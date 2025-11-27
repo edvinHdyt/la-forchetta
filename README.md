@@ -29,12 +29,13 @@ Website La Forchetta menyediakan berbagai fitur untuk mendukung pengalaman pengg
 8. Wishtlist makanan
 9. Search Makanan
 
-## Pembagian tugas per halaman
+## Pembagian tugas
 1. Dashboard (Inna, Herlyana)
 2. Login (Jevrene)
 3. Hasil Search (Edvin)
 4. Detail Makanan (Edvin)
-5. Archive Makanan (Fatimah)
+5. Archive Makanan (Fatimah, belva)
 6. Wishlist Makanan (Belva)
 7. Profil (Jevrene)
+8. Dokumentasi (Fatimah)
 
