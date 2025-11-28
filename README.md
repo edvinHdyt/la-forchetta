@@ -5,7 +5,7 @@ La Forchetta adalah sebuah website untuk food review. website ini dibuat sebagai
 3. Inna Lutfia Fatih - 4524210044
 4. Fatimah - 4524210039
 5. Herlyana Ferdiani - 4524210042
-6. Berlvaria Herdiyani - 4524210078
+6. Berlvaria Hendriyani - 4524210078
 
 ## Halaman-halaman website La Forchetta
 Website ini terdiri dari beberapa halaman utama, yaitu:
