@@ -2,7 +2,7 @@
 La Forchetta adalah sebuah website untuk food review. website ini dibuat sebagai tugas akhir mata kuliah teori Desain web. Adapun anggota kelompok kami adalah sebagai berikut:
 1. Muhamad Edvin Hidayat - 4524210054
 2. Jevrene Samny Pratama - 4524210046
-3. Inna Lutfia Fatih - 4524210044
+3. Inna Lutfiah Fatih - 4524210044
 4. Fatimah - 4524210039
 5. Herlyana Ferdiani - 4524210042
 6. Berlvaria Hendriyani - 4524210078
