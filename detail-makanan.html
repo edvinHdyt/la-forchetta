@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3 sticky-top">
         <div class="container d-flex justify-content-beetween align-items-center">
             <h2 class="logo mt-1">
                 <a href="#">La Forchetta</a>
@@ -43,13 +43,168 @@
         </div>
     </nav>
    <div class="container">
-    
+    <section class="header">
+        <div class="card p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <img src="./assets/image/foodImage/pancake.jpg" class="img-thumbnail rounded" alt="..." id="foodImage">
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <div class="header-section">
+                        <h1 class="title" id="foodName">
+                            Pancake
+                        </h1>
+                        <hr>
+                    </div>
+                    <div class="body-section">
+                        <h3>Tentang Makanan</h3>
+                        <p id="foodDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque vero quibusdam eius, iure placeat suscipit quasi repellat ex iste, quos minima quaerat expedita voluptate molestiae dolorem quas accusantium culpa?</p>
+                        <h3>Resep</h3>
+                        <span>Untuk 6-8 pancake ukuran sedang</span>
+                        <ul>
+                            <li>
+                                <p>
+                                    150 gram tepung terigu serbaguna (± 1 cup)
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    2 sdm gula pasir
+                                </p>
+                            </li>
+                            <li>
+                                <p>1 sdt baking powder</p>
+                            </li>
+                            <li>
+                                <p>1/4 sdt baking soda (opsional, biar makin fluffy)</p>
+                            </li>
+                            <li>
+                                <p>Sejumput garam</p>
+                            </li>
+                            <li>
+                                <p>1 butir telur</p>
+                            </li>
+                            <li>
+                                <p> 200 ml susu cair (bisa diganti air, tapi lebih enak susu)</p>
+                            </li>
+                            <li>
+                                <p> 2 sdm mentega cair / minyak</p>
+                            </li>
+                            <li>
+                                <p> 1 sdt vanilla extract (opsional)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div class="header-section">
+                <hr>
+                <h3 class="text-center">
+                    Cara Membuat
+                </h3>
+                <hr>
+            </div>
+            <div class="body-section">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                Campur bahan kering
+                                <br>
+                                <span>Dalam satu wadah, aduk rata:</span>
+                                <ul>
+                                    <li class="second-list">
+                                        <p>Tepung</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Gula</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Baking Powder</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Baking Soda</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Garam</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                Campur bahan kering
+                                <br>
+                                <span>Dalam satu wadah, aduk rata:</span>
+                                <ul>
+                                    <li class="second-list">
+                                        <p>Tepung</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Gula</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Baking Powder</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Baking Soda</p>
+                                    </li>
+                                    <li class="second-list">
+                                        <p>Garam</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                         <ul>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="./assets/image/foodImage/cooking-illus.svg" alt="" class="img-cooking-illustration">
+                    </div>
+                </div>
+            </div>
+
+            <!-- comment section -->
+            <div class="header-section">
+                <hr>
+                <h3 class="text-center">
+                    Review & Komen
+                </h3>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control mb-3" placeholder="Nama" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control mb-3" placeholder="Rating">
+                        </div>
+                    </div>
+                     <div class="col-md-12">
+                        <div class="form-input">
+                            <textarea class="form-control input-comment" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="footer-comment float-end mt-3">
+                        <div class="text-limit float-start me-2">
+                            <span id="countText">0</span>
+                            <span>/255</span>
+                        </div>
+                         <div class="btn btn-primary">
+                             Tambah Comment
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
    </div>
 
 
    <!-- footer -->
-      <footer class="main-footer">
+      <footer class="main-footer mt-5 static-bottom">
       <div class="footer-content">
         <div class="footer-section">
           <h3 class="footer-title">Contact Us</h3>

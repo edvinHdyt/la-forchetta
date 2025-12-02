@@ -13,12 +13,17 @@ body{
     background-color: #f4f4f4;
 }
 
-/* ini untuk dashboard */
+p, span{
+    font-family: "Montserrat", sans-serif;
+    color: #696969 !important;
+}
 
-
-
-
-/* ini untuk detail makanan */
+.btn-primary{
+    background-color: #800037 !important;
+    color: #fff;
+    border: none;
+}
+/* navbar */
 .active{
     color: #800037 !important;
     text-decoration: underline;
@@ -57,19 +62,57 @@ body{
     font-size: 1.5rem;
 }
 
-.form-control:active{
-    outline: none !important;
-    border: none !important;
+input:focus{
+    border: 0.1px solid #800037 !important;
+    outline: #800037 !important;
+    box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+}
+textarea:focus{
+    border: 0.1px solid #800037 !important;
+    outline: #800037 !important;
+    box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+}
+.footer-comment{
+    display: flex;
+    align-items: center;
+}
+/* ini untuk dashboard */
+
+
+
+
+/* ini untuk detail makanan */
+.img-thumbnail{
+    height: 60vh;
+}
+.img-cooking-illustration{
+    width: 60vh;
+    height: 60vh;
+}
+/* .comment-section{
+    width: 100%;
+    display: flex;
+    position: relative;
 }
 
-
-
+.form-comment{
+    width: 93%;
+}
+textarea.input-comment{
+    height: 51px;
+}
+.btn-comment{
+    height: 40px;
+    position: absolute;
+    right: -2px;
+    bottom: 0;
+} */
 /* --- FOOTER --- */
 .main-footer {
   background-color: #F9F3ED; /* Cream #F9F3ED */
   padding: 40px 20px;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
 }
