@@ -41,3 +41,74 @@ body{
     color: #800037;
     text-decoration: none;
 }
+
+.profile-border{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4d4d4;
+    border-radius: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.profile-border i{
+    font-size: 1.5rem;
+}
+
+.form-control:active{
+    outline: none !important;
+    border: none !important;
+}
+
+
+
+/* --- FOOTER --- */
+.main-footer {
+  background-color: #F9F3ED; /* Cream #F9F3ED */
+  padding: 40px 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.05);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-title {
+  color: #800037;
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 5px;
+}
+
+.social-links a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #800037;
+}
