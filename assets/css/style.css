@@ -7,9 +7,37 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    background-color: #f4f4f4;
+}
+
 /* ini untuk dashboard */
 
 
 
 
 /* ini untuk detail makanan */
+.active{
+    color: #800037 !important;
+    text-decoration: underline;
+}
+.navbar{
+    background-color: #F9F3ED !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.nav-link{
+    color: #333;
+}
+.nav-link:hover{
+    color: #800037 !important;
+}
+.search-bar{
+    width: 150% !important;
+}
+
+.logo>a{
+    color: #800037;
+    text-decoration: none;
+}
