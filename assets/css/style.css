@@ -124,9 +124,26 @@ body{
   border: 2px solid #ddd;}
 .profile-wrapper:hover .edit-btn {
   display: flex;}
-
-
-
+/* cancel save */
+.profile-card .btn {
+  font-size: 0.85rem;  
+  padding: 5px 15px;  
+  border-radius: 6px; }
+/* cancel */
+.profile-card .btn-outline-secondary {
+  border-color: #e9609b;
+  color: #800037;}
+.profile-card .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;}
+/* Tombol Save */
+.profile-card .btn-success {
+  background-color: #800037;
+  border-color: #e9609b;}
+.profile-card .btn-success:hover {
+  background-color: #e9609b;
+  border-color: #800037;
+  color:#000000}
 
 
 
