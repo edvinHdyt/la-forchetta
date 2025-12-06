@@ -9,7 +9,7 @@
 
 body{
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     background-color: #f4f4f4;
 }
 
@@ -29,7 +29,7 @@ body{
     color: #800037 !important;
 }
 .search-bar{
-    width: 150% !important;
+    width: 100% !important;
 }
 
 .logo>a{
@@ -58,6 +58,43 @@ body{
 }
 
 /* ini untuk dashboard */
+/* header */
+.carousel-item img {
+    filter: brightness(50%);}
+#carouselExampleAutoplaying {
+    height: 565px; /* sesuaikan tinggi dashboard */
+    overflow: hidden;}
+#carouselExampleAutoplaying .carousel-item img {
+    height: 565px;       
+    object-fit: cover;   
+    width: 100%;}
+.custom-caption {
+    bottom: 30%;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);}
+.custom-caption h2 {
+    font-size: 3rem;
+    font-weight: 700;}
+.custom-caption p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;}
+.custom-caption h2, /* Animasi */
+  .custom-caption p {
+      animation: fadeInUp 1s ease-in-out;}
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);}
+    to {
+      opacity: 1;
+      transform: translateY(0);}}
+.carousel-control-prev-icon, /* icon prev next */
+.carousel-control-next-icon {
+    filter: invert(100%);}
+
+
+
+
+
 
 
 
@@ -69,13 +106,14 @@ body{
 
 /* --- FOOTER --- */
 .main-footer {
-  background-color: #F9F3ED; /* Cream #F9F3ED */
+  background-color: #F9F3ED;
   padding: 40px 20px;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  position: relative; 
+  margin-top: 40px;  
 }
+
 
 .footer-content {
   display: flex;
