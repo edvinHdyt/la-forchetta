@@ -57,7 +57,7 @@ body{
     border: none !important;
 }
 
-/* ini untuk dashboard */
+/* ini untuk dashboard (inna)*/
 /* header */
 .carousel-item img {
     filter: brightness(50%);}
@@ -92,6 +92,38 @@ body{
     filter: invert(100%);}
 
 
+/* Profil (inna) */
+.profile-card {
+  max-width: 500px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  font-size: 14px;}
+.form-control {
+  width: 400px;
+  height: 35px;}
+.profile-wrapper {
+  position: relative;}
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #800037;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
+.edit-btn { /*icon pensil */
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 36px;
+  height: 36px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 2px solid #ddd;}
+.profile-wrapper:hover .edit-btn {
+  display: flex;}
 
 
 
