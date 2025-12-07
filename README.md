@@ -39,3 +39,9 @@ Website La Forchetta menyediakan berbagai fitur untuk mendukung pengalaman pengg
 7. Profil (Inna)
 8. Dokumentasi (Fatimah)
 
+#Workflow
+1. bikin branch
+ - git checkout -b nama_branch
+2. pindah branch
+ - git checkout nama_branch_tujuan
+
