@@ -10,21 +10,21 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container d-flex justify-content-beetween align-items-center">
             <h2 class="logo mt-1">
-                <a href="#">La Forchetta</a>
+                <a href="dashboard.html">La Forchetta</a>
             </h2>
             <div class="d-flex ms-2">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" href="#">Dashboard</a>
+                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="#contactUs">Contact Us</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Wishlist Makanan</a>
+                        <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">Archive Makanan</a>
@@ -38,40 +38,42 @@
     </nav>
 
     <!-- body -->
-    <div class="container my-5">
-    <div class="profile-card shadow p-5 rounded-4 mx-auto">
-    <h4 class="mb-4 fw-bold text-center">Profile Information</h4>
-        <!-- foto jisungku cihuyy -->
-        <div class="d-flex justify-content-center mb-3 position-relative">
-        <div class="profile-wrapper">
-            <img src="./assets/img/park jisung.jpg" class="profile-photo" alt="profile">
-            <!-- pensil -->
-            <button class="edit-btn btn btn-light rounded-circle shadow">
-            <i class="bi bi-pencil-fill"></i>
-            </button>
+    <main>
+        <div class="container my-5">
+            <div class="profile-card shadow p-5 rounded-4 mx-auto">
+            <h4 class="mb-4 fw-bold text-center">Profile Information</h4>
+                <!-- foto jisungku cihuyy -->
+                <div class="d-flex justify-content-center mb-3 position-relative">
+                <div class="profile-wrapper">
+                    <img src="./assets/img/park jisung.jpg" class="profile-photo" alt="profile">
+                    <!-- pensil -->
+                    <button class="edit-btn btn btn-light rounded-circle shadow">
+                    <i class="bi bi-pencil-fill"></i>
+                    </button>
+                </div>
+                </div>
+                <!-- edit profil -->
+                <form>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Name</label>
+                    <input type="text" maxlength="50" class="form-control" value="Park Jisung">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Phone Number</label>
+                    <input type="text" maxlength="20" class="form-control" value="082172274247">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input type="email" maxlength="50" class="form-control" value="Bamjjiparkjie@gmail.com">
+                </div>
+                <div class="d-flex justify-content-end gap-3 mt-4">
+                    <button type="button" class="btn btn-outline-secondary py-1 px-2">Cancel</button>
+                    <button type="submit" class="btn btn-success py-1 px-2">Save</button>
+                </div>
+                </form>
+            </div>
         </div>
-        </div>
-        <!-- edit profil -->
-        <form>
-        <div class="mb-3">
-            <label class="form-label fw-semibold">Name</label>
-            <input type="text" maxlength="50" class="form-control" value="Park Jisung">
-        </div>
-        <div class="mb-3">
-            <label class="form-label fw-semibold">Phone Number</label>
-            <input type="text" maxlength="20" class="form-control" value="082172274247">
-        </div>
-        <div class="mb-3">
-            <label class="form-label fw-semibold">Email</label>
-            <input type="email" maxlength="50" class="form-control" value="Bamjjiparkjie@gmail.com">
-        </div>
-        <div class="d-flex justify-content-end gap-3 mt-4">
-            <button type="button" class="btn btn-outline-secondary py-1 px-2">Cancel</button>
-            <button type="submit" class="btn btn-success py-1 px-2">Save</button>
-        </div>
-        </form>
-    </div>
-    </div>
+    </main>
 
    <!-- footer -->
       <footer class="main-footer">

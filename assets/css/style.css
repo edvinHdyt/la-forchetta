@@ -11,6 +11,11 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   background-color: #f4f4f4;
+  min-height: 100%;
+}
+
+main{
+  min-height: calc(50vh);
 }
 
 p, span{
@@ -78,7 +83,7 @@ textarea:focus{
 .footer-comment{
     display: flex;
     align-items: center;
-
+}
 .form-control:active {
   outline: none !important;
   border: none !important;
@@ -263,16 +268,16 @@ p.username{
     margin-top: 10px;
     font-size: 0.9rem;
 }
+
 /* --- FOOTER --- */
 .main-footer {
-  background-color: #f9f3ed;
+  background-color: #f9f3ed !important;
   padding: 40px 20px;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
   /* position: absolute; */
   bottom: 0;
   width: 100%;
   position: relative;
-  margin-top: 40px;
 }
 
 .footer-content {
