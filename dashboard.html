@@ -106,21 +106,96 @@
       </div>
     </div>
     </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only"> </span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only"> </span>
-        </a>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+   <!-- body -->
+   
+   <div class="container-fluid">
+    <div class="row mt-4">
+    <!-- Kolom Filter Kiri -->
+    <div class="col-lg-3 col-md-4 mb-4 no-padding-left">
+    <div class="card p-3 filter-box">
+            <h5 class="mb-3">Filter</h5>
+
+            <!-- Provinsi -->
+            <label class="form-label">Provinsi</label>
+            <select class="form-select mb-3">
+                <option selected disabled>Pilih Provinsi</option>
+                <option>Aceh</option>
+                <option>Sumatera Utara</option>
+                <option>Sumatera Barat</option>
+                <option>Riau</option>
+                <option>Jambi</option>
+                <option>Sumatera Selatan</option>
+                <option>Banten</option>
+                <option>DKI Jakarta</option>
+                <option>Jawa Barat</option>
+                <option>Jawa Tengah</option>
+            </select>
+
+            <!-- Jenis Makanan -->
+            <label class="form-label">Jenis Makanan</label>
+            <select class="form-select">
+                <option selected disabled>Pilih Jenis</option>
+                <option>Makanan Utama</option>
+                <option>Appetizer</option>
+                <option>Dessert</option>
+                <option>Pencuci Mulut</option>
+                <option>Minuman</option>
+                <option>Cemilan</option>
+            </select>
+        </div>
     </div>
 
-    <!-- body -->
-   
-   <div class="container">
+    <!-- Kolom Makanan Dashboard -->
+    <div class="col-lg-9 col-md-8">
+        <div class="row g-3">
 
+            <!-- Card makanan 1 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="./assets/img/makan01.jpg" class="card-img-top" alt="Makanan 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Makanan 1</h5>
+                        <p class="card-text">Deskripsi singkat makanan.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Card makanan 2 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="./assets/img/makan02.jpg" class="card-img-top" alt="Makanan 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Makanan 2</h5>
+                        <p class="card-text">Deskripsi singkat makanan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card makanan 3 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="./assets/img/makan03.jpg" class="card-img-top" alt="Makanan 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Makanan 3</h5>
+                        <p class="card-text">Deskripsi singkat makanan.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
    </div>
 
 
