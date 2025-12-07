@@ -147,6 +147,39 @@ body{
 
 
 
+/* ini untuk hasil search (elin) */
+/* navbar (biar diem)*/
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* footer hasil search */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.min-height {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f4f4f4;
+  margin-top: auto;
+}
+
 
 /* ini untuk detail makanan */
 
