@@ -51,6 +51,6 @@ Website La Forchetta menyediakan berbagai fitur untuk mendukung pengalaman pengg
    - git pull origin main
 2. pindah ke branch kalian
    - git checkout nama_branch
- 3. merge main ke branch kalian
+3. merge main ke branch kalian
    - git merge origin main
 
