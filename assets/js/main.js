@@ -1,4 +1,4 @@
-//slide interaktif header dashboard carousel bangsat
+//slide interaktif header dashboard carousel 
 document.addEventListener("DOMContentLoaded", function () {
     const myCarousel = document.querySelector('#carouselExampleAutoplaying');
     const carousel = new bootstrap.Carousel(myCarousel, {
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         wrap: true      });
 });
 
-//profil dah jir
+//profil 
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 inputs.forEach(input => {
     input.addEventListener("input", () => {
@@ -15,7 +15,36 @@ inputs.forEach(input => {
         counter.textContent = `${input.value.length}/${input.maxLength}`;
         validateForm();});
 });
+
 function validateForm() {
     const name = document.getElementById("name").value.trim();
     const saveBtn = document.getElementById("saveBtn");
-    saveBtn.disabled = name.length === 0;}
+    saveBtn.disabled = name.length === 0;
+}
+
+document.addEventListener('click', function(){
+    let strId = event.target.dataset["id"];
+    
+    switch (strId) {
+        case "showDropdownMenu":
+            showDropdownMenu();
+            break;
+    
+        default:
+            break;
+    }
+});
+
+
+function showDropdownMenu(){
+    let elm = document.getElementById('containerNavbarDropdown');
+    
+
+    if (elm.classList.contains("show")){
+        elm.classList.remove('d-none');
+        // elm.classList.add('d-block');
+    } else {
+        // elm.classList.remove('d-block');
+        elm.classList.add('show');
+    }
+}
