@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    background-color: #f4f4f4;
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background-color: #f4f4f4;
 }
 
 p, span{
@@ -28,43 +28,44 @@ h1, h2, h3, h4, h5{
     border: none;
 }
 /* navbar */
-.active{
-    color: #800037 !important;
-    text-decoration: underline;
+.active {
+  color: #800037 !important;
+  text-decoration: underline;
 }
-.navbar{
-    background-color: #F9F3ED !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.navbar {
+  background-color: #f9f3ed !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.nav-link{
-    color: #333;
+.nav-link {
+  color: #333;
 }
-.nav-link:hover{
-    color: #800037 !important;
+.nav-link:hover {
+  color: #800037 !important;
 }
-.search-bar{
-    width: 100% !important;
-}
-
-.logo>a{
-    color: #800037;
-    text-decoration: none;
+.search-bar {
+  width: 100% !important;
 }
 
-.profile-border{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d4d4d4;
-    border-radius: 25px;
-    margin-left: 20px;
-    cursor: pointer;
+.logo > a {
+  color: #800037;
+  text-decoration: none;
 }
-.profile-border i{
-    font-size: 1.5rem;
+
+.profile-border {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4d4d4;
+  border-radius: 25px;
+  margin-left: 20px;
+  cursor: pointer;
 }
+.profile-border i {
+  font-size: 1.5rem;
+}
+<<<<<<< HEAD
 input:focus{
     border: 0.1px solid #800037 !important;
     outline: #800037 !important;
@@ -78,42 +79,58 @@ textarea:focus{
 .footer-comment{
     display: flex;
     align-items: center;
+=======
+
+.form-control:active {
+  outline: none !important;
+  border: none !important;
+>>>>>>> origin/wishlist-makanan
 }
 
 /* ini untuk dashboard (inna)*/
 /* header */
 .carousel-item img {
-    filter: brightness(50%);}
+  filter: brightness(50%);
+}
 #carouselExampleAutoplaying {
-    height: 565px; /* sesuaikan tinggi dashboard */
-    overflow: hidden;}
+  height: 565px; /* sesuaikan tinggi dashboard */
+  overflow: hidden;
+}
 #carouselExampleAutoplaying .carousel-item img {
-    height: 565px;       
-    object-fit: cover;   
-    width: 100%;}
+  height: 565px;
+  object-fit: cover;
+  width: 100%;
+}
 .custom-caption {
-    bottom: 30%;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);}
+  bottom: 30%;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
 .custom-caption h2 {
-    font-size: 3rem;
-    font-weight: 700;}
+  font-size: 3rem;
+  font-weight: 700;
+}
 .custom-caption p {
-    font-size: 1.3rem;
-    margin-top: 0.5rem;}
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
 .custom-caption h2, /* Animasi */
   .custom-caption p {
-      animation: fadeInUp 1s ease-in-out;}
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);}
-    to {
-      opacity: 1;
-      transform: translateY(0);}}
+  animation: fadeInUp 1s ease-in-out;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .carousel-control-prev-icon, /* icon prev next */
 .carousel-control-next-icon {
-    filter: invert(100%);}
-
+  filter: invert(100%);
+}
 
 /* Profil (inna) */
 .profile-card {
@@ -121,20 +138,25 @@ textarea:focus{
   height: 500px;
   background: white;
   border-radius: 20px;
-  font-size: 14px;}
+  font-size: 14px;
+}
 .form-control {
   width: 400px;
-  height: 35px;}
+  height: 35px;
+}
 .profile-wrapper {
-  position: relative;}
+  position: relative;
+}
 .profile-photo {
   width: 90px;
   height: 90px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #800037;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
-.edit-btn { /*icon pensil */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.edit-btn {
+  /*icon pensil */
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -144,32 +166,36 @@ textarea:focus{
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  border: 2px solid #ddd;}
+  border: 2px solid #ddd;
+}
 .profile-wrapper:hover .edit-btn {
-  display: flex;}
+  display: flex;
+}
 /* cancel save */
 .profile-card .btn {
-  font-size: 0.85rem;  
-  padding: 5px 15px;  
-  border-radius: 6px; }
+  font-size: 0.85rem;
+  padding: 5px 15px;
+  border-radius: 6px;
+}
 /* cancel */
 .profile-card .btn-outline-secondary {
   border-color: #e9609b;
-  color: #800037;}
+  color: #800037;
+}
 .profile-card .btn-outline-secondary:hover {
   background-color: #6c757d;
-  color: white;}
+  color: white;
+}
 /* Tombol Save */
 .profile-card .btn-success {
   background-color: #800037;
-  border-color: #e9609b;}
+  border-color: #e9609b;
+}
 .profile-card .btn-success:hover {
   background-color: #e9609b;
   border-color: #800037;
-  color:#000000}
-
-
-
+  color: #000000;
+}
 
 /* ini untuk detail makanan */
 .img-thumbnail{
@@ -186,6 +212,7 @@ textarea:focus{
     position: relative;
 }
 
+<<<<<<< HEAD
 .form-comment{
     width: 93%;
 }
@@ -240,18 +267,19 @@ p.username{
     margin-top: 10px;
     font-size: 0.9rem;
 }
+=======
+>>>>>>> origin/wishlist-makanan
 /* --- FOOTER --- */
 .main-footer {
-  background-color: #F9F3ED;
+  background-color: #f9f3ed;
   padding: 40px 20px;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
   /* position: absolute; */
   bottom: 0;
   width: 100%;
-  position: relative; 
-  margin-top: 40px;  
+  position: relative;
+  margin-top: 40px;
 }
-
 
 .footer-content {
   display: flex;
@@ -291,6 +319,7 @@ p.username{
 .social-links a:hover {
   color: #800037;
 }
+<<<<<<< HEAD
 
 .hamburger-menu{
     display: none;
@@ -339,3 +368,5 @@ p.username{
         display: none;
     }
 }
+=======
+>>>>>>> origin/wishlist-makanan
