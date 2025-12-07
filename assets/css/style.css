@@ -65,7 +65,6 @@ h1, h2, h3, h4, h5{
 .profile-border i {
   font-size: 1.5rem;
 }
-<<<<<<< HEAD
 input:focus{
     border: 0.1px solid #800037 !important;
     outline: #800037 !important;
@@ -79,12 +78,10 @@ textarea:focus{
 .footer-comment{
     display: flex;
     align-items: center;
-=======
 
 .form-control:active {
   outline: none !important;
   border: none !important;
->>>>>>> origin/wishlist-makanan
 }
 
 /* ini untuk dashboard (inna)*/
@@ -212,7 +209,6 @@ textarea:focus{
     position: relative;
 }
 
-<<<<<<< HEAD
 .form-comment{
     width: 93%;
 }
@@ -267,8 +263,6 @@ p.username{
     margin-top: 10px;
     font-size: 0.9rem;
 }
-=======
->>>>>>> origin/wishlist-makanan
 /* --- FOOTER --- */
 .main-footer {
   background-color: #f9f3ed;
@@ -319,7 +313,6 @@ p.username{
 .social-links a:hover {
   color: #800037;
 }
-<<<<<<< HEAD
 
 .hamburger-menu{
     display: none;
@@ -368,5 +361,3 @@ p.username{
         display: none;
     }
 }
-=======
->>>>>>> origin/wishlist-makanan
