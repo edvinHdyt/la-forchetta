@@ -208,7 +208,7 @@ textarea:focus{
     height: 40vh;
     display: none;
 }
-/* .comment-section{
+.comment-section{
     width: 100%;
     display: flex;
     position: relative;
@@ -225,7 +225,7 @@ textarea.input-comment{
     position: absolute;
     right: -2px;
     bottom: 0;
-} */
+}
 .rating-label{
     font-size: clamp(3rem, 5vw, 5em);
     color: #696969;
