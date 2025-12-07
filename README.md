@@ -44,4 +44,6 @@ Website La Forchetta menyediakan berbagai fitur untuk mendukung pengalaman pengg
  - git checkout -b nama_branch
 2. pindah branch
  - git checkout nama_branch_tujuan
+3. push branch
+   -git push -u origin nama_branch
 
