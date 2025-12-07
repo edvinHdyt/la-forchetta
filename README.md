@@ -46,4 +46,11 @@ Website La Forchetta menyediakan berbagai fitur untuk mendukung pengalaman pengg
  - git checkout nama_branch_tujuan
 3. push branch
   - git push -u origin nama_branch
+## Workflow setelah merge
+1. pull branch main
+   - git pull origin main
+2. pindah ke branch kalian
+   - git checkout nama_branch
+ 3. merge main ke branch kalian
+   - git merge origin main
 
