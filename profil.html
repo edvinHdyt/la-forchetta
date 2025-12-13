@@ -38,40 +38,57 @@
     </nav>
 
     <!-- body -->
-    <div class="container my-5">
-    <div class="profile-card shadow p-5 rounded-4 mx-auto">
-    <h4 class="mb-4 fw-bold text-center">Profile Information</h4>
-        <!-- foto jisungku cihuyy -->
-        <div class="d-flex justify-content-center mb-3 position-relative">
+    <div class="container my-3">
+        <div class="profile-card shadow p-5 rounded-4 mx-auto">
+        <h4 class="mb-3 fw-bold text-center">Profile Information</h4>
+        <!-- photo profile -->
+        <div class="d-flex justify-content-center mb-2 position-relative">
         <div class="profile-wrapper">
-            <img id="profilePhoto" src="./assets/img/park jisung.jpg" class="profile-photo" alt="profile">
-            <!-- pensil -->
+            <img id="profilePhoto" src="./assets/img/parkjisung.jpg" class="profile-photo" alt="profile">
+            <!-- pensil edit photo profile -->
             <button id="changePhotoBtn" class="edit-btn btn btn-light rounded-circle shadow" type="button">
             <i class="bi bi-pencil-fill"></i>
             </button>
             <input type="file" id="photoInput" accept="image/*" class="d-none">
         </div>
         </div>
-        <!-- edit profil -->
-        <form id="profileForm">
-        <div class="mb-3">
+        <!-- edit form profil -->
+        <form id="profileForm" class="needs-validation" novalidate>
+        <div class="mb-2">
             <label class="form-label fw-semibold">Name</label>
             <input id="name" name="name" type="text" maxlength="50" class="form-control" value="Park Jisung" required>
+                <div class="valid-feedback">Good!</div>
+                <div class="invalid-feedback">Please enter your name</div>                    
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label class="form-label fw-semibold">Phone Number</label>
-            <input id="phone" name="phone" type="text" maxlength="20" class="form-control" value="082172274247">
+            <input id="phone" name="phone" type="text" maxlength="20" class="form-control" value="082172274247" required>
+                <div class="valid-feedback">Good!</div>
+                <div class="invalid-feedback">Please enter your phone numbers</div>  
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label class="form-label fw-semibold">Email</label>
-            <input id="email" name="email" type="email" maxlength="50" class="form-control" value="Bamjjiparkjie@gmail.com">
+            <input id="email" name="email" type="email" maxlength="50" class="form-control" value="Bamjjiparkjie@gmail.com" required>
+                <div class="valid-feedback">Good!</div>
+                <div class="invalid-feedback">Please enter your email address</div>          
         </div>
-        <div class="d-flex justify-content-end gap-3 mt-4">
-            <button id="cancelBtn" type="button" class="btn btn-outline-secondary py-1 px-2">Cancel</button>
+        <div class="d-flex justify-content-end gap-2 mt-3">
+            <button id="editBttnn" type="button" class="btn btn-outline-secondary">Edit Profile</button>
             <button id="saveBtn" type="submit" class="btn btn-success py-1 px-2">Save</button>
         </div>
         </form>
     </div>
+    </div>
+    <!-- btton konfirmasi perubahan profil -->
+    <div id="confirmCard" class="confirm-overlay d-none">
+        <div class="card confirm-card shadow rounded-4 p-4 text-center">
+            <p id="confirmText" class="mb-4 fw-semibold">
+                Are you sure you want to change your profile? </p>
+            <div class="d-flex justify-content-center gap-3">
+                <button id="confirmNo" class="btn btn-outline-secondary">No</button>
+                <button id="confirmYes" class="btn btn-success">Yes</button>
+            </div>
+        </div>
     </div>
 
    <!-- footer -->
