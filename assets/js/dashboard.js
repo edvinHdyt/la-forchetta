@@ -1,32 +1,16 @@
 // Carousel autoplay and navbar profile tooltip sync
 document.addEventListener("DOMContentLoaded", () => {
   const carouselEl = document.querySelector("#carouselExampleAutoplaying");
+  let carousel;
   if (carouselEl && window.bootstrap?.Carousel) {
-    new bootstrap.Carousel(carouselEl, {
-      interval: 4000,
+    carousel = new bootstrap.Carousel(carouselEl, {
+      interval: 5000,
       ride: "carousel",
-      wrap: true,
-    });
+      wrap: true, });
+    // Pause on hover in header
+    carouselEl.addEventListener("mouseenter", () => {
+      if (carousel) carousel.pause(); });
+    carouselEl.addEventListener("mouseleave", () => {
+      if (carousel) carousel.cycle(); });
   }
-
-  const STORAGE_KEY = "la-forchetta-profile";
-  const defaultName = "Park Jisung";
-  const defaultPhoto = "./assets/img/park jisung.jpg";
-  const navProfilePhoto = document.getElementById("navProfilePhoto");
-  const navProfileGreet = document.querySelector(".nav-profile-greet");
-
-  function loadProfile() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const profile = stored
-      ? JSON.parse(stored)
-      : { name: defaultName, photo: defaultPhoto };
-
-    if (navProfilePhoto) navProfilePhoto.src = profile.photo || defaultPhoto;
-    if (navProfileGreet) {
-      const name = profile.name?.trim() || defaultName;
-      navProfileGreet.textContent = `Hi ${name}!`;
-    }
-  }
-
-  loadProfile();
 });

@@ -143,49 +143,51 @@ textarea:focus{
 /* ini untuk dashboard (inna)*/
 /* header */
 .carousel-item img {
-  filter: brightness(50%);
-}
+  filter: brightness(50%); }
 #carouselExampleAutoplaying {
   height: 565px; /* sesuaikan tinggi dashboard */
-  overflow: hidden;
-}
+  overflow: hidden; }
 #carouselExampleAutoplaying .carousel-item img {
   height: 565px;
   object-fit: cover;
-  width: 100%;
-}
+  width: 100%; }
 .custom-caption {
   bottom: 30%;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
 .custom-caption h2 {
   font-size: 3rem;
   font-weight: 700;
-  color: #f4f4f4;
-}
+  color: #ffffff; }
 .custom-caption p {
   font-size: 1.3rem;
   margin-top: 0.5rem;
-  color: #f4f4f4;
-}
+  color: #ffffff !important; }
 .custom-caption h2, /* Animasi */
   .custom-caption p {
-  animation: fadeInUp 1s ease-in-out;
-}
+  animation: fadeInUp 1.2s ease-in-out; }
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
-  }
+    transform: translateY(20px); }
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
+    transform: translateY(0); } }
+.carousel-item {
+  transition: transform 0.6s ease-in-out; }
+.carousel-item img {
+  transition: opacity 0.6s ease-in-out; }
+.carousel-control-prev,
+.carousel-control-next {
+  height: auto; }
 .carousel-control-prev-icon, /* icon prev next */
 .carousel-control-next-icon {
-  filter: invert(100%);
-}
+  filter: brightness(0) invert(1);
+  width: 40px;
+  height: 40px; }
+main .container .card-img-top {  /* container card makanan */
+    height: 200px;
+    object-fit: cover;
+    width: 100%; }
 
 /* Profil (inna) */
 .profile-card {
@@ -193,23 +195,19 @@ textarea:focus{
   height: 500px;
   background: white;
   border-radius: 20px;
-  font-size: 14px;
-}
+  font-size: 14px; }
 .form-control {
   width: 400px;
-  height: 35px;
-}
+  height: 35px; }
 .profile-wrapper {
-  position: relative;
-}
+  position: relative; }
 .profile-photo {
   width: 90px;
   height: 90px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #800037;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
 .edit-btn {
   /*icon pensil */
   position: absolute;
@@ -221,36 +219,29 @@ textarea:focus{
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  border: 2px solid #ddd;
-}
+  border: 2px solid #ddd; }
 .profile-wrapper:hover .edit-btn {
-  display: flex;
-}
+  display: flex; }
 /* cancel save */
 .profile-card .btn {
   font-size: 0.85rem;
   padding: 5px 15px;
-  border-radius: 6px;
-}
+  border-radius: 6px; }
 /* cancel */
 .profile-card .btn-outline-secondary {
   border-color: #e9609b;
-  color: #800037;
-}
+  color: #800037; }
 .profile-card .btn-outline-secondary:hover {
   background-color: #6c757d;
-  color: white;
-}
+  color: white; }
 /* Tombol Save */
 .profile-card .btn-success {
   background-color: #800037;
-  border-color: #e9609b;
-}
+  border-color: #e9609b; }
 .profile-card .btn-success:hover {
   background-color: #e9609b;
   border-color: #800037;
-  color: #000000;
-}
+  color: #000000; }
 
 /* ini untuk detail makanan */
 .img-thumbnail{
