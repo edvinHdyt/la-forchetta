@@ -10,67 +10,105 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3 sticky-top">
-        <div class="container d-flex justify-content-beetween align-items-center">
-            <h2 class="logo mt-1">
-                <a href="dashboard.html">La Forchetta</a>
-            </h2>
-            <form action="" method="post" class="form-input form-input-search">
-                <div class="input-group search-bar">
-                    <input type="text" class="form-control" placeholder="Cari makanan">
-                    <button class="input-group-text" type="submit" id="basic-addon2">Search</button>
-                </div>
-            </form>
-            <div class="menu-section d-flex ms-2">
-                <div class="menu-list">
-                    <ul class="navbar-nav">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="dashboard.html">La Forchetta</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link active" href="dashboard.html">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contactUs">Contact Us</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Archive Makanan</a>
                         </li>
                     </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
                 </div>
-                <div class="hamburger-menu">
-                    <button class="btn btn-primary navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" data-id="showDropdownMenu">
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
+                    <div class="profile-border">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
                 </div>
-                <div class="profile-border">
-                    <i class="bi bi-person-fill"></i>
+            </div>
+        </nav>
+        
+        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
+            <div class="container">
+                <div class="navbar-dropdown-item" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </header>
 
-        <div class="container d-none" id="containerNavbarDropdown">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-               <div class="navbar-nav">
-                   <a class="nav-link active" aria-current="page" href="#">Home</a>
-                   <a class="nav-link" href="#">Dashboard</a>
-                   <a class="nav-link" href="#">Contact Us</a>
-                   <a class="nav-link" href="#">Wishlist Makanan</a>
-                   <a class="nav-link" href="#">Archive Makanan</a>
-               </div>
-           </div>
-        </div>
-    </nav>
-    <main>
+    <main class="mt-4">
         <div class="container">
          <section class="header">
              <div class="card p-4">
                  <div class="row">
-                     <div class="col-lg-4 col-md-6">
-                         <img src="./assets/image/foodImage/pancake.jpg" class="img-thumbnail rounded" alt="..." id="foodImage">
+                     <div class="col-lg-4 col-md-6 mb-3">
+                         <div class="header-section-responsive">
+                             <h1 class="title" id="foodName">
+                                 Pancake
+                             </h1>
+                             <hr>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <img src="./assets/image/foodImage/pancake.jpg" class="img-thumbnail rounded food-image" alt="..." id="foodImage">
+                            </div>
+                            <div class="col-md-12 d-flex flex-wrap align-items-center justify-content-center">
+                                <div class="food-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <p>Aceh</p>
+                                </div>
+                                 <div class="food-label">
+                                    <i class="bi bi-tags-fill"></i>
+                                    <p>Desert</p>
+                                </div>
+                                 <div class="food-label">
+                                    <i class="bi bi-star-fill"></i>
+                                    <p>5/5</p>
+                                </div>
+                            </div>
+                         </div>
+                         
+                         
                      </div>
-                     <div class="col-lg-8 col-md-6">
-                         <div class="header-section">
+                     <div class="col-lg-8 col-md-6 mb-3">
+                         <div class="header-section food-title">
                              <h1 class="title" id="foodName">
                                  Pancake
                              </h1>
@@ -179,7 +217,7 @@
                              </ul>
                          </div>
                          <div class="col-md-6 d-flex justify-content-center align-items-center">
-                             <img src="./assets/image/foodImage/cooking-illus.svg" alt="" class="img-cooking-illustration">
+                             <img src="./assets/image/SVG/DrawKit-cooking-kitchen-food-vector-illustrations-02.svg" alt="" class="img-cooking-illustration">
                          </div>
                      </div>
                  </div>
@@ -196,27 +234,33 @@
                      <div class="col-md-7">
                          <div class="header-comment-section">
                              <div class="row">
-                                 <div class="col-md-6">
-                                     <input type="text" class="form-control form-comment input-comment mb-3" placeholder="Nama" disabled>
+                                 <div class="col-md-6 mb-3">
+                                     <input type="text" class="form-control form-comment input-comment " placeholder="Nama" value="John Doe" disabled id="nama">
                                  </div>
-                                 <div class="col-md-6">
-                                     <input type="number" class="form-control form-comment input-comment mb-3" placeholder="Rating">
+                                 <div class="col-md-6 mb-3">
+                                     <input type="number" class="form-control form-comment input-comment" placeholder="Rating" id="rating">
+                                     <div class="invalid-feedback" id="ratingFeedback">
+                                        Rating harus diisi
+                                     </div>
                                  </div>
                              </div>
                              <div class="form-input">
-                                 <textarea class="form-control input-comment" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                 <textarea class="form-control input-comment" placeholder="Leave a comment here"id="comment"></textarea>
+                                <div class="invalid-feedback" id="commentFeedback">
+                                    Komen harus diisi
+                                </div>
                              </div>
                              <div class="footer-comment float-end mt-3 mb-3">
                                  <div class="text-limit float-start me-2">
                                      <span id="countText">0</span>
                                      <span>/255</span>
                                  </div>
-                                  <div class="btn btn-primary">
+                                  <div class="btn btn-primary" data-id="addComment" id="addComment">
                                       Tambah Comment
                                   </div>
                              </div>
                          </div>
-                         <div class="body-comment-section">
+                         <div class="body-comment-section" id="commentSection">
                              <div class="card px-2 py-3 d-flex flex-row mb-3">
                                  <div class="profile-border profile-comment">
                                      <i class="bi bi-person-fill"></i>
@@ -224,7 +268,7 @@
                                  <div class="detail-comment ms-3">
                                      <div class="detail-comment-header d-flex">
                                          <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 March 2025</p>
+                                         <p class="ms-2"> - 30 Mar 2025</p>
                                      </div>
                                      <div class="detail-comment-body d-flex flex-column">
                                          <p>Rating: <span>5</span></p>
@@ -239,7 +283,7 @@
                                  <div class="detail-comment ms-3">
                                      <div class="detail-comment-header d-flex">
                                          <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 March 2025</p>
+                                         <p class="ms-2"> - 30 Mar 2025</p>
                                      </div>
                                      <div class="detail-comment-body d-flex flex-column">
                                          <p>Rating: <span>5</span></p>
@@ -254,7 +298,7 @@
                                  <div class="detail-comment ms-3">
                                      <div class="detail-comment-header d-flex">
                                          <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 March 2025</p>
+                                         <p class="ms-2"> - 30 Mar 2025</p>
                                      </div>
                                      <div class="detail-comment-body d-flex flex-column">
                                          <p>Rating: <span>5</span></p>
@@ -316,29 +360,45 @@
 
 
    <!-- footer -->
-      <footer class="main-footer mt-5 static-bottom">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-title">Contact Us</h3>
-          <p>Email: info@forchetta.com</p>
-          <p>Telepon: (021) 1234 5678</p>
-        </div>
-        <div class="footer-section">
-          <h3 class="footer-title">Media Sosial</h3>
-          <ul class="social-links">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3 class="footer-title">La Forchetta</h3>
-          <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
-        </div>
-      </div>
+        <footer class="main-footer mt-5 static-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <p>Email: info@forchetta.com</p>
+                    <p>Telepon: (021) 1234 5678</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
+                    <h3 class="footer-title">Media Sosial</h3>
+                    <ul class="social-links">
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
+                </div>
+          </div>
+            </div>
     </footer>
+      
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets//js/detailMakanan.js"></script>
 </body>
 </html>

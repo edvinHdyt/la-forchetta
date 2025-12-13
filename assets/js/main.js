@@ -37,14 +37,21 @@ document.addEventListener('click', function(){
 
 
 function showDropdownMenu(){
-    let elm = document.getElementById('containerNavbarDropdown');
+    let elm = document.getElementById('dropdownNavbar');
+    let nav = document.getElementById("navbar");
     
 
-    if (elm.classList.contains("show")){
-        elm.classList.remove('d-none');
-        // elm.classList.add('d-block');
+    if (elm.classList.contains("hide-dropdown-navbar")){
+        elm.classList.remove('hide-dropdown-navbar');
+        elm.classList.remove('hiding-dropdown-navbar');
+        elm.classList.add('showing-dropdown-navbar');
+
+        nav.classList.add("navbar-dropdown-active");
     } else {
-        // elm.classList.remove('d-block');
-        elm.classList.add('show');
+        elm.classList.remove('showing-dropdown-navbar');
+        elm.classList.add('hiding-dropdown-navbar');
+        elm.classList.add('hide-dropdown-navbar');
+
+        nav.classList.remove("navbar-dropdown-active");
     }
 }
