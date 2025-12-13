@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive Makanan | La Forchetta</title>
+
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/boostrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h2 class="logo mt-1">
+          <a href="dashboard.html">La Forchetta</a>
+        </h2>
+
+        <form class="form-input">
+          <div class="input-group search-bar">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Cari makanan"
+            />
+            <button class="input-group-text">Search</button>
+          </div>
+        </form>
+
+        <div class="d-flex ms-2">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="archive.html">Archive Makanan</a>
+            </li>
+          </ul>
+
+          <div class="profile-border">
+            <i class="bi bi-person-fill"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="container my-5">
+      <!-- HEADER ARCHIVE -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Archive Makanan</h3>
+
+        <select id="sortArchive" class="form-select w-auto">
+          <option value="">Urutkan berdasarkan</option>
+          <option value="like">Paling Banyak Like</option>
+          <option value="comment">Paling Banyak Komentar</option>
+        </select>
+      </div>
+
+      <!-- GRID MAKANAN -->
+      <div class="row g-3" id="archiveContainer">
+        <!-- CARD 1 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="120"
+          data-comment="45"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/makan01.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Makanan 1</h5>
+              <p class="card-text">Deskripsi singkat makanan.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+                <span><i class="bi bi-heart-fill text-danger"></i> 120</span>
+                <span><i class="bi bi-chat-dots"></i> 45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="80"
+          data-comment="70"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/makan02.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Makanan 2</h5>
+              <p class="card-text">Deskripsi singkat makanan.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+                <span><i class="bi bi-heart-fill text-danger"></i> 80</span>
+                <span><i class="bi bi-chat-dots"></i> 70</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="200"
+          data-comment="30"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/makan03.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Makanan 3</h5>
+              <p class="card-text">Deskripsi singkat makanan.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+                <span><i class="bi bi-heart-fill text-danger"></i> 200</span>
+                <span><i class="bi bi-chat-dots"></i> 30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer mt-5">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Contact Us</h3>
+          <p>Email: info@forchetta.com</p>
+          <p>Telepon: (021) 1234 5678</p>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Media Sosial</h3>
+          <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Forchetta</h3>
+          <p>&copy; 2025 La Forchetta</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+
+    <!-- SORTING SCRIPT -->
+    <script>
+      document
+        .getElementById("sortArchive")
+        .addEventListener("change", function () {
+          const value = this.value;
+          const container = document.getElementById("archiveContainer");
+          const items = Array.from(container.querySelectorAll(".archive-item"));
+
+          items.sort((a, b) => {
+            if (value === "like") {
+              return b.dataset.like - a.dataset.like;
+            }
+            if (value === "comment") {
+              return b.dataset.comment - a.dataset.comment;
+            }
+            return 0;
+          });
+
+          items.forEach((item) => container.appendChild(item));
+        });
+    </script>
+  </body>
+</html>
