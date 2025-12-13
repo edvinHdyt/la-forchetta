@@ -15,29 +15,44 @@ document.addEventListener("click", function(){
 
 
 const initial = async () => {
-    let res = await fetch("https://dummyjson.com/c/0f83-ce76-49dd-8d68");
+    let res = await fetch("https://dummyjson.com/c/a9a4-9ad5-4288-9f36");
     let data = await res.json();
-
+    const commentSection = document.getElementById("commentSection");
+    
     Array.from(data).forEach((val, i) => {
-       if (val["food_id"] == 1){
-            let comments = val["comments"];
+        if (val["food_id"] == 1){
+            let comments = val["comment"];
+            
+            comments.forEach(comm => {
+                let date = createDateFormat(comm["created_at"]);
+                let profile;
 
-            // comments.forEach(comm => {
-            //     let elm = 
-            //     '<div class="profile-border profile-comment">' + 
-            //         '<i class="bi bi-person-fill"></i>' +
-            //     '</div>'+
-            //     '<div class="detail-comment ms-3">'+
-            //         '<div class="detail-comment-header d-flex">'+
-            //             '<p class="username text-bold">'+comm["name"]+'</p>'+
-            //             '<p class="ms-2"> - '+date+'</p>'+
-            //         '</div>'+
-            //         '<div class="detail-comment-body d-flex flex-column">'+
-            //             '<p>Rating: <span>'+rating.value+'</span></p>'+
-            //             '<p class="flex-wrap comment">'+comment.value+'</p>'+
-            //         '</div>'+
-            //     '</div>';
-            // })
+                if (comm["profil_pict"] == ""){
+                    profile = 
+                    '<div class="profile-border profile-comment">' + 
+                        '<i class="bi bi-person-fill"></i>' +
+                    '</div>';
+                } else {
+                    profile = 
+                    '<img src="'+comm["profil_pict"]+'" class="comment-profile-img">'
+                }
+
+                let elm =
+                profile + 
+                '<div class="detail-comment ms-3">'+
+                    '<div class="detail-comment-header d-flex">'+
+                        '<p class="username text-bold">'+comm["name"]+'</p>'+
+                        '<p class="ms-2"> - '+date+'</p>'+
+                    '</div>'+
+                    '<div class="detail-comment-body d-flex flex-column">'+
+                        '<p>Rating: <span>'+comm["rating"]+'</span></p>'+
+                        '<p class="flex-wrap comment">'+comm["comment"]+'</p>'+
+                    '</div>'+
+                '</div>';
+
+                let div = createCardComment(elm);
+                commentSection.prepend(div);
+            })
        }
     })
 }
@@ -53,9 +68,21 @@ const createDateFormat = (dateNow) => {
     return date;
 }
 
+const createCardComment = (elm) => {
+    const div = document.createElement('div');
+    div.classList.add("card");
+    div.classList.add("px-2");
+    div.classList.add('py-3');
+    div.classList.add("d-flex");
+    div.classList.add("flex-row");
+    div.classList.add("mb-3");
+    div.innerHTML = elm;
+
+    return div;
+}
+
 function addComment(){
     const commentSection = document.getElementById("commentSection");
-    const div = document.createElement('div');
     let rating = document.getElementById("rating");
     let comment = document.getElementById("comment");
     let nama = document.getElementById("nama").value;
@@ -77,7 +104,7 @@ function addComment(){
 
     const d = new Date();
 
-    let date = createDateFormat(d.getDate());
+    let date = createDateFormat(d);
 
     if ((rating.value != "" && comment.value != "") && (rating.value >= 0 && rating.value <= 5)){
         let elm = 
@@ -95,14 +122,7 @@ function addComment(){
                 '</div>'+
             '</div>';
     
-        div.classList.add("card");
-        div.classList.add("px-2");
-        div.classList.add('py-3');
-        div.classList.add("d-flex");
-        div.classList.add("flex-row");
-        div.classList.add("mb-3");
-        div.innerHTML = elm;
-    
+        let div = createCardComment(elm);
         commentSection.prepend(div);
 
         rating.value = "";

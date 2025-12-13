@@ -160,6 +160,78 @@ input:focus{
   text-decoration: none !important;
 }
 
+.dropdown-profile{
+  background-color: #FFFF;
+  width: 12rem;
+  position: absolute;
+  right: 15px;
+  top: -12px;
+  border-radius: 10px;
+  border: 0.1px solid #bababa;
+  box-shadow: 6px 8px 10px -4px #a0a0a0;
+  padding: 0;
+}
+.hide-dropdown-profile-container{
+  opacity: 0;
+  transform: translateY(-200px);
+}
+.hiding-dropdown-profile-container{
+  animation: fadeUp 0.5s ease-in;
+  z-index: 1000;
+}
+.show-dropdown-profile-container{
+  animation: fadeDown 0.5s ease-in;
+  z-index: 1000;
+}
+@keyframes fadeDown {
+  from{
+    transform: translateY(-200px);
+    opacity: 0;
+  }to{
+    transform: translateY(0);
+    opacity: 100;
+  }
+}
+
+@keyframes fadeUp {
+   0% {
+    transform: translateY(-0);
+    opacity: 100;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+
+.list-item{
+  padding: 0;
+  margin-bottom: 0 !important;
+}
+
+.list-item>li{
+  list-style: none;
+}
+
+.profile-dropdown-link{
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  color: #696969;
+}
+.profile-dropdown-link>i{
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+.profile-dropdown-link:hover{
+  background-color: #800037;
+  color: #ffff !important;
+}
+
 /* ini untuk dashboard (inna)*/
 /* header */
 .carousel-item img {
@@ -371,6 +443,12 @@ textarea:focus{
   color: #fff !important;
 }
 
+.comment-profile-img{
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 25px;
+  margin-left: 20px;
+}
 
 /* --- FOOTER --- */
 .main-footer {

@@ -40,13 +40,13 @@
                     <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
-                    <div class="profile-border">
-                        <i class="bi bi-person-fill"></i>
+                    <div class="profile-border" data-id="dropdownProfile">
+                        <i class="bi bi-person-fill" data-id="dropdownProfile"></i>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
         <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
             <div class="container">
                 <div class="navbar-dropdown-item" id="navbarSupportedContent">
@@ -69,6 +69,24 @@
                         <button class="btn btn-primary btn-search" type="submit">Search</button>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="container position-relative hide-dropdown-profile-container" id="dropdownProfile" >
+            <div class="dropdown-profile">
+              <ul class="list-item">
+                <li>
+                    <a href="profil.html" class="profile-dropdown-link">
+                        <i class="bi bi-person-fill"></i>
+                        John Doe
+                    </a>
+                </li>
+                 <li>
+                    <a href="profil.html" class="profile-dropdown-link">
+                        <i class="bi bi-box-arrow-in-left"></i>
+                        Keluar
+                    </a>
+                </li>
+              </ul>
             </div>
         </div>
     </header>
@@ -261,51 +279,7 @@
                              </div>
                          </div>
                          <div class="body-comment-section" id="commentSection">
-                             <div class="card px-2 py-3 d-flex flex-row mb-3">
-                                 <div class="profile-border profile-comment">
-                                     <i class="bi bi-person-fill"></i>
-                                 </div>
-                                 <div class="detail-comment ms-3">
-                                     <div class="detail-comment-header d-flex">
-                                         <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 Mar 2025</p>
-                                     </div>
-                                     <div class="detail-comment-body d-flex flex-column">
-                                         <p>Rating: <span>5</span></p>
-                                         <p class="flex-wrap comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam hic esse, at pariatur sunt, ducimus, vel veniam placeat vero cum earum alias tenetur. Praesentium quas ducimus quos culpa ipsa consectetur?</p>
-                                     </div>
-                                 </div>
-                             </div>
-                              <div class="card px-2 py-3 d-flex flex-row mb-3">
-                                 <div class="profile-border profile-comment">
-                                     <i class="bi bi-person-fill"></i>
-                                 </div>
-                                 <div class="detail-comment ms-3">
-                                     <div class="detail-comment-header d-flex">
-                                         <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 Mar 2025</p>
-                                     </div>
-                                     <div class="detail-comment-body d-flex flex-column">
-                                         <p>Rating: <span>5</span></p>
-                                         <p class="flex-wrap comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam hic esse, at pariatur sunt, ducimus, vel veniam placeat vero cum earum alias tenetur. Praesentium quas ducimus quos culpa ipsa consectetur?</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="card px-2 py-3 d-flex flex-row mb-3">
-                                 <div class="profile-border profile-comment">
-                                     <i class="bi bi-person-fill"></i>
-                                 </div>
-                                 <div class="detail-comment ms-3">
-                                     <div class="detail-comment-header d-flex">
-                                         <p class="username text-bold">John Doe</p>
-                                         <p class="ms-2"> - 30 Mar 2025</p>
-                                     </div>
-                                     <div class="detail-comment-body d-flex flex-column">
-                                         <p>Rating: <span>5</span></p>
-                                         <p class="flex-wrap comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam hic esse, at pariatur sunt, ducimus, vel veniam placeat vero cum earum alias tenetur. Praesentium quas ducimus quos culpa ipsa consectetur?</p>
-                                     </div>
-                                 </div>
-                             </div>
+
                          </div>
                      </div>
                      <div class="col-md-5 mb-3">

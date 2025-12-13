@@ -29,7 +29,9 @@ document.addEventListener('click', function(){
         case "showDropdownMenu":
             showDropdownMenu();
             break;
-    
+        case "dropdownProfile":
+            showDropdownProfile();
+            break;
         default:
             break;
     }
@@ -53,5 +55,21 @@ function showDropdownMenu(){
         elm.classList.add('hide-dropdown-navbar');
 
         nav.classList.remove("navbar-dropdown-active");
+    }
+}
+
+function showDropdownProfile(){
+    let elm = document.getElementById('dropdownProfile');
+    let nav = document.getElementById("navbar");
+    
+    if (elm.classList.contains("hide-dropdown-profile-container")){
+        elm.classList.remove('hide-dropdown-profile-container');
+        elm.classList.remove('hiding-dropdown-profile-container');
+        elm.classList.add('show-dropdown-profile-container');
+
+    } else {
+        elm.classList.remove('show-dropdown-profile-container');
+        elm.classList.add('hiding-dropdown-profile-container');
+        elm.classList.add('hide-dropdown-profile-container');
     }
 }
