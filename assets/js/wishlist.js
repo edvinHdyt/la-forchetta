@@ -9,7 +9,7 @@ let DUMMY_DATA = [
     id: 2,
     nama: "Sate Ayam Madura",
     deskripsi: "Daging ayam empuk dengan bumbu kacang kental khas Madura.",
-    foto: "./assets/img/sate.jpg",
+    foto: "./assets/img/sateayam.jpg",
   },
 ];
 

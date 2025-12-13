@@ -14,23 +14,28 @@ body {
   min-height: 100%;
 }
 
-main{
+main {
   min-height: calc(50vh);
 }
 
-p, span{
-    font-family: "Montserrat", sans-serif;
-    color: #696969 !important;
+p,
+span {
+  font-family: "Montserrat", sans-serif;
+  color: #696969 !important;
 }
 
-h1, h2, h3, h4, h5{
-    color: #696969;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #696969;
 }
 
-.btn-primary{
-    background-color: #800037 !important;
-    color: #fff;
-    border: none;
+.btn-primary {
+  background-color: #800037 !important;
+  color: #fff;
+  border: none;
 }
 /* navbar */
 .active {
@@ -70,19 +75,19 @@ h1, h2, h3, h4, h5{
 .profile-border i {
   font-size: 1.5rem;
 }
-input:focus{
-    border: 0.1px solid #800037 !important;
-    outline: #800037 !important;
-    box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+input:focus {
+  border: 0.1px solid #800037 !important;
+  outline: #800037 !important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037 !important;
 }
-textarea:focus{
-    border: 0.1px solid #800037 !important;
-    outline: #800037 !important;
-    box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+textarea:focus {
+  border: 0.1px solid #800037 !important;
+  outline: #800037 !important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037 !important;
 }
-.footer-comment{
-    display: flex;
-    align-items: center;
+.footer-comment {
+  display: flex;
+  align-items: center;
 }
 .form-control:active {
   outline: none !important;
@@ -132,6 +137,46 @@ textarea:focus{
 .carousel-control-prev-icon, /* icon prev next */
 .carousel-control-next-icon {
   filter: invert(100%);
+}
+
+/*WISHLIST PAGE*/
+
+.wishlist-page {
+  padding: 40px 20px;
+  min-height: 80vh;
+}
+
+/* GRID CARD */
+.wishlist-page .wishlist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.wishlist-page .card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.wishlist-page .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* GAMBAR MAKANAN DI WISHLIST */
+.food-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* BODY */
+.wishlist-page .card-body {
+  text-align: left;
 }
 
 /* Profil (inna) */
@@ -200,73 +245,73 @@ textarea:focus{
 }
 
 /* ini untuk detail makanan */
-.img-thumbnail{
-    height: 50vh;
+.img-thumbnail {
+  height: 50vh;
 }
-.img-cooking-illustration{
-    width: 40vh;
-    height: 40vh;
-    display: none;
+.img-cooking-illustration {
+  width: 40vh;
+  height: 40vh;
+  display: none;
 }
-.comment-section{
-    width: 100%;
-    display: flex;
-    position: relative;
+.comment-section {
+  width: 100%;
+  display: flex;
+  position: relative;
 }
 
-.form-comment{
-    width: 93%;
+.form-comment {
+  width: 93%;
 }
-textarea.input-comment{
-    height: 51px;
+textarea.input-comment {
+  height: 51px;
 }
-.btn-comment{
-    height: 40px;
-    position: absolute;
-    right: -2px;
-    bottom: 0;
+.btn-comment {
+  height: 40px;
+  position: absolute;
+  right: -2px;
+  bottom: 0;
 }
-.rating-label{
-    font-size: clamp(3rem, 5vw, 5em);
-    color: #696969;
+.rating-label {
+  font-size: clamp(3rem, 5vw, 5em);
+  color: #696969;
 }
-.rating-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+.rating-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.rating-bar >.progress{
-    width: 90% !important;
+.rating-bar > .progress {
+  width: 90% !important;
 }
-.list-group-item{
-    color: #696969;
+.list-group-item {
+  color: #696969;
 }
-.header-comment-section{
-    margin-bottom: 5rem;
+.header-comment-section {
+  margin-bottom: 5rem;
 }
-.body-comment-section{
-    max-height: 40vh;
-    overflow: hidden;
-    overflow-y: scroll;
-    padding: 10px;
-    margin-bottom: 20px;
+.body-comment-section {
+  max-height: 40vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-bottom: 20px;
 }
-.profile-comment{
-    width: 100px;
+.profile-comment {
+  width: 100px;
 }
-p.username{
-    font-family: 'Roboto', sans-serif;
+p.username {
+  font-family: "Roboto", sans-serif;
 }
-.detail-comment-body{
-    margin-top: -20px !important;
+.detail-comment-body {
+  margin-top: -20px !important;
 }
-.detail-comment-body>p{
-    margin-bottom: -5px;
+.detail-comment-body > p {
+  margin-bottom: -5px;
 }
-.detail-comment-body>.comment{
-    margin-top: 10px;
-    font-size: 0.9rem;
+.detail-comment-body > .comment {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
 /* --- FOOTER --- */
@@ -319,8 +364,8 @@ p.username{
   color: #800037;
 }
 
-.hamburger-menu{
-    display: none;
+.hamburger-menu {
+  display: none;
 }
 
 /* #containerNavbarDropdown{
@@ -332,37 +377,37 @@ p.username{
 } */
 
 @media screen and (max-width: 1400px) {
-    .menu-list{
-        display: none !important;
-    }
-    .search-bar{
-        width: 150% !important;
-    }
-    .form-input-search{
-        margin-left: -16rem;
-    }
-    .hamburger-menu{
-        display: block;
-    }
-    /* #containerNavbarDropdown {
+  .menu-list {
+    display: none !important;
+  }
+  .search-bar {
+    width: 150% !important;
+  }
+  .form-input-search {
+    margin-left: -16rem;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  /* #containerNavbarDropdown {
         display: flex !important;
     } */
 }
 
 @media screen and (max-width: 1000px) {
-    .search-bar{
-        width: 120% !important;
-    }
-    .form-input-search{
-        margin-left: 0.5rem;
-    }
+  .search-bar {
+    width: 120% !important;
+  }
+  .form-input-search {
+    margin-left: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .search-bar{
-        width: 100% !important;
-    }
-    .form-input-search{
-        display: none;
-    }
+  .search-bar {
+    width: 100% !important;
+  }
+  .form-input-search {
+    display: none;
+  }
 }
