@@ -7,6 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
         wrap: true      });
 });
 
+
+// // Buat interaktif like n save - elin
+// function toggleHeart(el) {
+//     el.classList.add("d-none2");
+//     const target = el.nextElementSibling || el.previousElementSibling;
+//     target.classList.remove("d-none2");
+// }
+
+
+
 //profil 
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 inputs.forEach(input => {
