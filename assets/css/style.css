@@ -612,7 +612,7 @@ textarea.input-comment {
   margin-bottom: 20px;
 }
 .profile-comment {
-  width: 100px;
+  min-width: 40px;
 }
 p.username {
   font-family: "Roboto", sans-serif;
