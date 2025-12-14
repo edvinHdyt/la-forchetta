@@ -165,6 +165,16 @@ textarea:focus {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+.wishlist-page a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wishlist-page a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* GAMBAR MAKANAN DI WISHLIST */
 .food-img {
   width: 100%;
