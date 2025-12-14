@@ -189,6 +189,79 @@ main .container .card-img-top {  /* container card makanan */
     object-fit: cover;
     width: 100%; }
 
+/* Dashboard Elin  */
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 107%;
+  min-width: 1%;
+}
+
+main .container .card-img-top{
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-img-top {
+  height: 200px !important;
+  width: 100% !important;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.bookmark-icon {
+    position: absolute;
+    top: 215px;
+    right: 12px;
+    z-index: 100;
+    color: #800037;
+    cursor: pointer;
+    border-radius: 20%;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.bookmark-icon:hover {
+    color: #e9609b;
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+.heart-icon {
+    position: absolute;
+    top: 215px;
+    right: 34px;
+    z-index: 100;
+    color: #800037;
+    cursor: pointer;
+    border-radius: 20%;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.heart-icon:hover {
+    color: #e9609b;
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+
+.text-truncate-multiline {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.filter-img {
+  width: auto;
+  min-height: auto;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+/* Dashboard Elin - End */
+
+
 /* Profil (inna) */
 .profile-card {
   max-width: 500px;
