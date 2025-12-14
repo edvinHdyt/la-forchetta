@@ -28,14 +28,42 @@ document.addEventListener('click', function(){
     switch (strId) {
         case "showDropdownMenu":
             showDropdownMenu();
+            hideProfileDropdown();
             break;
         case "dropdownProfile":
             showDropdownProfile();
+            hideNavbarDropdown();
             break;
         default:
             break;
     }
+
+
 });
+
+function hideNavbarDropdown(){
+    let dropdownNav = document.getElementById("dropdownNavbar");
+    let nav = document.getElementById("navbar");
+
+    if (!dropdownNav.classList.contains("hide-dropdown-navbar")){
+        dropdownNav.classList.remove('showing-dropdown-navbar');
+        dropdownNav.classList.add('hiding-dropdown-navbar');
+        dropdownNav.classList.add('hide-dropdown-navbar');
+
+        nav.classList.remove("navbar-dropdown-active");
+    }
+}
+
+function hideProfileDropdown(){
+    let elm = document.getElementById('dropdownProfile');
+
+    if (!elm.classList.contains("hide-dropdown-profile-container")){
+        elm.classList.remove('show-dropdown-profile-container');
+        elm.classList.add('hiding-dropdown-profile-container');
+        elm.classList.add('hide-dropdown-profile-container');
+
+    }
+}
 
 
 function showDropdownMenu(){
@@ -60,7 +88,6 @@ function showDropdownMenu(){
 
 function showDropdownProfile(){
     let elm = document.getElementById('dropdownProfile');
-    let nav = document.getElementById("navbar");
     
     if (elm.classList.contains("hide-dropdown-profile-container")){
         elm.classList.remove('hide-dropdown-profile-container');

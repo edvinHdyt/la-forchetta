@@ -165,7 +165,7 @@ input:focus{
   width: 12rem;
   position: absolute;
   right: 15px;
-  top: -12px;
+  top: 50px;
   border-radius: 10px;
   border: 0.1px solid #bababa;
   box-shadow: 6px 8px 10px -4px #a0a0a0;
@@ -173,34 +173,35 @@ input:focus{
 }
 .hide-dropdown-profile-container{
   opacity: 0;
-  transform: translateY(-200px);
+  transform: translateY(100px);
+  z-index: 0;
 }
 .hiding-dropdown-profile-container{
-  animation: fadeUp 0.5s ease-in;
-  z-index: 1000;
+  animation: slideDown 0.1s ease-in;
+  z-index: 1200;
 }
 .show-dropdown-profile-container{
-  animation: fadeDown 0.5s ease-in;
-  z-index: 1000;
+  animation: slideUp 0.1s ease-in;
+  z-index: 1200;
 }
-@keyframes fadeDown {
+@keyframes slideDown {
   from{
-    transform: translateY(-200px);
-    opacity: 0;
-  }to{
     transform: translateY(0);
     opacity: 100;
+  }to{
+    transform: translateY(30px);
+    opacity: 0;
   }
 }
 
-@keyframes fadeUp {
+@keyframes slideUp {
    0% {
-    transform: translateY(-0);
-    opacity: 100;
+    transform: translateY(30px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(-200px);
-    opacity: 0;
+    transform: translateY(0);
+    opacity: 100;
   }
 }
 
