@@ -9,7 +9,7 @@ let DUMMY_DATA = [
     id: 2,
     nama: "Sate Ayam Madura",
     deskripsi: "Daging ayam empuk dengan bumbu kacang kental khas Madura.",
-    foto: "./assets/img/sate.jpg",
+    foto: "./assets/img/sateayam.jpg",
   },
 ];
 
@@ -32,6 +32,7 @@ function renderWishlist(items) {
   items.forEach((item) => {
     wishlistContainer.innerHTML += `
       <div class="col-12 col-md-6 col-lg-4">
+      <a href="detail-makanan.html">
         <div class="card food-card h-100 shadow-sm">
           <img src="${item.foto}" class="food-img" alt="${item.nama}" />
 
@@ -44,6 +45,7 @@ function renderWishlist(items) {
             </button>
           </div>
         </div>
+        </a>
       </div>`;
   });
 
