@@ -407,17 +407,15 @@ main .container .card-img-top{
 
 
 /* Profil (inna) */
-.profile-card {
+.profile-card { 
   max-width: 500px;
-  height: 500px;
+  height: auto;
   background: white;
   border-radius: 20px;
-  font-size: 14px;
-}
+  font-size: 14px; }
 /* .form-control {
   width: 400px;
-  height: 35px;
-} */
+  height: 30px; } */
 .profile-wrapper {
   position: relative; }
 .profile-photo {
@@ -426,9 +424,8 @@ main .container .card-img-top{
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #800037;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
-.edit-btn {
-  /*icon pensil */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); }
+.edit-btn { /*icon pensil */
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -438,29 +435,69 @@ main .container .card-img-top{
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  border: 2px solid #ddd; }
+  border: 2px solid #800037;
+  color: #800037; }
+.edit-btn:hover {
+  background-color: #800037;
+  color: #f4f4f4; 
+  border: #800037;}
 .profile-wrapper:hover .edit-btn {
   display: flex; }
-/* cancel save */
 .profile-card .btn {
   font-size: 0.85rem;
   padding: 5px 15px;
   border-radius: 6px; }
-/* cancel */
-.profile-card .btn-outline-secondary {
+#editBttnn{
+  background-color: #800037;
+  border-color: #e9609b;
+  color: white; }
+#editBttnn:hover{
+  background-color: white;
   border-color: #e9609b;
   color: #800037; }
-.profile-card .btn-outline-secondary:hover {
-  background-color: #6c757d;
-  color: white; }
 /* Tombol Save */
 .profile-card .btn-success {
+  width: 100px ;
   background-color: #800037;
-  border-color: #e9609b; }
+  border-color: white; }
 .profile-card .btn-success:hover {
-  background-color: #e9609b;
-  border-color: #800037;
+  background-color: #ffffff;
+  border-color: #e9609b;
+  color: #800037; }
+/* konfirmasi perubahan profil */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; }
+.confirm-card {
+  width: 300px;
+  border-radius: 16px;
+  font-size: 16px; }
+.confirm-card #confirmText {
   color: #000000; }
+.confirm-card .btn {
+  font-size: 0.85rem;
+  padding: 5px 18px; }
+.confirm-card .btn-outline-secondary {
+  border-color: #e9609b;
+  background-color: white;
+  color: #800037; }
+.confirm-card .btn-outline-secondary:hover {
+  border-color: #e9609b;
+  background-color: #800037;
+  color: white; }
+.confirm-card .btn-success {
+  border-color: #e9609b;
+  background-color: #800037;
+  color: white; }
+.confirm-card .btn-success:hover {
+  background-color: white;
+  color: #800037; }
+
 
 /* ini untuk detail makanan */
 .img-thumbnail{

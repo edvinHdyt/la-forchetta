@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-     <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
+    <!-- navbar -->
+    <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
             <li>
@@ -27,7 +28,6 @@
           </ul>
         </div>
     </div>
-    <!-- navbar -->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
             <div class="container">
@@ -59,7 +59,10 @@
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
-                        <i class="bi bi-person-fill" data-id="dropdownProfile"></i>
+                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                        </div>
                     </div>
                 </div>
             </div>
