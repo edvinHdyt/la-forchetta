@@ -366,3 +366,206 @@ p.username{
         display: none;
     }
 }
+
+/* ===============================
+   ARCHIVE MAKANAN
+================================ */
+
+/* Container spacing */
+#archiveContainer {
+  margin-top: 20px;
+}
+
+/* ===============================
+   ACTION BUTTON BASE
+================================ */
+.btn-like,
+.btn-comment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.8rem; /* 1 sumber ukuran */
+  line-height: 1;
+}
+
+/* ICON */
+.btn-like i,
+.btn-comment i {
+  font-size: 1.1em; /* relatif ke font-size */
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* COUNT */
+.like-count,
+.comment-count {
+  transition: transform 0.25s ease;
+}
+/* WRAPPER ACTIONS */
+#archiveContainer .card-actions {
+  display: flex;
+  justify-content: flex-start; /* Jangan menggunakan space-between agar Like & Comment rapat ke kiri */
+  align-items: center;
+  gap: 12px;                   /* jarak antar tombol Like & Comment (dikecilkan jadi 12px untuk lebih rapat) */
+  padding: 8px 12px;
+  margin-top: auto;
+}
+
+/* LIKE & COMMENT BUTTON */
+#archiveContainer .btn-like,
+#archiveContainer .btn-comment {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* jarak icon & angka diperbaiki jadi 4px agar lebih rapat */
+  font-size: 0.9rem;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0; /* reset padding supaya elemen tombol tidak mengembang */
+}
+
+/* ICONS */
+#archiveContainer .btn-like i,
+#archiveContainer .btn-comment i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0; /* reset margin supaya tidak ada spasi ekstra */
+}
+
+/* LIKE DEFAULT */
+#archiveContainer .btn-like {
+  color: #dc3545; /* merah Bootstrap danger */
+}
+
+#archiveContainer .btn-like:hover i {
+  transform: scale(1.2);
+}
+
+#archiveContainer .btn-like.liked i {
+  animation: heartPop 0.6s ease;
+  color: #dc3545;
+}
+
+/* COMMENT DEFAULT */
+#archiveContainer .btn-comment {
+  color: #6c757d;
+}
+
+#archiveContainer .btn-comment:hover {
+  color: #0d6efd;
+}
+
+#archiveContainer .btn-comment:hover i {
+  transform: scale(1.2);
+  color: #0d6efd;
+}
+
+/* COUNTER POP */
+.like-count.pop,
+.comment-count.pop {
+  animation: countPop 0.4s ease;
+}
+
+
+/* KEYFRAMES (sama seperti sebelumnya) */#archiveContainer .card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px; /* jarak antar tombol dikurangi untuk komentar lebih ke kiri */
+  padding: 8px 12px;
+  margin-top: auto;
+}
+
+#archiveContainer .btn-like,
+#archiveContainer .btn-comment {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* jarak icon & angka */
+  font-size: 0.9rem;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0; /* pastikan margin direset */
+  transition: all 0.2s ease;
+}
+
+#archiveContainer .btn-comment {
+  margin-right: 10; /* hilangkan margin kiri supaya tidak terdorong */
+}
+
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.3); }
+  40% { transform: scale(0.95); }
+  60% { transform: scale(1.15); }
+  80% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+@keyframes countPop {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.4); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+
+/* CARD */
+#archiveContainer .card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#archiveContainer .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+#archiveContainer .card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* BODY */
+#archiveContainer .card-body {
+  padding: 14px 16px;
+}
+
+/* TITLE */
+#archiveContainer .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+/* DESCRIPTION */
+#archiveContainer .card-text {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #archiveContainer .card-img-top {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  #archiveContainer .card-img-top {
+    height: 150px;
+  }
+}

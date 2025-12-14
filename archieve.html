@@ -76,14 +76,24 @@
           data-comment="45"
         >
           <div class="card h-100">
-            <img src="./assets/img/makan01.jpg" class="card-img-top" alt="" />
+            <img src="./assets/img/Bakso.jpg" class="card-img-top" alt="" />
             <div class="card-body">
-              <h5 class="card-title">Makanan 1</h5>
-              <p class="card-text">Deskripsi singkat makanan.</p>
+              <h5 class="card-title">Bakso</h5>
+              <p class="card-text">Makanan khas Indonesia berupa bola daging (umumnya sapi) yang disajikan dengan kuah kaldu gurih, mie, tahu, dan taburan bawang goreng.</p>
 
               <div class="d-flex justify-content-between small text-muted">
-                <span><i class="bi bi-heart-fill text-danger"></i> 120</span>
-                <span><i class="bi bi-chat-dots"></i> 45</span>
+                <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">120</span>
+                </button>
+
+                <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">45</span>
+                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -96,14 +106,24 @@
           data-comment="70"
         >
           <div class="card h-100">
-            <img src="./assets/img/makan02.jpg" class="card-img-top" alt="" />
+            <img src="./assets/img/EsCendol.jpg" class="card-img-top" alt="" />
             <div class="card-body">
-              <h5 class="card-title">Makanan 2</h5>
-              <p class="card-text">Deskripsi singkat makanan.</p>
+              <h5 class="card-title">Es Cendol</h5>
+              <p class="card-text">Minuman tradisional yang berisi butiran cendol dari tepung beras atau hunkwe, disajikan dengan santan dan gula merah cair, memberikan rasa manis dan segar.</p>
 
               <div class="d-flex justify-content-between small text-muted">
-                <span><i class="bi bi-heart-fill text-danger"></i> 80</span>
-                <span><i class="bi bi-chat-dots"></i> 70</span>
+              <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">80</span>
+              </button>
+
+              <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">70</span>
+                </span>
+              </div>
               </div>
             </div>
           </div>
@@ -116,14 +136,24 @@
           data-comment="30"
         >
           <div class="card h-100">
-            <img src="./assets/img/makan03.jpg" class="card-img-top" alt="" />
+            <img src="./assets/img/KueLapis.jpg" class="card-img-top" alt="" />
             <div class="card-body">
-              <h5 class="card-title">Makanan 3</h5>
-              <p class="card-text">Deskripsi singkat makanan.</p>
+              <h5 class="card-title">Kue Lapis</h5>
+              <p class="card-text">Jajanan tradisional berbahan tepung beras atau tepung sagu yang dikukus berlapis-lapis, bertekstur kenyal, dengan rasa manis dan warna-warna menarik.</p>
 
               <div class="d-flex justify-content-between small text-muted">
-                <span><i class="bi bi-heart-fill text-danger"></i> 200</span>
-                <span><i class="bi bi-chat-dots"></i> 30</span>
+              <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">200</span>
+              </button>
+              
+              <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">30</span>
+                </span>
+              </div>
               </div>
             </div>
           </div>
@@ -153,29 +183,7 @@
       </div>
     </footer>
 
-    <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
-
-    <!-- SORTING SCRIPT -->
-    <script>
-      document
-        .getElementById("sortArchive")
-        .addEventListener("change", function () {
-          const value = this.value;
-          const container = document.getElementById("archiveContainer");
-          const items = Array.from(container.querySelectorAll(".archive-item"));
-
-          items.sort((a, b) => {
-            if (value === "like") {
-              return b.dataset.like - a.dataset.like;
-            }
-            if (value === "comment") {
-              return b.dataset.comment - a.dataset.comment;
-            }
-            return 0;
-          });
-
-          items.forEach((item) => container.appendChild(item));
-        });
-    </script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/archieve.js"></script>
   </body>
 </html>
