@@ -3,7 +3,7 @@ let DUMMY_DATA = [
     id: 1,
     nama: "Nasi Goreng Spesial",
     deskripsi: "Nasi goreng dengan bumbu rahasia dan topping melimpah.",
-    foto: "./assets/img/nasigoreng.jpg",
+    foto: "./assets/img/Nasigoreng.jpg",
   },
   {
     id: 2,
