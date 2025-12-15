@@ -355,8 +355,7 @@ main .container .card-img-top {  /* container card makanan */
 .filter-box {
   display: flex;
   flex-direction: column;
-  min-height: 107%;
-  min-width: 1%;
+  margin-bottom: 24px;
 }
 
 main .container .card-img-top{
@@ -415,10 +414,10 @@ main .container .card-img-top{
 }
 
 .filter-img {
-  width: auto;
-  min-height: auto;
-  object-fit: contain;
+  width: 100%;
+  max-width: 260px;
   margin-top: auto;
+  align-self: center;
 }
 
 /* Dashboard Elin - End */
