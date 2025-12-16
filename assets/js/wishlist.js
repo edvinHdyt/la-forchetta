@@ -40,7 +40,7 @@ function renderWishlist(items) {
             <h5 class="card-title">${item.nama}</h5>
             <p class="card-text text-muted">${item.deskripsi}</p>
 
-            <button class="btn btn-danger remove-btn mt-3 w-100" data-id="${item.id}">
+            <button class="btn-hapus remove-btn mt-3 w-100" data-id="${item.id}">
               <i class="bi bi-trash"></i> Hapus
             </button>
           </div>
