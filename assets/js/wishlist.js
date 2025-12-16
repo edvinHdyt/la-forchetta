@@ -13,7 +13,29 @@ let DUMMY_DATA = [
   },
 ];
 
-const wishlistContainer = document.getElementById("wishlist-data-container");
+let selectedDeleteId = null;
+let wishlistContainer = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+  wishlistContainer = document.getElementById("wishlist-data-container");
+
+  const modal = document.getElementById("deleteModal");
+  const cancelBtn = document.getElementById("cancelDelete");
+  const confirmBtn = document.getElementById("confirmDelete");
+
+  cancelBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    selectedDeleteId = null;
+  });
+
+  confirmBtn.addEventListener("click", () => {
+    DUMMY_DATA = DUMMY_DATA.filter((item) => item.id !== selectedDeleteId);
+    modal.classList.remove("show");
+    fetchWishlist();
+  });
+
+  fetchWishlist();
+});
 
 function fetchWishlist() {
   wishlistContainer.innerHTML = `<p class="col-12 text-center fst-italic text-muted">Memuat Wishlist...</p>`;
@@ -32,9 +54,10 @@ function renderWishlist(items) {
   items.forEach((item) => {
     wishlistContainer.innerHTML += `
       <div class="col-12 col-md-6 col-lg-4">
-      <a href="detail-makanan.html">
-        <div class="card food-card h-100 shadow-sm">
-          <img src="${item.foto}" class="food-img" alt="${item.nama}" />
+        <div class="card food-card h-100 shadow-sm wishlist-card"
+        data-id="${item.id}">
+
+          <img src="${item.foto}" class="food-img" alt="${item.nama}">
 
           <div class="card-body">
             <h5 class="card-title">${item.nama}</h5>
@@ -45,28 +68,24 @@ function renderWishlist(items) {
             </button>
           </div>
         </div>
-        </a>
       </div>`;
   });
 
-  attachDeleteListeners();
+  wishlistContainer.addEventListener("mousedown", (e) => {
+    // klik tombol hapus
+    const deleteBtn = e.target.closest(".remove-btn");
+    if (deleteBtn) {
+      e.stopPropagation();
+      selectedDeleteId = parseInt(deleteBtn.dataset.id);
+      document.getElementById("deleteModal").classList.add("show");
+      return;
+    }
+
+    // klik card ke detail
+    const card = e.target.closest(".wishlist-card");
+    if (card) {
+      const id = card.dataset.id;
+      window.location.href = `detail-makanan.html?id=${id}`;
+    }
+  });
 }
-
-function attachDeleteListeners() {
-  wishlistContainer.onclick = (e) => {
-    let btn = e.target.closest(".remove-btn");
-    if (!btn) return;
-
-    let id = parseInt(btn.dataset.id);
-    simulateDelete(id);
-  };
-}
-
-function simulateDelete(id) {
-  if (!confirm("Yakin hapus item ini?")) return;
-
-  DUMMY_DATA = DUMMY_DATA.filter((item) => item.id !== id);
-  fetchWishlist();
-}
-
-document.addEventListener("DOMContentLoaded", fetchWishlist);
