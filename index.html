@@ -133,10 +133,10 @@
 
     <!-- body -->
     <div class="container px-2 mt-6">
-        <div class="row mt-4">
+        <div class="row mt-4 d-flex align-items-stretch">
             <!-- Kolom Filter Kiri -->
-            <div class="col-lg-3 col-md-4 col-12">
-                <div class="card p-3 filter-box">
+            <div class="col-lg-3 col-md-4 col-12 d-flex">
+                <div class="card p-3 filter-box w-100">
                     <h5 class="mb-3">Filter</h5>
 
                     <!-- Provinsi -->
@@ -214,30 +214,35 @@
                             dan pedas, serta ditaburi bawang goreng dan emping.
                         </p>
 
-                        <div class="d-flex justify-content-between small text-muted">
-                            <button type="button"
-                                    class="btn btn-like p-0 border-0 bg-transparent"
-                                    data-liked="false"
-                                    aria-label="Like">
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
                             <i class="bi bi-heart"></i>
                             <span class="like-count">0</span>
                         </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
 
 
                     <!-- Card makanan 2 -->
-                    <div class="col-8 col-md-4 col-lg-3">
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                     <div class="card">
                         
                         <!-- Gambar -->
                         <a href="detail-makanan.html">
-                        <img src="./assets/img/Gadogado.jpg"
+                        <img src="./assets/img/Rendang.jpg"
                             class="card-img-top"
                             alt="Gado - gado">
                         </a>
@@ -269,176 +274,261 @@
                             Rendang adalah masakan khas Minangkabau berbahan dasar daging sapi yang dimasak perlahan dengan santan dan campuran rempah-rempah khas hingga menghasilkan cita rasa gurih, pedas, dan kaya bumbu.
                         </p>
 
-                        <div class="d-flex justify-content-between small text-muted">
-                            <button type="button"
-                                    class="btn btn-like p-0 border-0 bg-transparent"
-                                    data-liked="false"
-                                    aria-label="Like">
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
                             <i class="bi bi-heart"></i>
                             <span class="like-count">0</span>
                         </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
                     <!-- Card makanan 3 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                fill="currentColor"
-                                class="bi bi-bookmark-heart bookmark-icon"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                <path
-                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18"
-                                fill="currentColor"
-                                class="bi bi-heart heart-icon"
-                                viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                            </svg>
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/Tongseng.jpg"
+                            class="card-img-top"
+                            alt="Tongseng">
+                        </a>
 
-                            <!-- buat hasil klik
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="18" 
-                                height="18" 
-                                fill="currentColor" 
-                                class="bi bi-bookmark-heart-fill d-none1" 
-                                viewBox="0 0 16 16">
-                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                            </svg>
-
-
-                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="18" height="18" fill="currentColor" 
-                                class="bi bi-heart-fill d-none2" 
-                                viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" 
-                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-                            </svg> -->
-
-                            <a href="detail-makanan.html">
-                                <img src="./assets/img/Tongseng.jpg" class="card-img-top" alt="Tongseng">
-                            </a>
-                                <div class="card-body">
-                                    <a href="detail-makanan.html"
-                                    class="text-decoration-none text-dark">
-                                        <h5 class="card-title">Tongseng</h5>
-                                    </a>
-                                <p class="card-text text-truncate-multiline">Tongseng adalah masakan berkuah khas Jawa Tengah yang terbuat dari daging kambing atau sapi dengan irisan kol dan tomat, dimasak menggunakan bumbu rempah yang gurih, manis, dan sedikit pedas.</p>
-                            </div>
-                        </div>
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Tongseng</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            class="bi bi-bookmark-heart bookmark-icon"
+                            viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                                d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                        </svg>
                     </div>
 
-                    <!-- Card makanan 4 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                fill="currentColor"
-                                class="bi bi-bookmark-heart bookmark-icon"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                <path
-                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18"
-                                fill="currentColor"
-                                class="bi bi-heart heart-icon"
-                                viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                            </svg>
-                            <a href="detail-makanan.html">
-                                <img src="./assets/img/NasiUduk.jpg" class="card-img-top" alt="Nasi Uduk">
-                            </a>
-                                <div class="card-body">
-                                    <a href="detail-makanan.html"
-                                    class="text-decoration-none text-dark">
-                                        <h5 class="card-title">Nasi Uduk</h5>
-                                    </a>
-                                <p class="card-text text-truncate-multiline">Nasi uduk adalah hidangan nasi khas Indonesia yang dimasak dengan santan dan rempah-rempah, disajikan dengan lauk pauk seperti ayam goreng, telur balado, tempe orek, dan sambal kacang.</p>  
-                            </div>
+                        <p class="card-text text-truncate-multiline">
+                            Tongseng adalah masakan berkuah khas Jawa Tengah yang terbuat dari daging kambing atau sapi dengan irisan kol dan tomat, dimasak menggunakan bumbu rempah yang gurih, manis, dan sedikit pedas.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
                         </div>
-                    </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                    <!-- Card makanan 4 -->
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/NasiUduk.jpg"
+                            class="card-img-top"
+                            alt="Nasi Uduk">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Nasi Uduk</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            class="bi bi-bookmark-heart bookmark-icon"
+                            viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                                d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Nasi uduk adalah hidangan nasi khas Indonesia yang dimasak dengan santan dan rempah-rempah, disajikan dengan lauk pauk seperti ayam goreng, telur balado, tempe orek, dan sambal kacang.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
                     <!-- Card makanan 5 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                fill="currentColor"
-                                class="bi bi-bookmark-heart bookmark-icon"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                <path
-                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18"
-                                fill="currentColor"
-                                class="bi bi-heart heart-icon"
-                                viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                            </svg>
-                            <a href="detail-makanan.html">
-                                <img src="./assets/img/AyamBetutu.jpg" class="card-img-top" alt="Ayam Betutu">
-                            </a>
-                                <div class="card-body">
-                                    <a href="detail-makanan.html"
-                                    class="text-decoration-none text-dark">
-                                        <h5 class="card-title">Ayam Betutu</h5>
-                                    </a>
-                                <p class="card-text text-truncate-multiline">Ayam betutu adalah hidangan khas Bali yang terbuat dari ayam atau bebek utuh yang dibumbui dan dipanggang atau direbus dalam waktu lama hingga empuk. </p>
-                            </div>
-                           </div>
-                    </div> 
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/AyamBetutu.jpg"
+                            class="card-img-top"
+                            alt="Ayam Betutu">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Ayam Betutu</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            class="bi bi-bookmark-heart bookmark-icon"
+                            viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                                d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Ayam betutu adalah hidangan khas Bali yang terbuat dari ayam atau bebek utuh yang dibumbui dan dipanggang atau direbus dalam waktu lama hingga empuk.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
                     <!-- Card makanan 6 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                fill="currentColor"
-                                class="bi bi-bookmark-heart bookmark-icon"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                <path
-                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18"
-                                fill="currentColor"
-                                class="bi bi-heart heart-icon"
-                                viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                            </svg>
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/AyamGeprek.jpg"
+                            class="card-img-top"
+                            alt="Ayam Geprek">
+                        </a>
 
-                            <a href="detail-makanan.html">
-                                <img src="./assets/img/AyamGeprek.jpg" class="card-img-top" alt="Ayam Geprek">
-                            </a>
-                                <div class="card-body">
-                                    <a href="detail-makanan.html"
-                                    class="text-decoration-none text-dark">
-                                        <h5 class="card-title">Ayam Geprek</h5>
-                                    </a>
-                                <p class="card-text text-truncate-multiline">Ayam geprek adalah hidangan ayam goreng tepung renyah khas Indonesia yang "digeprek" (ulek/tumbuk) bersama sambal pedas, seringkali sambal bawang, hingga dagingnya menyatu dengan sambal, menawarkan sensasi pedas, gurih, dan tekstur renyah yang khas, disajikan biasanya dengan nasi dan lalapan. </p>  
-                            </div>
-                           </div>
-                    </div> 
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Ayam Geprek</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            class="bi bi-bookmark-heart bookmark-icon"
+                            viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                                d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Ayam geprek adalah hidangan ayam goreng tepung renyah khas Indonesia yang "digeprek" (ulek/tumbuk) bersama sambal pedas, seringkali sambal bawang, hingga dagingnya menyatu dengan sambal, menawarkan sensasi pedas, gurih, dan tekstur renyah yang khas, disajikan biasanya dengan nasi dan lalapan.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
                 </div>
             </div>
