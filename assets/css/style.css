@@ -356,13 +356,11 @@ main .container .card-img-top {  /* container card makanan */
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
   .filter-box {
     position: sticky;
-    top: 20px;
   }
 }
 
