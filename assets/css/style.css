@@ -445,13 +445,6 @@ main .container .card-img-top {
   min-height: 80vh;
 }
 
-/* GRID CARD */
-.wishlist-page .wishlist-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
 /* CARD */
 .wishlist-page .card {
   border-radius: 15px;
@@ -486,6 +479,26 @@ main .container .card-img-top {
 /* BODY */
 .wishlist-page .card-body {
   text-align: left;
+}
+
+/* SAMARATAKAN JUDUL & DESKRIPSI */
+.wishlist-page .card-title {
+  min-height: 48px;
+}
+
+.wishlist-page .card-text {
+  min-height: 72px;
+}
+
+/* BIKIN ISI CARD FLEX */
+.wishlist-page .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* DORONG BUTTON KE BAWAH */
+.wishlist-page .btn-hapus {
+  margin-top: auto;
 }
 
 /* BUTTON HAPUS */

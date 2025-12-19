@@ -53,7 +53,7 @@ function renderWishlist(items) {
 
   items.forEach((item) => {
     wishlistContainer.innerHTML += `
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col">
         <div class="card food-card h-100 shadow-sm wishlist-card"
         data-id="${item.id}">
 
@@ -63,7 +63,7 @@ function renderWishlist(items) {
             <h5 class="card-title">${item.nama}</h5>
             <p class="card-text text-muted">${item.deskripsi}</p>
 
-            <button class="btn-hapus remove-btn mt-3 w-100" data-id="${item.id}">
+            <button class="btn-hapus remove-btn w-100" data-id="${item.id}">
               <i class="bi bi-trash"></i> Hapus
             </button>
           </div>
