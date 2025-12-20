@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil User</title>
-    <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-      <!-- navbar -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive Makanan | La Forchetta</title>
+
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/boostrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+        <!-- navbar -->
     <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
@@ -60,7 +67,7 @@
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
                         <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
-                        <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
                             <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
                         </div>
                     </div>
@@ -93,93 +100,116 @@
             </div>
         </div>
     </header>
-    <!-- navbar -->
-    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container d-flex justify-content-beetween align-items-center">
-            <h2 class="logo mt-1">
-                <a href="#">La Forchetta</a>
-            </h2>
-            <div class="d-flex ms-2 align-items-center gap-3">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Wishlist Makanan</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Archive Makanan</a>
-                    </li>
-                </ul>
-                <div class="nav-profile-wrapper">
-                    <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo">
-                </div>
-            </div>
-        </div>
-    </nav> -->
 
-    <!-- body -->
-    <main>
-    
-        <div class="container my-3">
-            <div class="profile-card shadow p-5 rounded-4 mx-auto">
-            <h4 class="mb-3 fw-bold text-center">Profile Information</h4>
-            <!-- photo profile -->
-            <div class="d-flex justify-content-center mb-2 position-relative">
-            <div class="profile-wrapper">
-                <img id="profilePhoto" src="./assets/img/parkjisung.jpg" class="profile-photo" alt="profile">
-                <!-- pensil edit photo profile -->
-                <button id="changePhotoBtn" class="edit-btn btn btn-light rounded-circle shadow" type="button">
-                <i class="bi bi-pencil-fill"></i>
+    <!-- MAIN -->
+    <main class="container my-5">
+      <!-- HEADER ARCHIVE -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Archive Makanan</h3>
+
+        <select id="sortArchive" class="form-select w-auto">
+          <option value="">Urutkan berdasarkan</option>
+          <option value="like">Paling Banyak Like</option>
+          <option value="comment">Paling Banyak Komentar</option>
+        </select>
+      </div>
+
+      <!-- GRID MAKANAN -->
+      <div class="row g-3" id="archiveContainer">
+        <!-- CARD 1 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="120"
+          data-comment="45"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/Bakso.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Bakso</h5>
+              <p class="card-text">Makanan khas Indonesia berupa bola daging (umumnya sapi) yang disajikan dengan kuah kaldu gurih, mie, tahu, dan taburan bawang goreng.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+                <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">120</span>
                 </button>
-                <input type="file" id="photoInput" accept="image/*" class="d-none">
-            </div>
-            </div>
-            <!-- edit form profil -->
-            <form id="profileForm" class="needs-validation" novalidate>
-            <div class="mb-2">
-                <label class="form-label fw-semibold">Name</label>
-                <input id="name" name="name" type="text"  class="form-control" value="Park Jisung" required>
-                    <div class="valid-feedback">Good!</div>
-                    <div class="invalid-feedback">Please enter your name</div>                    
-            </div>
-            <div class="mb-2">
-                <label class="form-label fw-semibold">Phone Number</label>
-                <input id="phone" name="phone" type="text"  class="form-control" value="082172274247" required>
-                    <div class="valid-feedback">Good!</div>
-                    <div class="invalid-feedback">Please enter your phone numbers</div>  
-            </div>
-            <div class="mb-2">
-                <label class="form-label fw-semibold">Email</label>
-                <input id="email" name="email" type="email" class="form-control" value="Bamjjiparkjie@gmail.com" required>
-                    <div class="valid-feedback">Good!</div>
-                    <div class="invalid-feedback">Please enter your email address</div>          
-            </div>
-            <div class="d-flex justify-content-end gap-2 mt-3">
-                <button id="editBttnn" type="button" class="btn btn-outline-secondary">Edit Profile</button>
-                <button id="saveBtn" type="submit" class="btn btn-success py-1 px-2">Save</button>
-            </div>
-            </form>
-        </div>
-        </div>
-        <!-- btton konfirmasi perubahan profil -->
-        <div id="confirmCard" class="confirm-overlay d-none">
-            <div class="card confirm-card shadow rounded-4 p-4 text-center">
-                <p id="confirmText" class="mb-4 fw-semibold">
-                    Are you sure you want to change your profile? </p>
-                <div class="d-flex justify-content-center gap-3">
-                    <button id="confirmNo" class="btn btn-outline-secondary">No</button>
-                    <button id="confirmYes" class="btn btn-success">Yes</button>
+
+                <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">45</span>
+                </span>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="80"
+          data-comment="70"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/EsCendol.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Es Cendol</h5>
+              <p class="card-text">Minuman tradisional yang berisi butiran cendol dari tepung beras atau hunkwe, disajikan dengan santan dan gula merah cair, memberikan rasa manis dan segar.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+              <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">80</span>
+              </button>
+
+              <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">70</span>
+                </span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="col-lg-4 col-md-6 archive-item"
+          data-like="200"
+          data-comment="30"
+        >
+          <div class="card h-100">
+            <img src="./assets/img/KueLapis.jpg" class="card-img-top" alt="" />
+            <div class="card-body">
+              <h5 class="card-title">Kue Lapis</h5>
+              <p class="card-text">Jajanan tradisional berbahan tepung beras atau tepung sagu yang dikukus berlapis-lapis, bertekstur kenyal, dengan rasa manis dan warna-warna menarik.</p>
+
+              <div class="d-flex justify-content-between small text-muted">
+              <button class="btn btn-like p-0 border-0 bg-transparent"
+                      data-liked="false">
+                <i class="bi bi-heart text-danger"></i>
+                <span class="like-count">200</span>
+              </button>
+              
+              <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                <span class="btn-comment">
+                  <i class="bi bi-chat-dots"></i>
+                  <span class="comment-count">30</span>
+                </span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-   <!-- footer -->
-        <footer class="main-footer mt-5 static-bottom">
+    <!-- footer -->
+      <footer class="main-footer mt-5 static-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
@@ -212,11 +242,12 @@
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
-            </div>
+        </div>
     </footer>
+
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/profil.js"></script>
-</body>
+    <script src="./assets/js/archieve.js"></script>
+  </body>
 </html>

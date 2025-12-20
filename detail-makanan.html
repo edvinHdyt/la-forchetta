@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Makanan</title>
+    <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
+        <div class="dropdown-profile">
+          <ul class="list-item">
+            <li>
+                <a href="profil.html" class="profile-dropdown-link">
+                    <i class="bi bi-person-fill"></i>
+                    John Doe
+                </a>
+            </li>
+             <li>
+                <a href="profil.html" class="profile-dropdown-link">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    Keluar
+                </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="index.html">La Forchetta</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                        <i class="bi bi-list" data-id="showDropdownMenu"></i>
+                    </button>
+                    <div class="profile-border" data-id="dropdownProfile">
+                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
+            <div class="container">
+                <div class="navbar-dropdown-item" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+   
+
+    <main class="mt-4">
+        <div class="container">
+         <section class="header">
+             <div class="card p-4">
+                 <div class="row">
+                     <div class="col-lg-4 col-md-6 mb-3">
+                         <div class="header-section-responsive">
+                             <h1 class="title" id="foodName">
+                                 Pancake
+                             </h1>
+                             <hr>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <img src="./assets/image/foodImage/pancake.jpg" class="img-thumbnail rounded food-image" alt="..." id="foodImage">
+                            </div>
+                            <div class="col-md-12 d-flex flex-wrap align-items-center justify-content-center">
+                                <div class="food-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <p>Aceh</p>
+                                </div>
+                                 <div class="food-label">
+                                    <i class="bi bi-tags-fill"></i>
+                                    <p>Desert</p>
+                                </div>
+                                 <div class="food-label">
+                                    <i class="bi bi-star-fill"></i>
+                                    <p id="ratingCategory">5</p>
+                                    <p>/ 5</p>
+                                </div>
+                            </div>
+                         </div>
+                         
+                         
+                     </div>
+                     <div class="col-lg-8 col-md-6 mb-3">
+                         <div class="header-section food-title">
+                             <h1 class="title" id="foodName">
+                                 Pancake
+                             </h1>
+                             <hr>
+                         </div>
+                         <div class="body-section">
+                             <h3>Tentang Makanan</h3>
+                             <p id="foodDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque vero quibusdam eius, iure placeat suscipit quasi repellat ex iste, quos minima quaerat expedita voluptate molestiae dolorem quas accusantium culpa?</p>
+                             <h3>Resep</h3>
+                             <span>Untuk 6-8 pancake ukuran sedang</span>
+                             <ul>
+                                 <li>
+                                     <p>
+                                         150 gram tepung terigu serbaguna (± 1 cup)
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <p>
+                                         2 sdm gula pasir
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <p>1 sdt baking powder</p>
+                                 </li>
+                                 <li>
+                                     <p>1/4 sdt baking soda (opsional, biar makin fluffy)</p>
+                                 </li>
+                                 <li>
+                                     <p>Sejumput garam</p>
+                                 </li>
+                                 <li>
+                                     <p>1 butir telur</p>
+                                 </li>
+                                 <li>
+                                     <p> 200 ml susu cair (bisa diganti air, tapi lebih enak susu)</p>
+                                 </li>
+                                 <li>
+                                     <p> 2 sdm mentega cair / minyak</p>
+                                 </li>
+                                 <li>
+                                     <p> 1 sdt vanilla extract (opsional)</p>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <div class="header-section">
+                     <hr>
+                     <h3 class="text-center">
+                         Cara Membuat
+                     </h3>
+                     <hr>
+                 </div>
+                 <div class="body-section">
+                     <div class="row">
+                         <div class="col-md-6 col-sm-12">
+                             <ol class="list-group list-group-numbered">
+                                 <li class="list-group-item">
+                                     Campur bahan kering
+                                     <br>
+                                     <span>Dalam satu wadah, aduk rata:</span>
+                                     <ul>
+                                         <li class="second-list">
+                                             <p>Tepung</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Gula</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Baking Powder</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Baking Soda</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Garam</p>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <li class="list-group-item">
+                                     Campur bahan kering
+                                     <br>
+                                     <span>Dalam satu wadah, aduk rata:</span>
+                                     <ul>
+                                         <li class="second-list">
+                                             <p>Tepung</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Gula</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Baking Powder</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Baking Soda</p>
+                                         </li>
+                                         <li class="second-list">
+                                             <p>Garam</p>
+                                         </li>
+                                     </ul>
+                                 </li>
+                             </ol>
+                              <ul>
+                                 
+                             </ul>
+                         </div>
+                         <div class="col-md-6 d-flex justify-content-center align-items-center">
+                             <img src="./assets/image/SVG/DrawKit-cooking-kitchen-food-vector-illustrations-02.svg" alt="" class="img-cooking-illustration">
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- comment section -->
+                 <div class="header-section">
+                     <hr>
+                     <h3 class="text-center">
+                         Review & Komen
+                     </h3>
+                     <hr>
+                 </div>
+                 <div class="row flex-wrap-reverse">
+                     <div class="col-md-7">
+                         <div class="header-comment-section">
+                             <div class="row">
+                                 <div class="col-md-6 mb-3">
+                                     <input type="text" class="form-control form-comment input-comment " placeholder="Nama" value="John Doe" disabled id="nama">
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                     <input type="number" class="form-control form-comment input-comment" placeholder="Rating" id="rating">
+                                     <div class="invalid-feedback" id="ratingFeedback">
+                                        Rating harus diisi
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="form-input">
+                                 <textarea class="form-control input-comment" placeholder="Leave a comment here"id="comment"></textarea>
+                                <div class="invalid-feedback" id="commentFeedback">
+                                    Komen harus diisi
+                                </div>
+                             </div>
+                             <div class="footer-comment float-end mt-3 mb-3">
+                                 <div class="text-limit float-start me-2">
+                                     <span id="countText">0</span>
+                                     <span>/255</span>
+                                 </div>
+                                  <div class="btn btn-primary" data-id="addComment" id="addComment">
+                                      Tambah Comment
+                                  </div>
+                             </div>
+                         </div>
+                         <div class="body-comment-section" id="commentSection">
+
+                         </div>
+                     </div>
+                     <div class="col-md-5 mb-3">
+                         <div class="card p-2">
+     
+                             <div class="row">
+                                 <div class="col-4 d-flex text-center align-items-center justify-content-center">
+                                     <h1 class="rating-label" id="ratingLabel">
+                                         5.0
+                                     </h1>
+                                 </div>
+                                 <div class="col-8">
+                                         <div class="rating-bar">
+                                             <div class="progress" role="progressbar" aria-label="Warning example" aria-valuemin="0" 
+                                             aria-valuenow="45"
+                                             aria-valuemax="50">
+                                                 <div class="progress-bar bg-warning" id="progressRating5" style="width:100%"></div>
+                                             </div>
+                                             <span class="ms-2">5</span>
+                                         </div>
+                                         <div class="rating-bar">
+                                             <div class="progress" role="progressbar" aria-label="Warning example" aria-valuemin="0" aria-valuemax="100">
+                                                 <div class="progress-bar bg-warning" id="progressRating4" style="width: 100%"></div>
+                                             </div>
+                                             <span class="ms-2">4</span>
+                                         </div>
+                                         <div class="rating-bar">
+                                             <div class="progress" role="progressbar" aria-label="Warning example" aria-valuemin="0" aria-valuemax="100">
+                                                 <div class="progress-bar bg-warning" id="progressRating3" style="width: 100%"></div>
+                                             </div>
+                                             <span class="ms-2">3</span>
+                                         </div>
+                                         <div class="rating-bar">
+                                             <div class="progress" role="progressbar" aria-label="Warning example" aria-valuemin="0" aria-valuemax="100">
+                                                 <div class="progress-bar bg-warning" id="progressRating2" style="width: 100%"></div>
+                                             </div>
+                                             <span class="ms-2">2</span>
+                                         </div>
+                                         <div class="rating-bar">
+                                             <div class="progress" role="progressbar" aria-label="Warning example" aria-valuemin="0" aria-valuemax="100">
+                                                 <div class="progress-bar bg-warning" id="progressRating1" style="width: 75%"></div>
+                                             </div>
+                                             <span class="ms-2">1</span>
+                                         </div>
+                                     </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+        </div>
+    </main>
+
+
+   <!-- footer -->
+        <footer class="main-footer mt-5 static-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <p>Email: info@forchetta.com</p>
+                    <p>Telepon: (021) 1234 5678</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
+                    <h3 class="footer-title">Media Sosial</h3>
+                    <ul class="social-links">
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
+                </div>
+          </div>
+            </div>
+    </footer>
+      
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets//js/detailMakanan.js"></script>
+</body>
+</html>
