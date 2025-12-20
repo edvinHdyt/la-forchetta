@@ -456,6 +456,27 @@ main .container .card-img-top {  /* container card makanan */
   z-index: 200;
 }
 
+.bookmark-icon {
+  color: #800037;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bookmark-icon:hover {
+  transform: scale(1.15);
+  color: #e63946; 
+  transform: scale(1,1);
+}
+
+.bookmark-icon.active {
+  color: #e63946;
+  fill: #e63946;
+  stroke: #e63946;
+}
+
+.bookmark-icon.active path { 
+  fill: currentColor; }
+
 /* Dashboard Elin - End */
 
 
