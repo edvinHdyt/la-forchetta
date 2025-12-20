@@ -1007,3 +1007,219 @@ textarea:focus{
     height: 150px;
   }
 }
+
+/* LOGIN PAGE */
+.login-page-container {
+  max-width: 420px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.login-page-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #800037;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.login-form-label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #800037;
+}
+.login-form-control {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #696969;
+  background: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+}
+.login-form-control:focus {
+  border: 0.1px solid #800037 !important;
+  outline: #800037 !important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+  background: #fff;
+}
+.login-btn {
+  width: 100%;
+  background-color: #800037;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 0;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.login-btn:hover {
+  background-color: #a0004a;
+}
+.login-register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #800037;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+.login-register-link:hover {
+  text-decoration: underline;
+}
+/* Eye icon styling for login password */
+.input-group .login-form-control {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+}
+.input-group .login-password-toggle-btn {
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-left: none;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 56px;
+  height: 48px;
+  min-height: 100%;
+  margin: 0;
+  transition: background 0.2s;
+}
+.input-group .login-password-toggle-btn:active,
+.input-group .login-password-toggle-btn:focus {
+  background: #ececec;
+  outline: none;
+  box-shadow: none;
+}
+.input-group .login-password-toggle-btn i {
+  font-size: 1.3rem;
+  color: #696969;
+  pointer-events: none;
+}
+.login-form-control[type="password"], .login-form-control[type="text"] {
+  padding-right: 0.5rem;
+  height: 48px;
+}
+
+/* REGISTER PAGE */
+.register-page-container {
+  max-width: 480px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.register-page-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #800037;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.register-form-label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #800037;
+}
+.register-form-control {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #696969;
+  background: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+}
+.register-form-control:focus {
+  border: 0.1px solid #800037 !important;
+  outline: #800037 !important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+  background: #fff;
+}
+.register-btn {
+  width: 100%;
+  background-color: #800037;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 0;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.register-btn:hover {
+  background-color: #a0004a;
+}
+.register-login-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #800037;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+.register-login-link:hover {
+  text-decoration: underline;
+}
+/* Eye icon styling for register password */
+.input-group .register-form-control {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+}
+.input-group .register-password-toggle-btn {
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-left: none;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 56px;
+  height: 48px;
+  min-height: 100%;
+  margin: 0;
+  transition: background 0.2s;
+}
+.input-group .register-password-toggle-btn:active,
+.input-group .register-password-toggle-btn:focus {
+  background: #ececec;
+  outline: none;
+  box-shadow: none;
+}
+.input-group .register-password-toggle-btn i {
+  font-size: 1.3rem;
+  color: #696969;
+  pointer-events: none;
+}
+.register-form-control[type="password"], .register-form-control[type="text"] {
+  padding-right: 0.5rem;
+  height: 48px;
+}
