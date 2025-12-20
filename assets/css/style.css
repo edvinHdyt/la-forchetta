@@ -409,51 +409,13 @@ main .container .card-img-top {  /* container card makanan */
 
 .bookmark-icon {
   cursor: pointer;
-  color: #800037;    
-  opacity: 0.9;
-  transition:
-    color 0.25s ease,
-    transform 0.2s ease,
-    opacity 0.2s ease;
+  opacity: 0.7;
 }
 .bookmark-icon:hover {
-  color: #e9609b;
-  transform: scale(1.1);
+    color: #e9609b;
+    background-color: #ffffff;
+    opacity: 1;
 }
-
-
-
-
-.btn-like {
-  color: #800037;
-  cursor: pointer;
-  transition: color 0.25s ease, transform 0.2s ease; }
-
-.btn-like i,
-.btn-like span {
-  transition: color 0.25s ease; }
-
-.btn-like:hover {
-  color: #e9609b;
-  transform: scale(1.05); }
-
-.btn-like.liked {
-  color: #e9609b; }
-
-.btn-comment {
-  color: #800037;
-  cursor: pointer;
-  transition: color 0.25s ease, transform 0.2s ease; }
-
-.btn-comment i,
-.btn-comment span {
-  color:#0153ce;
-  transition: color 0.25s ease; }
-
-.btn-comment:hover {
-  color: #89b8ff;
-  transform: scale(1.05); }
-
 
 /* .heart-icon {
     position: absolute;
@@ -492,6 +454,27 @@ main .container .card-img-top {  /* container card makanan */
   position: relative;
   z-index: 200;
 }
+
+.bookmark-icon {
+  color: #800037;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bookmark-icon:hover {
+  transform: scale(1.15);
+  color: #e63946; 
+  transform: scale(1,1);
+}
+
+.bookmark-icon.active {
+  color: #e63946;
+  fill: #e63946;
+  stroke: #e63946;
+}
+
+.bookmark-icon.active path { 
+  fill: currentColor; }
 
 /* Dashboard Elin - End */
 

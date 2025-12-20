@@ -35,3 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+document.querySelectorAll('.bookmark-icon').forEach(icon => {
+  const id = icon.dataset.id;
+
+  if (localStorage.getItem(id) === 'true') {
+    icon.classList.add('active');
+  }
+
+  icon.addEventListener('click', () => {
+    icon.classList.toggle('active');
+    localStorage.setItem(id, icon.classList.contains('active'));
+  });
+});

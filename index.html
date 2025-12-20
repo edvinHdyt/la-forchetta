@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home La-Forchetta</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image/favicon/favicon.ico">
     <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -49,10 +50,15 @@
                             <a class="nav-link" href="archieve.html">Archive Makanan</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
-                    </form>
+                    <form class="d-flex" role="search" action="HasilSearch.html" method="GET">
+                    <input class="form-control me-2"
+                        type="search"
+                        name="q"
+                        placeholder="Search"
+                        required>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+
                 </div>
                 <div class="d-flex">
                     <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
@@ -200,6 +206,7 @@
                             height="18"
                             fill="currentColor"
                             class="bi bi-bookmark-heart bookmark-icon"
+                            data-id="menu"
                             viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                                 d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
@@ -222,13 +229,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">121</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">10</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
@@ -282,13 +289,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">300</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">25</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
@@ -341,13 +348,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">132</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">23</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
@@ -400,13 +407,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">255</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">43</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
@@ -458,13 +465,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">78</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">6</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
@@ -517,13 +524,13 @@
                                 data-liked="false"
                                 aria-label="Like">
                             <i class="bi bi-heart"></i>
-                            <span class="like-count">456</span>
+                            <span class="like-count">0</span>
                         </button>
 
                         <!-- Comment -->
                         <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
                             <i class="bi bi-chat-dots"></i>
-                            <span class="comment-count">56</span>
+                            <span class="comment-count">0</span>
                         </div>
                     </div>
                 </div>
