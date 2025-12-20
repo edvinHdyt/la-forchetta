@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | La Forchetta</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image/favicon/favicon.ico">
+    <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="index.html">La Forchetta</a>
+                </h2>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="register-page-container shadow">
+            <h2 class="register-page-title mb-4">Register</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="registerName" class="register-form-label form-label">Name</label>
+                    <input type="text" class="form-control register-form-control" id="registerName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPhone" class="register-form-label form-label">Phone Number</label>
+                    <input type="text" class="form-control register-form-control" id="registerPhone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registerEmail" class="register-form-label form-label">Email</label>
+                    <input type="email" class="form-control register-form-control" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-2">
+                    <label for="registerPassword" class="register-form-label form-label">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control register-form-control" id="registerPassword" placeholder="Enter your password" required>
+                        <button class="register-password-toggle-btn" type="button" id="toggleRegisterPassword" tabindex="-1">
+                            <i class="bi bi-eye" id="registerEyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn register-btn">Register</button>
+                <a href="login-page.html" class="register-login-link">Sudah punya akun? Login di sini</a>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer mt-5 static-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <p>Email: info@forchetta.com</p>
+                    <p>Telepon: (021) 1234 5678</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
+                    <h3 class="footer-title">Media Sosial</h3>
+                    <ul class="social-links">
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/login-register.js"></script>
+</body>
+</html>
