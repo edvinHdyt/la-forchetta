@@ -90,6 +90,7 @@ function showDropdownProfile(){
     let elm = document.getElementById('dropdownProfile');
     
     if (elm.classList.contains("hide-dropdown-profile-container")){
+        elm.classList.remove("d-none")
         elm.classList.remove('hide-dropdown-profile-container');
         elm.classList.remove('hiding-dropdown-profile-container');
         elm.classList.add('show-dropdown-profile-container');
@@ -98,5 +99,9 @@ function showDropdownProfile(){
         elm.classList.remove('show-dropdown-profile-container');
         elm.classList.add('hiding-dropdown-profile-container');
         elm.classList.add('hide-dropdown-profile-container');
+
+        setTimeout(() => {
+            elm.classList.add("d-none");
+        }, 200);
     }
 }
