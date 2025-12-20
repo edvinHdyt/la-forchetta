@@ -1,4 +1,4 @@
-// Show/hide password for login page
+// Show/hide password
 document.addEventListener('DOMContentLoaded', function() {
     // Login page
     const loginPwdInput = document.getElementById('loginPassword');
