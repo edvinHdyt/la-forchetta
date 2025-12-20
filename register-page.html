@@ -11,15 +11,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
-            <div class="container">
-                <h2 class="logo mt-2">
-                    <a href="index.html">La Forchetta</a>
-                </h2>
-            </div>
-        </nav>
-    </header>
+    <navbar-login-element></navbar-login-element>
 
     <main>
         <div class="register-page-container shadow">
@@ -53,43 +45,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="main-footer mt-5 static-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
-                    <p>Email: info@forchetta.com</p>
-                    <p>Telepon: (021) 1234 5678</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
-                    <ul class="social-links">
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div> 
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
-                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer-element></footer-element>
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+    <!-- componnets -->
+    <script src="./assets/components/components-js/navbar_login_comp.js"></script>
+    <script src="./assets/components/components-js/footer_comp.js"></script>
+
     <script src="./assets/js/login-register.js"></script>
 </body>
 </html>

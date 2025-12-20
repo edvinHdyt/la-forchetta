@@ -11,91 +11,7 @@
 </head>
 <body>
     <!-- navbar -->
-    <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
-        <div class="dropdown-profile">
-          <ul class="list-item">
-            <li>
-                <a href="profil.html" class="profile-dropdown-link">
-                    <i class="bi bi-person-fill"></i>
-                    John Doe
-                </a>
-            </li>
-             <li>
-                <a href="profil.html" class="profile-dropdown-link">
-                    <i class="bi bi-box-arrow-in-left"></i>
-                    Keluar
-                </a>
-            </li>
-          </ul>
-        </div>
-    </div>
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
-            <div class="container">
-                <h2 class="logo mt-2">
-                    <a href="index.html">La Forchetta</a>
-                </h2>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contactUs">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
-                        </li>
-                       <li class="nav-item">
-                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
-                    </form>
-                </div>
-                <div class="d-flex">
-                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
-                        <i class="bi bi-list" data-id="showDropdownMenu"></i>
-                    </button>
-                    <div class="profile-border" data-id="dropdownProfile">
-                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
-                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
-                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
-            <div class="container">
-                <div class="navbar-dropdown-item" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contactUs">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
-   
-
+     <navbar-element></navbar-element>
     <main class="mt-4">
         <div class="container">
          <section class="header">
@@ -342,44 +258,15 @@
 
 
    <!-- footer -->
-        <footer class="main-footer mt-5 static-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
-                    <p>Email: info@forchetta.com</p>
-                    <p>Telepon: (021) 1234 5678</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
-                    <ul class="social-links">
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="social-link-item">
-                            <a href="#">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div> 
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
-                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
-                </div>
-          </div>
-            </div>
-    </footer>
-      
+   <footer-element></footer-element> 
+
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+
+    <!-- components -->
+    <script src="./assets/components/components-js/navbar_comp.js"></script>
+    <script src="./assets/components/components-js/footer_comp.js"></script>
+
     <script src="./assets/js/main.js"></script>
     <script src="./assets//js/detailMakanan.js"></script>
 </body>
