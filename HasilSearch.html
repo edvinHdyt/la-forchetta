@@ -1,36 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasil-Search</title>
-    <link rel="icon" type="image/x-icon" href="./assets/image/favicon/favicon.ico">
-  <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/STYLElin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home La-Forchetta</title>
+    <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body class="min-height">
-    <!-- navbar -->
-    <navbar-element></navbar-element>
 <body>
-  <body class="hasil-search">
-    <div class="container mt-4">
-      <div id="food-list" class="row mt-3">
-        <!-- Daftar makanan akan ditampilkan di sini -->
-      </div>
+    <!-- navbar -->
+    <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
+        <div class="dropdown-profile">
+          <ul class="list-item">
+            <li>
+                <a href="profil.html" class="profile-dropdown-link">
+                    <i class="bi bi-person-fill"></i>
+                    John Doe
+                </a>
+            </li>
+             <li>
+                <a href="profil.html" class="profile-dropdown-link">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                    Keluar
+                </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="index.html">La Forchetta</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form action="HasilSearch.html" method="GET" class="d-flex" role="search">
+                    <input
+                        type="search"
+                        name="q"
+                        class="form-control form-input-search me-2"
+                        placeholder="Search"
+                        required
+                    />
+                    <button class="btn btn-primary btn-search" type="submit">
+                        Search
+                    </button>
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                        <i class="bi bi-list" data-id="showDropdownMenu"></i>
+                    </button>
+                    <div class="profile-border" data-id="dropdownProfile">
+                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
+            <div class="container">
+                <div class="navbar-dropdown-item" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Archive Makanan</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container mt-4 min-vh-100">
+
+    <h4 id="search-title" class="mb-4">
+        Hasil Pencarian
+    </h4>
+
+    <div id="food-list" class="row g-3">
+        <!-- CARD HASIL SEARCH AKAN DI-RENDER OLEH JS -->
     </div>
 
-   <!-- footer -->
-    <footer-element></footer-element>
+    <!-- <div class="col-lg-9 col-md-8 col-12"> -->
+                <div class="row g-3">
+
+                    <!-- Card makanan 1 -->
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/Gadogado.jpg"
+                            class="card-img-top"
+                            alt="Gado - gado">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Gado - gado</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            fill="currentColor"
+                            class="bi bi-bookmark-heart bookmark-icon"
+                            viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                                d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Gado-gado adalah hidangan salad khas Indonesia yang terdiri dari aneka sayuran rebus,
+                            tahu, tempe, dan telur rebus yang disiram saus kacang kental berbumbu manis, gurih,
+                            dan pedas, serta ditaburi bawang goreng dan emping.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+  <!-- footer -->
+        <footer class="main-footer mt-5 static-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <p>Email: info@forchetta.com</p>
+                    <p>Telepon: (021) 1234 5678</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
+                    <h3 class="footer-title">Media Sosial</h3>
+                    <ul class="social-links">
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
+                </div>
+          </div>
+            </div>
+    </footer>
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
-  
-     <!-- components -->
-    <script src="./assets/components/components-js/navbar_comp.js"></script>
-    <script src="./assets/components/components-js/footer_comp.js"></script>
-
+    <script src="./assets/js/dashboard.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/HasilSearch.js"></script>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ document.addEventListener("click", function(){
 });
 
 
-const initial = async () => {
+let initialize = async () => {
     let res = await fetch("https://dummyjson.com/c/a9a4-9ad5-4288-9f36");
     let data = await res.json();
     const commentSection = document.getElementById("commentSection");
@@ -60,7 +60,7 @@ const initial = async () => {
 }
 
 
-initial();
+initialize();
 
 const calculationgRating = (comments, parseRating) => {
     let progRating5 = document.getElementById("progressRating5");
