@@ -8,7 +8,7 @@ class NavbarLogin extends HTMLElement {
         currentUrl = currentUrl.split("/");
         currentUrl = currentUrl[0] + "//" + currentUrl[2];
 
-        if (currentUrl == "https://edvinhdyt.github.io/"){
+        if (currentUrl == "https://edvinhdyt.github.io"){
             currentUrl = currentUrl + "/la-forchetta/";
         }
 
