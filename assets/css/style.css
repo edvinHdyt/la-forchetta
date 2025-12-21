@@ -803,9 +803,9 @@ textarea:focus{
     .search-bar{
         width: 100% !important;
     }
-    .form-input-search{
+    /* .form-input-search{
         display: none;
-    }
+    } */
     .food-title{
       display: none;
     }

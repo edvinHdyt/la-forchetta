@@ -3,91 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Pencarian | La Forchetta</title>
-
-    <!-- CSS -->
+    <title>Home La-Forchetta</title>
     <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
-<!-- ================= DROPDOWN PROFILE ================= -->
-<div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile">
-    <div class="dropdown-profile">
-        <ul class="list-item">
+    <!-- navbar -->
+    <div class="container sticky-top hide-dropdown-profile-container" id="dropdownProfile" >
+        <div class="dropdown-profile">
+          <ul class="list-item">
             <li>
                 <a href="profil.html" class="profile-dropdown-link">
                     <i class="bi bi-person-fill"></i>
                     John Doe
                 </a>
             </li>
-            <li>
-                <a href="#" class="profile-dropdown-link">
+             <li>
+                <a href="profil.html" class="profile-dropdown-link">
                     <i class="bi bi-box-arrow-in-left"></i>
                     Keluar
                 </a>
             </li>
-        </ul>
+          </ul>
+        </div>
     </div>
-</div>
-
-<header class="sticky-top">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-        <div class="container">
-            <h2 class="logo mt-2">
-                <a href="index.html">La Forchetta</a>
-            </h2>
-
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto ms-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactUs">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="archieve.html">Archive Makanan</a>
-                    </li>
-                </ul>
-
-                <!-- SEARCH -->
-                <form class="d-flex" action="HasilSearch.html" method="GET">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="index.html">La Forchetta</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="archieve.html">Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form action="HasilSearch.html" method="GET" class="d-flex" role="search">
                     <input
-                        class="form-control form-input-search me-2"
                         type="search"
                         name="q"
-                        placeholder="Search makanan..."
+                        class="form-control form-input-search me-2"
+                        placeholder="Search"
                         required
                     />
                     <button class="btn btn-primary btn-search" type="submit">
                         Search
                     </button>
-                </form>
-            </div>
-
-            <div class="d-flex">
-                <button class="btn btn-primary btn-hamburger-menu">
-                    <i class="bi bi-list"></i>
-                </button>
-
-                <div class="profile-border">
-                    <div class="nav-profile-wrapper">
-                        <img
-                            src="./assets/img/parkjisung.jpg"
-                            class="nav-profile-photo"
-                            alt="Profile"
-                        />
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                        <i class="bi bi-list" data-id="showDropdownMenu"></i>
+                    </button>
+                    <div class="profile-border" data-id="dropdownProfile">
+                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                        </div>
                     </div>
                 </div>
             </div>
+        </nav>
+
+        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
+            <div class="container">
+                <div class="navbar-dropdown-item" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html">Wishlist Makanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Archive Makanan</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </nav>
-</header>
+    </header>
 
 <!-- ================= MAIN CONTENT ================= -->
 <main class="container mt-4 min-vh-100">
@@ -142,6 +151,7 @@
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
     <script src="./assets/js/dashboard.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/HasilSearch.js"></script>
 
 </body>
 </html>

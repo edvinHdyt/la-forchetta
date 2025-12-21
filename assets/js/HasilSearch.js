@@ -112,4 +112,13 @@ else {
     </div>
   </div>
 `).join("");
+
+if (results.length === 0) {
+  foodList.innerHTML = `
+    <p class="text-muted">
+      Tidak ditemukan makanan dengan kata kunci "${keyword}"
+    </p>
+  `;
+}
+
 }
