@@ -7,7 +7,7 @@ class Navbar extends HTMLElement {
         let currentUrl = window.location.href;
         currentUrl = currentUrl.split("/");
         currentUrl = currentUrl[0] + "//" + currentUrl[2];
-        
+        console.log(currenUrl);
         const res = await fetch(currentUrl + "/assets/components/navbar_comp.html");
         const htmlnya = await res.text();
 
