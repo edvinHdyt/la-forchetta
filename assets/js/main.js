@@ -6,23 +6,24 @@ const STORAGE_KEY = "la-forchetta-profile";
 const defaultPhoto = "./assets/img/parkjisung.jpg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 
-const navProfilePhoto = document.getElementById("navProfilePhoto");
 
-function loadProfile() {
+function loadProfileMain() {
   const stored = localStorage.getItem(STORAGE_KEY);
   const profile = stored
     ? JSON.parse(stored) : {
         photo: defaultPhoto 
       };
   initialProfile = { ...profile };
-  setPhoto(profile.photo || defaultPhoto);
+  setPhotoMain(profile.photo || defaultPhoto);
 }
 
-function setPhoto(src) {
-  if (navProfilePhoto) navProfilePhoto.src = src; 
+function setPhotoMain(src) {
+    debugger
+    let navProfilePhoto;
+    navProfilePhoto = document.getElementById("navProfilePhoto");
+    if (navProfilePhoto) navProfilePhoto.src = src; 
 }
 
-loadProfile();
 
 document.addEventListener('click', function(){
     let strId = event.target.dataset["id"];
@@ -132,6 +133,9 @@ function initial(){
     })
 }
 
-setTimeout(() => {
+let timeout = setTimeout(() => {
+    loadProfileMain();
     initial();
-}, 100)
+
+    clearTimeout(timeout);
+}, 500);

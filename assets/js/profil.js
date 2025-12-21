@@ -13,6 +13,8 @@ const confirmCard = document.getElementById("confirmCard");
 const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 const confirmText = document.getElementById("confirmText");
+// navProfilePhoto = document.getElementById("navProfilePhoto");
+
 
 let isEditMode = false;
 
@@ -46,8 +48,12 @@ photoInput?.addEventListener("change", e => {
 });
 
 function setPhoto(src) {
-  profilePhoto.src = src;
-  if (navProfilePhoto) navProfilePhoto.src = src; 
+  let navProfilePhoto;
+  setTimeout(() => {
+    navProfilePhoto = document.getElementById("navProfilePhoto");
+    profilePhoto.src = src;
+    if (navProfilePhoto) navProfilePhoto.src = src; 
+  }, 100);
 }
 
 // logic edit
@@ -98,5 +104,3 @@ confirmYes?.addEventListener("click", () => {
 confirmNo?.addEventListener("click", () => {
   confirmCard.classList.add("d-none");
   loadProfile(); });
-
-loadProfile();

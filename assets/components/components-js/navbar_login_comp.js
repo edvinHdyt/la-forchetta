@@ -4,7 +4,11 @@ class NavbarLogin extends HTMLElement {
     }
 
     async connectedCallback(){
-        const res = await fetch("../../../assets/components/navbar_login_comp.html");
+        let currentUrl = window.location.href;
+        currentUrl = currentUrl.split("/");
+        currentUrl = currentUrl[0] + "//" + currentUrl[2];
+
+        const res = await fetch(currentUrl + "/assets/components/navbar_login_comp.html");
 
         const htmlnya = await res.text();
 
