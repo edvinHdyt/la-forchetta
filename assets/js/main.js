@@ -18,7 +18,6 @@ function loadProfileMain() {
 }
 
 function setPhotoMain(src) {
-    debugger
     let navProfilePhoto;
     navProfilePhoto = document.getElementById("navProfilePhoto");
     if (navProfilePhoto) navProfilePhoto.src = src; 
