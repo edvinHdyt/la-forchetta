@@ -49,11 +49,9 @@ photoInput?.addEventListener("change", e => {
 
 function setPhoto(src) {
   let navProfilePhoto;
-  setTimeout(() => {
-    navProfilePhoto = document.getElementById("navProfilePhoto");
-    profilePhoto.src = src;
-    if (navProfilePhoto) navProfilePhoto.src = src; 
-  }, 100);
+  navProfilePhoto = document.getElementById("navProfilePhoto");
+  profilePhoto.src = src;
+  if (navProfilePhoto) navProfilePhoto.src = src; 
 }
 
 // logic edit
@@ -104,3 +102,5 @@ confirmYes?.addEventListener("click", () => {
 confirmNo?.addEventListener("click", () => {
   confirmCard.classList.add("d-none");
   loadProfile(); });
+
+loadProfile();

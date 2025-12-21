@@ -36,7 +36,7 @@ document.addEventListener('click', function(){
             showDropdownProfile();
             hideNavbarDropdown();
             break;
-        case "activatedContactUsMenu":
+        case "activatedMenu":
             setTimeout(() => {
                 initial();
             }, 100);
@@ -132,9 +132,5 @@ function initial(){
     })
 }
 
-let timeout = setTimeout(() => {
-    loadProfileMain();
-    initial();
-
-    clearTimeout(timeout);
-}, 500);
+initial();
+loadProfileMain();
