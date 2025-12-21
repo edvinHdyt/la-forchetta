@@ -1,4 +1,4 @@
-// Carousel autoplay and navbar profile tooltip sync
+// Carousel autoplay and navbar profile tooltip sync 
 document.addEventListener("DOMContentLoaded", () => {
   const carouselEl = document.querySelector("#carouselExampleAutoplaying");
   let carousel;
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       interval: 5000,
       ride: "carousel",
       wrap: true, });
-    // Pause on hover in header
+    // Pause on hover in header na syg jsg
     carouselEl.addEventListener("mouseenter", () => {
       if (carousel) carousel.pause(); });
     carouselEl.addEventListener("mouseleave", () => {
@@ -35,16 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-document.querySelectorAll('.bookmark-icon').forEach(icon => {
-  const id = icon.dataset.id;
-
-  if (localStorage.getItem(id) === 'true') {
-    icon.classList.add('active');
-  }
-
-  icon.addEventListener('click', () => {
-    icon.classList.toggle('active');
-    localStorage.setItem(id, icon.classList.contains('active'));
-  });
+// bookmark - inna
+document.querySelectorAll('.bookmark-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah link jika ada
+        this.classList.toggle('active');
+    });
 });
