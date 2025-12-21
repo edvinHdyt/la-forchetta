@@ -7,6 +7,11 @@ class Footer extends HTMLElement {
         let currentUrl = window.location.href;
         currentUrl = currentUrl.split("/");
         currentUrl = currentUrl[0] + "//" + currentUrl[2];
+        
+        if (currentUrl == "https://edvinhdyt.github.io/"){
+            currentUrl = currentUrl + "/la-forchetta/";
+        }
+
 
         const res = await fetch(currentUrl + "/assets/components/footer_comp.html");
 
