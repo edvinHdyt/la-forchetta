@@ -121,4 +121,11 @@ if (results.length === 0) {
   `;
 }
 
+document.querySelectorAll('.bookmark-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah link jika ada
+        this.classList.toggle('active');
+    });
+});
+
 }

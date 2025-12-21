@@ -377,6 +377,7 @@ main .container .card-img-top {  /* container card makanan */
   object-fit: cover; */
   position: relative;
   display: flex;
+  
 }
 
 .card-title {
@@ -401,13 +402,43 @@ main .container .card-img-top {  /* container card makanan */
   /* transition: all 0.3s ease; */
 }
 
+.bookmark-wrapper {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: #800037; }
+
+.icon-fill {
+    display: none; }
+
+.bookmark-wrapper.active {
+    color: #fff; }
+
+.bookmark-wrapper.active .icon-outline {
+    display: none; }
+.bookmark-wrapper.active .icon-fill {
+    display: block; }
+
+.bookmark-wrapper:hover {
+  color: #e9609b;
+  background-color: #ffffff;
+  transform: scale(1.2); }
+.bi-bookmark-heart-fill:hover {
+  color: #800037;
+  background-color: #ffffff;
+  transform: scale(1.2); }
+
 /* @media (max-width: 576px) {
   .card-img-top {
     aspect-ratio: 16 / 9;
   }
 } */
 
-.bookmark-icon {
+/* .bookmark-icon {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -416,7 +447,7 @@ main .container .card-img-top {  /* container card makanan */
     color: #e9609b;
     background-color: #ffffff;
     opacity: 1;
-}
+} */
 
 /* .heart-icon {
     position: absolute;
