@@ -36,6 +36,11 @@ document.addEventListener('click', function(){
             showDropdownProfile();
             hideNavbarDropdown();
             break;
+        case "activatedContactUsMenu":
+            setTimeout(() => {
+                initial();
+            }, 100);
+            break;
         default:
             break;
     }
@@ -105,3 +110,28 @@ function showDropdownProfile(){
         }, 200);
     }
 }
+
+
+function initial(){
+    let currentUrl = window.location.href;
+    currentUrl = currentUrl.split("/");
+    currentUrl = currentUrl[currentUrl.length - 1];
+    
+    currentUrl = currentUrl.includes("#contactUs") ? "#contactUs" : currentUrl;
+    
+    const navlink = document.getElementsByClassName("nav-link");
+
+    Array.from(navlink).forEach(elm => {
+        if (elm.getAttribute("href") == currentUrl){
+            elm.classList.add("active");
+        }else if(elm.getAttribute("href") == "index.html" && currentUrl == ""){
+            elm.classList.add("active");
+        } else {
+            elm.classList.remove("active");
+        }
+    })
+}
+
+setTimeout(() => {
+    initial();
+}, 100)
