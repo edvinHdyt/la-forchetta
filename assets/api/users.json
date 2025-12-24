@@ -1,0 +1,60 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "nama": "Andi Pratama",
+            "email": "andi.pratama@example.com",
+            "password": "password123",
+            "profile_pict": "https://ui-avatars.com/api/?name=Andi+Pratama&background=random"
+        },
+        { 
+            "id": 2,
+            "nama": "Siti Aminah",
+            "email": "siti.aminah@testmail.com",
+            "password": "rahasia_user_456",
+            "profile_pict": "https://ui-avatars.com/api/?name=Siti+Aminah&background=random"
+        },
+        {
+            "id": 3,
+            "nama": "Budi Santoso",
+            "email": "budi.s@demo.net",
+            "password": "secure_pass_789!",
+            "profile_pict": "https://ui-avatars.com/api/?name=Budi+Santoso&background=random"
+        },
+        {
+            "id": 4,
+            "nama": "Dewi Anggraini",
+            "email": "dewi.anggraini@example.com",
+            "password": "password_dewi_2025",
+            "profile_pict": "https://ui-avatars.com/api/?name=Dewi+Anggraini&background=random"
+        },
+        {
+            "id": 5,
+            "nama": "Ayu Lestari",
+            "email": "ayu.lestari@testmail.com",
+            "password": "ayu_secure_555",
+            "profile_pict": "https://ui-avatars.com/api/?name=Ayu+Lestari&background=random"
+        },
+        {
+            "id": 6,
+            "nama": "Putra Mahendra",
+            "email": "putra.m@demo.net",
+            "password": "mahendra_pass_88",
+            "profile_pict": "https://ui-avatars.com/api/?name=Putra+Mahendra&background=random"
+        },
+        {
+            "id": 7,
+            "nama": "Rizky Pratama",
+            "email": "rizky.p@example.org",
+            "password": "rizky_gamer_99",
+            "profile_pict": "https://ui-avatars.com/api/?name=Rizky+Pratama&background=random"
+        },
+        {
+            "id": 8,
+            "nama": "Andi Wijaya",
+            "email": "andi.wijaya@domain.com",
+            "password": "wijaya_andi_777",
+            "profile_pict": "https://ui-avatars.com/api/?name=Andi+Wijaya&background=random"
+        }
+    ]
+}

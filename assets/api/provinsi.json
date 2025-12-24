@@ -1,0 +1,44 @@
+{
+    "provinsi": [
+        {
+            "id": 1,
+            "nama": "Aceh"
+        },
+        {
+            "id": 2,
+            "nama": "Sumatera Utara"
+        },
+        {
+            "id": 3,
+            "nama": "Sumatera Barat"
+        },
+        {
+            "id": 4,
+            "nama": "Sumatera Selatan"
+        },
+        {
+            "id": 5,
+            "nama": "Riau"
+        },
+        {
+            "id": 6,
+            "nama": "Jambi"
+        },
+        {
+            "id": 7,
+            "nama": "Banten"
+        },
+        {
+            "id": 8,
+            "nama": "DKI Jakarta"
+        },
+        {
+            "id": 9,
+            "nama": "Jawa Barat"
+        },
+        {
+            "id": 10,
+            "nama": "Jawa Tengah"
+        }
+    ]
+}

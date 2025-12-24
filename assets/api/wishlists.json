@@ -1,0 +1,49 @@
+{
+    "wishlists": [
+        {
+            "id": 1,
+            "id_user": 1,
+            "id_makanan": 1
+        },
+        {
+            "id": 2,
+            "id_user": 1,
+            "id_makanan": 2
+        },
+        {
+            "id": 3,
+            "id_user": 1,
+            "id_makanan": 3
+        },
+        {
+            "id": 4,
+            "id_user": 2,
+            "id_makanan": 4
+        },
+        {
+            "id": 5,
+            "id_user": 2,
+            "id_makanan": 5
+        },
+        {
+            "id": 6,
+            "id_user": 2,
+            "id_makanan": 6
+        },
+        {
+            "id": 7,
+            "id_user": 3,
+            "id_makanan": 7
+        },
+        {
+            "id": 8,
+            "id_user": 3,
+            "id_makanan": 8
+        },
+        {
+            "id": 9,
+            "id_user": 3,
+            "id_makanan": 9
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "category": "Makanan Utama"
+        },
+        {
+            "id": 2,
+            "category": "Appetizer"
+        },
+        {
+            "id": 3,
+            "category": "Dessert"
+        },
+        {
+            "id": 4,
+            "category": "Minuman"
+        },
+        {
+            "id": 5,
+            "category": "Cemilan"
+        }
+    ]
+}
