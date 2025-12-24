@@ -15,15 +15,15 @@
         <div class="dropdown-profile">
           <ul class="list-item">
             <li>
-                <a href="profil.html" class="profile-dropdown-link">
+                <a href="#" class="profile-dropdown-link d-none" id="userProfileName">
                     <i class="bi bi-person-fill"></i>
                     John Doe
                 </a>
             </li>
              <li>
-                <a href="profil.html" class="profile-dropdown-link">
-                    <i class="bi bi-box-arrow-in-left"></i>
-                    Keluar
+                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                    <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
+                    Masuk
                 </a>
             </li>
           </ul>
@@ -62,7 +62,7 @@
                     <div class="profile-border" data-id="dropdownProfile">
                         <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
                           <div class="nav-profile-wrapper" data-id="dropdownProfile">
-                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/image/SVG/defaultProfile.svg" alt="Profile photo" data-id="dropdownProfile">
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                  </div>
      
                  <!-- comment section -->
-                 <div class="header-section">
+                 <div class="header-section" id="comment-section">
                      <hr>
                      <h3 class="text-center">
                          Review & Komen
@@ -258,7 +258,7 @@
                          <div class="header-comment-section">
                              <div class="row">
                                  <div class="col-md-6 mb-3">
-                                     <input type="text" class="form-control form-comment input-comment " placeholder="Nama" value="John Doe" disabled id="nama">
+                                     <input type="text" class="form-control form-comment input-comment " placeholder="Nama" disabled id="nama">
                                  </div>
                                  <div class="col-md-6 mb-3">
                                      <input type="number" class="form-control form-comment input-comment" placeholder="Rating" id="rating">

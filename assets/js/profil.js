@@ -103,4 +103,41 @@ confirmNo?.addEventListener("click", () => {
   confirmCard.classList.add("d-none");
   loadProfile(); });
 
-loadProfile();
+
+
+const initialize = async() => {
+   if(userLogin == null){
+      let url = window.location.href;
+      url = url.split("/");
+      const currUrl = `${url[0]}//${url[2]}/`;
+      window.location.href = currUrl + "login-page.html";
+
+      return;
+  }
+
+  let users = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
+  let dataUser = await users.json();
+
+  Array.from(dataUser["users"]).forEach(user => {
+    if (user["id"] == 1){
+      dataUser = user;
+    }
+  });
+
+  const obj = {
+    id: dataUser["id"],
+    name: dataUser["nama"],
+    phone: dataUser["phone"],
+    email: dataUser["email"],
+    photo: dataUser["profile_pict"] == null ? defaultPhoto : dataUser["profile_pict"]
+  };
+
+  const stored = localStorage.getItem(STORAGE_KEY);
+
+  if (stored == null){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+  }
+  loadProfile();
+}
+
+initialize();

@@ -11,19 +11,19 @@
 </head>
 <body>
    <!-- navbar -->
-    <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
+   <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
             <li>
-                <a href="profil.html" class="profile-dropdown-link">
+                <a href="#" class="profile-dropdown-link d-none" id="userProfileName">
                     <i class="bi bi-person-fill"></i>
                     John Doe
                 </a>
             </li>
              <li>
-                <a href="profil.html" class="profile-dropdown-link">
-                    <i class="bi bi-box-arrow-in-left"></i>
-                    Keluar
+                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                    <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
+                    Masuk
                 </a>
             </li>
           </ul>
@@ -62,7 +62,7 @@
                     <div class="profile-border" data-id="dropdownProfile">
                         <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
                           <div class="nav-profile-wrapper" data-id="dropdownProfile">
-                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/img/parkjisung.jpg" alt="Profile photo" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/image/SVG/defaultProfile.svg" alt="Profile photo" data-id="dropdownProfile">
                         </div>
                     </div>
                 </div>
@@ -98,14 +98,14 @@
 
     <!-- body -->
     <main>
-    
+
         <div class="container my-3">
             <div class="profile-card shadow p-5 rounded-4 mx-auto">
             <h4 class="mb-3 fw-bold text-center">Profile Information</h4>
             <!-- photo profile -->
             <div class="d-flex justify-content-center mb-2 position-relative">
             <div class="profile-wrapper">
-                <img id="profilePhoto" src="./assets/img/parkjisung.jpg" class="profile-photo" alt="profile">
+                <img id="profilePhoto" src="./assets/image/SVG/defaultProfile.svg" class="profile-photo" alt="profile">
                 <!-- pensil edit photo profile -->
                 <button id="changePhotoBtn" class="edit-btn btn btn-light rounded-circle shadow" type="button">
                 <i class="bi bi-pencil-fill"></i>

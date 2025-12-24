@@ -382,7 +382,8 @@ main .container .card-img-top {
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 0.875rem;
-  font-weight: 600; }
+  font-weight: 600; 
+}
 
 .text-truncate-multiline {
   display: -webkit-box;
@@ -1055,6 +1056,9 @@ textarea:focus {
   }
   .social-links {
     justify-content: center;
+  }
+  .card-title{
+    font-size: 1.1rem !important;
   }
 }
 /* ===============================

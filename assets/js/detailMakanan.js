@@ -1,5 +1,5 @@
 const month = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Oct", "Nov", "Des"];
-let dataComments;
+const commentKeyStorage = "la-forchetta-comment";
 
 
 document.addEventListener("click", function(){
@@ -16,72 +16,108 @@ document.addEventListener("click", function(){
 });
 
 
+
+
 let initialize = async () => {
-    let res = await fetch("https://dummyjson.com/c/a9a4-9ad5-4288-9f36");
-    let data = await res.json();
-    const commentSection = document.getElementById("commentSection");
+    setNameCommentUser(userLogin);
+
+    // set data comments to localstorage
+    let isDataCommentAvailable = localStorage.getItem(commentKeyStorage) == null ? false : true;
     
-    Array.from(data).forEach((val, i) => {
-        if (val["food_id"] == 1){
-            dataComments = val["comment"];
-            calculationgRating(dataComments);
-            dataComments.forEach(comm => {
-                let date = createDateFormat(comm["created_at"]);
-                let profile;
+    if(!isDataCommentAvailable){
+        let res = await fetch("https://dummyjson.com/c/fd5d-2881-4a4c-bc72");
+        let data = await res.json();
 
-                if (comm["profil_pict"] == ""){
-                    profile = 
-                    '<div class="profile-border profile-comment">' + 
-                        '<i class="bi bi-person-fill"></i>' +
-                    '</div>';
-                } else {
-                    profile = 
-                    '<img src="'+comm["profil_pict"]+'" class="comment-profile-img">'
-                }
+        let dataComments = data["comments"].filter((data) => {
+            return data["id_makanan"] == 1; //ubah jadi id makanan
+        });
 
-                let elm =
-                profile + 
-                '<div class="detail-comment ms-3">'+
-                    '<div class="detail-comment-header d-flex">'+
-                        '<p class="username text-bold">'+comm["name"]+'</p>'+
-                        '<p class="ms-2"> - '+date+'</p>'+
-                    '</div>'+
-                    '<div class="detail-comment-body d-flex flex-column">'+
-                        '<p>Rating: <span>'+comm["rating"]+'</span></p>'+
-                        '<p class="flex-wrap comment">'+comm["comment"]+'</p>'+
-                    '</div>'+
-                '</div>';
 
-                let div = createCardComment(elm);
-                commentSection.prepend(div);
-            })
-       }
+        localStorage.setItem(commentKeyStorage, JSON.stringify(dataComments));
+    }
+
+    const users = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
+    let userData = await users.json();
+    userData = userData["users"];
+
+    const commentSection = document.getElementById("commentSection");
+
+    dataComments = localStorage.getItem(commentKeyStorage);
+    dataComments = JSON.parse(dataComments);
+
+    Array.from(dataComments).forEach((val, i) => {
+        let user = userData.filter((user) => {
+            return user["id"] == val["id_user"];
+        });
+
+        user = user[0];
+
+        // dataComments = val["comment"];
+        let date = createDateFormat(val["created_at"]);
+        let profile;
+
+        if (user.profile_pict == ""){
+            profile = 
+            '<div class="profile-border profile-comment">' + 
+                '<i class="bi bi-person-fill"></i>' +
+            '</div>';
+        } else {
+            profile = 
+            '<img src="'+user.profile_pict+'" class="comment-profile-img">'
+        }
+
+        let elm =
+        profile + 
+        '<div class="detail-comment ms-3">'+
+            '<div class="detail-comment-header d-flex">'+
+                '<p class="username text-bold">'+user.nama+'</p>'+
+                '<p class="ms-2"> - '+date+'</p>'+
+            '</div>'+
+            '<div class="detail-comment-body d-flex flex-column">'+
+                '<p>Rating: <span>'+val["rating"]+'</span></p>'+
+                '<p class="flex-wrap comment">'+val["komen"]+'</p>'+
+            '</div>'+
+        '</div>';
+
+        let div = createCardComment(elm);
+        commentSection.prepend(div);
     });
+
+    calculationgRating(dataComments);
+}
+
+const setNameCommentUser = (user) => {
+    const elm = document.getElementById("nama");
+
+    if (user == null){
+        elm.value = "Guest";
+    } else {
+        elm.value = user.nama;
+    }
 }
 
 
-initialize();
-
-const calculationgRating = (comments, parseRating) => {
-    let progRating5 = document.getElementById("progressRating5");
-    let progRating4 = document.getElementById("progressRating4");
-    let progRating3 = document.getElementById("progressRating3");
-    let progRating2 = document.getElementById("progressRating2");
-    let progRating1 = document.getElementById("progressRating1");
-    let ratingLabel = document.getElementById("ratingLabel");
-    let ratingCategory = document.getElementById("ratingCategory");
+const calculationgRating = (comments) => {
+    const progRating5 = document.getElementById("progressRating5");
+    const progRating4 = document.getElementById("progressRating4");
+    const progRating3 = document.getElementById("progressRating3");
+    const progRating2 = document.getElementById("progressRating2");
+    const progRating1 = document.getElementById("progressRating1");
+    const ratingLabel = document.getElementById("ratingLabel");
+    const ratingCategory = document.getElementById("ratingCategory");
     
-    let totalRating5 = parseRating == 5 ? 1 : 0;
-    let totalRating4 = parseRating == 4 ? 1 : 0;
-    let totalRating3 = parseRating == 3 ? 1 : 0;
-    let totalRating2 = parseRating == 2 ? 1 : 0;
-    let totalRating1 = parseRating == 1 ? 1 : 0;
-    
-    let totalAllRating = parseRating != undefined ? parseRating : 0;
-    Array.from(comments).forEach(val => {
-        totalAllRating += val["rating"];
+    let totalRating5 = 0;
+    let totalRating4 = 0;
+    let totalRating3 = 0;
+    let totalRating2 = 0;
+    let totalRating1 = 0;
+        
+    let totalAllRating =  0;
 
-        switch (val["rating"]) {
+    Array.from(comments).forEach(elm => {
+        totalAllRating += elm["rating"];
+
+        switch (elm["rating"]) {
             case 5:
                  totalRating5 += 1;
                 
@@ -104,8 +140,11 @@ const calculationgRating = (comments, parseRating) => {
                 break;
         }
     });
+
     
     let ratingAverage = parseFloat(totalAllRating / comments.length);
+
+    ratingAverage = ratingAverage.toLocaleString('en', {maximumSignificantDigits : 2});
 
     if (ratingAverage > 5){
         ratingAverage = 5.0;
@@ -156,6 +195,16 @@ const createCardComment = (elm) => {
 }
 
 function addComment(){
+    if(userLogin == null){
+        let url = window.location.href;
+        url = url.split("/");
+        const currUrl = `${url[0]}//${url[2]}/`;
+        window.location.href = currUrl + "login-page.html";
+
+        return;
+    }
+
+
     const commentSection = document.getElementById("commentSection");
     let rating = document.getElementById("rating");
     let comment = document.getElementById("comment");
@@ -177,11 +226,28 @@ function addComment(){
     }
 
     const d = new Date();
+    const objDate =  `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
 
     let date = createDateFormat(d);
 
+    
     if ((rating.value != "" && comment.value != "") && (rating.value >= 0 && rating.value <= 5)){
-        calculationgRating(dataComments, parseInt(rating.value));
+        let dataComments = JSON.parse(localStorage.getItem(commentKeyStorage));
+        
+        // pengisian data
+        let obj = {
+            id : dataComments.length,
+            id_makanan: 1, //ubah id makanan yg sesuai,
+            id_user: 1, //ubah id user yg sesuai,
+            rating: parseInt(rating.value),
+            komen: comment.value,
+            created_at: objDate
+        }
+
+        dataComments.push(obj);
+        
+        localStorage.setItem(commentKeyStorage, JSON.stringify(dataComments));
+
         let elm = 
             '<div class="profile-border profile-comment">' + 
                 '<i class="bi bi-person-fill"></i>' +
@@ -202,6 +268,8 @@ function addComment(){
 
         rating.value = "";
         comment.value = "";
+
+        calculationgRating(dataComments);
     }
 }
 
@@ -244,3 +312,6 @@ comment.addEventListener("keyup", function(){
     }
 
 })
+
+
+initialize();

@@ -3,9 +3,9 @@
 let initialProfile = {};
 
 const STORAGE_KEY = "la-forchetta-profile";
-const defaultPhoto = "./assets/img/parkjisung.jpg";
+const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
-
+let userLogin = localStorage.getItem("la-forchetta-user-login");
 
 function loadProfileMain() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -113,6 +113,8 @@ function showDropdownProfile(){
 
 
 function initial(){
+    setNameUserLogin();
+
     let currentUrl = window.location.href;
     currentUrl = currentUrl.split("/");
     currentUrl = currentUrl[currentUrl.length - 1];
@@ -131,6 +133,23 @@ function initial(){
         }
     })
 }
+
+const setNameUserLogin = () => {
+    let userProfileMenu = document.getElementById("userProfileName");
+    let loginMenu = document.getElementById("loginMenu");
+    const loginIconMenu = document.getElementById("iconLoginMenu");
+
+    if(userLogin != null){
+        userProfileMenu.classList.remove("d-none");
+        userProfileMenu.innerText = userLogin.nama;
+        userProfileMenu.href = "profil.html";
+
+        loginIconMenu.classList.remove("bi-box-arrow-in-right");
+        loginIconMenu.classList.add("bi-box-arrow-in-left");
+        loginMenu.innerText = "Keluar";
+    }
+}
+
 
 initial();
 loadProfileMain();
