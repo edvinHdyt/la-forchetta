@@ -20,7 +20,7 @@ document.addEventListener("click", function(){
 
 let initialize = async () => {
     setNameCommentUser(userLogin);
-
+    initializeContent();
     // set data comments to localstorage
     let isDataCommentAvailable = localStorage.getItem(commentKeyStorage) == null ? false : true;
     
@@ -94,6 +94,21 @@ const setNameCommentUser = (user) => {
     } else {
         elm.value = user.nama;
     }
+}
+
+const initializeContent = async () => {
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+
+    const makanan = await fetch("https://dummyjson.com/c/35ce-16d4-490b-84b1");
+    let dataMakanan = await makanan.json();
+
+    Array.from(dataMakanan["makanan"]).forEach(elm => {
+        if (elm["id_makanan"] == id){
+            dataMakanan = elm;
+        }
+    });
+
 }
 
 
