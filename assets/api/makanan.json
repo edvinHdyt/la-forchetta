@@ -1,0 +1,1138 @@
+{
+  "makanan": [
+        {
+            "id_makanan": 1,
+            "nama_makanan": "Mie Aceh",
+            "deskripsi_makanan": "Mie kuning tebal dengan kuah kari pedas khas Aceh.",
+            "resep": [
+            "Mie kuning",
+            "daging sapi",
+            "cabai",
+            "bawang merah",
+            "kari"
+            ],
+            "step_by_step": [
+            "1. Tumis bumbu",
+            "2. Masukkan daging",
+            "3. Masukkan mie dan aduk sampai matang."
+            ],
+            "foto_makanan": "mie_aceh.jpg",
+            "rating": 4.9,
+            "jumlah_like": 8200,
+            "id_provinsi": "1",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 2,
+            "nama_makanan": "Martabak Aceh",
+            "deskripsi_makanan": "Martabak telur isi daging berbumbu kari khas Aceh.",
+            "resep": [
+            "Telur",
+            "daging sapi",
+            "bawang bombay",
+            "kari bubuk"
+            ],
+            "step_by_step": [
+            "1. Tumis isian.",
+            "2. Masukkan telur.",
+            "3. Goreng hingga kecokelatan."
+            ],
+            "foto_makanan": "martabak_aceh.jpg",
+            "rating": 4.8,
+            "jumlah_like": 5400,
+            "id_provinsi": "1",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 3,
+            "nama_makanan": "Timphan",
+            "deskripsi_makanan": "Kue ketan isi srikaya khas Aceh.",
+            "resep": [
+            "Tepung ketan",
+            "santan",
+            "gula",
+            "srikaya"
+            ],
+            "step_by_step": [
+            "1. Campur adonan.",
+            "2. Isi srikaya.",
+            "3. Bungkus daun pisang.",
+            "4. Kukus."
+            ],
+            "foto_makanan": "timphan.jpg",
+            "rating": 4.7,
+            "jumlah_like": 3100,
+            "id_provinsi": "1",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 4,
+            "nama_makanan": "Kopi Sanger",
+            "deskripsi_makanan": "Kopi khas Aceh yang dicampur susu kental manis dan gula dengan teknik tarik, rasanya kuat tapi creamy.",
+            "resep": [
+            "Bubuk kopi Aceh",
+            "air panas",
+            "susu kental manis",
+            "gula"
+            ],
+            "step_by_step": [
+            "1. Seduh kopi.",
+            "2. Tambahkan susu dan gula.",
+            "3. Tarik kopi berulang kali sampai berbusa.",
+            "4. Sajikan hangat."
+            ],
+            "foto_makanan": "kopi_sanger.jpg",
+            "rating": 4.9,
+            "jumlah_like": 6700,
+            "id_provinsi": "1",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 5,
+            "nama_makanan": "Kue Adee",
+            "deskripsi_makanan": "Kue tradisional Aceh bertekstur lembut dan manis.",
+            "resep": [
+            "Tepung terigu",
+            "santan",
+            "gula aren",
+            "telur"
+            ],
+            "step_by_step": [
+            "1. Campur bahan.",
+            "2. Tuang ke cetakan.",
+            "3. Panggang sampai matang."
+            ],
+            "foto_makanan": "kue_adee.jpg",
+            "rating": 4.5,
+            "jumlah_like": 1800,
+            "id_provinsi": "1",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 11,
+            "nama_makanan": "Rendang",
+            "deskripsi_makanan": "Masakan daging sapi bersantan khas Minangkabau.",
+            "resep": [
+            "Daging sapi",
+            "santan",
+            "cabai",
+            "lengkuas",
+            "serai"
+            ],
+            "step_by_step": [
+            "1. Tumis bumbu.",
+            "2. Masukkan daging & santan.",
+            "3. Masak lama sampai kering."
+            ],
+            "foto_makanan": "rendang.jpg",
+            "rating": 5,
+            "jumlah_like": 15000,
+            "id_provinsi": "3",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 12,
+            "nama_makanan": "Sala Lauak",
+            "deskripsi_makanan": "Gorengan bulat khas Pariaman dari campuran tepung beras dan ikan asin yang gurih, renyah di luar dan lembut di dalam.",
+            "resep": [
+            "Tepung beras",
+            "ikan asin",
+            "bawang putih",
+            "daun kunyit",
+            "air"
+            ],
+            "step_by_step": [
+            "1. Rendam ikan asin lalu haluskan.",
+            "2. Campur tepung beras dengan bumbu.",
+            "3. Tambahkan ikan asin dan air secukupnya.",
+            "4. Bentuk bulat kecil.",
+            "5. Goreng sampai kuning keemasan."
+            ],
+            "foto_makanan": "sala_lauak.jpg",
+            "rating": 4.7,
+            "jumlah_like": 4200,
+            "id_provinsi": "3",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 13,
+            "nama_makanan": "Lapek Bugih",
+            "deskripsi_makanan": "Kue ketan isi kelapa manis khas Minang.",
+            "resep": [
+            "Tepung ketan",
+            "kelapa parut",
+            "gula aren"
+            ],
+            "step_by_step": [
+            "1. Campur adonan.",
+            "2. Isi kelapa.",
+            "3. Bungkus daun.",
+            "4. Kukus."
+            ],
+            "foto_makanan": "lapek_bugih.jpg",
+            "rating": 4.7,
+            "jumlah_like": 2600,
+            "id_provinsi": "3",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 14,
+            "nama_makanan": "Teh Talua",
+            "deskripsi_makanan": "Minuman teh telur khas Minangkabau.",
+            "resep": [
+            "Teh",
+            "telur ayam kampung",
+            "gula"
+            ],
+            "step_by_step": [
+            "1. Kocok telur & gula.",
+            "2. Seduh teh.",
+            "3. Campurkan."
+            ],
+            "foto_makanan": "teh_talua.jpg",
+            "rating": 4.8,
+            "jumlah_like": 3600,
+            "id_provinsi": "3",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 15,
+            "nama_makanan": "Karupuak Sanjai",
+            "deskripsi_makanan": "Keripik singkong balado khas Bukittinggi.",
+            "resep": [
+            "Singkong",
+            "cabai",
+            "gula",
+            "minyak goreng"
+            ],
+            "step_by_step": [
+            "1. Iris singkong.",
+            "2. Goreng.",
+            "3. Balur sambal."
+            ],
+            "foto_makanan": "karupuak_sanjai.jpg",
+            "rating": 4.6,
+            "jumlah_like": 4100,
+            "id_provinsi": "3",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 16,
+            "nama_makanan": "Pempek",
+            "deskripsi_makanan": "Makanan utama khas Palembang berbahan dasar ikan dan sagu dengan kuah cuko asam pedas.",
+            "resep": [
+            "Ikan tenggiri halus",
+            "tepung sagu",
+            "tepung terigu",
+            "bawang putih halus",
+            "air es",
+            "garam",
+            "gula",
+            "minyak goreng",
+            "gula aren",
+            "cabai rawit",
+            "asam jawa",
+            "bawang putih (cuko)"
+            ],
+            "step_by_step": [
+            "1. Haluskan ikan tenggiri hingga benar-benar lembut.",
+            "2. Campur ikan dengan bawang putih, garam, gula, dan air es sedikit demi sedikit sambil diaduk.",
+            "3. Masukkan tepung terigu, aduk rata.",
+            "4. Tambahkan tepung sagu perlahan sampai adonan bisa dibentuk dan tidak lengket.",
+            "5. Bentuk adonan sesuai selera.",
+            "6. Rebus dalam air mendidih hingga pempek mengapung, angkat dan tiriskan.",
+            "7. Untuk cuko: rebus air, gula aren, cabai, bawang putih, dan asam jawa hingga mendidih dan kental.",
+            "8. Sajikan pempek dengan kuah cuko."
+            ],
+            "foto_makanan": "Pempek.jpg",
+            "rating": 4.9,
+            "jumlah_like": 2600,
+            "id_provinsi": "4",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 17,
+            "nama_makanan": "Tekwan",
+            "deskripsi_makanan": "Sup pembuka khas Palembang berisi bola ikan dengan kuah kaldu udang.",
+            "resep": [
+            "Ikan tenggiri halus",
+            "tepung sagu",
+            "bawang putih",
+            "garam",
+            "gula",
+            "air",
+            "udang",
+            "minyak goreng",
+            "jamur kuping",
+            "daun bawang",
+            "seledri"
+            ],
+            "step_by_step": [
+            "1. Campur ikan, bawang putih, garam, dan gula.",
+            "2. Tambahkan tepung sagu dan air secukupnya hingga adonan lembut.",
+            "3. Bentuk adonan kecil-kecil.",
+            "4. Rebus hingga mengapung, angkat dan tiriskan.",
+            "5. Tumis udang hingga harum, tambahkan air dan rebus hingga menjadi kaldu.",
+            "6. Masukkan jamur kuping dan bola ikan.",
+            "7. Bumbui garam dan gula.",
+            "8. Sajikan panas dengan daun bawang dan seledri."
+            ],
+            "foto_makanan": "Tekwan.jpg",
+            "rating": 4.7,
+            "jumlah_like": 6400,
+            "id_provinsi": "4",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 18,
+            "nama_makanan": "Kue Srikaya",
+            "deskripsi_makanan": "Dessert tradisional Palembang berbahan telur dan santan dengan rasa manis legit.",
+            "resep": [
+            "Telur ayam",
+            "santan kental",
+            "gula pasir",
+            "gula vanili",
+            "garam",
+            "daun pandan",
+            "air"
+            ],
+            "step_by_step": [
+            "1. Kocok telur dan gula hingga tercampur rata (tidak perlu mengembang).",
+            "2. Masukkan santan, garam, dan vanili, aduk perlahan.",
+            "3. Saring adonan agar halus.",
+            "4. Masukkan daun pandan.",
+            "5. Tuang ke loyang dan kukus dengan api sedang selama ±30 menit hingga set.",
+            "6. Dinginkan sebelum disajikan."
+            ],
+            "foto_makanan": "KueSrikaya.jpg",
+            "rating": 4.6,
+            "jumlah_like": 5200,
+            "id_provinsi": "4",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 19,
+            "nama_makanan": "Es Kacang Merah",
+            "deskripsi_makanan": "Minuman tradisional segar dari kacang merah rebus dan susu.",
+            "resep": [
+            "Kacang merah",
+            "air",
+            "gula pasir",
+            "garam",
+            "susu kental manis",
+            "es batu"
+            ],
+            "step_by_step": [
+            "1. Rendam kacang merah selama 6–8 jam.",
+            "2. Rebus kacang hingga empuk, tambahkan gula dan sedikit garam.",
+            "3. Dinginkan kacang beserta kuahnya.",
+            "4. Sajikan dalam gelas dengan es batu dan susu kental manis."
+            ],
+            "foto_makanan": "EsKacangMerah.jpg",
+            "rating": 4.8,
+            "jumlah_like": 4100,
+            "id_provinsi": "4",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 20,
+            "nama_makanan": "Kemplang",
+            "deskripsi_makanan": "Kerupuk ikan panggang khas Palembang yang renyah dan gurih.",
+            "resep": [
+            "Ikan tenggiri",
+            "tepung sagu",
+            "bawang putih",
+            "garam",
+            "gula",
+            "air",
+            "minyak goreng"
+            ],
+            "step_by_step": [
+            "1. Haluskan ikan dan bawang putih.",
+            "2. Campur dengan garam, gula, dan air secukupnya.",
+            "3. Masukkan tepung sagu hingga adonan kalis.",
+            "4. Bentuk pipih dan rebus hingga matang.",
+            "5. Jemur hingga kering.",
+            "6. Panggang atau goreng hingga mengembang."
+            ],
+            "foto_makanan": "Kemplang.jpg",
+            "rating": 4.9,
+            "jumlah_like": 6666,
+            "id_provinsi": "4",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 21,
+            "nama_makanan": "Gulai Ikan Patin",
+            "deskripsi_makanan": "Makanan utama khas Riau berbahan ikan patin dengan kuah santan kuning berbumbu rempah Melayu.",
+            "resep": [
+            "Ikan patin",
+            "santan",
+            "bawang merah",
+            "bawang putih",
+            "cabai merah",
+            "kunyit",
+            "jahe",
+            "lengkuas",
+            "serai",
+            "daun jeruk",
+            "garam",
+            "gula",
+            "air",
+            "minyak goreng"
+            ],
+            "step_by_step": [
+            "1. Bersihkan ikan patin dan potong sesuai selera.",
+            "2. Haluskan bawang merah, bawang putih, cabai, kunyit, dan jahe.",
+            "3. Tumis bumbu halus dengan minyak hingga harum.",
+            "4. Masukkan serai, daun jeruk, dan lengkuas.",
+            "5. Tambahkan air dan santan, aduk perlahan agar santan tidak pecah.",
+            "6. Masukkan ikan patin.",
+            "7. Bumbui dengan garam dan gula.",
+            "8. Masak dengan api sedang hingga ikan matang dan kuah mengental.",
+            "9. Sajikan hangat."
+            ],
+            "foto_makanan": "GulaiIkanPatin.jpg",
+            "rating": 4.7,
+            "jumlah_like": 4309,
+            "id_provinsi": "5",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 22,
+            "nama_makanan": "Asam Pedas Baung",
+            "deskripsi_makanan": "Sup pembuka khas Riau dengan rasa asam pedas segar berbahan ikan baung.",
+            "resep": [
+            "Ikan baung",
+            "bawang merah",
+            "bawang putih",
+            "cabai merah",
+            "asam jawa",
+            "serai",
+            "daun jeruk",
+            "garam",
+            "gula",
+            "air",
+            "minyak goreng"
+            ],
+            "step_by_step": [
+            "1. Bersihkan ikan baung dan potong-potong.",
+            "2. Haluskan bawang merah, bawang putih, dan cabai.",
+            "3. Tumis bumbu hingga harum.",
+            "4. Tambahkan air dan asam jawa.",
+            "5. Masukkan serai dan daun jeruk.",
+            "6. Masukkan ikan baung.",
+            "7. Bumbui garam dan gula.",
+            "8. Masak hingga ikan matang dan kuah segar.",
+            "9. Sajikan panas."
+            ],
+            "foto_makanan": "AsamPedasBaung.jpg",
+            "rating": 5,
+            "jumlah_like": 7800,
+            "id_provinsi": "5",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 23,
+            "nama_makanan": "Kue Asidah",
+            "deskripsi_makanan": "Dessert tradisional Melayu Riau dengan tekstur lembut dan aroma rempah.",
+            "resep": [
+            "Tepung terigu",
+            "gula pasir",
+            "santan",
+            "kayu manis",
+            "cengkeh",
+            "kapulaga",
+            "garam",
+            "air"
+            ],
+            "step_by_step": [
+            "1. Rebus air bersama kayu manis, cengkeh, dan kapulaga hingga harum.",
+            "2. Saring air rempah.",
+            "3. Masukkan gula dan santan, aduk rata.",
+            "4. Masukkan tepung terigu sedikit demi sedikit sambil diaduk agar tidak menggumpal.",
+            "5. Tambahkan garam.",
+            "6. Masak dengan api kecil hingga adonan mengental dan licin.",
+            "7. Sajikan setelah hangat atau dingin."
+            ],
+            "foto_makanan": "KueAsidah.jpg",
+            "rating": 4.5,
+            "jumlah_like": 4300,
+            "id_provinsi": "5",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 24,
+            "nama_makanan": "Air Mata Pengantin",
+            "deskripsi_makanan": "Minuman khas Riau berbahan agar-agar dan biji selasih dengan rasa manis segar.",
+            "resep": [
+            "Agar-agar merah",
+            "biji selasih",
+            "gula pasir",
+            "air",
+            "sirup mawar",
+            "es batu"
+            ],
+            "step_by_step": [
+            "1. Masak agar-agar sesuai petunjuk hingga matang, dinginkan dan potong kecil.",
+            "2. Rendam biji selasih hingga mengembang.",
+            "3. Rebus air dan gula hingga larut, dinginkan.",
+            "4. Campurkan agar-agar, biji selasih, dan air gula.",
+            "5. Tambahkan sirup dan es batu.",
+            "6. Sajikan dingin."
+            ],
+            "foto_makanan": "AirMataPengantin.jpg",
+            "rating": 4.7,
+            "jumlah_like": 6200,
+            "id_provinsi": "5",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 25,
+            "nama_makanan": "Bolu Kemojo",
+            "deskripsi_makanan": "Kue tradisional khas Riau berwarna hijau dengan aroma pandan dan santan.",
+            "resep": [
+            "Tepung terigu",
+            "telur",
+            "santan",
+            "gula pasir",
+            "daun pandan",
+            "garam",
+            "margarin"
+            ],
+            "step_by_step": [
+            "1. Blender santan dengan daun pandan, saring.",
+            "2. Kocok telur dan gula hingga larut.",
+            "3. Masukkan santan pandan dan margarin cair.",
+            "4. Tambahkan tepung terigu dan garam, aduk rata.",
+            "5. Tuang ke loyang.",
+            "6. Panggang hingga matang dan bagian atas kecokelatan.",
+            "7. Dinginkan sebelum dipotong."
+            ],
+            "foto_makanan": "BoluKemojo.jpg",
+            "rating": 4.5,
+            "jumlah_like": 3043,
+            "id_provinsi": "5",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 31,
+            "nama_makanan": "Sate Bandeng",
+            "deskripsi_makanan": "Sate khas Banten berbahan dasar ikan bandeng tanpa duri yang dihaluskan bersama bumbu rempah dan santan, lalu dibakar dalam balutan daun pisang.",
+            "resep": [
+            "2 ekor ikan bandeng sedang",
+            "100g kelapa parut sangrai",
+            "2 butir telur ayam",
+            "100ml santan kental",
+            "Minyak, daun pisang, & bambu penjepit",
+            "Kunyit, bawang merah, bawang putih",
+            "Cabai merah besar, ketumbar, jintan",
+            "Jahe & lengkuas"
+            ],
+            "step_by_step": [
+            "1. Persiapan: Bersihkan ikan, pukul badan ikan hingga daging lepas, keluarkan tulang dan duri tanpa merusak kulit.",
+            "2. Isian: Tumis bumbu halus, masukkan kelapa sangrai dan daging ikan halus. Tambahkan santan hingga mengental, dinginkan, lalu campur telur.",
+            "3. Mengisi: Masukkan adonan isian ke dalam kulit ikan hingga kembali ke bentuk semula.",
+            "4. Panggang: Bungkus daun pisang, jepit bambu, lalu panggang di atas bara api hingga harum dan matang kecoklatan.",
+            "5. Sajikan: Angkat dan sajikan selagi hangat."
+            ],
+            "foto_makanan": "sate_bandeng.jpg",
+            "rating": 4.9,
+            "jumlah_like": 3400,
+            "id_provinsi": "7",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 32,
+            "nama_makanan": "Samosa Serang",
+            "deskripsi_makanan": "Samosa Serang merupakan jajanan camilan khas Banten yang berbentuk segitiga renyah dengan isian daging bumbu kari rempah yang gurih, cocok sebagai pembuka.",
+            "resep": [
+            "Kulit pangsit secukupnya",
+            "250 gr daging giling",
+            "200 gr wortel cincang kecil",
+            "1 sachet bumbu kari",
+            "1 siung bawang bombay cincang",
+            "3 siung bawang putih cincang",
+            "1 batang daun bawang",
+            "2 sdm margarin untuk menumis",
+            "1/2 sdt garam",
+            "1/2 sdt kaldu jamur",
+            "1 sdt gula",
+            "3 sdm tepung terigu (perekat)",
+            "Air secukupnya"
+            ],
+            "step_by_step": [
+            "1. Penumisan: Panaskan margarin, tumis bawang bombay, bawang putih hingga harum, masukan daging, tumis hingga harum dan berubah warna.",
+            "2. Isian: Masukan wortel masak hingga layu, tambahkan daun bawang, bumbu kari tambahkan garam, kaldu jamur dan gula, aduk sampai rata, koreksi rasa.",
+            "3. Pembungkusan: Ambil kulit lumpia, beri isian samosa, lalu beri perekat diujung kulit lumpia lalu lipat bentuk segitiga, lakukan hingga lumpia dan isian habis.",
+            "4. Goreng: Goreng samosa dalam minyak banyak dengan api sedang hingga berwarna kuning kecokelatan.",
+            "5. Penyajian: Tiriskan dan samosa pun siap dinikmati"
+            ],
+            "foto_makanan": "samosa.jpg",
+            "rating": 4.6,
+            "jumlah_like": 560,
+            "id_provinsi": "7",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 33,
+            "nama_makanan": "Kue Pasung",
+            "deskripsi_makanan": "Kue manis berbentuk kerucut yang dibungkus daun pisang, teksturnya kenyal dan legit.",
+            "resep": [
+            "150 gram gula merah, disisir halus",
+            "50 gram gula pasir",
+            "200 ml air",
+            "100 ml santan kental",
+            "100 gram tepung beras",
+            "1 sdm tepung sagu (atau tapioka)",
+            "Sejumput garam",
+            "2 lembar daun pandan (ikat simpul)",
+            "200 ml santan kental (lapisan putih)",
+            "100 ml air (lapisan putih)",
+            "50 gram tepung beras (lapisan putih)",
+            "1 sdm tepung sagu (lapisan putih)",
+            "Daun pisang untuk cetakan kerucut",
+            "Lidi untuk mengunci gulungan"
+            ],
+            "step_by_step": [
+            "1. Siapkan cetakan: Cuci bersih daun pisang, panaskan sebentar di atas api agar lentur. Bentuk menjadi kerucut dan sematkan dengan lidi. Sisihkan.",
+            "2. Buat lapisan coklat (gula merah): Rebus air, gula merah, gula pasir, daun pandan, dan garam hingga gula larut. Saring, lalu campurkan larutan gula dengan santan, tepung beras, dan tepung sagu. Aduk rata.",
+            "3. Buat lapisan putih (santan): Campur santan, air, tepung beras, tepung sagu, dan garam. Aduk rata hingga halus tanpa gumpalan.",
+            "4. Proses pengukusan: Panaskan kukusan. Tuang adonan gula merah ke dalam cetakan (±½ tinggi). Kukus 10–15 menit. Lalu tuang adonan santan putih di atasnya. Kukus kembali 15–20 menit hingga matang sempurna.",
+            "5. Angkat dan sajikan: Biarkan dingin terlebih dahulu agar teksturnya lebih padat. Sajikan langsung dalam kerucut daun pisang."
+            ],
+            "foto_makanan": "kue_pasung.jpg",
+            "rating": 4.5,
+            "jumlah_like": 310,
+            "id_provinsi": "7",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 34,
+            "nama_makanan": "Es Sekemu",
+            "deskripsi_makanan": "Minuman legendaris Banten berisi campuran kelapa muda dan buah sawo dengan kuah segar.",
+            "resep": [
+            "200 gr Gula pasir",
+            "150 ml Air",
+            "1 lembar Daun Pandan",
+            "3 tetes pewarna makanan pandan",
+            "1 sdm biji selasih, rendam air panas",
+            "3-5 Buah Sawo matang, kupas dan potong panjang",
+            "1 Buah Kelapa muda, daging buahnya dikerok",
+            "400-500 ml Air Kelapa",
+            "Es batu secukupnya"
+            ],
+            "step_by_step": [
+            "1. Persiapan: Siapkan semua bahan untuk topping.",
+            "2. Memasak Sirup: Memasak sirup pandan terlebih dahulu dengan siapkan panci lalu campurkan gula pasir, air dan daun pandan.",
+            "3. Pemberian Warna: Tambahkan pewarna makanan pandan, aduk dan masak hingga mendidih. Jika sudah, biarkan sejenak baru matikan kompor lalu tunggu hingga dingin.",
+            "4. Penataan: Siapkan mangkok masukkan es batu yg sudah dihancurkan, beri potongan buah sawo, beri kelapa muda.",
+            "5. Pencampuran: Masukkan sedikit biji selasih, tuang sirup pandan sesuai selera, tuang air kelapa.",
+            "6. Penyajian: Es Sekemu Khas Banten siap disajikan dan dinikmati."
+            ],
+            "foto_makanan": "es_sekemu.jpg",
+            "rating": 4.3,
+            "jumlah_like": 478,
+            "id_provinsi": "7",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 35,
+            "nama_makanan": "Emping Menes",
+            "deskripsi_makanan": "Cemilan kerupuk renyah dari biji melinjo asli daerah Menes, Pandeglang, yang diproses secara tradisional untuk menghasilkan rasa gurih alami.",
+            "resep": [
+            "1 kg Biji melinjo yang sudah tua",
+            "Minyak goreng secukupnya",
+            "Pasir bersih (untuk menyangrai)",
+            "3 siung bawang putih, haluskan (opsional)",
+            "1 sdt garam (opsional)",
+            "100 ml air (opsional)"
+            ],
+            "step_by_step": [
+            "1. Penyangraian: Sangrai biji melinjo bersama pasir bersih di atas wajan tanah liat hingga kulit melinjo menghitam dan panas merata.",
+            "2. Pengupasan Kulit: Angkat melinjo dari wajan, pecahkan kulit kerasnya menggunakan palu kecil selagi panas hingga tersisa biji bagian dalam yang berwarna putih.",
+            "3. Pemipihan: Letakkan 1-3 biji melinjo di atas talenan kayu, lalu pukul menggunakan palu kayu hingga pipih dan berbentuk lingkaran tipis.",
+            "4. Penjemuran: Tata emping di atas tampah, jemur di bawah sinar matahari langsung selama 1-2 hari hingga benar-benar kering dan keras.",
+            "5. Penggorengan: Panaskan minyak dengan api sedang. Goreng emping sebentar hingga mengembang (5-10 detik), angkat, dan tiriskan agar tetap renyah."
+            ],
+            "foto_makanan": "emping_menes.jpg",
+            "rating": 4.8,
+            "jumlah_like": 1200,
+            "id_provinsi": "7",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 36,
+            "nama_makanan": "Soto Betawi",
+            "deskripsi_makanan": "Soto khas Betawi berbahan dasar daging sapi dengan kuah santan atau susu yang gurih, disajikan bersama kentang, tomat, dan emping.",
+            "resep": [
+            "1kg Daging sapi",
+            "3cm Lengkuas",
+            "1 Batang Kayu manis",
+            "4 Lembar Daun salam",
+            "6 Butir Cengkeh",
+            "2 Batang Serai",
+            "1500ml Santan",
+            "500ml Susu Cair",
+            "Minyak Secukupnya",
+            "2L Air",
+            "15 Butir Bawang merah",
+            "8 Siung Bawang putih",
+            "2cm Jahe",
+            "3 Butir Kemiri",
+            "1/2 sdt Jintan",
+            "1 sdm Ketumbar Sangrai",
+            "1 sdt Merica Bubuk",
+            "Garam Secukupnya",
+            "Gula Pasir Secukupnya",
+            "Sambal Cabai Rawit",
+            "2 Batang Daun Bawang",
+            "2 Buah Tomat",
+            "100g Bawang Merah Goreng",
+            "50g Emping Goreng",
+            "4 Buah Jeruk Nipis",
+            "2 Buah Kentang Goreng"
+            ],
+            "step_by_step": [
+            "1. Siapkan bahan. Haluskan bumbu.",
+            "2. Rebus sebentar daging yg sudah dipotong-potong, buang air darahnya. Rebus kembali daging sapi dengan santan.",
+            "3. Tumis bumbu halus bersama lengkuas, daun salam, kayu manis, cengkeh, sereh sampai harum. Masukkan bumbu tumis ke dalam rebusan daging. Didihkan, masak sambil diaduk-aduk supaya santan tidak pecah.",
+            "4. Masukkan susu. Aduk. Beri garam, gula secukupnya. Cicipi. Masak sampai bumbu meresap dan daging empuk.",
+            "5. Sajikan soto bersama bersama pelengkapnya."
+            ],
+            "foto_makanan": "./assets/img/SotoBetawi.jpg",
+            "rating": 5,
+            "jumlah_like": 590,
+            "id_provinsi": "8",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 37,
+            "nama_makanan": "Asinan Betawi",
+            "deskripsi_makanan": "Asinan khas Betawi berupa sayuran segar yang disiram kuah asam, manis, dan pedas, disajikan dingin sebagai hidangan pembuka.",
+            "resep": [
+            "100g Selada Kriting",
+            "100g Sawi Asin",
+            "50g Ketimun",
+            "100g Kubis",
+            "100g Taoge",
+            "50g Wortel",
+            "200g Tahu Putih",
+            "75g Mie Kuning",
+            "500ml Air",
+            "100g Gula Merah",
+            "150g Kacang Tanah Goreng",
+            "3 Buah Cabe Merah Besar",
+            "3 Buah Cabe Rawit",
+            "25g Ebi Sangrai",
+            "2 sdt Cuka",
+            "1 sdt Garam",
+            "25g Gula Pasir",
+            "Kerupuk Mie Goreng",
+            "Kerupuk Merah Goreng",
+            "50g Kacang Tanah Goreng"
+            ],
+            "step_by_step": [
+            "1. Saus: rebus gula merah dan air hingga mendidih, angkat dan saring.",
+            "2. Masukkan bumbu halus, lalu rebus lagi hingga mendidih, angkat dan dinginkan.",
+            "3. Tata sayuran, tahu dan mi dalam piring saji, lalu siram dengan bumbunya.",
+            "4. Sajikan bersama pelengkapnya."
+            ],
+            "foto_makanan": "./assets/img/AsinanBetawi.jpg",
+            "rating": 4.2,
+            "jumlah_like": 300,
+            "id_provinsi": "8",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 38,
+            "nama_makanan": "Roti Buaya",
+            "deskripsi_makanan": "Roti khas Betawi berbentuk buaya yang melambangkan kesetiaan dan biasanya disajikan dalam upacara pernikahan adat Betawi.",
+            "resep": [
+            "150-165 Susu Cair",
+            "1 Butir Telur",
+            "2 sdm Gula Pasir",
+            "5g Ragi Instant",
+            "1 sdt Garam",
+            "1 sdm Minyak Goreng",
+            "300g Tepung Terigu Protein Tinggi"
+            ],
+            "step_by_step": [
+            "1. Siapkan bahan, masukkan susu cair (sisakan 15ml/1 sdm), telur, gula & ragi dalam wadah lalu aduk rata & diamkan sebentar untuk memastikan ragi masih aktif.",
+            "2. Masukkan 1/2 bagian terigu, minyak goreng dan garam lalu aduk rata baru kemudian masukkan sisanya. Jika masih terasa kering masukkan 15 susu yg disisakan tadi. Campur adonan dengan tangan sampai rata.",
+            "3. Bulatkan adonan, tutup dengan serbet dan diamkan selama 1 jam. Setelah 1 jam dan mengembang, kempiskan. Lalu tutup lagi dengan wrap dan simpan di kulkas atau lanjut dibentuk dan dioven. Max simpan di kulkas selama 12 jam.",
+            "4. Dioven : lumuri baking mat dengan tepung, setelah adonan mengembang kempiskan dulu lalu buat bulatan. Sebaiknya bulatan tersebut diistirahatkan selama 10-15 menit supaya mudah dibentuk. Sebelum dipanggang oles dengan kuning telur dan susu.",
+            "5. Sebagian adonan bentuk buaya dengan isian cokelat, SKM dan keju parut. Gunting punggung buaya untuk membuat duri.",
+            "6. Oles kuning telur dan susu lalu panggang.",
+            "7. Roti manis selesai."
+            ],
+            "foto_makanan": "./assets/img/RotiBuaya.jpg",
+            "rating": 4.7,
+            "jumlah_like": 420,
+            "id_provinsi": "8",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 39,
+            "nama_makanan": "Es Selendang Mayang",
+            "deskripsi_makanan": "Minuman khas Betawi berbahan dasar tepung beras dengan kuah santan dan gula merah yang manis dan menyegarkan.",
+            "resep": [
+            "50g Tepung Hunkwe",
+            "2 sdm Tepung Tapioka",
+            "1 sdm Tepung Beras",
+            "3 sdm Gula Pasir",
+            "1/2 sdt Garam",
+            "500ml Air",
+            "Pewarna Makanan Secukupnya",
+            "100ml Santan",
+            "500ml Air",
+            "1/2 sdt Garam",
+            "1/4 sdt Pasta Vanila",
+            "Sirup Cocopandan Secukupnya",
+            "Es Batu Secukupnya"
+            ],
+            "step_by_step": [
+            "1. Masukkan tepung hunkwe, tepung tapioka, tepung beras, gula pasir dan garam ke dalam panci.",
+            "2. Tuang air, lalu aduk hingga tercampur rata. Masak hingga mengental dan meletup-letup.",
+            "3. Olesi alas loyang dengan pewarna merah. Lalu tuang adonan ke dalam loyang. Biarkan set, lalu olesi permukaan adonan dengan pewarna hijau. Biarkan dingin, lalu potong-potong.",
+            "4. Masukkan santan, air, garam dan pasta vanila dalam panci. Aduk rata, lalu masak hingga mendidih. Biarkan dingin.",
+            "5. Tuang sirup cocopandan ke dalam gelas. Tambahkan potongan selendang mayang dan es batu. Lalu tuang kuah santan. Sajikan."
+            ],
+            "foto_makanan": "./assets/img/EsSelendangMayang.jpg",
+            "rating": 4.9,
+            "jumlah_like": 520,
+            "id_provinsi": "8",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 40,
+            "nama_makanan": "Kerak Telor",
+            "deskripsi_makanan": "Cemilan khas Betawi yang terbuat dari beras ketan dan telur, dimasak hingga kering dengan taburan kelapa parut dan ebi, bercita rasa gurih dan khas.",
+            "resep": [
+            "1 Butir Telur",
+            "2 sdm Nasi Ketan",
+            "Kaldu Bubuk Secukupnya",
+            "Garam Secukupnya",
+            "Bawang Goreng Scukupnya",
+            "1 Butir Kelapa Parut",
+            "1/2 sdm Gula Merah",
+            "1 sdt Gula Pasir",
+            "1 sdt Garam",
+            "50g Udang Kering",
+            "1cm Kencur",
+            "5 Siung Bawang Merah",
+            "5 Cabai Merah Besar"
+            ],
+            "step_by_step": [
+            "1. Buat Serundeng : campur kelapa parut, bumbu halus, gula pasir, gula merah dan garam. Aduk rata, sangrai dalam wajan hingga berwarna kuning kecoklatan. Angkat.",
+            "2. Buat Kerak Telur : Dalam mangkuk masukkan telur, nasi ketan, 2 sdt serundeng, tambahkan sejumput kaldu bubuk dan sejumput garam, aduk rata.",
+            "3. Panaskan wajan anti lengket. Tuang sedikit minyak goreng, masukkan adonan nasi, Buat dadar setebal 1 cm. Tutup panci kemudian balik, angkat.",
+            "4. Penyajian : Siapkan piring saji. Taruh dadar kerak telur, taburkan serundeng dan bawang goreng. Sajikan."
+            ],
+            "foto_makanan": "./assets/img/KerakTelor.jpg",
+            "rating": 4.8,
+            "jumlah_like": 1200,
+            "id_provinsi": "8",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 41,
+            "nama_makanan": "Nasi Timbel",
+            "deskripsi_makanan": "Makanan khas Jawa Barat yang dibungkus daun pisang, disajikan dengan lauk sederhana seperti ayam, ikan asin, tahu, tempe, lalapan, dan sambal.",
+            "resep": [
+            "1 Piring Nasi Putih Panas",
+            "2 Lembar Daun Pisang Lebar",
+            "Tempe",
+            "Tahu",
+            "Ayam Goreng",
+            "Ikan asin Goreng",
+            "Telur Dadar",
+            "Aneka Lalapan",
+            "Sambal Terasi"
+            ],
+            "step_by_step": [
+            "1. Siapkan 2 lembar daun pisang yang lebar dan panjang sekitar 2 jengkal kemudian layukan di atas kompor dengan api sedang hingga seluruh permukaan layu, lalu gunting bagian daun kerasnya.",
+            "2. Letakan nasi secukupnya di atas selembar daun lalu gulung secara perlahan, kemudian gulung bagian ujung daun, atas dan bawahnya lalu rapikan.",
+            "3. Susun nasi timbel bersama pelengkapnya, dan siap di nikmati."
+            ],
+            "foto_makanan": "./assets/img/NasiTimbel.jpg",
+            "rating": 5,
+            "jumlah_like": 700,
+            "id_provinsi": "9",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 42,
+            "nama_makanan": "Lotek",
+            "deskripsi_makanan": "Makanan khas Jawa Barat berupa aneka sayuran rebus yang disiram bumbu kacang khas Sunda, rasanya gurih, manis, dan sedikit pedas.",
+            "resep": [
+            "1 Ikat Bayam",
+            "1 Ikat Kangkung",
+            "1 Buah Labu Siam",
+            "50g Taoge",
+            "1 Ikat Kacang Panjang",
+            "3 Lembar Kol",
+            "Air Asam Jawa Secukupnya",
+            "50g Kacang Tanah",
+            "3 Buah Cabe Rawit",
+            "4 Buah Cabe Merah Keriting",
+            "1 Ruas Jari Kencur",
+            "1 sdt Terasi Bakar",
+            "3 Buah Bawang Merah",
+            "2 Siung Bawang Putih",
+            "Gula Merah Secukupnya",
+            "Garam Secukupnya",
+            "Minyak Goreng Secukupnya"
+            ],
+            "step_by_step": [
+            "1. Didih kan air beri garam lalu rebus semua sayuran secara bergantian, setelah matang angkat simpan dalam air dingin, lalu tiriskan dan sisihkan.",
+            "2. Panaskan minyak goreng kacang sampai matang lalu angkat tiriskan.",
+            "3. Lalu goreng cabe, bawang merah, bawang putih sampai matang lalu angkat tiriskan.",
+            "4. Haluskan kacang tanah goreng sampai halus lalu masukan cabe, kencur dan terasi dan gula merah uleg sampai halus.",
+            "5. Setelah halus masukan air asam jawa secara bertahap sampai kekentalan yang diinginkan.",
+            "6. Lalu masukan sayuran rebus aduk rata dan lotek bandung siap di sajikan enjoy."
+            ],
+            "foto_makanan": "./assets/img/Lotek.jpg",
+            "rating": 4.8,
+            "jumlah_like": 200,
+            "id_provinsi": "9",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 43,
+            "nama_makanan": "Colenak",
+            "deskripsi_makanan": "Makanan khas Jawa Barat berbahan dasar tape singkong yang dibakar, lalu disajikan dengan saus gula aren dan parutan kelapa.",
+            "resep": [
+            "200g Tape Singkong",
+            "50g Gula Aren",
+            "100ml Air Putih",
+            "30g Kelapa Parut",
+            "2 Lembar Daun Jeruk",
+            "Garam Secukupnya"
+            ],
+            "step_by_step": [
+            "1. Bakar tape singkong di atas teflon sampai permukaannya agak kering.",
+            "2. Rebus gula aren dan air putih hingga larut.",
+            "3. Masukkan kelapa parut, daun jeruk, dan garam ke dalam larutan gula, aduk rata.",
+            "4. Setelah mendidih, matikan kompor.",
+            "5. Sajikan tape bakar, siram dengan saus gula kelapa."
+            ],
+            "foto_makanan": "./assets/img/Colenak.png",
+            "rating": 4,
+            "jumlah_like": 205,
+            "id_provinsi": "9",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 44,
+            "nama_makanan": "Bandrek",
+            "deskripsi_makanan": "Minuman khas Jawa Barat yang terbuat dari jahe, gula aren, dan rempah-rempah, disajikan hangat untuk menghangatkan tubuh.",
+            "resep": [
+            "500ml Air",
+            "50g Jahe",
+            "1 Batang Serai",
+            "5 Butir Cengkeh",
+            "75g Gula Merah",
+            "1 Lembar Daun Pandan",
+            "1/2 sdt Kayu Manis Bubuk",
+            "1 Sachet SKM"
+            ],
+            "step_by_step": [
+            "1. Siapkan bahan.",
+            "2. Masukkan semua bahan kecuali susu. Rebus dengan api kecil hingga mendidih, tutup panci. Jika sudah mendidih, matikan api. Diamkan sejenak.",
+            "3. Lalu saring dan beri kental manis. Aduk rata, siap disajikan."
+            ],
+            "foto_makanan": "./assets/img/Bandrek.jpg",
+            "rating": 4.5,
+            "jumlah_like": 320,
+            "id_provinsi": "9",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 45,
+            "nama_makanan": "Batagor",
+            "deskripsi_makanan": "Makanan khas Bandung berupa bakso tahu goreng dari campuran ikan dan tepung, disajikan dengan saus kacang dan kecap manis.",
+            "resep": [
+            "250g Ikan Tenggiri",
+            "150g Tapioka",
+            "50ml Air",
+            "3 Siung Bawang Putih",
+            "1 Butir Telur",
+            "2 Batang Daun Bawang",
+            "1/2 sdm Garam",
+            "1/2 sdm Gula",
+            "1/2 sdm Penyedap Rasa",
+            "1/2 sdt Lada",
+            "15-20 lembar Kulit Pangsit",
+            "Minyak Goreng Secukupnya",
+            "Bumbu Kacang Instant Secukupnya"
+            ],
+            "step_by_step": [
+            "1. Campurkan ikan tenggiri, tapioka, bawang putih yang telah dihaluskan, daun bawang yang sudah diiris menjadi satu. Kemudian masukan telur, garam, gula dan penyedap rasa serta lada. Aduk rata kembali, terakhir tambahkan tapioka dan air. Aduk rata, sisihkan.",
+            "2. Lalu ambil satu lembar kulit pangsit, isi tengahnya dengan adonan ikan. Lipat menjadi empat. Lakukan sampai semua adonan dan kulit habis.",
+            "3. Panaskan kukusan, kemudian kukus batagor sampai matang. Batagor yang telah matang dapat diangkat dan didinginkan. Batagor siap digoreng, apabila ingin disimpan, bisa masuk kulkas dalam wadah kedap udara.",
+            "4. Goreng batagor dalam minyak panas sampai keemasan, kemudian sajikan dengan kuah kacang. Selamat mencoba."
+            ],
+            "foto_makanan": "./assets/img/Batagor.jpg",
+            "rating": 5,
+            "jumlah_like": 2200,
+            "id_provinsi": "9",
+            "id_kategori": "5"
+        },
+        {
+            "id_makanan": 46,
+            "nama_makanan": "Soto Banyumas",
+            "deskripsi_makanan": "Soto khas Banyumas dengan ciri khas kuah rempah yang segar, disajikan dengan ketupat, kerupuk merah, dan sambal kacang yang gurih nan kental.",
+            "resep": [
+            "50 gr Soun, rendam air dingin lalu tiriskan",
+            "1 ltr Air",
+            "50 gr Tauge pendek, bersihkan",
+            "3 sdm Kecap manis",
+            "150 gr Kedelai goreng",
+            "3 cm Jahe, geprek",
+            "2 cm Lengkuas, geprek",
+            "2 btg Serai, geprek",
+            "5 btr Bawang merah (bumbu halus)",
+            "5 btr Bawang putih (bumbu halus)",
+            "5 btr Kemiri, sangrai (bumbu halus)",
+            "3 cm Kunyit, bakar (bumbu halus)",
+            "½ sdt Merica bubuk (bumbu halus)",
+            "1 sdt Garam (bumbu halus)",
+            "150 gr Kacang tanah, lembutkan (sambal kacang)",
+            "3 btr Bawang merah & 2 btr Bawang putih (sambal kacang)",
+            "7 btr Cabai rawit merah (sambal kacang)",
+            "1 sdm Gula merah, rajang halus (sambal kacang)",
+            "200 ml Air & 1 sdm Air asam (sambal kacang)",
+            "½ sdt Garam & 2 sdm Minyak goreng (sambal kacang)",
+            "Pelengkap: Seledri, daun bawang, kerupuk, dan bawang goreng."
+            ],
+            "step_by_step": [
+            "1. Pengolahan Kaldu: Rebus air hingga matang, masukan daging dan tunggu hingga matang. Jaga takaran air tetap 1 liter dengan menambahkan air hangat jika berkurang.",
+            "2. Menumis Bumbu: Panaskan minyak dan tumis bumbu halus hingga harum. Tuangkan kaldu, serai, kecap manis, jahe, serta lengkuas. Masak hingga bumbu meresap, lalu angkat dan potong kecil dagingnya.",
+            "3. Membuat Sambal: Campur dan masak semua bahan-bahan sambal kacang hingga matang dan teksturnya mengental, lalu angkat.",
+            "4. Penyajian: Sediakan mangkuk, tambahkan tauge pendek dan soun. Tuangkan kuah soto, lalu taburi dengan seledri, daun bawang, bawang goreng, kedelai goreng, kerupuk, dan sambal kacang.",
+            "5. Hidangan: Soto banyumas siap untuk dinikmati selagi hangat."
+            ],
+            "foto_makanan": "soto_banyumas.jpg",
+            "rating": 4.9,
+            "jumlah_like": 5100,
+            "id_provinsi": "10",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 47,
+            "nama_makanan": "Tahu Petis Semarang",
+            "deskripsi_makanan": "Tahu petis Semarang merupakan tahu pong goreng yang disisipkan saus petis hitam kental di tengahnya, memberikan perpaduan rasa gurih, manis, dan aroma udang yang khas.",
+            "resep": [
+            "1½ sdm petis udang",
+            "3 siung bawang putih, haluskan",
+            "1 sdt garam",
+            "300 ml air",
+            "2 sdm kecap manis",
+            "50 gr gula aren",
+            "2 sdm minyak goreng",
+            "3 sdm tepung beras, larutkan",
+            "15 buah tahu ukuran besar, bagi menjadi 2 buah segitiga",
+            "20 buah cabai rawit"
+            ],
+            "step_by_step": [
+            "1. Penggorengan Tahu: Goreng tahu hingga matang dan bagian kulitnya sedikit kering, lalu angkat dan sisihkan.",
+            "2. Menumis Bumbu Petis: Tumis bawang putih hingga harum. Kemudian, masukkan petis dan garam, masak hingga aromanya keluar.",
+            "3. Memasak Saus: Tambahkan air dan semua bahan lainnya, kecuali larutan tepung beras. Masak adonan hingga mendidih.",
+            "4. Pengentalan: Masukkan larutan tepung beras, aduk cepat hingga rata. Masak terus adonan petis hingga teksturnya mengental sempurna.",
+            "5. Pengisian: Belah tahu di bagian tengah secara mendatar, pastikan jangan sampai putus.",
+            "6. Penyajian: Isi bagian tengah tahu dengan petis secukupnya. Sajikan Tahu Petis Semarang bersama cabai rawit hijau."
+            ],
+            "foto_makanan": "tahu_petis.jpg",
+            "rating": 4.7,
+            "jumlah_like": 2800,
+            "id_provinsi": "10",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 48,
+            "nama_makanan": "Carica Dieng",
+            "deskripsi_makanan": "Carica adalah manisan buah legendaris khas Dataran Tinggi Dieng, Wonosobo, yang sering dijuluki sebagai 'Buah Para Dewa'. Buah ini hanya dapat tumbuh di wilayah pegunungan yang dingin seperti Dieng. Memiliki tekstur daging yang kenyal dan rasa asam yang unik, buah ini diolah menjadi manisan segar dengan sirup kental yang berasal dari sari bijinya sendiri, menciptakan cita rasa manis alami yang sangat ikonik bagi wisatawan yang berkunjung ke pegunungan tengah Jawa Tengah ini.",
+            "resep": [
+            "1 kg buah carica",
+            "1500 ml air",
+            "200-250 gr gula pasir",
+            "1/2 sdt garam"
+            ],
+            "step_by_step": [
+            "1. Persiapan Buah: Kupas buah carica (jangan lupa alasi tangan dengan plastik karena getahnya gatal), lalu cuci sampai bersih.",
+            "2. Pemisahan Isi: Belah dua carica, lalu ambil bagian isiannya.",
+            "3. Perebusan Sari: Masukkan isian carica ke dalam panci, tambahkan juga 500 ml air, masak sampai mendidih sambil diaduk-aduk.",
+            "4. Penyaringan: Saring dan agak ditekan, agar keluar sarinya.",
+            "5. Pembuatan Kuah: Pindahkan lagi ke dalam panci. Masukkan 1000 ml air, gula pasir, dan garam. Aduk rata, kemudian nyalakan api, masak sampai mendidih.",
+            "6. Memasak Buah: Masukkan buah carica yang sudah dipotong-potong, lalu masak sampai carica matang.",
+            "7. Pendinginan: Dinginkan, lalu simpan di kulkas minimal selama 3 jam."
+            ],
+            "foto_makanan": "carica.jpg",
+            "rating": 4.8,
+            "jumlah_like": 3900,
+            "id_provinsi": "10",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 49,
+            "nama_makanan": "Es Dawet Ayu",
+            "deskripsi_makanan": "Es Dawet Ayu adalah minuman tradisional ikonik asal Banjarnegara, Jawa Tengah, yang telah melegenda di seluruh nusantara. Ciri khasnya terletak pada cendol berwarna hijau alami dari daun pandan yang kenyal, disiram dengan santan gurih dan gula aren asli yang kental. Aroma nangka yang sering ditambahkan ke dalam sirup gulanya memberikan kesegaran ganda, menjadikannya pelepas dahaga yang sempurna di tengah teriknya cuaca.",
+            "resep": [
+            "250 gr tepung tapioka (cendol)",
+            "250 gr tepung beras (cendol)",
+            "600 ml air matang (cendol)",
+            "100 ml air sari daun pandan (cendol)",
+            "Es serut secukupnya (cendol)",
+            "1 liter santan",
+            "3 lembar daun pandan (santan)",
+            "1/2 sdt garam (santan)",
+            "500 gr gula aren sisir (larutan gula)",
+            "50 gr gula pasir putih (larutan gula)",
+            "250 ml air (larutan gula)"
+            ],
+            "step_by_step": [
+            "1. Membuat Adonan Cendol: Rebus air, daun pandan, tepung tapioka dan tepung beras. Aduk rata. Rebus hingga mengental. Siapkan baskom berisi air dingin dan es batu. Masukkan adonan panas ke cetakan cendol, tekan hingga jatuh ke baskom berisi es agar kaku dan terpisah.",
+            "2. Membuat Kuah Santan: Rebus santan bersama dengan daun pandan dan garam hingga mendidih. Aduk terus agar santan tidak pecah. Jika sudah mendidih, angkat dan dinginkan.",
+            "3. Membuat Larutan Gula Merah: Rebus air bersama dengan gula merah dan gula putih sampai mendidih. Aduk rata hingga gula larut sempurna. Angkat dan dinginkan.",
+            "4. Penyajian: Siapkan mangkok atau gelas, masukkan larutan gula merah, cendol, dan es batu serut. Guyur dengan kuah santan di atasnya.",
+            "5. Hidangan: Es dawet ayu asli banjarnegara sudah siap untuk dinikmati."
+            ],
+            "foto_makanan": "dawet.jpg",
+            "rating": 4.9,
+            "jumlah_like": 10800,
+            "id_provinsi": "10",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 50,
+            "nama_makanan": "Lumpia Semarang",
+            "deskripsi_makanan": "Lumpia Semarang adalah perpaduan budaya kuliner Tionghoa dan Jawa yang melegenda. Isian utamanya berupa rebung (bambu muda) yang diolah sedemikian rupa hingga aromanya sedap, dipadukan dengan gurihnya udang dan ayam. Dibungkus dengan kulit yang tipis dan digoreng hingga garing, kudapan ini menjadi oleh-oleh wajib dan ikon kuliner kebanggaan ibu kota Jawa Tengah.",
+            "resep": [
+            "200 gram tepung terigu (kulit)",
+            "1 butir telur (kulit)",
+            "300 ml air (kulit)",
+            "1/2 sendok teh garam (kulit)",
+            "1 sendok makan minyak sayur (kulit)",
+            "200 gram rebung, iris tipis dan rebus (isian)",
+            "100 gram udang cincang (isian)",
+            "100 gram daging ayam cincang (isian)",
+            "2 siung bawang putih & 2 butir bawang merah, cincang halus (isian)",
+            "Kecap manis, saus tiram, garam, merica, dan gula pasir (isian)",
+            "2 sendok makan minyak untuk menumis (isian)"
+            ],
+            "step_by_step": [
+            "1. Membuat Kulit: Campurkan tepung, telur, garam, dan air hingga licin. Tambah minyak, aduk rata. Dadar tipis di wajan anti lengket hingga matang. Ulangi sampai habis.",
+            "2. Membuat Isian: Tumis bawang merah dan putih hingga harum. Masukkan udang dan ayam, aduk hingga berubah warna. Tambahkan rebung dan semua bumbu. Masak sampai meresap, lalu angkat dan dinginkan.",
+            "3. Membungkus: Ambil selembar kulit, beri isian tumisan rebung secukupnya. Lipat sisi kanan dan kiri, gulung perlahan, lalu rekatkan ujungnya dengan sedikit air atau putih telur.",
+            "4. Menggoreng: Panaskan minyak dalam jumlah banyak. Goreng lumpia hingga berwarna kuning keemasan dan teksturnya renyah.",
+            "5. Penyajian: Angkat, tiriskan, dan sajikan bersama acar mentimun, cabai rawit, atau saus kental khas lumpia."
+            ],
+            "foto_makanan": "lumpia_semarang.jpg",
+            "rating": 4.9,
+            "jumlah_like": 6590,
+            "id_provinsi": "10",
+            "id_kategori": "5"
+        }
+    ]
+}
