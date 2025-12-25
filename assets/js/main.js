@@ -3,6 +3,7 @@
 let initialProfile = {};
 
 const STORAGE_KEY = "la-forchetta-profile";
+const STORAGE_KEY_RATING = "la-forchetta-ratings";
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 let userLogin = localStorage.getItem("la-forchetta-user-login");
@@ -114,6 +115,7 @@ function showDropdownProfile(){
 
 function initial(){
     setNameUserLogin();
+    setTotalRatingMakananByComments();
 
     let currentUrl = window.location.href;
     currentUrl = currentUrl.split("/");
@@ -147,6 +149,18 @@ const setNameUserLogin = () => {
         loginIconMenu.classList.remove("bi-box-arrow-in-right");
         loginIconMenu.classList.add("bi-box-arrow-in-left");
         loginMenu.innerText = "Keluar";
+    }
+}
+
+const setTotalRatingMakananByComments = async () => {
+    const ratingStorage = localStorage.getItem(STORAGE_KEY_RATING);
+
+    if (ratingStorage == null){
+        const dataRating = await fetch("https://dummyjson.com/c/7b89-7430-43b3-a03f");
+    
+        let rating = await dataRating.json();
+
+        localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(rating["ratings"]));
     }
 }
 

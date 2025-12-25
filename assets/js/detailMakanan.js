@@ -1,6 +1,7 @@
 const month = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Oct", "Nov", "Des"];
 const commentKeyStorage = "la-forchetta-comment";
-
+const params = new URLSearchParams(window.location.search);
+const idMakanan = parseInt(params.get("id"));
 
 document.addEventListener("click", function(){
     let strId = event.target.dataset['id'];
@@ -27,13 +28,7 @@ let initialize = async () => {
     if(!isDataCommentAvailable){
         let res = await fetch("https://dummyjson.com/c/fd5d-2881-4a4c-bc72");
         let data = await res.json();
-
-        let dataComments = data["comments"].filter((data) => {
-            return data["id_makanan"] == 1; //ubah jadi id makanan
-        });
-
-
-        localStorage.setItem(commentKeyStorage, JSON.stringify(dataComments));
+        localStorage.setItem(commentKeyStorage, JSON.stringify(data["comments"]));
     }
 
     const users = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
@@ -42,10 +37,12 @@ let initialize = async () => {
 
     const commentSection = document.getElementById("commentSection");
 
-    dataComments = localStorage.getItem(commentKeyStorage);
+    let dataComments = localStorage.getItem(commentKeyStorage);
     dataComments = JSON.parse(dataComments);
 
-    Array.from(dataComments).forEach((val, i) => {
+    let newdataComments = dataComments.map(e => e).filter((data) => data["id_makanan"] == idMakanan);
+
+    Array.from(newdataComments).forEach((val, i) => {
         let user = userData.filter((user) => {
             return user["id"] == val["id_user"];
         });
@@ -83,7 +80,7 @@ let initialize = async () => {
         commentSection.prepend(div);
     });
 
-    calculationgRating(dataComments);
+    calculationgRating(newdataComments);
 }
 
 const setNameCommentUser = (user) => {
@@ -97,20 +94,92 @@ const setNameCommentUser = (user) => {
 }
 
 const initializeContent = async () => {
-    let params = new URLSearchParams(window.location.search);
-    let id = params.get("id");
+    const foodImage = document.getElementById("foodImage");
+    const provinsi = document.getElementById("provinsi");
+    const category = document.getElementById("category");
+    const foodName = document.getElementById("foodName");
+    const foodNameResponsive = document.getElementById("foodNameResponsive");
+    const foodDesc = document.getElementById("foodDesc");
+    const resep = document.getElementById("resep");
+    const stepByStep = document.getElementById("stepByStep");
+    const containerDetailMakanan = document.getElementById("containerDetailMakanan");
+    const detailMakanan404 = document.getElementById("containerDetailMakanan404");
+
 
     const makanan = await fetch("https://dummyjson.com/c/35ce-16d4-490b-84b1");
     let dataMakanan = await makanan.json();
+    let newDataMakanan;
 
     Array.from(dataMakanan["makanan"]).forEach(elm => {
-        if (elm["id_makanan"] == id){
-            dataMakanan = elm;
+        if (elm["id_makanan"] == idMakanan){
+            newDataMakanan = elm;
+            return;
         }
     });
 
-}
+    if (newDataMakanan != undefined){
+        containerDetailMakanan.classList.remove("d-none");
+        detailMakanan404.classList.add("d-none");
 
+        let res = await fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c");  
+    
+        let dataProvinsi = await res.json();
+        
+        dataProvinsi = dataProvinsi["provinsi"].filter((data) => {
+            return data.id == newDataMakanan["id_provinsi"];
+        });
+    
+        res = await fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70");
+        let dataCategory = await res.json();
+    
+        dataCategory = dataCategory["categories"].filter((data) => {
+            return data.id == newDataMakanan["id_kategori"];
+        });
+
+
+    
+        foodImage.src = `./assets/image/foodImage/${newDataMakanan["foto_makanan"]}`;
+        provinsi.innerText = dataProvinsi[0].nama;
+        category.innerText = dataCategory[0].category;
+        foodName.innerText = newDataMakanan["nama_makanan"];
+        foodNameResponsive.innerText = newDataMakanan["nama_makanan"];
+        foodDesc.innerText = newDataMakanan["deskripsi_makanan"];
+        
+    
+        let ul = document.createElement("ul");
+    
+        newDataMakanan["resep"].forEach(elm => {
+            const li = document.createElement("li");
+            const p = document.createElement("p");
+    
+            p.innerText = elm;
+    
+            li.append(p);
+            ul.append(li);
+        });
+    
+        resep.appendChild(ul);
+    
+    
+        ul = document.createElement("ul");
+        newDataMakanan["step_by_step"].forEach(elm => {
+            const li = document.createElement("li");
+            li.classList.add("list-group-item");
+            const p = document.createElement("p");
+    
+            p.innerText = elm;
+    
+            li.append(p);
+            ul.append(li);
+        });
+    
+        stepByStep.appendChild(ul);
+    }else {
+        containerDetailMakanan.classList.add("d-none");
+        detailMakanan404.classList.remove("d-none");
+    }
+
+}
 
 const calculationgRating = (comments) => {
     const progRating5 = document.getElementById("progressRating5");
@@ -159,11 +228,25 @@ const calculationgRating = (comments) => {
     
     let ratingAverage = parseFloat(totalAllRating / comments.length);
 
+    let dataRating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
+    
+    let rating = dataRating.filter((data) => {
+        return data["id_makanan"] == idMakanan;
+    });
+
+
     ratingAverage = ratingAverage.toLocaleString('en', {maximumSignificantDigits : 2});
 
     if (ratingAverage > 5){
         ratingAverage = 5.0;
     }
+
+    rating[0]["total_rating"] = ratingAverage;
+
+    let indexRatingMakanan = dataRating.map(e => e.id_makanan).indexOf(parseInt(idMakanan));
+    dataRating[indexRatingMakanan] = rating[0];
+    
+    localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(dataRating));
 
     totalRating5 = (totalRating5 / comments.length) * 100;
     totalRating4 = (totalRating4 / comments.length) * 100;
@@ -185,7 +268,6 @@ const calculationgRating = (comments) => {
 
     ratingLabel.innerText = ratingAverage;
     ratingCategory.innerText = ratingAverage;
-
 }
  
 const createDateFormat = (dateNow) => {
@@ -245,14 +327,13 @@ function addComment(){
 
     let date = createDateFormat(d);
 
-    
     if ((rating.value != "" && comment.value != "") && (rating.value >= 0 && rating.value <= 5)){
         let dataComments = JSON.parse(localStorage.getItem(commentKeyStorage));
         
         // pengisian data
         let obj = {
             id : dataComments.length,
-            id_makanan: 1, //ubah id makanan yg sesuai,
+            id_makanan: idMakanan, //ubah id makanan yg sesuai,
             id_user: 1, //ubah id user yg sesuai,
             rating: parseInt(rating.value),
             komen: comment.value,
@@ -262,6 +343,8 @@ function addComment(){
         dataComments.push(obj);
         
         localStorage.setItem(commentKeyStorage, JSON.stringify(dataComments));
+
+        let newdataComments = dataComments.map(e => e).filter((data) => data["id_makanan"] == idMakanan);
 
         let elm = 
             '<div class="profile-border profile-comment">' + 
@@ -284,7 +367,7 @@ function addComment(){
         rating.value = "";
         comment.value = "";
 
-        calculationgRating(dataComments);
+        calculationgRating(newdataComments);
     }
 }
 

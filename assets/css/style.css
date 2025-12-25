@@ -896,7 +896,7 @@ textarea:focus {
   text-align: center;
 }
 .food-label {
-  width: 40% !important;
+  width: auto;
   /* min-width: 70% !important; */
   height: 30px;
   padding: 2px 20px;
@@ -922,6 +922,10 @@ textarea:focus {
   max-height: 40px;
   border-radius: 25px;
   margin-left: 20px;
+}
+.food-notfound{
+  max-width: 100%;
+  height: auto;
 }
 
 /* --- FOOTER --- */
