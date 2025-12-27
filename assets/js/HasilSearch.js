@@ -42,9 +42,7 @@ async function tryLoadWishlistIdsFromApi() {
     if (!res.ok) throw new Error(`wishlist HTTP ${res.status}`);
     const data = await res.json();
 
-    // Perhatikan: struktur API kamu kemungkinan { wishlists: [...] }
     const list = Array.isArray(data.wishlists) ? data.wishlists : [];
-    // filter by user (kalau ada id_user)
     const ids = new Set(
       list
         .filter(w => String(w.id_user) === String(USER_ID))
@@ -56,11 +54,7 @@ async function tryLoadWishlistIdsFromApi() {
     return null;
   }
 }
-
-// OPTIONAL: SYNC WRITE wishlist to API (BEST EFFORT)
 async function trySyncWishlistToApi(action, idMakanan) {
-  // action: "add" | "remove"
-  // Banyak endpoint dummyjson custom itu READ-ONLY. Jadi ini best effort.
   try {
     const method = action === "add" ? "POST" : "DELETE";
     const res = await fetch(API_WISHLIST, {
@@ -169,18 +163,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // load state dulu (biar gak kosong)
   let state = loadState();
-
-  // ===== FETCH MAKANAN (INI WAJIB, JANGAN DIBLOCK) =====
   try {
     const res = await fetch(API_MAKANAN);
     if (!res.ok) throw new Error(`makanan HTTP ${res.status}`);
     const data = await res.json();
     const makanan = Array.isArray(data.makanan) ? data.makanan : [];
-
-    // OPTIONAL: coba ambil wishlist dari API (non-blocking)
     const wishlistIds = await tryLoadWishlistIdsFromApi();
     if (wishlistIds) {
-      // merge ke state (biar icon saved nyala sesuai API)
       wishlistIds.forEach(id => {
         const fs = getFoodState(state, String(id));
         fs.saved = true;
