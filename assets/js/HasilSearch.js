@@ -1,128 +1,260 @@
-// Ambil parameter search
-const params = new URLSearchParams(window.location.search);
-const keyword = params.get("q");
+// ===== CONFIG =====
+const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
+const API_WISHLIST = "https://dummyjson.com/c/c42d-933e-41ca-8c5e";
 
-// Elemen DOM
-const foodList = document.getElementById("food-list");
-const searchTitle = document.getElementById("search-title");
+// "User" versi frontend (sementara)
+const USER_ID = localStorage.getItem("current_user_id") || "1";
+const STORAGE_KEY = `laforchetta_state_user_${USER_ID}`;
 
-// DATA MAKANAN
-const foods = [
-  {
-    name: "Gado-gado",
-    image: "./assets/img/Gadogado.jpg",
-    desc: "Salad khas Indonesia dengan saus kacang"
-  },
-  {
-    name: "Rendang",
-    image: "./assets/img/Rendang.jpg",
-    desc: "Masakan Minangkabau berbahan daging sapi"
-  },
-  {
-    name: "Tongseng",
-    image: "./assets/img/Tongseng.jpg",
-    desc: "Masakan berkuah khas Jawa Tengah"
-  },
-  {
-    name: "Nasi Uduk",
-    image: "./assets/img/NasiUduk.jpg",
-    desc: "Nasi santan dengan lauk pauk"
-  },
-  {
-    name: "Ayam Betutu",
-    image: "./assets/img/AyamBetutu.jpg",
-    desc: "Masakan khas Bali berbumbu rempah"
-  },
-  {
-    name: "Ayam Geprek",
-    image: "./assets/img/AyamGeprek.jpg",
-    desc: "Ayam goreng geprek sambal pedas"
+// ===== STORAGE HELPERS =====
+function loadState() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+  } catch {
+    return {};
   }
-];
+}
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function getFoodState(state, id) {
+  state.foods = state.foods || {};
+  state.foods[id] = state.foods[id] || {
+    saved: false,
+    liked: false,
+    likeCount: 0,
+    comments: []
+  };
+  return state.foods[id];
+}
 
-// 🚫 BELUM SEARCH
-if (!keyword || keyword.trim() === "") {
-  searchTitle.innerText = "Silakan masukkan kata kunci pencarian.";
-  foodList.innerHTML = "";
-} 
-// ✅ SUDAH SEARCH
-else {
-  const keywordLower = keyword.toLowerCase();
-  searchTitle.innerText = `Hasil pencarian untuk: "${keyword}"`;
+// ===== URL SEARCH =====
+function getKeyword() {
+  const params = new URLSearchParams(window.location.search);
+  return (params.get("q") || "").trim().toLowerCase();
+}
 
-  const results = foods.filter(food =>
-    food.name.toLowerCase().includes(keywordLower)
-  );
+// ===== OPTIONAL: SYNC READ wishlist from API (NON-BLOCKING) =====
+async function tryLoadWishlistIdsFromApi() {
+  // Ini jangan bikin render mati kalau error
+  try {
+    const res = await fetch(API_WISHLIST);
+    if (!res.ok) throw new Error(`wishlist HTTP ${res.status}`);
+    const data = await res.json();
 
-  foodList.innerHTML = results.map(food => `
-  <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-    <div class="card">
+    // Perhatikan: struktur API kamu kemungkinan { wishlists: [...] }
+    const list = Array.isArray(data.wishlists) ? data.wishlists : [];
+    // filter by user (kalau ada id_user)
+    const ids = new Set(
+      list
+        .filter(w => String(w.id_user) === String(USER_ID))
+        .map(w => String(w.id_makanan))
+    );
+    return ids;
+  } catch (e) {
+    console.warn("Wishlist API gagal, fallback storage:", e.message);
+    return null;
+  }
+}
 
-      <!-- Gambar -->
-      <a href="detail-makanan.html">
-        <img src="${food.image}"
-             class="card-img-top"
-             alt="${food.name}">
-      </a>
+// OPTIONAL: SYNC WRITE wishlist to API (BEST EFFORT)
+async function trySyncWishlistToApi(action, idMakanan) {
+  // action: "add" | "remove"
+  // Banyak endpoint dummyjson custom itu READ-ONLY. Jadi ini best effort.
+  try {
+    const method = action === "add" ? "POST" : "DELETE";
+    const res = await fetch(API_WISHLIST, {
+      method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id_user: Number(USER_ID), id_makanan: Number(idMakanan) })
+    });
+    if (!res.ok) throw new Error(`sync HTTP ${res.status}`);
+  } catch (e) {
+    console.warn("Sync wishlist ke API gagal (gapapa):", e.message);
+  }
+}
 
-      <div class="card-body">
+// ===== RENDER =====
+function renderCards(makananList, state) {
+  const foodList = document.getElementById("food-list");
+  if (!foodList) return;
 
-        <div class="d-flex justify-content-between align-items-start">
-          <a href="detail-makanan.html"
-             class="text-decoration-none text-dark">
-            <h5 class="card-title">${food.name}</h5>
+  if (!makananList.length) {
+    foodList.innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-warning mb-0">Tidak ada hasil yang cocok.</div>
+      </div>
+    `;
+    return;
+  }
+
+  let html = "";
+  makananList.forEach(item => {
+    const id = String(item.id_makanan);
+    const fs = getFoodState(state, id);
+
+    html += `
+      <div class="col-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+          <a href="detail-makanan.html?id=${id}">
+            <img
+              src="./assets/img/${item.foto_makanan}"
+              class="card-img-top"
+              alt="${item.nama_makanan}"
+              onerror="this.onerror=null; this.src='./assets/img/placeholder.jpg';"
+            />
           </a>
 
-          <!-- Bookmark -->
-          <div class="bookmark-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
-                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                            </svg>
-                        </div>
-                    </div>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start">
+              <a href="detail-makanan.html?id=${id}" class="text-decoration-none text-dark">
+                <h5 class="card-title">${item.nama_makanan}</h5>
+              </a>
 
-        <p class="card-text text-truncate-multiline">
-          ${food.desc}
-        </p>
+              <!-- SAVE -->
+              <div class="bookmark-wrapper ${fs.saved ? "active" : ""}"
+                   role="button"
+                   data-action="save"
+                   data-id="${id}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                  <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                </svg>
+              </div>
+            </div>
 
-        <div class="d-flex justify-content-between align-items-center mt-1">
+            <p class="card-text text-truncate-multiline">${item.deskripsi_makanan || ""}</p>
 
-          <!-- Like -->
-          <button type="button"
-            class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
-            data-liked="false">
-            <i class="bi bi-heart"></i>
-            <span class="like-count">0</span>
-          </button>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <!-- LIKE -->
+              <button type="button"
+                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                data-action="like"
+                data-id="${id}">
+                <i class="bi ${fs.liked ? "bi-heart-fill" : "bi-heart"}"></i>
+                <span class="like-count">${fs.likeCount}</span>
+              </button>
 
-          <!-- Comment -->
-          <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
-            <i class="bi bi-chat-dots"></i>
-            <span class="comment-count">0</span>
+              <!-- COMMENT -->
+              <button type="button"
+                class="btn btn-comment p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1 text-muted"
+                data-action="comment"
+                data-id="${id}">
+                <i class="bi bi-chat-dots"></i>
+                <span class="comment-count">${(fs.comments || []).length}</span>
+              </button>
+            </div>
           </div>
-
         </div>
       </div>
-    </div>
-  </div>
-`).join("");
+    `;
+  });
 
-if (results.length === 0) {
-  foodList.innerHTML = `
-    <p class="text-muted">
-      Tidak ditemukan makanan dengan kata kunci "${keyword}"
-    </p>
-  `;
+  foodList.innerHTML = html;
 }
 
-document.querySelectorAll('.bookmark-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', function(e) {
-        e.preventDefault(); // Mencegah link jika ada
-        this.classList.toggle('active');
+document.addEventListener("DOMContentLoaded", async () => {
+  const searchTitle = document.getElementById("search-title");
+  const foodList = document.getElementById("food-list");
+  const keyword = getKeyword();
+
+  if (searchTitle) {
+    searchTitle.textContent = keyword ? `Hasil Pencarian: "${keyword}"` : "Hasil Pencarian";
+  }
+
+  // load state dulu (biar gak kosong)
+  let state = loadState();
+
+  // ===== FETCH MAKANAN (INI WAJIB, JANGAN DIBLOCK) =====
+  try {
+    const res = await fetch(API_MAKANAN);
+    if (!res.ok) throw new Error(`makanan HTTP ${res.status}`);
+    const data = await res.json();
+    const makanan = Array.isArray(data.makanan) ? data.makanan : [];
+
+    // OPTIONAL: coba ambil wishlist dari API (non-blocking)
+    const wishlistIds = await tryLoadWishlistIdsFromApi();
+    if (wishlistIds) {
+      // merge ke state (biar icon saved nyala sesuai API)
+      wishlistIds.forEach(id => {
+        const fs = getFoodState(state, String(id));
+        fs.saved = true;
+      });
+      saveState(state);
+    }
+
+    const hasil = keyword
+      ? makanan.filter(item => {
+          const nama = (item.nama_makanan || "").toLowerCase();
+          const desk = (item.deskripsi_makanan || "").toLowerCase();
+          return nama.includes(keyword) || desk.includes(keyword);
+        })
+      : makanan;
+
+    renderCards(hasil, state);
+
+    // ===== CLICK HANDLERS =====
+    foodList.addEventListener("click", async (e) => {
+      const el = e.target.closest("[data-action]");
+      if (!el) return;
+
+      const action = el.dataset.action;
+      const id = String(el.dataset.id);
+      state = loadState();
+      const fs = getFoodState(state, id);
+
+      if (action === "save") {
+        fs.saved = !fs.saved;
+        saveState(state);
+        el.classList.toggle("active", fs.saved);
+
+        // best-effort sync ke API (kalau bisa)
+        await trySyncWishlistToApi(fs.saved ? "add" : "remove", id);
+        return;
+      }
+
+      if (action === "like") {
+        fs.liked = !fs.liked;
+        fs.likeCount = Math.max(0, (fs.likeCount || 0) + (fs.liked ? 1 : -1));
+        saveState(state);
+
+        const icon = el.querySelector("i");
+        const count = el.querySelector(".like-count");
+        if (icon) {
+          icon.classList.toggle("bi-heart-fill", fs.liked);
+          icon.classList.toggle("bi-heart", !fs.liked);
+        }
+        if (count) count.textContent = String(fs.likeCount);
+        return;
+      }
+
+      if (action === "comment") {
+        const text = prompt("Tulis komentar:");
+        if (!text) return;
+
+        fs.comments = fs.comments || [];
+        fs.comments.push(text.trim());
+        saveState(state);
+
+        const count = el.querySelector(".comment-count");
+        if (count) count.textContent = String(fs.comments.length);
+        return;
+      }
     });
-});
 
-}
+  } catch (err) {
+    console.error(err);
+    if (foodList) {
+      foodList.innerHTML = `
+        <div class="col-12">
+          <div class="alert alert-danger mb-0">Gagal ambil data makanan dari API.</div>
+        </div>
+      `;
+    }
+  }
+});
