@@ -42,6 +42,17 @@ h5 {
   display: flex;
 }
 
+.breadcrumb-item > a{
+  color: #800037 !important;
+  text-decoration: underline !important;
+}
+
+.breadcrumb-item.active{
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+
 /* navbar */
 .btn-search {
   padding: 0 10px;
