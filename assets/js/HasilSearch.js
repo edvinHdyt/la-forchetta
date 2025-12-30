@@ -15,11 +15,9 @@ function debugApi(label, data) {
   console.log(`[${label}] keys:`, Object.keys(data || {}));
 }
 
-// "User" versi frontend (sementara)
 const USER_ID = localStorage.getItem("current_user_id") || "1";
 const STORAGE_KEY = `laforchetta_state_user_${USER_ID}`;
 
-// ===== STORAGE HELPERS =====
 function loadState() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -47,7 +45,6 @@ function getKeyword() {
   return (params.get("q") || "").trim().toLowerCase();
 }
 
-// ===== OPTIONAL: SYNC READ wishlist from API (NON-BLOCKING) =====
 async function tryLoadWishlistIdsFromApi() {
   try {
     const res = await fetch(API_WISHLIST);
@@ -103,8 +100,6 @@ function resolveImageSrc(foto) {
   return `./assets/image/foodImage/${s}`;
 }
 
-
-// ===== RENDER =====
 function renderCards(makananList, state) {
   const foodList = document.getElementById("food-list");
   if (!foodList) return;
@@ -123,23 +118,20 @@ function renderCards(makananList, state) {
     const id = String(item.id_makanan);
     const fs = getFoodState(state, id);
 
-    // ✅ INI YANG LU LUPA: define imgSrc dulu
     const imgSrc = resolveImageSrc(item.foto_makanan);
-
-    // ✅ DEBUG YANG BENER (sekarang gak bakal error)
     console.log("IMG DEBUG:", item.nama_makanan, item.foto_makanan, "=>", imgSrc);
 
     html += `
-<div class="col-12 col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100">
-    <a href="detail-makanan.html?id=${id}">
-      <img
-        src="${imgSrc}"
-        class="card-img-top"
-        alt="${item.nama_makanan || "Food"}"
-        onerror="this.onerror=null; this.src='./assets/image/foodImage/placeholder.jpg';"
-      />
-    </a>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <a href="detail-makanan.html?id=${id}">
+          <img
+            src="${imgSrc}"
+            class="card-img-top"
+            alt="${item.nama_makanan || "Food"}"
+            onerror="this.onerror=null; this.src='./assets/image/foodImage/placeholder.jpg';"
+          />
+        </a>
 
     <div class="card-body d-flex flex-column">
 
@@ -203,8 +195,9 @@ function renderCards(makananList, state) {
   </div>
 </div>
 `;
-  });
-  foodList.innerHTML = html;
+});
+
+foodList.innerHTML = html;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -212,7 +205,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const foodList = document.getElementById("food-list");
   const keyword = getKeyword();
 
-  // ⬇️ INI DIA TEMPATNYA
   document
     .querySelectorAll('input[type="search"][name="q"]')
     .forEach(input => {
@@ -225,10 +217,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       : "Hasil Pencarian";
   }
 
-  // lanjut kode fetch & render...
-
-
-  // load state dulu (biar gak kosong)
   let state = loadState();
   try {
     const res = await fetch(API_MAKANAN);
@@ -237,9 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     debugApi("MAKANAN", data);
 
-    // ini penting: jangan ngotot data.makanan
     const makanan = pickArray(data, ["makanan", "foods", "data", "items", "results"]);
-
 
     if (!keyword) {
       searchTitle.textContent = "Masukkan kata kunci pencarian";
@@ -253,8 +239,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     renderCards(hasil, state);
-
-    // ===== CLICK HANDLERS =====
     foodList.addEventListener("click", async (e) => {
       const el = e.target.closest("[data-action]");
       if (!el) return;
@@ -268,8 +252,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         fs.saved = !fs.saved;
         saveState(state);
         el.classList.toggle("active", fs.saved);
-
-        // best-effort sync ke API (kalau bisa)
         await trySyncWishlistToApi(fs.saved ? "add" : "remove", id);
         return;
       }
