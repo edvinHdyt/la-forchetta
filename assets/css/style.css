@@ -300,8 +300,7 @@ textarea:focus {
 }
 .profile-dropdown-link:hover {
   background-color: #800037;
-  color: #ffff !important;
-}
+  color: #ffff !important; }
 
 /* ini untuk dashboard (inna)*/
 /* header */
@@ -347,6 +346,41 @@ textarea:focus {
   filter: brightness(0) invert(1);
   width: 40px;
   height: 40px; }
+/* responsiveness max-width:576px */
+
+/* na pagination */
+.pagination .page-link {
+  color: #800037;               
+  border: 1px solid #800037;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out; }
+.pagination .page-link:hover {
+  color: #fff;
+  background-color: #e9609b;
+  border-color: #e9609b; }
+.pagination .page-item.active .page-link {
+  color: #fff;
+  background-color: #800037;
+  border-color: #800037;
+  font-weight: 600; }
+.pagination .page-item.disabled .page-link {
+  color: #c2c2c2;
+  background-color: #f8f8f8;
+  border-color: #e0e0e0;
+  cursor: not-allowed; }
+.pagination .page-item {
+  margin-left: 4px; }
+
+@media (max-width: 576px) {
+  .pagination .page-link {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+}
+
 
 /* Dashboard Elin  */
 .filter-box {
@@ -356,24 +390,19 @@ textarea:focus {
 @media (min-width: 768px) {
   .filter-box {
     position: sticky; } }
-
 main .container .card-img-top {
   height: 150px;
   object-fit: cover;
   width: 100%; }
-
 .card {
   border-radius: 10px;
   position: relative;
   display: flex; }
-
 .card-body {
   padding: 0.5rem; }
-
 .card-img-top {
   height: 110px;
   object-fit: cover; }
-
 .card-title {
   display: -webkit-box;
   line-height: 1.3;
@@ -382,47 +411,26 @@ main .container .card-img-top {
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 0.875rem;
-  font-weight: 600; 
-}
-
+  font-weight: 600; }
 .text-truncate-multiline {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden; 
   font-size: 0.75rem;}
-
-/* ternyata mainin di html wwkwk */
-/* @media (min-width: 768px) and (max-width:1023px){
-main .container .card-img-top {
-  height: 100px;
-  object-fit: cover;
-  width: 100%; }
-.form-label {
-    font-size: 0.875rem; }
- } */
-
-/* mobile s */
-/* @media (max-width:320) {
-  .card-img-top {
-  height: 1/1;
-  object-fit: cover; }
-} */
-
 @media (min-width: 1024px) {
   .card-title {
     font-size: 1rem;
     -webkit-line-clamp: 1;  }
   .text-truncate-multiline {
     font-size: 0.875rem;
-    -webkit-line-clamp: 3; } }
-
+    -webkit-line-clamp: 2; } 
+}
 .filter-img {
   width: 100%;
   max-width: 260px;
   margin-top: auto;
   align-self: center; }
-
 .bookmark-wrapper {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.8);
@@ -432,18 +440,14 @@ main .container .card-img-top {
     justify-content: center;
     transition: all 0.2s ease;
     color: #800037; }
-
 .icon-fill {
     display: none; }
-
 .bookmark-wrapper.active {
     color: #fff; }
-
 .bookmark-wrapper.active .icon-outline {
     display: none; }
 .bookmark-wrapper.active .icon-fill {
     display: block; }
-
 .bookmark-wrapper:hover {
   color: #e9609b;
   background-color: #ffffff;
@@ -452,8 +456,6 @@ main .container .card-img-top {
   color: #800037;
   background-color: #ffffff;
   transform: scale(1.2); } 
-
-
 .heart-icon {
   position: absolute;
   top: 215px;
@@ -462,69 +464,49 @@ main .container .card-img-top {
   color: #800037;
   cursor: pointer;
   border-radius: 20%;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
+  transition: color 0.2s ease, transform 0.2s ease; }
 .heart-icon:hover {
   color: #e9609b;
   background-color: #ffffff;
-  transform: scale(1.2);
-}
-
-
+  transform: scale(1.2); }
 .btn-like {
   color: #800037;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.2s ease; }
-
 .btn-like i,
 .btn-like span {
   transition: color 0.25s ease; }
-
 .btn-like:hover {
   color: #e9609b;
   transform: scale(1.05); }
-
 .btn-like.liked {
   color: #e9609b; }
-
 .btn-comment {
   color: #800037;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.2s ease; }
-
 .btn-comment i,
 .btn-comment span {
   color:#0153ce;
   transition: color 0.25s ease; }
-
 .btn-comment:hover {
   color: #89b8ff;
   transform: scale(1.05); }
-
 .btn-like {
   position: relative;
-  z-index: 200;
-}
-
+  z-index: 200; }
 .bookmark-icon {
   color: #800037;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
+  transition: transform 0.2s ease, color 0.2s ease; }
 .bookmark-icon:hover {
   transform: scale(1.15);
   color: #e63946; 
-  transform: scale(1,1);
-}
-
+  transform: scale(1,1); }
 .bookmark-icon.active {
   color: #e63946;
   fill: #e63946;
-  stroke: #e63946;
-}
-
+  stroke: #e63946; }
 .bookmark-icon.active path { 
   fill: currentColor; }
 
@@ -681,16 +663,14 @@ main .container .card-img-top {
   width: 400px;
   height: 30px; } */
 .profile-wrapper {
-  position: relative;
-}
+  position: relative; }
 .profile-photo {
   width: 90px;
   height: 90px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #800037;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
-}
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); }
 .edit-btn {
   /*icon pensil */
   position: absolute;
@@ -703,8 +683,7 @@ main .container .card-img-top {
   justify-content: center;
   font-size: 14px;
   border: 2px solid #800037;
-  color: #800037;
-}
+  color: #800037; }
 .edit-btn:hover {
   background-color: #800037;
   color: #f4f4f4; 
@@ -715,29 +694,24 @@ main .container .card-img-top {
 .profile-card .btn {
   font-size: 0.85rem;
   padding: 5px 15px;
-  border-radius: 6px;
-}
+  border-radius: 6px; }
 #editBttnn {
   background-color: #800037;
   border-color: #e9609b;
-  color: white;
-}
+  color: white; }
 #editBttnn:hover {
   background-color: white;
   border-color: #e9609b;
-  color: #800037;
-}
+  color: #800037; }
 /* Tombol Save */
 .profile-card .btn-success {
   width: 100px;
   background-color: #800037;
-  border-color: white;
-}
+  border-color: white; }
 .profile-card .btn-success:hover {
   background-color: #ffffff;
   border-color: #e9609b;
-  color: #800037;
-}
+  color: #800037; }
 /* konfirmasi perubahan profil */
 .confirm-overlay {
   position: fixed;
@@ -746,35 +720,28 @@ main .container .card-img-top {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
-}
+  z-index: 999; }
 .confirm-card {
   width: 300px;
   border-radius: 16px;
-  font-size: 16px;
-}
+  font-size: 16px; }
 .confirm-card #confirmText {
-  color: #000000;
-}
+  color: #000000; }
 .confirm-card .btn {
   font-size: 0.85rem;
-  padding: 5px 18px;
-}
+  padding: 5px 18px; }
 .confirm-card .btn-outline-secondary {
   border-color: #e9609b;
   background-color: white;
-  color: #800037;
-}
+  color: #800037; }
 .confirm-card .btn-outline-secondary:hover {
   border-color: #e9609b;
   background-color: #800037;
-  color: white;
-}
+  color: white; }
 .confirm-card .btn-success {
   border-color: #e9609b;
   background-color: #800037;
-  color: white;
-}
+  color: white; }
 .confirm-card .btn-success:hover {
   background-color: white;
   color: #800037; }
@@ -817,9 +784,7 @@ main .container .card-img-top {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
-  } 
-  }
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); } }
 
 /* ini untuk detail makanan */
 .img-thumbnail {
