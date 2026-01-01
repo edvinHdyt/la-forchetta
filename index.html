@@ -3,76 +3,599 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Makanan</title>
+    <title>Home La-Forchetta</title>
+    <link rel="icon" type="image/x-icon" href="./assets/image/favicon/favicon.ico">
     <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-        <div class="container d-flex justify-content-beetween align-items-center">
-            <h2 class="logo mt-1">
-                <a href="#">La Forchetta</a>
-            </h2>
-            <form action="" method="post" class="form-input">
-                <div class="input-group search-bar">
-                    <input type="text" class="form-control" placeholder="Cari makanan">
-                    <button class="input-group-text" type="submit" id="basic-addon2">Search</button>
-                </div>
-            </form>
-            <div class="d-flex ms-2">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Wishlist Makanan</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Archive Makanan</a>
-                    </li>
-                </ul>
-                <div class="profile-border">
+    <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
+        <div class="dropdown-profile">
+          <ul class="list-item">
+            <li>
+                <a href="#" class="profile-dropdown-link d-none" id="userProfileName">
                     <i class="bi bi-person-fill"></i>
+                    John Doe
+                </a>
+            </li>
+             <li>
+                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                    <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
+                    Masuk
+                </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center" id="navbar">
+            <div class="container">
+                <h2 class="logo mt-2">
+                    <a href="index.html">La Forchetta</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs" data-id="activatedMenu">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html" >Wishlist Makanan</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="archieve.html" >Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form action="HasilSearch.html" method="GET"  class="d-flex" role="search">
+                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search" name="q"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                        <i class="bi bi-list" data-id="showDropdownMenu"></i>
+                    </button>
+                    <div class="profile-border" data-id="dropdownProfile">
+                        <!-- <i class="bi bi-person-fill" data-id="dropdownProfile"></i> -->
+                          <div class="nav-profile-wrapper" data-id="dropdownProfile">
+                            <img id="navProfilePhoto" class="nav-profile-photo" src="./assets/image/SVG/defaultProfile.svg" alt="Profile photo" data-id="dropdownProfile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
+            <div class="container">
+                <div class="navbar-dropdown-item" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactUs" data-id="activatedMenu">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wishlist.html" >Wishlist Makanan</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="archieve.html" >Archive Makanan</a>
+                        </li>
+                    </ul>
+                    <form action="HasilSearch.html" method="GET"  class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
+
+   
+    <main>
+    <!-- Header -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="./assets/img/makan01.jpg" class="d-block w-100" alt="slide 1">
+                <div class="carousel-caption custom-caption">
+                    <h2>Welcome to La Forchetta</h2>
+                    <p>Discover the finest culinary experience</p>
+                </div>
+            </div>
+        <div class="carousel-item">
+            <img src="./assets/img/makan02.jpg" class="d-block w-100" alt="slide 2">
+                <div class="carousel-caption custom-caption">
+                    <h2>Delicious Menus</h2>
+                    <p>Fresh, tasty, and made with love</p>
+                </div>
+            </div>
+        <div class="carousel-item">
+            <img src="./assets/img/makan03.jpg" class="d-block w-100" alt="slide 3">
+                <div class="carousel-caption custom-caption">
+                    <h2>Authentic Food Taste</h2>
+                    <p>The best dishes crafted by experts</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
     <!-- body -->
-    <main>
-        <div class="container">
-         <!-- ubah untuk body -->
+    <div class="container px-2 mt-6">
+        <div class="row mt-4 d-flex align-items-stretch">
+            <!-- Kolom Filter Kiri -->
+            <div class="col-lg-3 col-md-4 col-12 d-flex mb-3">
+                <div class="card p-3 filter-box w-100">
+                    <h5 class="mb-3">Filter</h5>
+
+                    <!-- Provinsi -->
+                    <label class="form-label">Provinsi</label>
+                    <select class="form-select mb-3">
+                        <option selected disabled>Pilih Provinsi</option>
+                        <option>Aceh</option>
+                        <option>Sumatera Utara</option>
+                        <option>Sumatera Barat</option>
+                        <option>Riau</option>
+                        <option>Jambi</option>
+                        <option>Sumatera Selatan</option>
+                        <option>Banten</option>
+                        <option>DKI Jakarta</option>
+                        <option>Jawa Barat</option>
+                        <option>Jawa Tengah</option>
+                    </select>
+
+                    <!-- Jenis Makanan -->
+                    <label class="form-label">Jenis Makanan</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih Jenis</option>
+                        <option>Makanan Utama</option>
+                        <option>Appetizer</option>
+                        <option>Dessert</option>
+                        <option>Pencuci Mulut</option>
+                        <option>Minuman</option>
+                        <option>Cemilan</option>
+                    </select>
+                    <img src="./assets/img/orangkrem.svg" class="filter-img d-none d-md-block" alt="Orang Krem">
+                </div>
+            </div>
+
+            <!-- Kolom Makanan Dashboard -->
+            <div class="col-lg-9 col-md-8 col-12 mb-3">
+                <div class="row g-3">
+
+                    <!-- Card makanan 1 -->
+                    <div class="col-12 col-md-6 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/Gadogado.jpg"
+                            class="card-img-top"
+                            alt="Gado - gado">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Gado - gado</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Gado-gado adalah hidangan salad khas Indonesia yang terdiri dari aneka sayuran rebus,
+                            tahu, tempe, dan telur rebus yang disiram saus kacang kental berbumbu manis, gurih,
+                            dan pedas, serta ditaburi bawang goreng dan emping.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                <button type="button" 
+                                onclick="toggleArchive(this)"
+                                data-id="1" 
+                                data-judul="Gado - gado" 
+                                data-image="./assets/img/Gadogado.jpg" 
+                                data-deskripsi="Gado-gado adalah hidangan salad khas Indonesia yang terdiri dari aneka sayuran rebus,
+                                                tahu, tempe, dan telur rebus yang disiram saus kacang kental berbumbu manis, gurih,
+                                                dan pedas, serta ditaburi bawang goreng dan emping."
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+
+
+                    <!-- Card makanan 2 -->
+                    <div class="col-12 col-md-6 col-sm-6  col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/Rendang.jpg"
+                            class="card-img-top"
+                            alt="Gado - gado">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Rendang</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Rendang adalah masakan khas Minangkabau berbahan dasar daging sapi yang dimasak perlahan dengan santan dan campuran rempah-rempah khas hingga menghasilkan cita rasa gurih, pedas, dan kaya bumbu.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                onclick="toggleArchive(this)"
+                                data-id="2" 
+                                data-judul="Rendang" 
+                                data-image="./assets/img/Rendang.jpg" 
+                                data-deskripsi="Rendang adalah masakan khas Minangkabau berbahan dasar daging sapi yang dimasak perlahan dengan santan dan campuran rempah-rempah khas hingga menghasilkan cita rasa gurih, pedas, dan kaya bumbu."
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <!-- Card makanan 3 -->
+                    <div class="col-12 col-md-6 col-sm-6  col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/Tongseng.jpg"
+                            class="card-img-top"
+                            alt="Tongseng">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Tongseng</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Tongseng adalah masakan berkuah khas Jawa Tengah yang terbuat dari daging kambing atau sapi dengan irisan kol dan tomat, dimasak menggunakan bumbu rempah yang gurih, manis, dan sedikit pedas.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-id="3" 
+                                data-judul="Tonseng" 
+                                data-image="./assets/img/Tongseng.jpg" 
+                                data-deskripsi="Tongseng adalah masakan berkuah khas Jawa Tengah yang terbuat dari daging kambing atau sapi dengan irisan kol dan tomat, dimasak menggunakan bumbu rempah yang gurih, manis, dan sedikit pedas."                                
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                    <!-- Card makanan 4 -->
+                    <div class="col-12 col-md-6 col-sm-6  col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/NasiUduk.jpg"
+                            class="card-img-top"
+                            alt="Nasi Uduk">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Nasi Uduk</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Nasi uduk adalah hidangan nasi khas Indonesia yang dimasak dengan santan dan rempah-rempah, disajikan dengan lauk pauk seperti ayam goreng, telur balado, tempe orek, dan sambal kacang.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-id="4" 
+                                data-judul="NasiUduk" 
+                                data-image="./assets/img/NasiUduk.jpg" 
+                                data-deskripsi="Nasi uduk adalah hidangan nasi khas Indonesia yang dimasak dengan santan dan rempah-rempah, disajikan dengan lauk pauk seperti ayam goreng, telur balado, tempe orek, dan sambal kacang."                                
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+                    <!-- Card makanan 5 -->
+                    <div class="col-12 col-md-6 col-sm-6  col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/AyamBetutu.jpg"
+                            class="card-img-top"
+                            alt="Ayam Betutu">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Ayam Betutu</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Ayam betutu adalah hidangan khas Bali yang terbuat dari ayam atau bebek utuh yang dibumbui dan dipanggang atau direbus dalam waktu lama hingga empuk.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-id="5" 
+                                data-judul="Ayam betutu" 
+                                data-image="./assets/img/AyamBetutu.jpg" 
+                                data-deskripsi="Ayam betutu adalah hidangan khas Bali yang terbuat dari ayam atau bebek utuh yang dibumbui dan dipanggang atau direbus dalam waktu lama hingga empuk."                                
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <!-- Card makanan 6 -->
+                    <div class="col-12 col-md-6 col-sm-6  col-lg-4 col-xl-3">
+                    <div class="card">
+                        
+                        <!-- Gambar -->
+                        <a href="detail-makanan.html">
+                        <img src="./assets/img/AyamGeprek.jpg"
+                            class="card-img-top"
+                            alt="Ayam Geprek">
+                        </a>
+
+                        <div class="card-body">
+                        
+                        
+                        <div class="d-flex justify-content-between align-items-start">
+                        <a href="detail-makanan.html"
+                            class="text-decoration-none text-dark">
+                            <h5 class="card-title">Ayam Geprek</h5>
+                        </a>
+                        
+                        <!-- Bookmark -->
+                         <div class="bookmark-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                        <p class="card-text text-truncate-multiline">
+                            Ayam geprek adalah hidangan ayam goreng tepung renyah khas Indonesia yang "digeprek" (ulek/tumbuk) bersama sambal pedas, seringkali sambal bawang, hingga dagingnya menyatu dengan sambal, menawarkan sensasi pedas, gurih, dan tekstur renyah yang khas, disajikan biasanya dengan nasi dan lalapan.
+                        </p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+
+                        <!-- Like -->
+                        <button type="button"
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
+                                data-id="6" 
+                                data-judul="Ayam Geprek" 
+                                data-image="./assets/img/AyamGeprek.jpg" 
+                                data-deskripsi="Ayam geprek adalah hidangan ayam goreng tepung renyah khas Indonesia yang digeprek (ulek/tumbuk) bersama sambal pedas, seringkali sambal bawang, hingga dagingnya menyatu dengan sambal, menawarkan sensasi pedas, gurih, dan tekstur renyah yang khas, disajikan biasanya dengan nasi dan lalapan."                                
+                                data-liked="false"
+                                aria-label="Like">
+                            <i class="bi bi-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+
+                        <!-- Comment -->
+                        <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="comment-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
 
    <!-- footer -->
-      <footer class="main-footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-title">Contact Us</h3>
-          <p>Email: info@forchetta.com</p>
-          <p>Telepon: (021) 1234 5678</p>
-        </div>
-        <div class="footer-section">
-          <h3 class="footer-title">Media Sosial</h3>
-          <ul class="social-links">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3 class="footer-title">Forchetta</h3>
-          <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
-        </div>
-      </div>
+     <footer class="main-footer mt-5 static-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <p>Email: info@forchetta.com</p>
+                    <p>Telepon: (021) 1234 5678</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-6">
+                    <h3 class="footer-title">Media Sosial</h3>
+                    <ul class="social-links">
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-link-item">
+                            <a href="#">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
+                </div>
+          </div>
+            </div>
     </footer>
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
 </body>
 </html>
