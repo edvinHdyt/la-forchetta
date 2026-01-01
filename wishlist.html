@@ -22,23 +22,26 @@
   </head>
   <body>
     <!-- navbar -->
-    <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
-        <div class="dropdown-profile">
-          <ul class="list-item">
-            <li>
-                <a href="#" class="profile-dropdown-link d-none" id="userProfileName">
-                    <i class="bi bi-person-fill"></i>
-                    John Doe
-                </a>
-            </li>
-             <li>
-                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
-                    <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
-                    Masuk
-                </a>
-            </li>
-          </ul>
-        </div>
+    <div
+      class="container sticky-top hide-dropdown-profile-container d-none"
+      id="dropdownProfile"
+    >
+      <div class="dropdown-profile">
+        <ul class="list-item">
+          <li>
+            <a href="profil.html" class="profile-dropdown-link">
+              <i class="bi bi-person-fill"></i>
+              John Doe
+            </a>
+          </li>
+          <li>
+            <a href="profil.html" class="profile-dropdown-link">
+              <i class="bi bi-box-arrow-in-left"></i>
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <header class="sticky-top">
       <nav
@@ -96,7 +99,7 @@
                 <img
                   id="navProfilePhoto"
                   class="nav-profile-photo"
-                  src="./assets/image/SVG/defaultProfile.svg"
+                  src="./assets/img/parkjisung.jpg"
                   alt="Profile photo"
                   data-id="dropdownProfile"
                 />
@@ -195,21 +198,70 @@
       </div>
     </footer>
     <!-- MODAL KONFIRMASI HAPUS -->
-    <div id="deleteModal" class="custom-modal">
-      <div class="custom-modal-content">
-        <h5>Konfirmasi</h5>
-        <p>Yakin hapus item ini?</p>
-
-        <div class="modal-actions">
-          <button id="cancelDelete" class="btn-cancel">Cancel</button>
-          <button id="confirmDelete" class="btn-confirm">OK</button>
+    <div
+      id="deleteModal"
+      class="custom-modal"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      "
+    >
+      <div
+        class="custom-modal-content"
+        style="
+          background-color: white;
+          margin: 15% auto;
+          padding: 20px;
+          border-radius: 8px;
+          width: 320px;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <h5 class="fw-bold">Konfirmasi</h5>
+        <p>Yakin ingin menghapus item ini dari wishlist?</p>
+        <div class="modal-actions d-flex justify-content-center gap-2 mt-4">
+          <button id="cancelDelete" class="btn btn-secondary btn-sm px-4">
+            Batal
+          </button>
+          <button id="confirmDelete" class="btn btn-danger btn-sm px-4">
+            Ya, Hapus
+          </button>
         </div>
       </div>
-      <script src="./assets/vendor/jquery/jquery.min.js"></script>
-      <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
+    </div>
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
 
-      <script src="./assets/js/main.js"></script>
-      <script src="./assets/js/wishlist.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 9999"
+    >
+      <div
+        id="liveToast"
+        class="toast align-items-center text-white border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body" id="toastMessage"></div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

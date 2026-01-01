@@ -1,91 +1,173 @@
-let DUMMY_DATA = [
-  {
-    id: 1,
-    nama: "Nasi Goreng Spesial",
-    deskripsi: "Nasi goreng dengan bumbu rahasia dan topping melimpah.",
-    foto: "./assets/img/Nasigoreng.jpg",
-  },
-  {
-    id: 2,
-    nama: "Sate Ayam Madura",
-    deskripsi: "Daging ayam empuk dengan bumbu kacang kental khas Madura.",
-    foto: "./assets/img/sateayam.jpg",
-  },
-];
+"use strict";
 
-let selectedDeleteId = null;
-let wishlistContainer = null;
+/* ===== CONFIG & STORAGE ===== */
+const WISHLIST_KEY = "la-forchetta-wishlist";
+const USER_ID = 1;
+const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
 
-document.addEventListener("DOMContentLoaded", () => {
-  wishlistContainer = document.getElementById("wishlist-data-container");
-
-  const modal = document.getElementById("deleteModal");
-  const cancelBtn = document.getElementById("cancelDelete");
-  const confirmBtn = document.getElementById("confirmDelete");
-
-  cancelBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
-    selectedDeleteId = null;
-  });
-
-  confirmBtn.addEventListener("click", () => {
-    DUMMY_DATA = DUMMY_DATA.filter((item) => item.id !== selectedDeleteId);
-    modal.classList.remove("show");
-    fetchWishlist();
-  });
-
-  fetchWishlist();
-});
-
-function fetchWishlist() {
-  wishlistContainer.innerHTML = `<p class="col-12 text-center fst-italic text-muted">Memuat Wishlist...</p>`;
-
-  setTimeout(() => renderWishlist(DUMMY_DATA), 500);
+function getAllWishlist() {
+  return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
 }
 
-function renderWishlist(items) {
-  wishlistContainer.innerHTML = "";
+function saveWishlist(data) {
+  localStorage.setItem(WISHLIST_KEY, JSON.stringify(data));
+}
 
-  if (items.length === 0) {
-    wishlistContainer.innerHTML = `<p class="col-12 text-center fst-italic text-muted">Wishlist kosong.</p>`;
+/* ===== API DATA ===== */
+async function getFoods() {
+  try {
+    const res = await fetch(API_MAKANAN);
+    const data = await res.json();
+    return data.products || data.makanan || data;
+  } catch (error) {
+    console.error("Gagal mengambil data API:", error);
+    return [];
+  }
+}
+
+/* ===== FUNGSI NOTIFIKASI CUSTOM (VERSI HIJAU) ===== */
+function showNotification(message, type = "success") {
+  const toastElement = document.getElementById("liveToast");
+  const toastMessage = document.getElementById("toastMessage");
+
+  if (!toastElement || !toastMessage) return;
+
+  // Set Warna (Success = Hijau bg-success, Danger = Merah bg-danger)
+  toastElement.classList.remove("bg-success", "bg-danger");
+  toastElement.classList.add(type === "success" ? "bg-success" : "bg-danger");
+
+  // Set Pesan
+  toastMessage.innerText = message;
+
+  // Jalankan Toast Bootstrap
+  const toast = new bootstrap.Toast(toastElement);
+  toast.show();
+}
+
+/* ===== 1. CREATE (Tambah ke Wishlist) ===== */
+function addToWishlist(id_makanan) {
+  let data = getAllWishlist();
+
+  const exists = data.find(
+    (w) => w.id_makanan == id_makanan && w.id_user == USER_ID
+  );
+
+  if (exists) {
+    showNotification("Makanan sudah ada di wishlist ❤️", "danger");
     return;
   }
 
-  items.forEach((item) => {
-    wishlistContainer.innerHTML += `
-      <div class="col">
-        <div class="card food-card h-100 shadow-sm wishlist-card"
-        data-id="${item.id}">
-
-          <img src="${item.foto}" class="food-img" alt="${item.nama}">
-
-          <div class="card-body">
-            <h5 class="card-title">${item.nama}</h5>
-            <p class="card-text text-muted">${item.deskripsi}</p>
-
-            <button class="btn-hapus remove-btn w-100" data-id="${item.id}">
-              <i class="bi bi-trash"></i> Hapus
-            </button>
-          </div>
-        </div>
-      </div>`;
+  data.push({
+    id_user: USER_ID,
+    id_makanan: id_makanan,
   });
 
-  wishlistContainer.addEventListener("mousedown", (e) => {
-    // klik tombol hapus
-    const deleteBtn = e.target.closest(".remove-btn");
-    if (deleteBtn) {
-      e.stopPropagation();
-      selectedDeleteId = parseInt(deleteBtn.dataset.id);
-      document.getElementById("deleteModal").classList.add("show");
-      return;
-    }
+  saveWishlist(data);
+  showNotification("Berhasil masuk wishlist!", "success");
 
-    // klik card ke detail
-    const card = e.target.closest(".wishlist-card");
-    if (card) {
-      const id = card.dataset.id;
-      window.location.href = `detail-makanan.html?id=${id}`;
+  if (document.getElementById("wishlist-data-container")) {
+    renderWishlist();
+  }
+}
+
+/* ===== 2. READ (Tampilkan Wishlist) ===== */
+async function renderWishlist() {
+  const container = document.getElementById("wishlist-data-container");
+  if (!container) return;
+
+  container.innerHTML = `<p class="col-12 text-center text-muted">Memuat Wishlist...</p>`;
+
+  const wishlists = getAllWishlist().filter((w) => w.id_user == USER_ID);
+  const foods = await getFoods();
+
+  if (wishlists.length === 0) {
+    container.innerHTML = `<p class="col-12 text-center text-muted fst-italic py-5">Wishlist masih kosong</p>`;
+    return;
+  }
+
+  container.innerHTML = "";
+
+  wishlists.forEach((w) => {
+    const food = foods.find((f) => f.id_makanan == w.id_makanan);
+
+    if (food) {
+      // Tentukan lokasi folder tempat Anda menyimpan gambar tadi
+      const pathFolder = "assets/img/";
+
+      container.innerHTML += `
+  <div class="col">
+    <div class="card shadow-sm border-0">
+      <a href="detail-makanan.html?id=${food.id_makanan}" class="card-clickable-link">
+        
+        <img src="${pathFolder}${food.foto_makanan}" class="card-img-top" alt="${food.nama_makanan}">
+        
+        <div class="card-body">
+          <h5 class="card-title">${food.nama_makanan}</h5>
+          <p class="card-text text-muted">${food.deskripsi_makanan}</p>
+        </div>
+      </a>
+      
+      <div class="btn-hapus-container" style="padding: 0 15px 15px 15px;">
+        <button onclick="showDeleteModal(${food.id_makanan})" class="btn-hapus">
+          <i class="bi bi-trash"></i> Hapus dari Wishlist
+        </button>
+      </div>
+    </div>
+  </div>`;
     }
   });
 }
+
+/* ===== 3. DELETE (Hapus dengan Modal) ===== */
+let idMakananYangAkanDihapus = null;
+
+function showDeleteModal(id) {
+  idMakananYangAkanDihapus = id;
+  const modal = document.getElementById("deleteModal");
+  if (modal) {
+    modal.style.display = "block";
+    modal.classList.add("show");
+  }
+}
+
+function closeDeleteModal() {
+  const modal = document.getElementById("deleteModal");
+  if (modal) {
+    modal.style.display = "none";
+    modal.classList.remove("show");
+  }
+  idMakananYangAkanDihapus = null;
+}
+
+function confirmDelete() {
+  if (idMakananYangAkanDihapus !== null) {
+    const currentWishlist = getAllWishlist();
+    const updatedWishlist = currentWishlist.filter(
+      (w) => !(w.id_makanan == idMakananYangAkanDihapus && w.id_user == USER_ID)
+    );
+
+    saveWishlist(updatedWishlist);
+    renderWishlist();
+    closeDeleteModal();
+    showNotification("Item berhasil dihapus!", "success");
+  }
+}
+
+/* ===== INITIALIZE ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("wishlist-data-container")) {
+    renderWishlist();
+  }
+
+  document
+    .getElementById("confirmDelete")
+    ?.addEventListener("click", confirmDelete);
+  document
+    .getElementById("cancelDelete")
+    ?.addEventListener("click", closeDeleteModal);
+
+  window.addEventListener("click", (event) => {
+    const modal = document.getElementById("deleteModal");
+    if (event.target == modal) closeDeleteModal();
+  });
+});
