@@ -3,7 +3,7 @@
 /* ===== CONFIG & STORAGE ===== */
 
 // const userLogin.id_user = 1;
-const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
+const API_MAKANAN = "https://dummyjson.com/c/a9df-4a0d-4043-9ef8";
 
 function getAllWishlist() {
   return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
@@ -48,6 +48,7 @@ function showNotification(message, type = "success") {
 function addToWishlist(id_makanan) {
   if (userLogin == null){
     window.location.href="login-page.html";
+    return;
   }
 
 
@@ -61,7 +62,7 @@ function addToWishlist(id_makanan) {
     // showNotification("Makanan sudah ada di wishlist ❤️", "danger");
     idMakananYangAkanDihapus = id_makanan;
     confirmDelete();
-    showNotification("Item berhasil dihapus!", "success");
+    showNotification("Item berhasil dihapus dari wishlist!", "success");
     return;
   }
 
@@ -100,7 +101,7 @@ async function renderWishlist() {
 
     if (food) {
       // Tentukan lokasi folder tempat Anda menyimpan gambar tadi
-      const pathFolder = "assets/img/";
+      const pathFolder = "./assets/image/foodImage/";
 
       container.innerHTML += `
   <div class="col">
@@ -157,7 +158,7 @@ function confirmDelete() {
     saveWishlist(updatedWishlist);
     renderWishlist();
     closeDeleteModal();
-    showNotification("Item berhasil dihapus!", "success");
+    showNotification("Item berhasil dihapus dari wishlist!", "success");
   }
 }
 

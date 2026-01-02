@@ -16,58 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// api dashboard - inna
-let allFoods = [];
-let filteredFoods = [];
-let currentPage = 1;
-const PAGE_SIZE = 6;
-
-document.addEventListener("DOMContentLoaded", () => {
-  const provinsiSelect = document.getElementById("provinsiSelect");
-  const kategoriSelect = document.getElementById("kategoriSelect");
-
-    // load Provinsi
-    fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c")
-      .then(res => res.json())
-      .then(data => {
-        (data.provinsi || []).forEach(p => {
-          const option = document.createElement("option");
-          option.value = String(p.id).trim();
-          option.textContent = p.nama;
-          provinsiSelect.appendChild(option);
-        });
-      })
-      .catch(err => console.error("Gagal Mengambil Data Provinsi:", err));
-
-    // load Kategori
-    fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70")
-      .then(res => res.json())
-      .then(data => {
-        (data.categories || []).forEach(c => {
-          const option = document.createElement("option");
-          option.value = String(c.id).trim();
-          option.textContent = c.category;
-          kategoriSelect.appendChild(option);
-        });
-      })
-      .catch(err => console.error("Gagal Mengambil Data Kategori:", err));
-
-  loadData();
-
-    //logic back
-    provinsiSelect.addEventListener("change", () => {
-      currentPage = 1;       // reset prov
-      applyFilter(); });
-    kategoriSelect.addEventListener("change", () => {
-      currentPage = 1;       // reset kategori
-      applyFilter();
-    });
-});
-
 // ambil data makanan
 async function loadData() {
   try {
-    const res = await fetch("https://dummyjson.com/c/5953-8a63-40d9-8670");
+    const res = await fetch("https://dummyjson.com/c/a9df-4a0d-4043-9ef8");
     const data = await res.json();
     allFoods = data.makanan || [];
       filteredFoods = allFoods;
@@ -76,7 +28,7 @@ async function loadData() {
   catch (err) {
     console.error("Gagal Mengambil Data Makanan:", err); 
   } 
-  }
+}
 
 // filtering sijakk
 function applyFilter() {
@@ -118,14 +70,32 @@ function renderCards(foods, wishlistData) {
     if (!container || !template) return;
     container.innerHTML = "";
 
+  let likedCountData = localStorage.getItem(STORAGE_KEY_LIKED_FOODS);
+  likedCountData = likedCountData == null ? likedCountData : JSON.parse(likedCountData);
+
+  let dataComment = localStorage.getItem(commentKeyStorage);
+  dataComment = dataComment == null ? dataComment : JSON.parse(dataComment);
+
   const frag = document.createDocumentFragment();
 
     foods.forEach(food => {
+      let newLikedCountData = likedCountData.filter((data) => {
+        return data["id_makanan"] == food["id_makanan"];
+      });
+
+      let newCommentData = dataComment.filter((data) => {
+        return data["id_makanan"] == food["id_makanan"];
+      });
       const clone = template.content.cloneNode(true);
       clone.querySelector(".food-title").textContent = food.nama_makanan ?? "-";
       clone.querySelector(".food-desc").textContent = food.deskripsi_makanan ?? "";
-      clone.querySelector(".like-count").textContent = food.jumlah_like ?? 0;
+      clone.querySelector(".like-count").textContent = newLikedCountData.length > 0 ? newLikedCountData[0].jumlah_like : 0;
       clone.querySelector(".bookmark-wrapper").setAttribute("onclick", `addToWishlist(${food.id_makanan})`);
+      clone.querySelector(".btn-like").setAttribute("onClick", `toggleArchive(${food.id_makanan})`);
+      clone.querySelector(".btn-like").setAttribute("data-value", food.id_makanan);
+      clone.querySelector(".comment-count").textContent = newCommentData.length;
+
+      syncLikeButtons(clone.querySelector(".bi-heart"), food.id_makanan);
       
       if (wishlistData != null){
         wishlistData.forEach(elm => {
@@ -134,7 +104,6 @@ function renderCards(foods, wishlistData) {
           }
         });
       }
-
 
       const img = clone.querySelector(".food-img");
       img.src = resolveFoodImage(food.foto_makanan);
@@ -151,6 +120,7 @@ function renderCards(foods, wishlistData) {
 
       frag.appendChild(clone);
    });
+
 
   container.appendChild(frag);
 }
@@ -241,7 +211,6 @@ function resolveFoodImage(filename) {
 }
 
 
-
 const initialDashboard = () => {
   // Like button - elin
   document.querySelectorAll('.btn-like').forEach(function (btn) {
@@ -250,8 +219,11 @@ const initialDashboard = () => {
       const icon = this.querySelector('i');
       const count = this.querySelector('.like-count');
 
-      const liked = this.dataset.liked === 'true';
-      this.dataset.liked = (!liked).toString();
+      let liked = false;
+
+      if (icon.classList.contains("bi-heart-fill")){
+        liked = true;
+      }
 
       icon.classList.toggle('bi-heart');
       icon.classList.toggle('bi-heart-fill');
@@ -270,3 +242,53 @@ const initialDashboard = () => {
         }); 
   });
 }
+
+
+// api dashboard - inna
+let allFoods = [];
+let filteredFoods = [];
+let currentPage = 1;
+const PAGE_SIZE = 6;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const provinsiSelect = document.getElementById("provinsiSelect");
+  const kategoriSelect = document.getElementById("kategoriSelect");
+
+    // load Provinsi
+    fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c")
+      .then(res => res.json())
+      .then(data => {
+        (data.provinsi || []).forEach(p => {
+          const option = document.createElement("option");
+          option.value = String(p.id).trim();
+          option.textContent = p.nama;
+          provinsiSelect.appendChild(option);
+        });
+      })
+      .catch(err => console.error("Gagal Mengambil Data Provinsi:", err));
+
+    // load Kategori
+    fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70")
+      .then(res => res.json())
+      .then(data => {
+        (data.categories || []).forEach(c => {
+          const option = document.createElement("option");
+          option.value = String(c.id).trim();
+          option.textContent = c.category;
+          kategoriSelect.appendChild(option);
+        });
+      })
+      .catch(err => console.error("Gagal Mengambil Data Kategori:", err));
+
+    loadData();
+
+    //logic back
+    provinsiSelect.addEventListener("change", () => {
+      currentPage = 1;       // reset prov
+      applyFilter(); });
+    kategoriSelect.addEventListener("change", () => {
+      currentPage = 1;       // reset kategori
+      applyFilter();
+    });
+
+});

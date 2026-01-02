@@ -955,7 +955,7 @@
             "4. Masukkan susu. Aduk. Beri garam, gula secukupnya. Cicipi. Masak sampai bumbu meresap dan daging empuk.",
             "5. Sajikan soto bersama bersama pelengkapnya."
             ],
-            "foto_makanan": "./assets/img/SotoBetawi.jpg",
+            "foto_makanan": "SotoBetawi.jpg",
             "rating": 5,
             "jumlah_like": 590,
             "id_provinsi": "8",
@@ -993,7 +993,7 @@
             "3. Tata sayuran, tahu dan mi dalam piring saji, lalu siram dengan bumbunya.",
             "4. Sajikan bersama pelengkapnya."
             ],
-            "foto_makanan": "./assets/img/AsinanBetawi.jpg",
+            "foto_makanan": "AsinanBetawi.jpg",
             "rating": 4.2,
             "jumlah_like": 300,
             "id_provinsi": "8",
@@ -1021,7 +1021,7 @@
             "6. Oles kuning telur dan susu lalu panggang.",
             "7. Roti manis selesai."
             ],
-            "foto_makanan": "./assets/img/RotiBuaya.jpg",
+            "foto_makanan": "RotiBuaya.jpg",
             "rating": 4.7,
             "jumlah_like": 420,
             "id_provinsi": "8",
@@ -1053,7 +1053,7 @@
             "4. Masukkan santan, air, garam dan pasta vanila dalam panci. Aduk rata, lalu masak hingga mendidih. Biarkan dingin.",
             "5. Tuang sirup cocopandan ke dalam gelas. Tambahkan potongan selendang mayang dan es batu. Lalu tuang kuah santan. Sajikan."
             ],
-            "foto_makanan": "./assets/img/EsSelendangMayang.jpg",
+            "foto_makanan": "EsSelendangMayang.jpg",
             "rating": 4.9,
             "jumlah_like": 520,
             "id_provinsi": "8",
@@ -1084,7 +1084,7 @@
             "3. Panaskan wajan anti lengket. Tuang sedikit minyak goreng, masukkan adonan nasi, Buat dadar setebal 1 cm. Tutup panci kemudian balik, angkat.",
             "4. Penyajian : Siapkan piring saji. Taruh dadar kerak telur, taburkan serundeng dan bawang goreng. Sajikan."
             ],
-            "foto_makanan": "./assets/img/KerakTelor.jpg",
+            "foto_makanan": "KerakTelor.jpg",
             "rating": 4.8,
             "jumlah_like": 1200,
             "id_provinsi": "8",
@@ -1110,7 +1110,7 @@
             "2. Letakan nasi secukupnya di atas selembar daun lalu gulung secara perlahan, kemudian gulung bagian ujung daun, atas dan bawahnya lalu rapikan.",
             "3. Susun nasi timbel bersama pelengkapnya, dan siap di nikmati."
             ],
-            "foto_makanan": "./assets/img/NasiTimbel.jpg",
+            "foto_makanan": "NasiTimbel.jpg",
             "rating": 5,
             "jumlah_like": 700,
             "id_provinsi": "9",
@@ -1147,7 +1147,7 @@
             "5. Setelah halus masukan air asam jawa secara bertahap sampai kekentalan yang diinginkan.",
             "6. Lalu masukan sayuran rebus aduk rata dan lotek bandung siap di sajikan enjoy."
             ],
-            "foto_makanan": "./assets/img/Lotek.jpg",
+            "foto_makanan": "Lotek.jpg",
             "rating": 4.8,
             "jumlah_like": 200,
             "id_provinsi": "9",
@@ -1172,7 +1172,7 @@
             "4. Setelah mendidih, matikan kompor.",
             "5. Sajikan tape bakar, siram dengan saus gula kelapa."
             ],
-            "foto_makanan": "./assets/img/Colenak.png",
+            "foto_makanan": "Colenak.png",
             "rating": 4,
             "jumlah_like": 205,
             "id_provinsi": "9",
@@ -1197,7 +1197,7 @@
             "2. Masukkan semua bahan kecuali susu. Rebus dengan api kecil hingga mendidih, tutup panci. Jika sudah mendidih, matikan api. Diamkan sejenak.",
             "3. Lalu saring dan beri kental manis. Aduk rata, siap disajikan."
             ],
-            "foto_makanan": "./assets/img/Bandrek.jpg",
+            "foto_makanan": "Bandrek.jpg",
             "rating": 4.5,
             "jumlah_like": 320,
             "id_provinsi": "9",
@@ -1228,7 +1228,7 @@
             "3. Panaskan kukusan, kemudian kukus batagor sampai matang. Batagor yang telah matang dapat diangkat dan didinginkan. Batagor siap digoreng, apabila ingin disimpan, bisa masuk kulkas dalam wadah kedap udara.",
             "4. Goreng batagor dalam minyak panas sampai keemasan, kemudian sajikan dengan kuah kacang. Selamat mencoba."
             ],
-            "foto_makanan": "./assets/img/Batagor.jpg",
+            "foto_makanan": "Batagor.jpg",
             "rating": 5,
             "jumlah_like": 2200,
             "id_provinsi": "9",

@@ -1,6 +1,6 @@
 // console.log("HasilSearch.js LOADED ✅ v1");
 // ===== CONFIG =====
-const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
+const API_MAKANAN = "https://dummyjson.com/c/a9df-4a0d-4043-9ef8";
 const API_WISHLIST = "https://dummyjson.com/c/c42d-933e-41ca-8c5e";
 
 function pickArray(obj, candidates) {
@@ -110,6 +110,11 @@ function renderCards(makananList) {
   let wishlistData = localStorage.getItem(WISHLIST_KEY);
   wishlistData = wishlistData == null ? wishlistData : JSON.parse(wishlistData);
   
+  let archiveData = localStorage.getItem(ARCHIVE_KEY);
+  archiveData = archiveData == null ? archiveData : JSON.parse(archiveData);
+
+  let likedCountData = localStorage.getItem(STORAGE_KEY_LIKED_FOODS);
+  likedCountData = likedCountData == null ? likedCountData : JSON.parse(likedCountData);
 
   if (!makananList.length) {
     foodList.innerHTML = `
@@ -133,9 +138,16 @@ function renderCards(makananList) {
       return data["id_makanan"] == idMakanan;
     });
 
-    console.log(newWishlistData)
+    let newArchieveData = archiveData.filter((data) => {
+      return data["id_makanan"] == idMakanan;
+    });
+
+    let newLikedCountData = likedCountData.filter((data) => {
+        return data["id_makanan"] == idMakanan; 
+    });
 
     const imgSrc = resolveImageSrc(item.foto_makanan);
+    console.log(imgSrc);
     // console.log("IMG DEBUG:", item.nama_makanan, item.foto_makanan, "=>", imgSrc);
     html += `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -189,9 +201,9 @@ function renderCards(makananList) {
         <button type="button"
           class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
           data-action="like"
-          data-id="${idMakanan}">
-          <i class="bi bi-heart"></i>
-          <span class="like-count">${item.jumlah_like}</span>
+          data-id="${idMakanan}" onclick="toggleArchive(${idMakanan})">
+          <i class="bi ${newArchieveData.length == 0 ? "bi-heart" : "bi-heart-fill text-danger"}"></i>
+          <span class="like-count">${newLikedCountData[0].jumlah_like}</span>
         </button>
 
         <button type="button"

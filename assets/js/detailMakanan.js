@@ -105,7 +105,7 @@ const initializeContent = async () => {
     const detailMakanan404 = document.getElementById("containerDetailMakanan404");
 
 
-    const makanan = await fetch("https://dummyjson.com/c/5953-8a63-40d9-8670");
+    const makanan = await fetch("https://dummyjson.com/c/a9df-4a0d-4043-9ef8");
     let dataMakanan = await makanan.json();
     let newDataMakanan;
 
