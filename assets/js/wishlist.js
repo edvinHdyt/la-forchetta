@@ -88,6 +88,16 @@ async function renderWishlist() {
 
   const wishlists = getAllWishlist().filter((w) => w.id_user == userLogin.id_user);
   const foods = await getFoods();
+  let res = await fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c");
+  let dataProvinsi = await res.json();
+  dataProvinsi = dataProvinsi["provinsi"];
+
+  res = await fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70");
+  let dataCategory = await res.json();
+  dataCategory = dataCategory["categories"];
+
+  let dataRating = localStorage.getItem(STORAGE_KEY_RATING);
+  dataRating = dataRating == null ? dataRating : JSON.parse(dataRating);
 
   if (wishlists.length === 0) {
     container.innerHTML = `<p class="col-12 text-center text-muted fst-italic py-5">Wishlist masih kosong</p>`;
@@ -103,26 +113,61 @@ async function renderWishlist() {
       // Tentukan lokasi folder tempat Anda menyimpan gambar tadi
       const pathFolder = "./assets/image/foodImage/";
 
-      container.innerHTML += `
-  <div class="col">
-    <div class="card shadow-sm border-0">
-      <a href="detail-makanan.html?id=${food.id_makanan}" class="card-clickable-link">
-        
-        <img src="${pathFolder}${food.foto_makanan}" class="card-img-top" alt="${food.nama_makanan}">
-        
-        <div class="card-body">
-          <h5 class="card-title">${food.nama_makanan}</h5>
-          <p class="card-text text-muted">${food.deskripsi_makanan}</p>
-        </div>
-      </a>
+      let newDataRating = dataRating.filter((data) => {
+        return data["id_makanan"] == food["id_makanan"]; 
+      });
+
+      let newDataCategory = dataCategory.filter((data) => {
+          return data["id"] == food.id_kategori;
+      });
+
+      let newDataProvinsi = dataProvinsi.filter((data) => {
+          return data["id"] == food.id_provinsi;
+      });
+
       
-      <div class="btn-hapus-container" style="padding: 0 15px 15px 15px;">
-        <button onclick="showDeleteModal(${food.id_makanan})" class="btn-hapus">
-          <i class="bi bi-trash"></i> Hapus dari Wishlist
-        </button>
-      </div>
-    </div>
-  </div>`;
+      container.innerHTML += `
+      <div class="col">
+        <div class="card shadow-sm border-0">
+          <a href="detail-makanan.html?id=${food.id_makanan}" class="card-clickable-link">
+            
+            <img src="${pathFolder}${food.foto_makanan}" class="card-img-top" alt="${food.nama_makanan}">
+            <!-- memanggil rating -->
+            <div class="rating-overlay">
+                <i class="bi bi-star-fill"></i>
+                <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">${food.nama_makanan}</h5>
+              <div class="col-md-12 d-flex flex-wrap align-items-center">   
+                  <!-- memanggil id_kategori -->
+                  <div class="food-labelss">
+                      <i class="bi bi-tags-fill"></i>
+                      <p class="mb-0 food-kat-name">${newDataCategory[0].category}</p>
+                  </div>
+              </div>
+              <!-- deskripsi -->
+              <div class="card-desc">
+                  <p class="card-text text-muted">${food.deskripsi_makanan}</p>
+                  <div class="col-md-12 d-flex flex-wrap align-items-center">   
+                      <!-- memanggil id_provinsi -->
+                      <div class="d-flex prov-label">
+                          <i class="bi bi-geo-alt-fill"></i>
+                          <p class="mb-0 food-prov-name">${newDataProvinsi[0].nama}</p>
+                      </div>
+                  </div>
+              </div>
+              <hr>  
+            </div>
+          </a>
+          
+          <div class="btn-hapus-container" style="padding: 0 15px 15px 15px;">
+            <button onclick="showDeleteModal(${food.id_makanan})" class="btn-hapus">
+              <i class="bi bi-trash"></i> Hapus dari Wishlist
+            </button>
+          </div>
+        </div>
+      </div>`;
     }
   });
 }

@@ -26,10 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        const res = await fetch("https://dummyjson.com/c/a9df-4a0d-4043-9ef8");
+        let res = await fetch("https://dummyjson.com/c/a9df-4a0d-4043-9ef8");
         let dataMakanan = await res.json();
         dataMakanan = dataMakanan["makanan"];
 
+        res = await fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c");
+        let dataProvinsi = await res.json();
+        dataProvinsi = dataProvinsi["provinsi"];
+
+        res = await fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70");
+        let dataCategory = await res.json();
+        dataCategory = dataCategory["categories"];
+        
         let dataComment = localStorage.getItem(commentKeyStorage);
         dataComment = dataComment == null ? dataComment : JSON.parse(dataComment);
 
@@ -38,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let likedCountData = localStorage.getItem(STORAGE_KEY_LIKED_FOODS);
         likedCountData = likedCountData == null ? likedCountData : JSON.parse(likedCountData);
+
+        let dataRating = localStorage.getItem(STORAGE_KEY_RATING);
+        dataRating = dataRating == null ? dataRating : JSON.parse(dataRating);
 
         archives.forEach(food => {
             let newDataWishlist = dataWishlist.filter((data) => {
@@ -52,15 +63,34 @@ document.addEventListener("DOMContentLoaded", () => {
             let newDataCommets = dataComment.filter((data) => {
                 return data["id_makanan"] == food["id_makanan"]; 
             });
+            
+            let newDataRating = dataRating.filter((data) => {
+                return data["id_makanan"] == food["id_makanan"]; 
+            });
+
 
             let newLikedCountData = likedCountData.filter((data) => {
                 return data["id_makanan"] == food["id_makanan"]; 
             });
 
+            let newDataCategory = dataCategory.filter((data) => {
+                return data["id"] == newDataMakanan[0].id_kategori;
+            });
+
+            let newDataProvinsi = dataProvinsi.filter((data) => {
+                return data["id"] == newDataMakanan[0].id_provinsi;
+            });
+
+
             archiveContainer.innerHTML += `
                 <div class="col-12 col-md-6 col-lg-4 archive-item" id="food-${newDataMakanan[0].id_makanan}">
                     <div class="card h-100 shadow-sm border-0">
                         <img src="./assets/image/foodimage/${newDataMakanan[0].foto_makanan}" class="card-img-top" alt="${newDataMakanan[0].nama_makanan}" style="height:180px; object-fit:cover;">
+                         <!-- memanggil rating -->
+                        <div class="rating-overlay">
+                            <i class="bi bi-star-fill"></i>
+                            <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
+                        </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-start">
                                 <h5 class="card-title fw-bold">${newDataMakanan[0].nama_makanan}</h5>
@@ -74,7 +104,25 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </svg>
                                 </div>
                                 </div>
-                                <p class="card-text text-muted small">${newDataMakanan[0].deskripsi_makanan}</p>
+                                <div class="col-md-12 d-flex flex-wrap align-items-center">   
+                                    <!-- memanggil id_kategori -->
+                                    <div class="food-labelss">
+                                        <i class="bi bi-tags-fill"></i>
+                                        <p class="mb-0 food-kat-name">${newDataCategory[0].category}</p>
+                                    </div>
+                                </div>
+                                <!-- deskripsi -->
+                                <div class="card-desc">
+                                    <p class="card-text text-truncate-multiline food-desc">${newDataMakanan[0].deskripsi_makanan}</p>
+                                    <div class="col-md-12 d-flex flex-wrap align-items-center">   
+                                        <!-- memanggil id_provinsi -->
+                                        <div class="d-flex prov-label">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <p class="mb-0 food-prov-name">${newDataProvinsi[0].nama}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>  
                             </div>
                             <div class="d-flex align-items-center mt-auto ps-3 pe-3 pb-2">
                                 <span class="btn-like p-0 border-0 bg-transparent btn-unlike" onclick="removeArchive('${newDataMakanan[0].id_makanan}')">

@@ -100,9 +100,17 @@ function resolveImageSrc(foto) {
   return `./assets/image/foodImage/${s}`;
 }
 
-function renderCards(makananList) {
+async function renderCards(makananList) {
   const foodList = document.getElementById("food-list");
   if (!foodList) return;
+
+  let res = await fetch("https://dummyjson.com/c/c6c4-7d86-4194-b36c");
+  let dataProvinsi = await res.json();
+  dataProvinsi = dataProvinsi["provinsi"];
+
+  res = await fetch("https://dummyjson.com/c/53e3-a999-43a5-8a70");
+  let dataCategory = await res.json();
+  dataCategory = dataCategory["categories"];
 
   let dataComment = localStorage.getItem(commentKeyStorage);
   dataComment = dataComment == null ? dataComment : JSON.parse(dataComment);
@@ -115,6 +123,9 @@ function renderCards(makananList) {
 
   let likedCountData = localStorage.getItem(STORAGE_KEY_LIKED_FOODS);
   likedCountData = likedCountData == null ? likedCountData : JSON.parse(likedCountData);
+
+  let dataRating = localStorage.getItem(STORAGE_KEY_RATING);
+  dataRating = dataRating == null ? dataRating : JSON.parse(dataRating);
 
   if (!makananList.length) {
     foodList.innerHTML = `
@@ -146,8 +157,21 @@ function renderCards(makananList) {
         return data["id_makanan"] == idMakanan; 
     });
 
+    let newDataRating = dataRating.filter((data) => {
+        return data["id_makanan"] == idMakanan; 
+    });
+
+    let newDataCategory = dataCategory.filter((data) => {
+        return data["id"] == item.id_kategori;
+    });
+
+    let newDataProvinsi = dataProvinsi.filter((data) => {
+        return data["id"] == item.id_provinsi;
+    });
+
+
+
     const imgSrc = resolveImageSrc(item.foto_makanan);
-    console.log(imgSrc);
     // console.log("IMG DEBUG:", item.nama_makanan, item.foto_makanan, "=>", imgSrc);
     html += `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -159,6 +183,11 @@ function renderCards(makananList) {
             alt="${item.nama_makanan || "Food"}"
             onerror="this.onerror=null; this.src='./assets/image/foodImage/placeholder.jpg';"
           />
+           <!-- memanggil rating -->
+            <div class="rating-overlay">
+                <i class="bi bi-star-fill"></i>
+                <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
+            </div>
         </a>
 
     <div class="card-body d-flex flex-column">
@@ -190,12 +219,28 @@ function renderCards(makananList) {
           </svg>
         </div>
       </div>
+       <div class="col-md-12 d-flex flex-wrap align-items-center">   
+          <!-- memanggil id_kategori -->
+          <div class="food-labelss">
+              <i class="bi bi-tags-fill"></i>
+              <p class="mb-0 food-kat-name">${newDataCategory[0].category}</p>
+          </div>
+      </div>
 
-      <!-- DESCRIPTION -->
-      <p class="card-text text-truncate-multiline">
-        ${item.deskripsi_makanan || ""}
-      </p>
-
+      <!-- deskripsi -->
+      <div class="card-desc">
+          <p class="card-text text-truncate-multiline">
+            ${item.deskripsi_makanan || ""}
+          </p>
+          <div class="col-md-12 d-flex flex-wrap align-items-center">   
+              <!-- memanggil id_provinsi -->
+              <div class="d-flex prov-label">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <p class="mb-0 food-prov-name">${newDataProvinsi[0].nama}</p>
+              </div>
+          </div>
+      </div>
+      <hr>
       <!-- ACTIONS (DORONG KE BAWAH) -->
       <div class="d-flex justify-content-between align-items-center mt-auto">
         <button type="button"
