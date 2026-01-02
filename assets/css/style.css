@@ -381,6 +381,54 @@ textarea:focus {
   }
 }
 
+/* na cards */
+.food-image-wrap{
+  position: relative;
+  display: block; }
+.rating-overlay{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1.5px solid #800037;
+  background: #fff;
+  color: #800037;          
+  font-size: 12px;
+  line-height: 1;
+  backdrop-filter: blur(2px); }
+.rating-overlay i{
+  color: #FF9529;    
+  font-size: 12px; }
+.rating-overlay span,
+.rating-overlay p{
+  color: #800037;         
+  margin: 0; }
+.food-labelss {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px; 
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1.5px solid #800037;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default; }
+.food-labelss i {
+  color: #800037;
+  font-size: 12px; }
+.food-labelss p {
+  margin: 0;
+  color: #800037;
+  font-weight: 500; }
+
 
 /* Dashboard Elin  */
 .filter-box {
@@ -397,8 +445,12 @@ main .container .card-img-top {
 .card {
   border-radius: 10px;
   position: relative;
-  display: flex; }
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
 .card-body {
+  display: flex;          
+  flex-direction: column;
   padding: 0.5rem; }
 .card-img-top {
   height: 110px;
@@ -418,6 +470,7 @@ main .container .card-img-top {
   -webkit-box-orient: vertical;
   overflow: hidden; 
   font-size: 0.75rem;}
+
 @media (min-width: 1024px) {
   .card-title {
     font-size: 1rem;
@@ -426,11 +479,13 @@ main .container .card-img-top {
     font-size: 0.875rem;
     -webkit-line-clamp: 2; } 
 }
+
 .filter-img {
   width: 100%;
   max-width: 260px;
   margin-top: auto;
   align-self: center; }
+
 .bookmark-wrapper {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.8);
@@ -469,7 +524,9 @@ main .container .card-img-top {
   color: #e9609b;
   background-color: #ffffff;
   transform: scale(1.2); }
+
 .btn-like {
+  display: inline-flex;
   color: #800037;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.2s ease; }
@@ -481,7 +538,9 @@ main .container .card-img-top {
   transform: scale(1.05); }
 .btn-like.liked {
   color: #e9609b; }
+
 .btn-comment {
+  display: inline-flex;
   color: #800037;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.2s ease; }
@@ -492,6 +551,7 @@ main .container .card-img-top {
 .btn-comment:hover {
   color: #89b8ff;
   transform: scale(1.05); }
+
 .btn-like {
   position: relative;
   z-index: 200; }
@@ -499,6 +559,7 @@ main .container .card-img-top {
   color: #800037;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease; }
+
 .bookmark-icon:hover {
   transform: scale(1.15);
   color: #e63946; 
