@@ -138,7 +138,7 @@ async function renderWishlist() {
                 <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
             </div>
             <div class="card-body">
-              <h5 class="card-title">${food.nama_makanan}</h5>
+              <h1 class="card-title">${food.nama_makanan}</h1>
               <div class="col-md-12 d-flex flex-wrap align-items-center">   
                   <!-- memanggil id_kategori -->
                   <div class="food-labelss">

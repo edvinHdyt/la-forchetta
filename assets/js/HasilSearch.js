@@ -176,7 +176,7 @@ async function renderCards(makananList) {
     html += `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100">
-        <a href="detail-makanan.html?id=${idMakanan}">
+        <a href="detail-makanan.html?id=${idMakanan}" aria-label="${item.nama_makanan}">
           <img
             src="${imgSrc}"
             class="card-img-top"
@@ -193,8 +193,8 @@ async function renderCards(makananList) {
     <div class="card-body d-flex flex-column">
       <!-- TITLE + BOOKMARK -->
       <div class="d-flex justify-content-between align-items-start mb-2">
-        <a href="detail-makanan.html?id=${idMakanan}" class="text-decoration-none text-dark">
-          <h5 class="card-title mb-0">${item.nama_makanan || ""}</h5>
+        <a href="detail-makanan.html?id=${idMakanan}" aria-label="${item.nama_makanan}"class="text-decoration-none text-dark">
+          <h1 class="card-title mb-0">${item.nama_makanan || ""}</h1>
         </a>
 
         <div class="bookmark-wrapper ${newWishlistData.length > 0 ? "active" : ""}" onclick="addToWishlist(${idMakanan})">
@@ -247,14 +247,14 @@ async function renderCards(makananList) {
           class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1"
           data-action="like"
           data-id="${idMakanan}" onclick="toggleArchive(${idMakanan})">
-          <i class="bi ${newArchieveData.length == 0 ? "bi-heart" : "bi-heart-fill text-danger"}"></i>
+          <i class="bi ${newArchieveData.length == 0 ? "bi-heart" : "bi-heart-fill text-danger"}" aria-label="button-like"></i>
           <span class="like-count">${newLikedCountData[0].jumlah_like}</span>
         </button>
 
         <button type="button"
           class="btn btn-comment p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1 text-muted"
           data-action="comment"
-          data-id="${idMakanan}">
+          data-id="${idMakanan}" aria-label="button-comment">
           <i class="bi bi-chat-dots"></i>
           <span class="comment-count">${newDataCommets.length}</span>
         </button>

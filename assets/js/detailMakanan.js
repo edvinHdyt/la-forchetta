@@ -59,7 +59,7 @@ let initialize = async () => {
             '</div>';
         } else {
             profile = 
-            '<img src="'+user.profile_pict+'" class="comment-profile-img">'
+            `<img src="${user.profile_pict}" class="comment-profile-img" alt="${user.nama}">`;
         }
 
         let elm =

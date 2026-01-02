@@ -182,8 +182,9 @@ function makeEllipsisItem() {
 }
 
 function makePageItem(label, page, disabled = false, active = false) {
+  // console.log(disabled);
   const li = document.createElement("li");
-    li.className = `page-item${disabled ? " disabled" : ""}${active ? " active" : ""}`;
+    li.className = `page-item${disabled ? " disabled d-none" : ""}${active ? " active" : ""}`;
   const a = document.createElement("a");
     a.className = "page-link";
     a.href = "#";

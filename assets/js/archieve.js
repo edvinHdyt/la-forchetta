@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             archiveContainer.innerHTML = `
                 <div class="col-12 text-center py-5">
                     <h4 class="text-muted">Archive Masih Kosong</h4>
-                    <a href="index.html" class="btn btn-primary mt-2">Cari Makanan</a>
+                    <a href="index.html" class="btn btn-primary mt-2" aria-label="cari-makanan">Cari Makanan</a>
                 </div>`;
             return;
         }
@@ -83,62 +83,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             archiveContainer.innerHTML += `
-                <div class="col-12 col-md-6 col-lg-4 archive-item" id="food-${newDataMakanan[0].id_makanan}">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="./assets/image/foodimage/${newDataMakanan[0].foto_makanan}" class="card-img-top" alt="${newDataMakanan[0].nama_makanan}" style="height:180px; object-fit:cover;">
-                         <!-- memanggil rating -->
-                        <div class="rating-overlay">
-                            <i class="bi bi-star-fill"></i>
-                            <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <h5 class="card-title fw-bold">${newDataMakanan[0].nama_makanan}</h5>
-                                <div class="bookmark-wrapper ${newDataWishlist.length > 0 ? "active" : "" }" onClick="addToWishlist(${newDataMakanan[0].id_makanan})">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
-                                        <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
-                                    </svg>
+            <div class="col-12 col-md-6 col-lg-4 archive-item" id="food-${newDataMakanan[0].id_makanan}">
+             <div class="card h-100 shadow-sm border-0">                    
+                <a href="detail-makanan.html?id=${newDataMakanan[0].id_makanan}" aria-label="${newDataMakanan[0].nama_makanan}">
+                    <img src="./assets/image/foodimage/${newDataMakanan[0].foto_makanan}" class="card-img-top" alt="${newDataMakanan[0].nama_makanan}" style="height:180px; object-fit:cover;">
+                        <!-- memanggil rating -->
+                    <div class="rating-overlay">
+                        <i class="bi bi-star-fill"></i>
+                        <p class="mb-0 food-rating">${newDataRating[0].total_rating}</p>
+                    </div>
+                </a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h1 class="card-title fw-bold">${newDataMakanan[0].nama_makanan}</h1>
+                            <div class="bookmark-wrapper ${newDataWishlist.length > 0 ? "active" : "" }" onClick="addToWishlist(${newDataMakanan[0].id_makanan})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart icon-outline" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bookmark-heart-fill icon-fill" viewBox="0 0 16 16">
+                                    <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                </svg>
+                            </div>
+                            </div>
+                            <div class="col-md-12 d-flex flex-wrap align-items-center">   
+                                <!-- memanggil id_kategori -->
+                                <div class="food-labelss">
+                                    <i class="bi bi-tags-fill"></i>
+                                    <p class="mb-0 food-kat-name">${newDataCategory[0].category}</p>
                                 </div>
-                                </div>
+                            </div>
+                            <!-- deskripsi -->
+                            <div class="card-desc">
+                                <p class="card-text text-truncate-multiline food-desc">${newDataMakanan[0].deskripsi_makanan}</p>
                                 <div class="col-md-12 d-flex flex-wrap align-items-center">   
-                                    <!-- memanggil id_kategori -->
-                                    <div class="food-labelss">
-                                        <i class="bi bi-tags-fill"></i>
-                                        <p class="mb-0 food-kat-name">${newDataCategory[0].category}</p>
+                                    <!-- memanggil id_provinsi -->
+                                    <div class="d-flex prov-label">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <p class="mb-0 food-prov-name">${newDataProvinsi[0].nama}</p>
                                     </div>
                                 </div>
-                                <!-- deskripsi -->
-                                <div class="card-desc">
-                                    <p class="card-text text-truncate-multiline food-desc">${newDataMakanan[0].deskripsi_makanan}</p>
-                                    <div class="col-md-12 d-flex flex-wrap align-items-center">   
-                                        <!-- memanggil id_provinsi -->
-                                        <div class="d-flex prov-label">
-                                            <i class="bi bi-geo-alt-fill"></i>
-                                            <p class="mb-0 food-prov-name">${newDataProvinsi[0].nama}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>  
                             </div>
-                            <div class="d-flex align-items-center mt-auto ps-3 pe-3 pb-2">
-                                <span class="btn-like p-0 border-0 bg-transparent btn-unlike" onclick="removeArchive('${newDataMakanan[0].id_makanan}')">
-                                    <i class="bi bi-heart-fill text-danger"></i>
-                                    <span class="like-count">${newLikedCountData[0].jumlah_like}</span>
-                                </span>
+                            <hr>  
+                        </div>
+                        <div class="d-flex align-items-center mt-auto ps-3 pe-3 pb-2">
+                            <span class="btn-like p-0 border-0 bg-transparent btn-unlike" onclick="removeArchive('${newDataMakanan[0].id_makanan}')">
+                                <i class="bi bi-heart-fill text-danger"></i>
+                                <span class="like-count">${newLikedCountData[0].jumlah_like}</span>
+                            </span>
 
-                                <div class="ms-auto d-flex align-items-center">
-                                    <span class="btn-comment" style="cursor: pointer;">
-                                        <i class="bi bi-chat-dots"></i>
-                                        <span class="comment-count">${newDataCommets.length}</span>
-                                    </span>                                
-                                    <a href="detail-makanan.html?id=${newDataMakanan[0].id_makanan}"</a>
-                                </div>
+                            <div class="ms-auto d-flex align-items-center">
+                                <span class="btn-comment" style="cursor: pointer;">
+                                    <i class="bi bi-chat-dots"></i>
+                                    <span class="comment-count">${newDataCommets.length}</span>
+                                </span>                                
                             </div>
                         </div>
+                    </div>
                 </div>`;
         });
     }

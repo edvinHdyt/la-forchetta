@@ -33,6 +33,10 @@ h5 {
   color: #696969;
 }
 
+.filter-title{
+  font-size: 1.5rem;
+}
+
 .btn-primary {
   background-color: #800037 !important;
   color: #fff;
@@ -629,6 +633,11 @@ main .container .card-img-top {
 
 /* Dashboard Elin - End */
 
+/* hasil search */
+#search-title{
+  font-size: 1.5rem;
+}
+
 /* =========================================
    WISHLIST PAGE STYLES ONLY
    ========================================= */
@@ -691,7 +700,7 @@ main .container .card-img-top {
 
 .wishlist-page .card-text {
   font-size: 0.85rem;
-  color: #777 !important;
+  color: #2c2c2c !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

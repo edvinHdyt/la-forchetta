@@ -65,13 +65,13 @@
                         aria-label="Search"
                         required
                     />
-                    <button class="btn btn-primary btn-search" type="submit">
+                    <button class="btn btn-primary btn-search" type="submit" aria-label="search">
                         Search
                     </button>
                     </form>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu" aria-label="hamburger-menu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
@@ -103,14 +103,13 @@
                     </ul>
                     <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                        <button class="btn btn-primary btn-search" type="submit" aria-label="search">Search</button>
                     </form>
                 </div>
             </div>
         </div>
     </header>
-
-   
+    
     <main>
     <!-- Header Carousel-->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -137,11 +136,11 @@
                     </div>
                 </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" aria-label="carousel-prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" aria-label="carousel-next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -153,14 +152,14 @@
             <!-- Kolom Filter Kiri -->
             <div class="col-lg-3 col-md-4 col-12 d-flex mb-3">
                 <div class="card p-3 filter-box w-100">
-                    <h5 class="mb-3">Filter</h5>
+                    <h1 class="mb-3 filter-title">Filter</h1>
                     <!-- Provinsi -->
-                    <label class="form-label">Provinsi</label>
+                    <label class="form-label" for="provinsiSelect">Provinsi</label>
                         <select class="form-select mb-3" id="provinsiSelect">
                             <option value="">Pilih Provinsi</option>
                         </select>
                     <!-- Jenis Makanan -->
-                    <label class="form-label">Jenis Makanan</label>
+                    <label class="form-label" for="kategoriSelect">Jenis Makanan</label>
                         <select class="form-select" id="kategoriSelect">
                             <option value="">Pilih Jenis</option>
                         </select>
@@ -200,7 +199,7 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start">
                         <a href="#" class="text-decoration-none text-dark food-link">
-                            <h5 class="card-title food-title">Nama Makanan</h5>
+                            <h1 class="card-title food-title">Nama Makanan</h1>
                         </a>
                     <!-- Bookmark -->
                     <div class="bookmark-wrapper">
@@ -236,7 +235,7 @@
                     <div class="d-flex justify-content-between align-items-center mt-auto">
                         <!-- Like -->
                         <button type="button"
-                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1">
+                                class="btn btn-like p-0 border-0 bg-transparent d-inline-flex align-items-center gap-1" aria-label="like">
                                 <i class="bi bi-heart"></i>
                                 <span class="like-count">0</span>
                         </button>
@@ -261,32 +260,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <h1 class="footer-title" id="contactUs">Contact Us</h1>
                     <p>Email: info@forchetta.com</p>
                     <p>Telepon: (021) 1234 5678</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
+                    <h1 class="footer-title">Media Sosial</h1>
                     <ul class="social-links">
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Tiktok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <h1 class="footer-title copyright-title">La Forchetta</h1>
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
