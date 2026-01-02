@@ -316,42 +316,55 @@ textarea:focus {
 /* ini untuk dashboard (inna)*/
 /* header */
 .carousel-item img {
-  filter: brightness(50%); }
+  filter: brightness(50%);
+}
 #carouselExampleAutoplaying {
   height: 565px; /* sesuaikan tinggi dashboard */
-  overflow: hidden; }
+  overflow: hidden;
+}
 #carouselExampleAutoplaying .carousel-item img {
   height: 565px;
   object-fit: cover;
-  width: 100%; }
+  width: 100%;
+}
 .custom-caption {
   bottom: 30%;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
 .custom-caption h2 {
   font-size: 3rem;
   font-weight: 700;
-  color: #ffffff; }
+  color: #ffffff;
+}
 .custom-caption p {
   font-size: 1.3rem;
   margin-top: 0.5rem;
-  color: #ffffff !important; }
+  color: #ffffff !important;
+}
 .custom-caption h2, /* Animasi */
   .custom-caption p {
-  animation: fadeInUp 1.2s ease-in-out; }
+  animation: fadeInUp 1.2s ease-in-out;
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px); }
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 .carousel-item {
-  transition: transform 0.6s ease-in-out; }
+  transition: transform 0.6s ease-in-out;
+}
 .carousel-item img {
-  transition: opacity 0.6s ease-in-out; }
+  transition: opacity 0.6s ease-in-out;
+}
 .carousel-control-prev,
 .carousel-control-next {
-  height: auto; }
+  height: auto;
+}
 .carousel-control-prev-icon, /* icon prev next */
 .carousel-control-next-icon {
   filter: brightness(0) invert(1);
@@ -397,7 +410,8 @@ textarea:focus {
 .filter-box {
   height: auto;
   display: flex;
-  flex-direction: column; } 
+  flex-direction: column;
+}
 @media (min-width: 768px) {
   .filter-box {
     position: sticky; } }
@@ -432,7 +446,8 @@ main .container .card-img-top {
 @media (min-width: 1024px) {
   .card-title {
     font-size: 1rem;
-    -webkit-line-clamp: 1;  }
+    -webkit-line-clamp: 1;
+  }
   .text-truncate-multiline {
     font-size: 0.875rem;
     -webkit-line-clamp: 2; } 
@@ -456,13 +471,15 @@ main .container .card-img-top {
 .bookmark-wrapper.active {
     color: #fff; }
 .bookmark-wrapper.active .icon-outline {
-    display: none; }
+  display: none;
+}
 .bookmark-wrapper.active .icon-fill {
     display: block; }
 .bookmark-wrapper:hover {
   color: #e9609b;
   background-color: #ffffff;
-  transform: scale(1.2); }
+  transform: scale(1.2);
+}
 .bi-bookmark-heart-fill:hover {
   color: #800037;
   background-color: #ffffff;
@@ -523,145 +540,136 @@ main .container .card-img-top {
 
 /* Dashboard Elin - End */
 
-/*WISHLIST PAGE*/
+/* =========================================
+   WISHLIST PAGE STYLES ONLY
+   ========================================= */
 
 .wishlist-page {
   padding: 40px 20px;
   min-height: 80vh;
 }
 
-/* CARD */
-.wishlist-page .card {
-  border-radius: 15px;
+/* Container kartu agar rapi dan seragam */
+#wishlist-data-container .card {
+  border-radius: 12px;
   overflow: hidden;
-  transition: 0.3s ease;
-}
-
-.wishlist-page .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.wishlist-page a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.wishlist-page a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* GAMBAR MAKANAN DI WISHLIST */
-.food-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-/* BODY */
-.wishlist-page .card-body {
-  text-align: left;
-}
-
-/* SAMARATAKAN JUDUL & DESKRIPSI */
-.wishlist-page .card-title {
-  min-height: 48px;
-}
-
-.wishlist-page .card-text {
-  min-height: 72px;
-}
-
-/* BIKIN ISI CARD FLEX */
-.wishlist-page .card-body {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* DORONG BUTTON KE BAWAH */
-.wishlist-page .btn-hapus {
-  margin-top: auto;
+#wishlist-data-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* BUTTON HAPUS */
-.btn-hapus {
-  background-color: #800037;
-  color: #ffffff;
-  border: 2px solid #800037;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Link pembungkus agar gambar dan teks bisa diklik ke detail */
+.card-clickable-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex-grow: 1; /* Memastikan konten teks mengisi ruang agar tombol tetap di bawah */
 }
 
-/* HOVER */
-.btn-hapus:hover {
-  background-color: #ffffff;
-  color: #800037;
-  border-color: #800037;
+.card-clickable-link:hover {
+  color: inherit;
 }
 
-/* MODAL CUSTOM */
-.custom-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+.wishlist-page .card-img-top {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
 }
 
-.custom-modal.show {
-  display: flex;
+.wishlist-page .card-body {
+  padding: 15px;
 }
 
-.custom-modal-content {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  width: 320px;
-  text-align: center;
+.wishlist-page .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.custom-modal-content h5 {
+.wishlist-page .card-text {
+  font-size: 0.85rem;
+  color: #777 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5em;
   margin-bottom: 10px;
 }
 
-.modal-actions {
+.wishlist-price {
+  font-weight: 700;
+  color: #800037 !important; /* Warna tema La Forchetta */
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* BUTTON HAPUS (Berdiri sendiri sebagai tombol lebar di bawah) */
+.btn-hapus {
+  width: calc(100% - 30px); /* Menyesuaikan padding card-body */
+  background-color: #800037;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 15px 15px 15px; /* Jarak dari tepi bawah dan samping kartu */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.btn-cancel {
-  background: #ddd;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  cursor: pointer;
+.btn-hapus:hover {
+  background-color: #a00045; /* Warna hover sedikit lebih terang */
+  color: white;
 }
 
-.btn-confirm {
-  background: #800037;
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  cursor: pointer;
+/* Penyesuaian ikon di dalam tombol jika ada */
+.btn-hapus i {
+  font-size: 1rem;
 }
 
-.btn-confirm:hover {
-  opacity: 0.9;
+/* Menyamakan warna tombol konfirmasi di modal dengan tema La Forchetta */
+#confirmDelete {
+  background-color: #800037 !important; /* Warna merah maroon tema */
+  border-color: #800037 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+#confirmDelete:hover {
+  background-color: #a00045 !important; /* Warna sedikit lebih terang saat hover */
+  border-color: #a00045 !important;
+}
+
+/* Opsional: Menyesuaikan tombol Batal agar serasi */
+#cancelDelete {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #ffffff;
 }
 
 /* Profil (inna) */
-.profile-card { 
+.profile-card {
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -669,7 +677,8 @@ main .container .card-img-top {
   border-radius: 20px;
   font-size: 14px;
   padding: 16px;
-  margin: auto; }
+  margin: auto;
+}
 /* .form-control {
   width: 400px;
   height: 30px; } */
@@ -697,11 +706,14 @@ main .container .card-img-top {
   color: #800037; }
 .edit-btn:hover {
   background-color: #800037;
-  color: #f4f4f4; 
-  border: #800037;}
+  color: #f4f4f4;
+  border: #800037;
+}
 @media (hover: hover) {
   .profile-wrapper:hover .edit-btn {
-    display: flex; } }
+    display: flex;
+  }
+}
 .profile-card .btn {
   font-size: 0.85rem;
   padding: 5px 15px;
@@ -755,29 +767,36 @@ main .container .card-img-top {
   color: white; }
 .confirm-card .btn-success:hover {
   background-color: white;
-  color: #800037; }
+  color: #800037;
+}
 /* tab */
 @media (max-width: 768px) {
   .profile-card {
     max-width: 100%;
     font-size: 13px;
-    border-radius: 16px; }
+    border-radius: 16px;
+  }
   .profile-photo {
     width: 80px;
-    height: 80px; }
+    height: 80px;
+  }
   .profile-card .btn {
     font-size: 0.8rem;
-    padding: 5px 12px; } }
+    padding: 5px 12px;
+  }
+}
 /* mobile */
 @media (max-width: 576px) {
   .profile-wrapper {
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+  }
   .profile-photo {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    display: block; }
+    display: block;
+  }
   .edit-btn {
     position: absolute;
     bottom: 0;
@@ -785,9 +804,9 @@ main .container .card-img-top {
     transform: translate(25%, 25%);
     width: 28px;
     height: 28px;
-    padding: 0;        
-    line-height: 1;     
-    border-radius: 50%; 
+    padding: 0;
+    line-height: 1;
+    border-radius: 50%;
     background-color: #fff;
     border: 2px solid #800037;
     color: #800037;
@@ -1037,7 +1056,7 @@ textarea:focus {
   .social-links {
     justify-content: center;
   }
-  .card-title{
+  .card-title {
     font-size: 1.1rem !important;
   }
 }
@@ -1267,7 +1286,7 @@ textarea:focus {
   margin: 60px auto 0 auto;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.10);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   padding: 2.5rem 2rem 2rem 2rem;
   font-family: "Montserrat", sans-serif;
 }
@@ -1297,7 +1316,7 @@ textarea:focus {
 .login-form-control:focus {
   border: 0.1px solid #800037 !important;
   outline: #800037 !important;
-  box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037 !important;
   background: #fff;
 }
 .login-btn {
@@ -1364,7 +1383,8 @@ textarea:focus {
   color: #696969;
   pointer-events: none;
 }
-.login-form-control[type="password"], .login-form-control[type="text"] {
+.login-form-control[type="password"],
+.login-form-control[type="text"] {
   padding-right: 0.5rem;
   height: 48px;
 }
@@ -1375,7 +1395,7 @@ textarea:focus {
   margin: 60px auto 0 auto;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.10);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   padding: 2.5rem 2rem 2rem 2rem;
   font-family: "Montserrat", sans-serif;
 }
@@ -1405,7 +1425,7 @@ textarea:focus {
 .register-form-control:focus {
   border: 0.1px solid #800037 !important;
   outline: #800037 !important;
-  box-shadow: 0 0.2px 2.5px 0.2px #800037!important;
+  box-shadow: 0 0.2px 2.5px 0.2px #800037 !important;
   background: #fff;
 }
 .register-btn {
@@ -1472,7 +1492,8 @@ textarea:focus {
   color: #696969;
   pointer-events: none;
 }
-.register-form-control[type="password"], .register-form-control[type="text"] {
+.register-form-control[type="password"],
+.register-form-control[type="text"] {
   padding-right: 0.5rem;
   height: 48px;
 }

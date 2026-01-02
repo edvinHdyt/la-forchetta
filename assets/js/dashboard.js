@@ -15,32 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Like button - elin
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.btn-like').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-
-      const icon = this.querySelector('i');
-      const count = this.querySelector('.like-count');
-
-      const liked = this.dataset.liked === 'true';
-      this.dataset.liked = (!liked).toString();
-
-      icon.classList.toggle('bi-heart');
-      icon.classList.toggle('bi-heart-fill');
-      icon.classList.toggle('text-danger');
-
-      count.textContent = parseInt(count.textContent, 10) + (liked ? -1 : 1);
-    });
-  });
-});
-
-// bookmark - inna
-document.querySelectorAll('.bookmark-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', function(e) {
-        e.preventDefault(); // mencegah link jika ada
-        this.classList.toggle('active'); }); 
-});
 
 // api dashboard - inna
 let allFoods = [];
@@ -97,9 +71,12 @@ async function loadData() {
     const data = await res.json();
     allFoods = data.makanan || [];
       filteredFoods = allFoods;
-      renderPage(); } 
+      renderPage(); 
+    } 
   catch (err) {
-    console.error("Gagal Mengambil Data Makanan:", err); } }
+    console.error("Gagal Mengambil Data Makanan:", err); 
+  } 
+  }
 
 // filtering sijakk
 function applyFilter() {
@@ -111,16 +88,29 @@ function applyFilter() {
       return matchProv && matchKat; });
   renderPage(); }
 
-function renderPage() {
-  const totalPages = Math.max(1, Math.ceil(filteredFoods.length / PAGE_SIZE));
+ function renderPage() {
+    const totalPages = Math.max(1, Math.ceil(filteredFoods.length / PAGE_SIZE));
     if (currentPage > totalPages) currentPage = totalPages;
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const end = start + PAGE_SIZE;
-  const pageFoods = filteredFoods.slice(start, end);
-    renderCards(pageFoods);
-    renderPagination(totalPages); }
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    const pageFoods = filteredFoods.slice(start, end);
 
-function renderCards(foods) {
+    let wishlistData = null;
+    
+    if (userLogin != null){
+      wishlistData = localStorage.getItem(WISHLIST_KEY);
+      wishlistData = wishlistData == null ? wishlistData : JSON.parse(wishlistData);
+      wishlistData = wishlistData.filter((data) => {
+        return data["id_user"] == userLogin["id_user"];
+      });
+    }
+
+    renderCards(pageFoods, wishlistData);
+    renderPagination(totalPages); 
+    initialDashboard();
+  }
+
+function renderCards(foods, wishlistData) {
   const container = document.getElementById("food-container");
   const template = document.getElementById("card-makanan-template");
 
@@ -131,23 +121,35 @@ function renderCards(foods) {
 
     foods.forEach(food => {
       const clone = template.content.cloneNode(true);
-        clone.querySelector(".food-title").textContent = food.nama_makanan ?? "-";
-        clone.querySelector(".food-desc").textContent = food.deskripsi_makanan ?? "";
-        clone.querySelector(".like-count").textContent = food.jumlah_like ?? 0;
+      clone.querySelector(".food-title").textContent = food.nama_makanan ?? "-";
+      clone.querySelector(".food-desc").textContent = food.deskripsi_makanan ?? "";
+      clone.querySelector(".like-count").textContent = food.jumlah_like ?? 0;
+      clone.querySelector(".bookmark-wrapper").setAttribute("onclick", `addToWishlist(${food.id_makanan})`);
+      
+      if (wishlistData != null){
+        wishlistData.forEach(elm => {
+          if(elm.id_makanan == food.id_makanan){
+            clone.querySelector(".bookmark-wrapper").classList.add("active");
+          }
+        });
+      }
+
+
       const img = clone.querySelector(".food-img");
-        img.src = resolveFoodImage(food.foto_makanan);
-        img.alt = food.nama_makanan || "Foto makanan";
-          img.onerror = () => {
-          img.onerror = null;
-          img.src = "./assets/image/SVG/orangkrem.svg"; };
+      img.src = resolveFoodImage(food.foto_makanan);
+      img.alt = food.nama_makanan || "Foto makanan";
+        img.onerror = () => {
+        img.onerror = null;
+        img.src = "./assets/image/SVG/orangkrem.svg"; 
+      };
 
-    // link detail?
-    clone.querySelectorAll(".food-link").forEach(a => {
-      a.href = `detail-makanan.html?id=${encodeURIComponent(food.id_makanan ?? "")}`; 
-    });
+      // link detail?
+      clone.querySelectorAll(".food-link").forEach(a => {
+        a.href = `detail-makanan.html?id=${encodeURIComponent(food.id_makanan ?? "")}`; 
+      });
 
-    frag.appendChild(clone);
-  });
+      frag.appendChild(clone);
+   });
 
   container.appendChild(frag);
 }
@@ -237,3 +239,33 @@ function resolveFoodImage(filename) {
   return `./assets/image/foodimage/${encodeURIComponent(f)}`;
 }
 
+
+
+const initialDashboard = () => {
+  // Like button - elin
+  document.querySelectorAll('.btn-like').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+
+      const icon = this.querySelector('i');
+      const count = this.querySelector('.like-count');
+
+      const liked = this.dataset.liked === 'true';
+      this.dataset.liked = (!liked).toString();
+
+      icon.classList.toggle('bi-heart');
+      icon.classList.toggle('bi-heart-fill');
+      icon.classList.toggle('text-danger');
+
+      count.textContent = parseInt(count.textContent, 10) + (liked ? -1 : 1);
+    });
+  });
+
+  
+  // bookmark - inna
+  document.querySelectorAll('.bookmark-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('click', function(e) {
+          e.preventDefault(); // mencegah link jika ada
+          this.classList.toggle('active'); 
+        }); 
+  });
+}

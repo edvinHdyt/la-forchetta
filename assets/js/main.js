@@ -4,6 +4,8 @@ let initialProfile = {};
 
 const STORAGE_KEY = "la-forchetta-profile";
 const STORAGE_KEY_RATING = "la-forchetta-ratings";
+const WISHLIST_KEY = "la-forchetta-wishlist";
+
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 let userLogin = localStorage.getItem("la-forchetta-user-login");
