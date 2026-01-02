@@ -1,5 +1,4 @@
 const month = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Oct", "Nov", "Des"];
-const commentKeyStorage = "la-forchetta-comment";
 const params = new URLSearchParams(window.location.search);
 const idMakanan = parseInt(params.get("id"));
 

@@ -166,9 +166,18 @@
     </footer>
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
-    <script src="./assets/js/dashboard.js"></script>
+    <!-- <script src="./assets/js/dashboard.js"></script> -->
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
     <script type="module" src="./assets/js/HasilSearch.js"></script>
-
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+        <div id="liveToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+            <div class="toast-body" id="toastMessage">
+                </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

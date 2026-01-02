@@ -6,6 +6,7 @@ const STORAGE_KEY = "la-forchetta-profile";
 const STORAGE_KEY_RATING = "la-forchetta-ratings";
 const WISHLIST_KEY = "la-forchetta-wishlist";
 const STORAGE_KEY_USER_LOGIN = "la-forchetta-user-login";
+const commentKeyStorage = "la-forchetta-comment";
 
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
