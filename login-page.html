@@ -23,7 +23,7 @@
     <main>
         <div class="login-page-container shadow">
             <h2 class="login-page-title mb-4">Login</h2>
-            <form>
+            <form action="index.html" method="post">
                 <div class="mb-3">
                     <label for="loginEmail" class="login-form-label form-label">Email</label>
                     <input type="email" class="form-control login-form-control" id="loginEmail" placeholder="Enter your email" required>
@@ -37,7 +37,7 @@
                         </button>
                     </div>
                 </div>
-                <button type="submit" class="btn login-btn">Login</button>
+                <button type="button" class="btn login-btn" data-id="login">Login</button>
                 <a href="register-page.html" class="login-register-link">Belum punya akun? Daftar di sini</a>
             </form>
         </div>
@@ -81,6 +81,16 @@
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
     
+    <script src="./assets/js/encrypter.js"></script>
     <script src="./assets/js/login-register.js"></script>
+
+    <div id="alertModal" class="confirm-overlay d-none">
+        <div class="card confirm-card shadow rounded-4 p-4 text-center">
+            <p id="alertDesc" class="mb-4 fw-semibold"> </p>
+            <div class="d-flex justify-content-center gap-3">
+                <button data-id="closeAlertModal" class="btn btn-success">Ok</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

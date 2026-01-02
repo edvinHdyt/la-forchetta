@@ -96,14 +96,15 @@ function applyFilter() {
     const pageFoods = filteredFoods.slice(start, end);
 
     let wishlistData = null;
+    wishlistData = localStorage.getItem(WISHLIST_KEY);
+    wishlistData = wishlistData == null ? wishlistData : JSON.parse(wishlistData);
     
-    if (userLogin != null){
-      wishlistData = localStorage.getItem(WISHLIST_KEY);
-      wishlistData = wishlistData == null ? wishlistData : JSON.parse(wishlistData);
+    if (userLogin != null && wishlistData != null){
       wishlistData = wishlistData.filter((data) => {
         return data["id_user"] == userLogin["id_user"];
       });
     }
+
 
     renderCards(pageFoods, wishlistData);
     renderPagination(totalPages); 

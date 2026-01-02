@@ -5,20 +5,22 @@ let initialProfile = {};
 const STORAGE_KEY = "la-forchetta-profile";
 const STORAGE_KEY_RATING = "la-forchetta-ratings";
 const WISHLIST_KEY = "la-forchetta-wishlist";
+const STORAGE_KEY_USER_LOGIN = "la-forchetta-user-login";
 
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 let userLogin = localStorage.getItem("la-forchetta-user-login");
+userLogin = userLogin == null ? userLogin : JSON.parse(userLogin);
 
-function loadProfileMain() {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const profile = stored
-    ? JSON.parse(stored) : {
-        photo: defaultPhoto 
-      };
-  initialProfile = { ...profile };
-  setPhotoMain(profile.photo || defaultPhoto);
-}
+// function loadProfileMain() {
+//   const stored = localStorage.getItem(STORAGE_KEY);
+//   const profile = stored
+//     ? JSON.parse(stored) : {
+//         photo: defaultPhoto 
+//       };
+//   initialProfile = { ...profile };
+//   setPhotoMain(profile.photo || defaultPhoto);
+// }
 
 function setPhotoMain(src) {
     let navProfilePhoto;
@@ -43,6 +45,13 @@ document.addEventListener('click', function(){
             setTimeout(() => {
                 initial();
             }, 100);
+            break;
+        case "login":
+            window.location.href="login-page.html";
+            break;
+        case "logout":
+            localStorage.removeItem(STORAGE_KEY_USER_LOGIN);
+            window.location.href="login-page.html";
             break;
         default:
             break;
@@ -116,7 +125,7 @@ function showDropdownProfile(){
 
 
 function initial(){
-    setNameUserLogin();
+    setUserLogin();
     setTotalRatingMakananByComments();
 
     let currentUrl = window.location.href;
@@ -138,19 +147,26 @@ function initial(){
     })
 }
 
-const setNameUserLogin = () => {
+const setUserLogin = () => {
     let userProfileMenu = document.getElementById("userProfileName");
     let loginMenu = document.getElementById("loginMenu");
     const loginIconMenu = document.getElementById("iconLoginMenu");
+    setPhotoMain(defaultPhoto);
 
     if(userLogin != null){
+        if(userLogin.profile_pict == undefined){
+            setPhotoMain(defaultPhoto);
+        }else {
+            setPhotoMain(userLogin.profile_pict);
+        }
         userProfileMenu.classList.remove("d-none");
-        userProfileMenu.innerText = userLogin.nama;
+        userProfileMenu.innerHTML = `<i class="bi bi-person-fill"></i> ${userLogin.nama}`;
         userProfileMenu.href = "profil.html";
 
         loginIconMenu.classList.remove("bi-box-arrow-in-right");
         loginIconMenu.classList.add("bi-box-arrow-in-left");
-        loginMenu.innerText = "Keluar";
+        loginMenu.innerHTML = `<i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i> keluar`;
+        loginMenu.setAttribute("data-id", "logout");
     }
 }
 
@@ -167,5 +183,5 @@ const setTotalRatingMakananByComments = async () => {
 }
 
 
+// loadProfileMain();
 initial();
-loadProfileMain();

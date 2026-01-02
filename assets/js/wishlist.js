@@ -2,7 +2,7 @@
 
 /* ===== CONFIG & STORAGE ===== */
 
-const USER_ID = 1;
+// const userLogin.id_user = 1;
 const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
 
 function getAllWishlist() {
@@ -54,7 +54,7 @@ function addToWishlist(id_makanan) {
   let data = getAllWishlist();
 
   const exists = data.find(
-    (w) => w.id_makanan == id_makanan && w.id_user == USER_ID
+    (w) => w.id_makanan == id_makanan && w.id_user == userLogin.id_user
   );
 
   if (exists) {
@@ -66,7 +66,7 @@ function addToWishlist(id_makanan) {
   }
 
   data.push({
-    id_user: USER_ID,
+    id_user: userLogin.id_user,
     id_makanan: id_makanan,
   });
 
@@ -85,7 +85,7 @@ async function renderWishlist() {
 
   container.innerHTML = `<p class="col-12 text-center text-muted">Memuat Wishlist...</p>`;
 
-  const wishlists = getAllWishlist().filter((w) => w.id_user == USER_ID);
+  const wishlists = getAllWishlist().filter((w) => w.id_user == userLogin.id_user);
   const foods = await getFoods();
 
   if (wishlists.length === 0) {
@@ -151,7 +151,7 @@ function confirmDelete() {
   if (idMakananYangAkanDihapus !== null) {
     const currentWishlist = getAllWishlist();
     const updatedWishlist = currentWishlist.filter(
-      (w) => !(w.id_makanan == idMakananYangAkanDihapus && w.id_user == USER_ID)
+      (w) => !(w.id_makanan == idMakananYangAkanDihapus && w.id_user == userLogin.id_user)
     );
 
     saveWishlist(updatedWishlist);

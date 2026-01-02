@@ -304,6 +304,7 @@ textarea:focus {
   align-items: center;
   text-decoration: none;
   color: #696969;
+  cursor: pointer;
 }
 .profile-dropdown-link > i {
   font-size: 1.6rem;

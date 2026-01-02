@@ -24,7 +24,7 @@
     <main>
         <div class="register-page-container shadow">
             <h2 class="register-page-title mb-4">Register</h2>
-            <form>
+            <form action="index.html" method="post">
                 <div class="mb-3">
                     <label for="registerName" class="register-form-label form-label">Name</label>
                     <input type="text" class="form-control register-form-control" id="registerName" placeholder="Enter your name" required>
@@ -46,7 +46,7 @@
                         </button>
                     </div>
                 </div>
-                <button type="submit" class="btn register-btn">Register</button>
+                <button type="button" class="btn register-btn" data-id="register">Register</button>
                 <a href="login-page.html" class="register-login-link">Sudah punya akun? Login di sini</a>
             </form>
         </div>
@@ -91,6 +91,16 @@
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
 
+    <script src="./assets/js/encrypter.js"></script>
     <script src="./assets/js/login-register.js"></script>
+
+    <div id="alertModal" class="confirm-overlay d-none">
+        <div class="card confirm-card shadow rounded-4 p-4 text-center">
+            <p id="alertDesc" class="mb-4 fw-semibold"> </p>
+            <div class="d-flex justify-content-center gap-3">
+                <button data-id="closeAlertModal" class="btn btn-success">Ok</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
