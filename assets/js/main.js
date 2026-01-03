@@ -129,7 +129,7 @@ function showDropdownProfile(){
 
 /* ================= 1. INIT DATA (AMBIL DARI API JIKA LOCAL KOSONG) ================= */
 async function initArchive() {
-    if (localStorage.getItem(ARCHIVE_KEY) === null) {
+    if (localStorage.getItem(ARCHIVE_KEY) === null && userLogin != null) {
         try {
             const res = await fetch("https://dummyjson.com/c/8454-9a1a-4c50-a20c");
             const data = await res.json();
@@ -149,7 +149,7 @@ async function initArchive() {
 }
 
 async function initWishlist() {
-    if (localStorage.getItem(WISHLIST_KEY) === null) {
+    if (localStorage.getItem(WISHLIST_KEY) === null  && userLogin != null) {
         try {
             const res = await fetch("https://dummyjson.com/c/c42d-933e-41ca-8c5e");
             const data = await res.json();
