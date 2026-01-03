@@ -184,12 +184,46 @@ async function initFoodLiked() {
     }
 }
 
+async function initDataRating() {
+    if (localStorage.getItem(STORAGE_KEY_RATING) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/7b89-7430-43b3-a03f");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.ratings;
+
+            localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initDataComment() {
+    if (localStorage.getItem(commentKeyStorage) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/fd5d-2881-4a4c-bc72");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.comments;
+
+            localStorage.setItem(commentKeyStorage, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
 function initial(){
     setUserLogin();
     setTotalRatingMakananByComments();
     initArchive();
     initWishlist();
     initFoodLiked(); 
+    initDataRating();
+    initDataComment();
 
     let currentUrl = window.location.href;
     currentUrl = currentUrl.split("/");
