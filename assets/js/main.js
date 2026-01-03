@@ -283,18 +283,20 @@ const setTotalRatingMakananByComments = async () => {
 
 // Fungsi agar saat halaman direfresh, tombol yang sudah dilike tetap berwarna merah
 function syncLikeButtons(icon, idMakanan) {
-    let archieve = localStorage.getItem(ARCHIVE_KEY);
-    archieve = archieve == null ? archieve : JSON.parse(archieve);
+    if (userLogin != null){
 
-    archieve = archieve.filter((data) => {
-        return data["id_makanan"] == idMakanan;
-    });
-
-    archieve.forEach(elm => {
-        icon.classList.replace('bi-heart', 'bi-heart-fill');
-        icon.classList.add('text-danger');
-    })
+        let archieve = localStorage.getItem(ARCHIVE_KEY);
+        archieve = archieve == null ? archieve : JSON.parse(archieve);
     
+        archieve = archieve.filter((data) => {
+            return data["id_makanan"] == idMakanan;
+        });
+    
+        archieve.forEach(elm => {
+            icon.classList.replace('bi-heart', 'bi-heart-fill');
+            icon.classList.add('text-danger');
+        })
+    }
 }
 
 // loadProfileMain();
