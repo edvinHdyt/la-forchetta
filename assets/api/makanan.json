@@ -109,6 +109,131 @@
             "id_kategori": "5"
         },
         {
+            "id_makanan": 6,
+            "nama_makanan": "Mie Gomak",
+            "deskripsi_makanan": "Mie khas Batak Sumatera Utara yang disajikan dengan kuah santan berbumbu andaliman.",
+            "resep": [
+            "200g mie lidi (mie gomak)",
+            "500ml santan",
+            "2 siung bawang putih",
+            "5 siung bawang merah",
+            "2 buah cabai merah",
+            "1 batang serai",
+            "1 sdt andaliman",
+            "Garam secukupnya"
+            ],
+            "step_by_step": [
+            "1. Rebus mie lidi hingga matang, tiriskan.",
+            "2. Tumis bumbu halus (bawang, cabai, andaliman) hingga harum.",
+            "3. Masukkan santan dan serai, didihkan.",
+            "4. Tambahkan mie, aduk rata.",
+            "5. Sajikan hangat dengan taburan bawang goreng."
+            ],
+            "foto_makanan": "Mie_Gomak.jpg",
+            "rating": 4.9,
+            "jumlah_like": 8200,
+            "id_provinsi": "2",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 7,
+            "nama_makanan": "Rujak Medan",
+            "deskripsi_makanan": "Appetizer berupa campuran buah segar dengan bumbu kacang khas Medan.",
+            "resep": [
+            "1 buah mangga muda",
+            "1 buah jambu air",
+            "1 buah nanas",
+            "100g kacang tanah goreng",
+            "3 sdm gula merah",
+            "1 buah cabai rawit"
+            ],
+            "step_by_step": [
+                "1. Potong semua buah sesuai selera.",
+                "2. Haluskan kacang tanah, gula merah, dan cabai.",
+                "3. Campurkan buah dengan bumbu kacang.",
+                "4. Sajikan dingin."
+            ],
+            "foto_makanan": "Rujak_Medan.jpg",
+            "rating": 4.8,
+            "jumlah_like": 5400,
+            "id_provinsi": "2",
+            "id_kategori": "2"
+            },
+            {
+            "id_makanan": 8,
+            "nama_makanan": "Bika Ambon",
+            "deskripsi_makanan": "Dessert khas Medan berbentuk kue bertekstur kenyal dan berongga dengan aroma pandan.",
+            "resep": [
+            "250g tepung tapioka",
+            "100g tepung terigu",
+            "200ml santan",
+            "200g gula pasir",
+            "5 butir telur",
+            "1 sdt ragi instan",
+            "Daun pandan"
+            ],
+            "step_by_step": [
+            "1. Campur tepung, gula, dan telur.",
+            "2. Tambahkan santan dan ragi, aduk rata.",
+            "3. Diamkan adonan 2 jam.",
+            "4. Tuang ke loyang, panggang 45 menit."
+            ],
+            "foto_makanan": "Bika_Ambon.jpg",
+            "rating": 4.7,
+            "jumlah_like": 3100,
+            "id_provinsi": "2",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 9,
+            "nama_makanan": "Teh Susu Telur",
+            "deskripsi_makanan": "Minuman khas Medan berupa teh panas yang dicampur susu kental manis dan telur, menghasilkan rasa creamy dan kaya energi.",
+            "resep": [
+            "1 gelas teh panas",
+            "1 butir kuning telur ayam",
+            "2 sdm susu kental manis",
+            "2 sdm gula pasir"
+            ],
+            "step_by_step": [
+            "1. Kocok kuning telur, gula, dan susu hingga mengembang.",
+            "2. Tuang teh panas perlahan sambil diaduk.",
+            "3. Aduk rata hingga berbusa.",
+            "4. Sajikan hangat."
+         ],
+            "foto_makanan": "Teh_Susu_Telur.jpg",
+            "rating": 4.9,
+            "jumlah_like": 6700,
+            "id_provinsi": "2",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 10,
+            "nama_makanan": "Bolu Meranti",
+            "deskripsi_makanan": "Bolu gulung khas Medan yang lembut dengan berbagai isian seperti keju, coklat, atau selai.",
+            "resep": [
+            "6 butir telur",
+            "150g gula pasir",
+            "100g tepung terigu",
+            "100g margarin, lelehkan",
+            "1 sdt emulsifier (SP/TBM)",
+            "1 sdt vanili",
+            "Isian: keju parut/coklat/selai sesuai selera"
+            ],
+            "step_by_step": [
+            "1. Kocok telur, gula, dan emulsifier hingga mengembang.",
+            "2. Masukkan tepung terigu dan vanili, aduk rata.",
+            "3. Tambahkan margarin leleh, aduk perlahan.",
+            "4. Tuang adonan ke loyang, ratakan.",
+            "5. Panggang 15-20 menit hingga matang.",
+            "6. Keluarkan, beri isian, lalu gulung selagi hangat."
+            ],
+            "foto_makanan": "Bolu_Meranti.jpg",
+            "rating": 4.5,
+            "jumlah_like": 1800,
+            "id_provinsi": "2",
+            "id_kategori": "5"
+        },
+        {
             "id_makanan": 11,
             "nama_makanan": "Rendang",
             "deskripsi_makanan": "Masakan daging sapi bersantan khas Minangkabau.",
@@ -516,6 +641,136 @@
             "id_kategori": "5"
         },
         {
+            "id_makanan": 26,
+            "nama_makanan": "Nasi Gemuk",
+            "deskripsi_makanan": "Nasi gurih khas Jambi yang dimasak dengan santan dan rempah, disajikan dengan lauk seperti telur, ikan teri, kacang goreng, dan sambal.",
+            "resep": [
+            "500g beras",
+            "600ml santan",
+            "2 lembar daun pandan",
+            "2 batang serai, memarkan",
+            "2 lembar daun salam",
+            "1 sdt garam",
+            "Pelengkap: telur rebus, ikan teri goreng, kacang goreng, sambal"
+            ],
+            "step_by_step": [
+            "1. Cuci beras hingga bersih.",
+            "2. Masak beras bersama santan, daun pandan, serai, daun salam, dan garam.",
+            "3. Aduk perlahan hingga santan meresap dan nasi matang.",
+            "4. Sajikan nasi gemuk dengan telur rebus, ikan teri goreng, kacang goreng, dan sambal."
+            ],
+            "foto_makanan": "Nasi_Gemuk.jpg",
+            "rating": 5,
+            "jumlah_like": 15000,
+            "id_provinsi": "6",
+            "id_kategori": "1"
+        },
+        {
+            "id_makanan": 27,
+            "nama_makanan": "Gulai Tepek Ikan",
+            "deskripsi_makanan": "Appetizer khas Jambi berupa olahan ikan giling yang dicampur tepung sagu, dibentuk pipih, lalu dimasak dalam kuah gulai santan berbumbu rempah.",
+            "resep": [
+            "250g ikan giling",
+            "200g tepung sagu",
+            "2 siung bawang putih",
+            "1 sdt garam",
+            "Air secukupnya",
+            "500ml santan",
+            "5 siung bawang merah",
+            "3 siung bawang putih",
+            "2 batang serai, memarkan",
+            "2 lembar daun salam",
+            "Cabai merah secukupnya"
+            ],
+            "step_by_step": [
+            "1. Campur ikan giling, tepung sagu, bawang putih, dan garam, tambahkan air secukupnya hingga adonan bisa dibentuk.",
+            "2. Bentuk adonan menjadi pipih (tepek), lalu rebus hingga matang, angkat dan tiriskan.",
+            "3. Tumis bumbu halus (bawang merah, bawang putih, cabai) hingga harum.",
+            "4. Masukkan santan, serai, dan daun salam, didihkan.",
+            "5. Masukkan tepek ikan ke dalam kuah gulai, masak hingga bumbu meresap.",
+            "6. Sajikan hangat."
+            ],
+            "foto_makanan": "Gulai_Tepek_Ikan.jpg",
+            "rating": 4.7,
+            "jumlah_like": 4200,
+            "id_provinsi": "6",
+            "id_kategori": "2"
+        },
+        {
+            "id_makanan": 28,
+            "nama_makanan": "Kue Padamaran",
+            "deskripsi_makanan": "Dessert khas Jambi berupa kue hijau dari tepung beras dan santan, beraroma pandan.",
+            "resep": [
+            "200g tepung beras",
+            "400ml santan",
+            "100g gula merah",
+            "Daun pandan",
+            "Garam secukupnya"
+            ],
+            "step_by_step": [
+            "1. Campur tepung beras, santan, dan garam.",
+            "2. Tambahkan air pandan.",
+            "3. Tuang adonan ke cetakan.",
+            "4. Tambahkan gula merah di tengah.",
+            "5. Kukus hingga matang."
+            ],
+            "foto_makanan": "Kue_Padamaran.jpg",
+            "rating": 4.7,
+            "jumlah_like": 2600,
+            "id_provinsi": "6",
+            "id_kategori": "3"
+        },
+        {
+            "id_makanan": 29,
+            "nama_makanan": "Jus Pinang",
+            "deskripsi_makanan": "Minuman tradisional khas Jambi yang terbuat dari buah pinang muda, dicampur rempah-rempah, madu, dan susu, dipercaya menambah stamina.",
+            "resep": [
+            "1 buah pinang muda, iris tipis",
+            "1 ruas jahe, memarkan",
+            "2 batang serai, memarkan",
+            "1 sdm madu",
+            "100ml susu kental manis",
+            "300ml air panas"
+            ],
+            "step_by_step": [
+            "1. Rebus irisan pinang muda, jahe, dan serai dengan air hingga mendidih.",
+            "2. Saring air rebusan ke dalam gelas.",
+            "3. Tambahkan madu dan susu kental manis, aduk rata.",
+            "4. Sajikan hangat."
+            ],
+            "foto_makanan": "Jus_Pinang.jpg",
+            "rating": 4.8,
+            "jumlah_like": 3600,
+            "id_provinsi": "6",
+            "id_kategori": "4"
+        },
+        {
+            "id_makanan": 30,
+            "nama_makanan": "Kue Gandus",
+            "deskripsi_makanan": "Cemilan khas Jambi berupa kue berbahan dasar tepung beras dan santan, bertekstur lembut dan gurih, biasanya disajikan dengan taburan ebi dan bawang goreng.",
+            "resep": [
+            "200g tepung beras",
+            "500ml santan",
+            "1 sdt garam",
+            "1 sdt merica bubuk",
+            "2 siung bawang putih, haluskan",
+            "Taburan: ebi sangrai, bawang goreng, irisan cabai merah"
+        ],
+            "step_by_step": [
+            "1. Campur tepung beras, santan, garam, merica, dan bawang putih hingga rata.",
+            "2. Masak adonan di atas api kecil sambil diaduk hingga mengental.",
+            "3. Tuang adonan ke dalam cetakan kecil atau loyang.",
+            "4. Kukus selama 20-25 menit hingga matang.",
+            "5. Angkat, beri taburan ebi, bawang goreng, dan irisan cabai merah di atasnya.",
+            "6. Sajikan hangat atau dingin."
+        ],
+            "foto_makanan": "Kue_Gandus.jpg",
+            "rating": 4.6,
+            "jumlah_like": 4100,
+            "id_provinsi": "6",
+            "id_kategori": "5"
+        },
+        {
             "id_makanan": 31,
             "nama_makanan": "Sate Bandeng",
             "deskripsi_makanan": "Sate khas Banten berbahan dasar ikan bandeng tanpa duri yang dihaluskan bersama bumbu rempah dan santan, lalu dibakar dalam balutan daun pisang.",
@@ -700,7 +955,7 @@
             "4. Masukkan susu. Aduk. Beri garam, gula secukupnya. Cicipi. Masak sampai bumbu meresap dan daging empuk.",
             "5. Sajikan soto bersama bersama pelengkapnya."
             ],
-            "foto_makanan": "./assets/img/SotoBetawi.jpg",
+            "foto_makanan": "SotoBetawi.jpg",
             "rating": 5,
             "jumlah_like": 590,
             "id_provinsi": "8",
@@ -738,7 +993,7 @@
             "3. Tata sayuran, tahu dan mi dalam piring saji, lalu siram dengan bumbunya.",
             "4. Sajikan bersama pelengkapnya."
             ],
-            "foto_makanan": "./assets/img/AsinanBetawi.jpg",
+            "foto_makanan": "AsinanBetawi.jpg",
             "rating": 4.2,
             "jumlah_like": 300,
             "id_provinsi": "8",
@@ -766,7 +1021,7 @@
             "6. Oles kuning telur dan susu lalu panggang.",
             "7. Roti manis selesai."
             ],
-            "foto_makanan": "./assets/img/RotiBuaya.jpg",
+            "foto_makanan": "RotiBuaya.jpg",
             "rating": 4.7,
             "jumlah_like": 420,
             "id_provinsi": "8",
@@ -798,7 +1053,7 @@
             "4. Masukkan santan, air, garam dan pasta vanila dalam panci. Aduk rata, lalu masak hingga mendidih. Biarkan dingin.",
             "5. Tuang sirup cocopandan ke dalam gelas. Tambahkan potongan selendang mayang dan es batu. Lalu tuang kuah santan. Sajikan."
             ],
-            "foto_makanan": "./assets/img/EsSelendangMayang.jpg",
+            "foto_makanan": "EsSelendangMayang.jpg",
             "rating": 4.9,
             "jumlah_like": 520,
             "id_provinsi": "8",
@@ -829,7 +1084,7 @@
             "3. Panaskan wajan anti lengket. Tuang sedikit minyak goreng, masukkan adonan nasi, Buat dadar setebal 1 cm. Tutup panci kemudian balik, angkat.",
             "4. Penyajian : Siapkan piring saji. Taruh dadar kerak telur, taburkan serundeng dan bawang goreng. Sajikan."
             ],
-            "foto_makanan": "./assets/img/KerakTelor.jpg",
+            "foto_makanan": "KerakTelor.jpg",
             "rating": 4.8,
             "jumlah_like": 1200,
             "id_provinsi": "8",
@@ -855,7 +1110,7 @@
             "2. Letakan nasi secukupnya di atas selembar daun lalu gulung secara perlahan, kemudian gulung bagian ujung daun, atas dan bawahnya lalu rapikan.",
             "3. Susun nasi timbel bersama pelengkapnya, dan siap di nikmati."
             ],
-            "foto_makanan": "./assets/img/NasiTimbel.jpg",
+            "foto_makanan": "NasiTimbel.jpg",
             "rating": 5,
             "jumlah_like": 700,
             "id_provinsi": "9",
@@ -892,7 +1147,7 @@
             "5. Setelah halus masukan air asam jawa secara bertahap sampai kekentalan yang diinginkan.",
             "6. Lalu masukan sayuran rebus aduk rata dan lotek bandung siap di sajikan enjoy."
             ],
-            "foto_makanan": "./assets/img/Lotek.jpg",
+            "foto_makanan": "Lotek.jpg",
             "rating": 4.8,
             "jumlah_like": 200,
             "id_provinsi": "9",
@@ -917,7 +1172,7 @@
             "4. Setelah mendidih, matikan kompor.",
             "5. Sajikan tape bakar, siram dengan saus gula kelapa."
             ],
-            "foto_makanan": "./assets/img/Colenak.png",
+            "foto_makanan": "Colenak.png",
             "rating": 4,
             "jumlah_like": 205,
             "id_provinsi": "9",
@@ -942,7 +1197,7 @@
             "2. Masukkan semua bahan kecuali susu. Rebus dengan api kecil hingga mendidih, tutup panci. Jika sudah mendidih, matikan api. Diamkan sejenak.",
             "3. Lalu saring dan beri kental manis. Aduk rata, siap disajikan."
             ],
-            "foto_makanan": "./assets/img/Bandrek.jpg",
+            "foto_makanan": "Bandrek.jpg",
             "rating": 4.5,
             "jumlah_like": 320,
             "id_provinsi": "9",
@@ -973,7 +1228,7 @@
             "3. Panaskan kukusan, kemudian kukus batagor sampai matang. Batagor yang telah matang dapat diangkat dan didinginkan. Batagor siap digoreng, apabila ingin disimpan, bisa masuk kulkas dalam wadah kedap udara.",
             "4. Goreng batagor dalam minyak panas sampai keemasan, kemudian sajikan dengan kuah kacang. Selamat mencoba."
             ],
-            "foto_makanan": "./assets/img/Batagor.jpg",
+            "foto_makanan": "Batagor.jpg",
             "rating": 5,
             "jumlah_like": 2200,
             "id_provinsi": "9",

@@ -15,12 +15,15 @@ const confirmNo = document.getElementById("confirmNo");
 const confirmText = document.getElementById("confirmText");
 // navProfilePhoto = document.getElementById("navProfilePhoto");
 
-
 let isEditMode = false;
+
+if (userLogin == undefined){
+  window.location.href = "index.html";
+}
 
 // load form
 function loadProfile() {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = localStorage.getItem(STORAGE_KEY_USER_LOGIN);
   const profile = stored
     ? JSON.parse(stored) : {
         name: nameInput?.defaultValue || "",
@@ -28,10 +31,10 @@ function loadProfile() {
         email: emailInput?.defaultValue || "",
         photo: defaultPhoto 
       };
-    nameInput.value = profile.name;
+    nameInput.value = profile.nama;
     phoneInput.value = profile.phone;
     emailInput.value = profile.email;
-  setPhoto(profile.photo || defaultPhoto);
+  setPhoto(profile.profile_pict || defaultPhoto);
   setEditMode(false); 
 }
 
@@ -77,7 +80,8 @@ function hasChanges() {
     nameInput.value.trim() !== initialProfile.name ||
     phoneInput.value.trim() !== initialProfile.phone ||
     emailInput.value.trim() !== initialProfile.email ||
-    profilePhoto.src !== initialProfile.photo ); }
+    profilePhoto.src !== initialProfile.profile_pict ); 
+}
 
 //logic alur button konfirmasi
 profileForm?.addEventListener("submit", e => {
@@ -86,58 +90,45 @@ profileForm?.addEventListener("submit", e => {
       profileForm.classList.add("was-validated");
       return; }
     if (!hasChanges()) return;
-  confirmCard.classList.remove("d-none"); });
+  confirmCard.classList.remove("d-none"); 
+});
 
 confirmYes?.addEventListener("click", () => {
+  userLogin.email = emailInput.value.trim();
+  userLogin.nama = nameInput.value.trim();
+  userLogin.phone = phoneInput.value.trim();
+  userLogin.profile_pict = profilePhoto.src;
+
+  let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
+  let newDataUsers = dataUsers.filter(data => data["id"] == userLogin.id);
+  
+  newDataUsers[0].email = emailInput.value.trim();
+  newDataUsers[0].nama = nameInput.value.trim();
+  newDataUsers[0].phone = phoneInput.value.trim();
+  newDataUsers[0].profile_pict = profilePhoto.src;
+
   const profile = {
-    name: nameInput.value.trim(),
-    phone: phoneInput.value.trim(),
-    email: emailInput.value.trim(),
-    photo: profilePhoto.src || defaultPhoto };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      email: emailInput.value.trim(),
+      profile_pict: profilePhoto.src || defaultPhoto 
+    };
+
+  let indexUser = dataUsers.map(e => e.id).indexOf(newDataUsers[0].id);
+
+  dataUsers[indexUser] = newDataUsers[0];
+
+  localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(userLogin));
+  localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUsers));
   initialProfile = { ...profile };
-    confirmCard.classList.add("d-none");
-    setEditMode(false); }); // di sini dia balik lagi ke edit profile
+  confirmCard.classList.add("d-none");
+  setEditMode(false); 
+}); // di sini dia balik lagi ke edit profile
     
 confirmNo?.addEventListener("click", () => {
   confirmCard.classList.add("d-none");
   loadProfile(); });
 
 
-
-const initialize = async() => {
-   if(userLogin == null){
-      let url = window.location.href;
-      url = url.split("/");
-      const currUrl = `${url[0]}//${url[2]}/`;
-      window.location.href = currUrl + "login-page.html";
-
-      return;
-  }
-
-  let users = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
-  let dataUser = await users.json();
-
-  Array.from(dataUser["users"]).forEach(user => {
-    if (user["id"] == 1){
-      dataUser = user;
-    }
-  });
-
-  const obj = {
-    id: dataUser["id"],
-    name: dataUser["nama"],
-    phone: dataUser["phone"],
-    email: dataUser["email"],
-    photo: dataUser["profile_pict"] == null ? defaultPhoto : dataUser["profile_pict"]
-  };
-
-  const stored = localStorage.getItem(STORAGE_KEY);
-
-  if (stored == null){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-  }
-  loadProfile();
-}
-
-initialize();
+loadProfile();

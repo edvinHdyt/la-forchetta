@@ -3,19 +3,28 @@
 let initialProfile = {};
 
 const STORAGE_KEY = "la-forchetta-profile";
+const STORAGE_KEY_RATING = "la-forchetta-ratings";
+const WISHLIST_KEY = "la-forchetta-wishlist";
+const STORAGE_KEY_USER_LOGIN = "la-forchetta-user-login";
+const commentKeyStorage = "la-forchetta-comment";
+const ARCHIVE_KEY = "la-forchetta-archive"; 
+const STORAGE_KEY_LIKED_FOODS = "la-forchetta-liked-foods"; 
+const STORAGE_KEY_USER = "la-forchetta-users"; 
+
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
 let userLogin = localStorage.getItem("la-forchetta-user-login");
+userLogin = userLogin == null ? userLogin : JSON.parse(userLogin);
 
-function loadProfileMain() {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const profile = stored
-    ? JSON.parse(stored) : {
-        photo: defaultPhoto 
-      };
-  initialProfile = { ...profile };
-  setPhotoMain(profile.photo || defaultPhoto);
-}
+// function loadProfileMain() {
+//   const stored = localStorage.getItem(STORAGE_KEY);
+//   const profile = stored
+//     ? JSON.parse(stored) : {
+//         photo: defaultPhoto 
+//       };
+//   initialProfile = { ...profile };
+//   setPhotoMain(profile.photo || defaultPhoto);
+// }
 
 function setPhotoMain(src) {
     let navProfilePhoto;
@@ -40,6 +49,13 @@ document.addEventListener('click', function(){
             setTimeout(() => {
                 initial();
             }, 100);
+            break;
+        case "login":
+            window.location.href="login-page.html";
+            break;
+        case "logout":
+            localStorage.removeItem(STORAGE_KEY_USER_LOGIN);
+            window.location.href="login-page.html";
             break;
         default:
             break;
@@ -112,8 +128,123 @@ function showDropdownProfile(){
 }
 
 
+/* ================= 1. INIT DATA (AMBIL DARI API JIKA LOCAL KOSONG) ================= */
+async function initArchive() {
+    if (localStorage.getItem(ARCHIVE_KEY) === null && userLogin != null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/8454-9a1a-4c50-a20c");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.archievest;
+            
+            initialData = initialData.filter((data) => {
+                return data["id_user"] == userLogin.id;
+            });
+
+            localStorage.setItem(ARCHIVE_KEY, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initWishlist() {
+    if (localStorage.getItem(WISHLIST_KEY) === null  && userLogin != null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/c42d-933e-41ca-8c5e");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.wishlists;
+            
+            initialData = initialData.filter((data) => {
+                return data["id_user"] == userLogin.id;
+            });
+
+            localStorage.setItem(WISHLIST_KEY, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+
+async function initUsers() {
+    // console.log(localStorage.getItem(STORAGE_KEY_USER))
+    if (localStorage.getItem(STORAGE_KEY_USER) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/0b7f-08fd-40a1-9ab1");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.users;
+
+            localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+
+async function initFoodLiked() {
+    if (localStorage.getItem(STORAGE_KEY_LIKED_FOODS) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/b77d-8bba-4ac5-b729");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.liked_foods;
+
+            localStorage.setItem(STORAGE_KEY_LIKED_FOODS, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initDataRating() {
+    if (localStorage.getItem(STORAGE_KEY_RATING) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/7b89-7430-43b3-a03f");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.ratings;
+
+            localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initDataComment() {
+    if (localStorage.getItem(commentKeyStorage) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/fd5d-2881-4a4c-bc72");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.comments;
+
+            localStorage.setItem(commentKeyStorage, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
 function initial(){
-    setNameUserLogin();
+    setUserLogin();
+    setTotalRatingMakananByComments();
+    initArchive();
+    initWishlist();
+    initFoodLiked(); 
+    initDataRating();
+    initDataComment();
+    initUsers();
 
     let currentUrl = window.location.href;
     currentUrl = currentUrl.split("/");
@@ -131,25 +262,65 @@ function initial(){
         } else {
             elm.classList.remove("active");
         }
-    })
+    });
 }
 
-const setNameUserLogin = () => {
+const setUserLogin = () => {
     let userProfileMenu = document.getElementById("userProfileName");
     let loginMenu = document.getElementById("loginMenu");
     const loginIconMenu = document.getElementById("iconLoginMenu");
+    setPhotoMain(defaultPhoto);
 
     if(userLogin != null){
+        if(userLogin.profile_pict == undefined){
+            setPhotoMain(defaultPhoto);
+        }else {
+            setPhotoMain(userLogin.profile_pict);
+        }
         userProfileMenu.classList.remove("d-none");
-        userProfileMenu.innerText = userLogin.nama;
+        userProfileMenu.innerHTML = `<i class="bi bi-person-fill"></i> ${userLogin.nama}`;
         userProfileMenu.href = "profil.html";
 
         loginIconMenu.classList.remove("bi-box-arrow-in-right");
         loginIconMenu.classList.add("bi-box-arrow-in-left");
-        loginMenu.innerText = "Keluar";
+        loginMenu.innerHTML = `<i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i> keluar`;
+        loginMenu.setAttribute("data-id", "logout");
+    }
+}
+
+const setTotalRatingMakananByComments = async () => {
+    const ratingStorage = localStorage.getItem(STORAGE_KEY_RATING);
+
+    if (ratingStorage == null){
+        const dataRating = await fetch("https://dummyjson.com/c/7b89-7430-43b3-a03f");
+    
+        let rating = await dataRating.json();
+
+        localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(rating["ratings"]));
     }
 }
 
 
+
+// Fungsi agar saat halaman direfresh, tombol yang sudah dilike tetap berwarna merah
+function syncLikeButtons(icon, idMakanan) {
+    if (userLogin != null){
+
+        let archieve = localStorage.getItem(ARCHIVE_KEY);
+        archieve = archieve == null ? archieve : JSON.parse(archieve);
+    
+        if (archieve != null){
+            archieve = archieve.filter((data) => {
+                return data["id_makanan"] == idMakanan;
+            });
+        }
+    
+        archieve.forEach(elm => {
+            icon.classList.replace('bi-heart', 'bi-heart-fill');
+            icon.classList.add('text-danger');
+        })
+    }
+}
+
+// loadProfileMain();
 initial();
-loadProfileMain();

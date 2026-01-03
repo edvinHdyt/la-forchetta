@@ -23,7 +23,7 @@
     <main>
         <div class="login-page-container shadow">
             <h2 class="login-page-title mb-4">Login</h2>
-            <form>
+            <form action="index.html" method="post">
                 <div class="mb-3">
                     <label for="loginEmail" class="login-form-label form-label">Email</label>
                     <input type="email" class="form-control login-form-control" id="loginEmail" placeholder="Enter your email" required>
@@ -32,47 +32,49 @@
                     <label for="loginPassword" class="login-form-label form-label">Password</label>
                     <div class="input-group">
                         <input type="password" class="form-control login-form-control" id="loginPassword" placeholder="Enter your password" required>
-                        <button class="login-password-toggle-btn" type="button" id="toggleLoginPassword" tabindex="-1">
+                        <button class="login-password-toggle-btn" type="button" id="toggleLoginPassword" tabindex="-1" aria-label="show-password">
                             <i class="bi bi-eye" id="loginEyeIcon"></i>
                         </button>
                     </div>
                 </div>
-                <button type="submit" class="btn login-btn">Login</button>
+                <button type="button" class="btn login-btn" data-id="loginProccess" aria-label="login">Login</button>
                 <a href="register-page.html" class="login-register-link">Belum punya akun? Daftar di sini</a>
             </form>
         </div>
     </main>
 
+
+   <!-- footer -->
      <footer class="main-footer mt-5 static-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <h1 class="footer-title" id="contactUs">Contact Us</h1>
                     <p>Email: info@forchetta.com</p>
                     <p>Telepon: (021) 1234 5678</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
+                    <h1 class="footer-title">Media Sosial</h1>
                     <ul class="social-links">
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Tiktok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <h1 class="footer-title copyright-title">La Forchetta</h1>
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
@@ -81,6 +83,17 @@
     <script src="./assets/vendor/jquery/jquery.min.js"></script>
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
     
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/encrypter.js"></script>
     <script src="./assets/js/login-register.js"></script>
+
+    <div id="alertModal" class="confirm-overlay d-none">
+        <div class="card confirm-card shadow rounded-4 p-4 text-center">
+            <p id="alertDesc" class="mb-4 fw-semibold"> </p>
+            <div class="d-flex justify-content-center gap-3">
+                <button data-id="closeAlertModal" class="btn btn-success" aria-label="close-alert">Ok</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil User</title>
+    <title>Profile</title>
     <link rel="icon" type="image/x-icon" href="./assets/image/favicon/favicon.ico">
     <link rel="stylesheet" href="./assets/vendor/boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendor/boostrap/icon/font/bootstrap-icons.min.css">
@@ -21,10 +21,10 @@
                 </a>
             </li>
              <li>
-                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                <div class="profile-dropdown-link" id="loginMenu" data-id="login">
                     <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
                     Masuk
-                </a>
+                </div>
             </li>
           </ul>
         </div>
@@ -50,8 +50,8 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form action="HasilSearch.html" method="GET"  class="d-flex" role="search">
-                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
                         <button class="btn btn-primary btn-search" type="submit">Search</button>
                     </form>
                 </div>
@@ -86,8 +86,8 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form action="HasilSearch.html" method="GET"  class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
                         <button class="btn btn-primary btn-search" type="submit">Search</button>
                     </form>
                 </div>
@@ -98,8 +98,12 @@
 
     <!-- body -->
     <main>
-
         <div class="container my-3">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb" id="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
             <div class="profile-card shadow p-5 rounded-4 mx-auto">
             <h4 class="mb-3 fw-bold text-center">Profile Information</h4>
             <!-- photo profile -->

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- navbar -->
+        <!-- navbar -->
     <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
@@ -32,10 +32,10 @@
                 </a>
             </li>
              <li>
-                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                <div class="profile-dropdown-link" id="loginMenu" data-id="login">
                     <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
                     Masuk
-                </a>
+                </div>
             </li>
           </ul>
         </div>
@@ -49,7 +49,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contactUs" data-id="activatedMenu">Contact Us</a>
@@ -61,13 +61,28 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form action="HasilSearch.html" method="GET" class="d-flex" role="search">
-                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                   </ul>
+                    <form
+                    action="HasilSearch.html"
+                    method="GET"
+                    class="d-none d-md-flex align-items-center"
+                    role="search"
+                    >
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        name="q"
+                        placeholder="Search"
+                        aria-label="Search"
+                        required
+                    />
+                    <button class="btn btn-primary btn-search" type="submit" aria-label="search">
+                        Search
+                    </button>
                     </form>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu" aria-label="hamburger-menu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
@@ -79,7 +94,7 @@
                 </div>
             </div>
         </nav>
-
+        <!-- dropdown -->
         <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
             <div class="container">
                 <div class="navbar-dropdown-item" id="navbarSupportedContent">
@@ -97,9 +112,9 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form action="HasilSearch.html" method="GET" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit" aria-label="search">Search</button>
                     </form>
                 </div>
             </div>
@@ -108,166 +123,58 @@
 
     <!-- MAIN -->
     <main class="container my-5">
+      <ol class="breadcrumb" id="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Archive Makanan</li>
+        </ol>
       <!-- HEADER ARCHIVE -->
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h3>Archive Makanan</h3>
 
-        <select id="sortArchive" class="form-select w-auto">
+        <!-- <select id="sortArchive" class="form-select w-auto">
           <option value="">Urutkan berdasarkan</option>
           <option value="like">Paling Banyak Like</option>
           <option value="comment">Paling Banyak Komentar</option>
-        </select>
+        </select> -->
       </div>
 
       <!-- GRID MAKANAN -->
       <div class="row g-3" id="archiveContainer">
-        <!-- CARD 1 -->
-        <div
-          class="col-lg-4 col-md-6 archive-item"
-          data-like="120"
-          data-comment="45"
-        >
-          <div class="card h-100">
-          <a href="detail-makanan.html">
-            <img src="./assets/img/Bakso.jpg" class="card-img-top" alt="Bakso"/>
-          </a>
-
-            <div class="card-body">
-
-          <a href="detail-makanan.html" class="text-decoration-none text-dark">
-            <h5 class="card-title">Bakso</h5>
-          </a>
-
-              <p class="card-text">Makanan khas Indonesia berupa bola daging (umumnya sapi) yang disajikan dengan kuah kaldu gurih, mie, tahu, dan taburan bawang goreng.</p>
-
-              <div class="d-flex justify-content-between small text-muted">
-                <button class="btn btn-like p-0 border-0 bg-transparent"
-                      data-liked="true">
-                <i class="bi bi-heart-fill text-danger"></i>
-                <span class="like-count">120</span>
-                </button>
-
-                <div
-                  class="btn-comment d-inline-flex align-items-center gap-1 text-muted"
-                >
-                  <span class="btn-comment">
-                    <i class="bi bi-chat-dots"></i>
-                    <span class="comment-count">45</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div
-          class="col-lg-4 col-md-6 archive-item"
-          data-like="80"
-          data-comment="70"
-        >
-
-          <div class="card h-100">
-
-          <a href="detail-makanan.html">
-            <img src="./assets/img/EsCendol.jpg" class="card-img-top" alt="EsCendol"/>
-          </a>
-
-            <div class="card-body">
-
-          <a href="detail-makanan.html" class="text-decoration-none text-dark">
-              <h5 class="card-title">Es Cendol</h5>
-          </a>
-          
-              <p class="card-text">Minuman tradisional yang berisi butiran cendol dari tepung beras atau hunkwe, disajikan dengan santan dan gula merah cair, memberikan rasa manis dan segar.</p>
-              <div class="d-flex justify-content-between small text-muted">
-              <button class="btn btn-like p-0 border-0 bg-transparent"
-                      data-liked="true">
-                <i class="bi bi-heart-fill text-danger"></i>
-                <span class="like-count">80</span>
-              </button>
-
-                <div
-                  class="btn-comment d-inline-flex align-items-center gap-1 text-muted"
-                >
-                  <span class="btn-comment">
-                    <i class="bi bi-chat-dots"></i>
-                    <span class="comment-count">70</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div
-          class="col-lg-4 col-md-6 archive-item"
-          data-like="200"
-          data-comment="30"
-        >
-          <div class="card h-100">
-          <a href="detail-makanan.html">
-            <img src="./assets/img/KueLapis.jpg" class="card-img-top" alt="KueLapis"/>
-          </a>
-
-            <div class="card-body">
-          
-           <a href="detail-makanan.html" class="text-decoration-none text-dark">
-              <h5 class="card-title">Kue Lapis</h5>
-          </a>
-
-              <p class="card-text">Jajanan tradisional berbahan tepung beras atau tepung sagu yang dikukus berlapis-lapis, bertekstur kenyal, dengan rasa manis dan warna-warna menarik.</p>
-              <div class="d-flex justify-content-between small text-muted">
-              <button class="btn btn-like p-0 border-0 bg-transparent"
-                      data-liked="true">
-                <i class="bi bi-heart-fill text-danger"></i>
-                <span class="like-count">200</span>
-              </button>
-              <div class="btn-comment d-inline-flex align-items-center gap-1 text-muted">
-                <span class="btn-comment">
-                  <i class="bi bi-chat-dots"></i>
-                  <span class="comment-count">30</span>
-                </span>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </main>
 
-    <!-- footer -->
+   <!-- footer -->
      <footer class="main-footer mt-5 static-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <h1 class="footer-title" id="contactUs">Contact Us</h1>
                     <p>Email: info@forchetta.com</p>
                     <p>Telepon: (021) 1234 5678</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
+                    <h1 class="footer-title">Media Sosial</h1>
                     <ul class="social-links">
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Tiktok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <h1 class="footer-title copyright-title">La Forchetta</h1>
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
@@ -278,6 +185,18 @@
     <script src="./assets/vendor/boostrap/js/bootstrap.min.js"></script>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
     <script src="./assets/js/archieve.js"></script>
+
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+      <div id="liveToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+          <div class="toast-body" id="toastMessage">
+              </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+      </div>
+    </div>
   </body>
 </html>

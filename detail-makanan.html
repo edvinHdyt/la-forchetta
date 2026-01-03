@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-     <!-- navbar -->
+ <!-- navbar -->
     <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
@@ -21,10 +21,10 @@
                 </a>
             </li>
              <li>
-                <a href="login-page.html" class="profile-dropdown-link" id="loginMenu">
+                <div class="profile-dropdown-link" id="loginMenu" data-id="login">
                     <i class="bi bi-box-arrow-in-right" id="iconLoginMenu"></i>
                     Masuk
-                </a>
+                </div>
             </li>
           </ul>
         </div>
@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contactUs" data-id="activatedMenu">Contact Us</a>
@@ -50,13 +50,28 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form  action="HasilSearch.html" method="GET"  class="d-flex" role="search">
-                        <input class="form-control form-input-search me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                   </ul>
+                    <form
+                    action="HasilSearch.html"
+                    method="GET"
+                    class="d-none d-md-flex align-items-center"
+                    role="search"
+                    >
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        name="q"
+                        placeholder="Search"
+                        aria-label="Search"
+                        required
+                    />
+                    <button class="btn btn-primary btn-search" type="submit" aria-label="search">
+                        Search
+                    </button>
                     </form>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu" aria-label="hamburger-menu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
@@ -68,7 +83,7 @@
                 </div>
             </div>
         </nav>
-
+        <!-- dropdown -->
         <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
             <div class="container">
                 <div class="navbar-dropdown-item" id="navbarSupportedContent">
@@ -86,9 +101,9 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form  action="HasilSearch.html" method="GET"  class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                    <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-primary btn-search" type="submit" aria-label="search">Search</button>
                     </form>
                 </div>
             </div>
@@ -97,12 +112,17 @@
 
     <main class="mt-4">
         <div class="container">
-         <section class="header">
+        <!-- breadcrumb -->
+        <ol class="breadcrumb" id="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail Makanan</li>
+        </ol>
+         <section class="header" id="containerDetailMakanan">
              <div class="card p-4">
                  <div class="row">
                      <div class="col-lg-4 col-md-6 mb-3">
                          <div class="header-section-responsive">
-                             <h1 class="title" id="foodName">
+                             <h1 class="title" id="foodNameResponsive">
                                  Pancake
                              </h1>
                              <hr>
@@ -114,20 +134,18 @@
                             <div class="col-md-12 d-flex flex-wrap align-items-center justify-content-center">
                                 <div class="food-label">
                                     <i class="bi bi-geo-alt-fill"></i>
-                                    <p>Aceh</p>
+                                    <p id="provinsi">Aceh</p>
                                 </div>
                                  <div class="food-label">
                                     <i class="bi bi-tags-fill"></i>
-                                    <p>Desert</p>
+                                    <p id="category">Desert</p>
                                 </div>
                                  <div class="food-label">
                                     <i class="bi bi-star-fill"></i>
                                     <p id="ratingCategory">5</p>
-                                    <p>/ 5</p>
                                 </div>
                             </div>
                          </div>
-                         
                          
                      </div>
                      <div class="col-lg-8 col-md-6 mb-3">
@@ -137,59 +155,25 @@
                              </h1>
                              <hr>
                          </div>
-                         <div class="body-section">
-                             <h3>Tentang Makanan</h3>
-                             <p id="foodDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque vero quibusdam eius, iure placeat suscipit quasi repellat ex iste, quos minima quaerat expedita voluptate molestiae dolorem quas accusantium culpa?</p>
-                             <h3>Resep</h3>
-                             <span>Untuk 6-8 pancake ukuran sedang</span>
-                             <ul>
-                                 <li>
-                                     <p>
-                                         150 gram tepung terigu serbaguna (± 1 cup)
-                                     </p>
-                                 </li>
-                                 <li>
-                                     <p>
-                                         2 sdm gula pasir
-                                     </p>
-                                 </li>
-                                 <li>
-                                     <p>1 sdt baking powder</p>
-                                 </li>
-                                 <li>
-                                     <p>1/4 sdt baking soda (opsional, biar makin fluffy)</p>
-                                 </li>
-                                 <li>
-                                     <p>Sejumput garam</p>
-                                 </li>
-                                 <li>
-                                     <p>1 butir telur</p>
-                                 </li>
-                                 <li>
-                                     <p> 200 ml susu cair (bisa diganti air, tapi lebih enak susu)</p>
-                                 </li>
-                                 <li>
-                                     <p> 2 sdm mentega cair / minyak</p>
-                                 </li>
-                                 <li>
-                                     <p> 1 sdt vanilla extract (opsional)</p>
-                                 </li>
-                             </ul>
+                         <div class="body-section" id="resep">
+                             <h2>Tentang Makanan</h2>
+                             <p id="foodDesc"></p>
+                             <h2>Resep</h2>
                          </div>
                      </div>
                  </div>
      
                  <div class="header-section">
                      <hr>
-                     <h3 class="text-center">
+                     <h1 class="text-center">
                          Cara Membuat
-                     </h3>
+                     </h1>
                      <hr>
                  </div>
                  <div class="body-section">
                      <div class="row">
-                         <div class="col-md-6 col-sm-12">
-                             <ol class="list-group list-group-numbered">
+                         <div class="col-md-6 col-sm-12" id="stepByStep">
+                             <!-- <ol class="list-group list-group-numbered">
                                  <li class="list-group-item">
                                      Campur bahan kering
                                      <br>
@@ -234,10 +218,7 @@
                                          </li>
                                      </ul>
                                  </li>
-                             </ol>
-                              <ul>
-                                 
-                             </ul>
+                             </ol> -->
                          </div>
                          <div class="col-md-6 d-flex justify-content-center align-items-center">
                              <img src="./assets/image/SVG/DrawKit-cooking-kitchen-food-vector-illustrations-02.svg" alt="" class="img-cooking-illustration">
@@ -248,9 +229,9 @@
                  <!-- comment section -->
                  <div class="header-section" id="comment-section">
                      <hr>
-                     <h3 class="text-center">
+                     <h1 class="text-center title-section-detail">
                          Review & Komen
-                     </h3>
+                     </h1>
                      <hr>
                  </div>
                  <div class="row flex-wrap-reverse">
@@ -337,40 +318,52 @@
              </div>
          </section>
         </div>
+        <div class="container  d-none" id="containerDetailMakanan404">
+            <div class="card flex justify-content-center align-items-center p-5">
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <img src="./assets/image/SVG/not_found.svg" alt="Food Not Found" class="food-notfound">
+                    </div>
+                     <div class="col-sm-6 m-auto text-center">
+                        <h1>Makanan tidak ditemukan</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
-   <!-- footer -->
-    <footer class="main-footer mt-5 static-bottom">
+    <!-- footer -->
+   <footer class="main-footer mt-5 static-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <h1 class="footer-title" id="contactUs">Contact Us</h1>
                     <p>Email: info@forchetta.com</p>
                     <p>Telepon: (021) 1234 5678</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
+                    <h1 class="footer-title">Media Sosial</h1>
                     <ul class="social-links">
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Tiktok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <h1 class="footer-title copyright-title">La Forchetta</h1>
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
