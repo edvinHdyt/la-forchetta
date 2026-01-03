@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="col-12 col-md-6 col-lg-4 archive-item" id="food-${newDataMakanan[0].id_makanan}">
              <div class="card h-100 shadow-sm border-0">                    
                 <a href="detail-makanan.html?id=${newDataMakanan[0].id_makanan}" aria-label="${newDataMakanan[0].nama_makanan}">
-                    <img src="./assets/image/foodimage/${newDataMakanan[0].foto_makanan}" class="card-img-top" alt="${newDataMakanan[0].nama_makanan}" style="height:180px; object-fit:cover;">
+                    <img src="./assets/image/foodImage/${newDataMakanan[0].foto_makanan}" class="card-img-top" alt="${newDataMakanan[0].nama_makanan}" style="height:180px; object-fit:cover;">
                         <!-- memanggil rating -->
                     <div class="rating-overlay">
                         <i class="bi bi-star-fill"></i>
