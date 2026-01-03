@@ -73,6 +73,14 @@ const registerProccess = async() =>  {
     let idUser = 0;
     let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
 
+    let isEmailUsed = dataUsers.filter((data) => data["email"] == emailInput);
+
+    console.log(isEmailUsed);
+    if (isEmailUsed.length > 0){
+        showAlertModals("Email sudah digunakan!");
+        return;
+    }
+
     do{
         idUser = Math.floor(9 + Math.random() * 100);
         isIdused = dataUsers.filter(data => data["id"] == idUser);
