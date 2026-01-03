@@ -290,10 +290,7 @@ const createCardComment = (elm) => {
 
 function addComment(){
     if(userLogin == null){
-        let url = window.location.href;
-        url = url.split("/");
-        const currUrl = `${url[0]}//${url[2]}/`;
-        window.location.href = currUrl + "login-page.html";
+        window.location.href = "login-page.html";
 
         return;
     }
