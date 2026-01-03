@@ -1,6 +1,6 @@
 "use strict";
 
-/* ===== CONFIG & STORAGE ===== */
+/*CONFIG & STORAGE*/
 const WISHLIST_KEY = "la-forchetta-wishlist";
 const USER_ID = 1;
 const API_MAKANAN = "https://dummyjson.com/c/5953-8a63-40d9-8670";
@@ -13,7 +13,7 @@ function saveWishlist(data) {
   localStorage.setItem(WISHLIST_KEY, JSON.stringify(data));
 }
 
-/* ===== API DATA ===== */
+/*API DATA */
 async function getFoods() {
   try {
     const res = await fetch(API_MAKANAN);
@@ -25,14 +25,14 @@ async function getFoods() {
   }
 }
 
-/* ===== FUNGSI NOTIFIKASI CUSTOM (VERSI HIJAU) ===== */
+/* FUNGSI NOTIFIKASI CUSTOM (VERSI HIJAU) */
 function showNotification(message, type = "success") {
   const toastElement = document.getElementById("liveToast");
   const toastMessage = document.getElementById("toastMessage");
 
   if (!toastElement || !toastMessage) return;
 
-  // Set Warna (Success = Hijau bg-success, Danger = Merah bg-danger)
+  // Set Warna Success = Hijau bg-success, Danger = Merah bg-danger)
   toastElement.classList.remove("bg-success", "bg-danger");
   toastElement.classList.add(type === "success" ? "bg-success" : "bg-danger");
 
@@ -44,7 +44,7 @@ function showNotification(message, type = "success") {
   toast.show();
 }
 
-/* ===== 1. CREATE (Tambah ke Wishlist) ===== */
+/*1. CREATE (Tambah ke Wishlist) */
 function addToWishlist(id_makanan) {
   let data = getAllWishlist();
 
@@ -53,7 +53,7 @@ function addToWishlist(id_makanan) {
   );
 
   if (exists) {
-    showNotification("Makanan sudah ada di wishlist ❤️", "danger");
+    showNotification("Makanan sudah ada di wishlist ", "danger");
     return;
   }
 
@@ -70,7 +70,7 @@ function addToWishlist(id_makanan) {
   }
 }
 
-/* ===== 2. READ (Tampilkan Wishlist) ===== */
+/*2. READ (Tampilkan Wishlist) */
 async function renderWishlist() {
   const container = document.getElementById("wishlist-data-container");
   if (!container) return;
@@ -91,7 +91,6 @@ async function renderWishlist() {
     const food = foods.find((f) => f.id_makanan == w.id_makanan);
 
     if (food) {
-      // Tentukan lokasi folder tempat Anda menyimpan gambar tadi
       const pathFolder = "assets/img/";
 
       container.innerHTML += `
@@ -118,7 +117,7 @@ async function renderWishlist() {
   });
 }
 
-/* ===== 3. DELETE (Hapus dengan Modal) ===== */
+/*3. DELETE (Hapus dengan Modal)*/
 let idMakananYangAkanDihapus = null;
 
 function showDeleteModal(id) {
@@ -153,7 +152,7 @@ function confirmDelete() {
   }
 }
 
-/* ===== INITIALIZE ===== */
+/*INITIALIZE*/
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("wishlist-data-container")) {
     renderWishlist();

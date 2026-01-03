@@ -569,9 +569,7 @@ main .container .card-img-top {
 
 /* Dashboard Elin - End */
 
-/* =========================================
-   WISHLIST PAGE STYLES ONLY
-   ========================================= */
+/* WISHLIST PAGE STYLES ONLY*/
 
 .wishlist-page {
   padding: 40px 20px;
@@ -671,12 +669,11 @@ main .container .card-img-top {
   color: white;
 }
 
-/* Penyesuaian ikon di dalam tombol jika ada */
 .btn-hapus i {
   font-size: 1rem;
 }
 
-/* Menyamakan warna tombol konfirmasi di modal dengan tema La Forchetta */
+/* Menyamakan warna tombol konfirmasi di modal dengan tema */
 #confirmDelete {
   background-color: #800037 !important; /* Warna merah maroon tema */
   border-color: #800037 !important;
@@ -690,7 +687,7 @@ main .container .card-img-top {
   border-color: #a00045 !important;
 }
 
-/* Opsional: Menyesuaikan tombol Batal agar serasi */
+/* Menyesuaikan tombol Batal agar serasi */
 #cancelDelete {
   background-color: #6c757d;
   border-color: #6c757d;
