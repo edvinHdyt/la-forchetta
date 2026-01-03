@@ -30,9 +30,7 @@ let initialize = async () => {
         localStorage.setItem(commentKeyStorage, JSON.stringify(data["comments"]));
     }
 
-    const users = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
-    let userData = await users.json();
-    userData = userData["users"];
+    let userData = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
 
     const commentSection = document.getElementById("commentSection");
 
@@ -40,7 +38,7 @@ let initialize = async () => {
     dataComments = JSON.parse(dataComments);
 
     let newdataComments = dataComments.map(e => e).filter((data) => data["id_makanan"] == idMakanan);
-
+    
     Array.from(newdataComments).forEach((val, i) => {
         let user = userData.filter((user) => {
             return user["id"] == val["id_user"];
@@ -52,7 +50,7 @@ let initialize = async () => {
         let date = createDateFormat(val["created_at"]);
         let profile;
 
-        if (user.profile_pict == ""){
+        if (user.profile_pict == undefined){
             profile = 
             '<div class="profile-border profile-comment">' + 
                 '<i class="bi bi-person-fill"></i>' +
@@ -321,8 +319,9 @@ function addComment(){
         comment.classList.remove("is-invalid");
     }
 
+    
     const d = new Date();
-    const objDate =  `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+    const objDate =  `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 
     let date = createDateFormat(d);
 
@@ -333,11 +332,12 @@ function addComment(){
         let obj = {
             id : dataComments.length,
             id_makanan: idMakanan, //ubah id makanan yg sesuai,
-            id_user: 1, //ubah id user yg sesuai,
+            id_user: userLogin.id, //ubah id user yg sesuai,
             rating: parseInt(rating.value),
             komen: comment.value,
             created_at: objDate
         }
+
 
         dataComments.push(obj);
         
@@ -345,10 +345,20 @@ function addComment(){
 
         let newdataComments = dataComments.map(e => e).filter((data) => data["id_makanan"] == idMakanan);
 
-        let elm = 
+        if (userLogin.profile_pict == undefined){
+            profile = 
             '<div class="profile-border profile-comment">' + 
                 '<i class="bi bi-person-fill"></i>' +
-            '</div>'+
+            '</div>';
+        } else {
+            profile = 
+            `<img src="${userLogin.profile_pict}" class="comment-profile-img" alt="${userLogin.nama}">`;
+        }
+
+
+
+        let elm = 
+            profile+
             '<div class="detail-comment ms-3">'+
                 '<div class="detail-comment-header d-flex">'+
                     '<p class="username text-bold">'+nama+'</p>'+

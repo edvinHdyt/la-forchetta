@@ -9,6 +9,7 @@ const STORAGE_KEY_USER_LOGIN = "la-forchetta-user-login";
 const commentKeyStorage = "la-forchetta-comment";
 const ARCHIVE_KEY = "la-forchetta-archive"; 
 const STORAGE_KEY_LIKED_FOODS = "la-forchetta-liked-foods"; 
+const STORAGE_KEY_USER = "la-forchetta-users"; 
 
 const defaultPhoto = "./assets/image/SVG/defaultProfile.svg";
 const inputs = document.querySelectorAll("#name, #phone, #email, #bio");
@@ -137,7 +138,7 @@ async function initArchive() {
             let initialData = data.archievest;
             
             initialData = initialData.filter((data) => {
-                return data["id_user"] == userLogin.id_user;
+                return data["id_user"] == userLogin.id;
             });
 
             localStorage.setItem(ARCHIVE_KEY, JSON.stringify(initialData));
@@ -157,7 +158,7 @@ async function initWishlist() {
             let initialData = data.wishlists;
             
             initialData = initialData.filter((data) => {
-                return data["id_user"] == userLogin.id_user;
+                return data["id_user"] == userLogin.id;
             });
 
             localStorage.setItem(WISHLIST_KEY, JSON.stringify(initialData));
@@ -167,6 +168,25 @@ async function initWishlist() {
         }
     }
 }
+
+
+async function initUsers() {
+    // console.log(localStorage.getItem(STORAGE_KEY_USER))
+    if (localStorage.getItem(STORAGE_KEY_USER) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/0b7f-08fd-40a1-9ab1");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.users;
+
+            localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
 
 async function initFoodLiked() {
     if (localStorage.getItem(STORAGE_KEY_LIKED_FOODS) === null) {
@@ -224,6 +244,7 @@ function initial(){
     initFoodLiked(); 
     initDataRating();
     initDataComment();
+    initUsers();
 
     let currentUrl = window.location.href;
     currentUrl = currentUrl.split("/");
@@ -288,9 +309,11 @@ function syncLikeButtons(icon, idMakanan) {
         let archieve = localStorage.getItem(ARCHIVE_KEY);
         archieve = archieve == null ? archieve : JSON.parse(archieve);
     
-        archieve = archieve.filter((data) => {
-            return data["id_makanan"] == idMakanan;
-        });
+        if (archieve != null){
+            archieve = archieve.filter((data) => {
+                return data["id_makanan"] == idMakanan;
+            });
+        }
     
         archieve.forEach(elm => {
             icon.classList.replace('bi-heart', 'bi-heart-fill');

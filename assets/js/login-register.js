@@ -1,13 +1,11 @@
-const STORAGE_KEY_USER_LOGIN = "la-forchetta-user-login";
 
 document.addEventListener("click", function(){
     const strId = event.target.dataset["id"];
-
     switch (strId) {
         case "closeAlertModal":
             closeAlertModals();
             break;
-        case "login":
+        case "loginProccess":
             loginProccess();
             break;
         case "register":
@@ -24,19 +22,18 @@ const loginProccess = async() =>  {
     emailInput = emailInput.value;
     passInput = passInput.value;
 
+
     if (emailInput == "" || passInput == ""){
         showAlertModals("Email dan password harus diisi!");
         return;
     }
 
-
     // get data users
-    let res = await fetch("https://dummyjson.com/c/8c8f-0b56-48f0-8ed4");
-    let dataUsers = await res.json();
-    dataUsers = dataUsers["users"].filter((data) => {
+    let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+    dataUsers = dataUsers.filter((data) => {
         return (
         (data["email"].includes(emailInput)) &&
-        (data["password"].includes(passInput))
+        (data["password"].includes(MD5(unescape(encodeURIComponent(passInput)))))
         );
     });
 
@@ -46,7 +43,7 @@ const loginProccess = async() =>  {
     }
 
     let obj = {
-        id_user : dataUsers[0].id,
+        id : dataUsers[0].id,
         email : dataUsers[0].email,
         nama : dataUsers[0].nama,
         profile_pict: dataUsers[0].profile_pict
@@ -72,10 +69,18 @@ const registerProccess = async() =>  {
         return;
     }
 
-    const idUser = Math.floor(8 + Math.random() * 100);
+    let isIdused = [];
+    let idUser = 0;
+    let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
+    do{
+        idUser = Math.floor(9 + Math.random() * 100);
+        isIdused = dataUsers.filter(data => data["id"] == idUser);
+    }while(isIdused.length > 0);
+
 
     let obj = {
-        id_user : idUser,
+        id : idUser,
         email : emailInput,
         nama : nameInput,
         phone : phoneInput,
@@ -83,7 +88,10 @@ const registerProccess = async() =>  {
         profile_pict: undefined
     };
 
+    dataUsers.push(obj);
+
     localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(obj));
+    localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUsers));
     window.location.href = "index.html";
 }
 

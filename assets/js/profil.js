@@ -98,7 +98,16 @@ confirmYes?.addEventListener("click", () => {
   userLogin.nama = nameInput.value.trim();
   userLogin.phone = phoneInput.value.trim();
   userLogin.profile_pict = profilePhoto.src;
+
+  let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
+  let newDataUsers = dataUsers.filter(data => data["id"] == userLogin.id);
   
+  newDataUsers[0].email = emailInput.value.trim();
+  newDataUsers[0].nama = nameInput.value.trim();
+  newDataUsers[0].phone = phoneInput.value.trim();
+  newDataUsers[0].profile_pict = profilePhoto.src;
+
   const profile = {
       name: nameInput.value.trim(),
       phone: phoneInput.value.trim(),
@@ -106,11 +115,16 @@ confirmYes?.addEventListener("click", () => {
       profile_pict: profilePhoto.src || defaultPhoto 
     };
 
-    localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(userLogin));
-    initialProfile = { ...profile };
-    confirmCard.classList.add("d-none");
-    setEditMode(false); 
-  }); // di sini dia balik lagi ke edit profile
+  let indexUser = dataUsers.map(e => e.id).indexOf(newDataUsers[0].id);
+
+  dataUsers[indexUser] = newDataUsers[0];
+
+  localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(userLogin));
+  localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUsers));
+  initialProfile = { ...profile };
+  confirmCard.classList.add("d-none");
+  setEditMode(false); 
+}); // di sini dia balik lagi ke edit profile
     
 confirmNo?.addEventListener("click", () => {
   confirmCard.classList.add("d-none");

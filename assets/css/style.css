@@ -841,11 +841,15 @@ main .container .card-img-top {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999; }
+  z-index: 999; 
+  height: auto;
+}
 .confirm-card {
   width: 300px;
   border-radius: 16px;
-  font-size: 16px; }
+  font-size: 16px; 
+  height: auto !important;
+}
 .confirm-card #confirmText {
   color: #000000; }
 .confirm-card .btn {

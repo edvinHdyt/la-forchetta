@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         archiveContainer.innerHTML = "";
 
         archives = archives.filter((data) => {
-            return data["id_user"] == userLogin["id_user"];
+            return data["id_user"] == userLogin["id"];
         });
 
         if (archives.length === 0) {
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleArchive(idMakanan) {
     if (userLogin == null){
-        window.location.href="index.html";
+        window.location.href="login-page.html";
         return;
     }
     // Ambil data dari LocalStorage
@@ -218,7 +218,7 @@ function toggleArchive(idMakanan) {
         
 
         let obj = {
-            id_user : userLogin.id_user,
+            id_user : userLogin.id,
             id_makanan : idMakanan
         };
 

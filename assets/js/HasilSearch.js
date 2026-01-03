@@ -137,21 +137,27 @@ async function renderCards(makananList) {
   }
 
   let html = "";
+  let newWishlistData = [];
+  let newArchieveData = [];
   makananList.forEach(item => {
     const idMakanan = item.id_makanan;
     // const fs = getFoodState(state, id);
-    
+
     let newDataCommets = dataComment.filter((data) => {
       return data["id_makanan"] == idMakanan;
     });
 
-    let newWishlistData = wishlistData.filter((data) => {
-      return data["id_makanan"] == idMakanan;
-    });
+    if (userLogin != null && wishlistData.length > 0){
+      newWishlistData = wishlistData.filter((data) => {
+        return data["id_makanan"] == idMakanan;
+      });
+    }
 
-    let newArchieveData = archiveData.filter((data) => {
-      return data["id_makanan"] == idMakanan;
-    });
+    if (userLogin != null && archiveData.length > 0){
+      newArchieveData = archiveData.filter((data) => {
+        return data["id_makanan"] == idMakanan;
+      });
+    }
 
     let newLikedCountData = likedCountData.filter((data) => {
         return data["id_makanan"] == idMakanan; 

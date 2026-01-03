@@ -56,7 +56,7 @@ function applyFilter() {
     
     if (userLogin != null && wishlistData != null){
       wishlistData = wishlistData.filter((data) => {
-        return data["id_user"] == userLogin["id_user"];
+        return data["id_user"] == userLogin["id"];
       });
     }
 
@@ -249,7 +249,7 @@ let filteredFoods = [];
 let currentPage = 1;
 const PAGE_SIZE = 6;
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
   const provinsiSelect = document.getElementById("provinsiSelect");
   const kategoriSelect = document.getElementById("kategoriSelect");
 
@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Gagal Mengambil Data Kategori:", err));
 
-    loadData();
+    await loadData();
 
     //logic back
     provinsiSelect.addEventListener("change", () => {
