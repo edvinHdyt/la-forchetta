@@ -206,7 +206,7 @@ function resolveFoodImage(filename) {
     if (!f) return "./assets/image/SVG/orangkrem.svg";
     if (/^https?:\/\//i.test(f)) return f;
     if (f.includes("/") || f.includes("\\")) return f;
-  return `./assets/image/foodimage/${encodeURIComponent(f)}`;
+  return `./assets/image/foodImage/${encodeURIComponent(f)}`;
 }
 
 
