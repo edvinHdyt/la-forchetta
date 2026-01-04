@@ -816,6 +816,9 @@ main .container .card-img-top {
   font-size: 0.85rem;
   padding: 5px 15px;
   border-radius: 6px; }
+.profil-title{
+  font-size: 1.5rem;
+}
 #editBttnn {
   background-color: #800037;
   border-color: #e9609b;

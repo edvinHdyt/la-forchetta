@@ -46,6 +46,7 @@ const loginProccess = async() =>  {
         id : dataUsers[0].id,
         email : dataUsers[0].email,
         nama : dataUsers[0].nama,
+        phone : dataUsers[0].phone,
         profile_pict: dataUsers[0].profile_pict
     };
 
