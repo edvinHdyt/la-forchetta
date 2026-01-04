@@ -125,33 +125,33 @@ La Forchet adalah sebuah website review makanan yang dirancang untuk membantu pe
 ![Login Tablet](image/logintablet.png)
 
 **Desktop**  
-![Login Desktop](image/LoginDesktop.png)
+![Login Desktop](image/logindesktop.png)
 
 ---
 
 ### 5.5 Register
 
 **Mobile**  
-![Register Mobile](image/RegisterMobile.png)
+![Register Mobile](image/registermobile.png)
 
 **Tablet**  
-![Register Tablet](image/RegisterTablet.png)
+![Register Tablet](image/registertablet.png)
 
 **Desktop**  
-![Register Desktop](image/RegisterDesktop.png)
+![Register Desktop](image/registerdesktop.png)
 
 ---
 
 ### 5.6 Profile
 
 **Mobile**  
-![Profile Mobile](image/ProfileMobile.png)
+![Profile Mobile](image/profilemobile.png)
 
 **Tablet**  
-![Profile Tablet](image/ProfileTablet.png)
+![Profile Tablet](image/profiletablet.png)
 
 **Desktop**  
-![Profile Desktop](image/ProfileDesktop.png)
+![Profile Desktop](image/profiledesktop.png)
 
 ---
 
@@ -161,7 +161,7 @@ La Forchet adalah sebuah website review makanan yang dirancang untuk membantu pe
 ![Wishlist Mobile](image/wishlistmobile.png)
 
 **Tablet**  
-![Wishlist Tablet](image/WishlistTablet.png)
+![Wishlist Tablet](image/wishlisttablet.png)
 
 **Desktop**  
 ![Wishlist Desktop](image/wishlistdesktop.png)
@@ -171,13 +171,13 @@ La Forchet adalah sebuah website review makanan yang dirancang untuk membantu pe
 ### 5.8 Archieve Makanan
 
 **Mobile**  
-![Archieve Mobile](image/ArchieveMobile.png)
+![Archieve Mobile](image/archievemobile.png)
 
 **Tablet**  
-![Archieve Tablet](image/ArchieveTablet.png)
+![Archieve Tablet](image/archievetablet.png)
 
 **Desktop**  
-![Archieve Desktop](image/ArchieveDesktop.png)
+![Archieve Desktop](image/archievedesktop.png)
 
 ---
 
@@ -186,28 +186,28 @@ La Forchet adalah sebuah website review makanan yang dirancang untuk membantu pe
 Berikut merupakan hasil pengecekan aksesibilitas pada website La Forchetta:
 
 **Dashboard**  
-![Dashboard Accessibility](image/AksesibilitasDashboard.png)
+![Dashboard Accessibility](image/aksesibilitasdashboard.png)
 
 **View Details**  
-![View Details Accessibility](image/AksesibilitasDetails.png)
+![View Details Accessibility](image/aksesibilitasdetails.png)
 
 **Login**  
-![Login Accessibility](image/AksesibilitasLogin.png)
+![Login Accessibility](image/aksesibilitaslogin.png)
 
 **View Register**  
-![Register Accessibility](image/AksesibilitasRegister.png)
+![Register Accessibility](image/aksesibilitasregister.png)
 
 **Profile**  
-![Profile Accessibility](image/AksesibilitasProfile.png)
+![Profile Accessibility](image/aksesibilitasprofile.png)
 
 **Wishlist Makanan**  
-![Wishlist Accessibility](image/Aksesibilitaswishlist.png)
+![Wishlist Accessibility](image/aksesibilitaswishlist.png)
 
 **Archieve Makanan**  
-![Archieve Accessibility](image/Aksesibilitasarchieve.png)
+![Archieve Accessibility](image/aksesibilitasarchieve.png)
 
 **Hasil Search**  
-![Hasil Search Accessibility](image/Aksesibilitashasilsearch.png)
+![Hasil Search Accessibility](image/aksesibilitashasilsearch.png)
 
 ---
 
