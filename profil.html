@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-   <!-- navbar -->
-   <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
+       <!-- navbar -->
+    <div class="container sticky-top hide-dropdown-profile-container d-none" id="dropdownProfile" >
         <div class="dropdown-profile">
           <ul class="list-item">
             <li>
@@ -50,13 +50,28 @@
                             <a class="nav-link" href="archieve.html" >Archive Makanan</a>
                         </li>
                     </ul>
-                    <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                   </ul>
+                    <form
+                    action="HasilSearch.html"
+                    method="GET"
+                    class="d-none d-md-flex align-items-center"
+                    role="search"
+                    >
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        name="q"
+                        placeholder="Search"
+                        aria-label="Search"
+                        required
+                    />
+                    <button class="btn btn-primary btn-search" type="submit" aria-label="search">
+                        Search
+                    </button>
                     </form>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu">
+                    <button class="btn btn-primary btn-hamburger-menu" data-id="showDropdownMenu" aria-label="hamburger-menu">
                         <i class="bi bi-list" data-id="showDropdownMenu"></i>
                     </button>
                     <div class="profile-border" data-id="dropdownProfile">
@@ -68,13 +83,13 @@
                 </div>
             </div>
         </nav>
-
+        <!-- dropdown -->
         <div class="dropdown-navbar hide-dropdown-navbar" id="dropdownNavbar">
             <div class="container">
                 <div class="navbar-dropdown-item" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 ms-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html" >Home</a>
+                            <a class="nav-link" href="index.html" >Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contactUs" data-id="activatedMenu">Contact Us</a>
@@ -88,7 +103,7 @@
                     </ul>
                     <form action="HasilSearch.html" method="GET"  action="HasilSearch.html" method="GET" class="d-flex" role="search">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-primary btn-search" type="submit">Search</button>
+                        <button class="btn btn-primary btn-search" type="submit" aria-label="search">Search</button>
                     </form>
                 </div>
             </div>
@@ -101,11 +116,11 @@
         <div class="container my-3">
             <!-- breadcrumb -->
             <ol class="breadcrumb" id="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html" aria-label="home">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profile</li>
             </ol>
             <div class="profile-card shadow p-5 rounded-4 mx-auto">
-            <h4 class="mb-3 fw-bold text-center">Profile Information</h4>
+            <h1 class="mb-3 fw-bold text-center profil-title">Profile Information</h1>
             <!-- photo profile -->
             <div class="d-flex justify-content-center mb-2 position-relative">
             <div class="profile-wrapper">
@@ -120,19 +135,19 @@
             <!-- edit form profil -->
             <form id="profileForm" class="needs-validation" novalidate>
             <div class="mb-2">
-                <label class="form-label fw-semibold">Name</label>
+                <label class="form-label fw-semibold" for="name">Name</label>
                 <input id="name" name="name" type="text"  class="form-control" value="Park Jisung" required>
                     <div class="valid-feedback">Good!</div>
                     <div class="invalid-feedback">Please enter your name</div>                    
             </div>
             <div class="mb-2">
-                <label class="form-label fw-semibold">Phone Number</label>
+                <label class="form-label fw-semibold" for="phone">Phone Number</label>
                 <input id="phone" name="phone" type="text"  class="form-control" value="082172274247" required>
                     <div class="valid-feedback">Good!</div>
                     <div class="invalid-feedback">Please enter your phone numbers</div>  
             </div>
             <div class="mb-2">
-                <label class="form-label fw-semibold">Email</label>
+                <label class="form-label fw-semibold" for="email">Email</label>
                 <input id="email" name="email" type="email" class="form-control" value="Bamjjiparkjie@gmail.com" required>
                     <div class="valid-feedback">Good!</div>
                     <div class="invalid-feedback">Please enter your email address</div>          
@@ -157,37 +172,37 @@
         </div>
     </main>
 
-   <!-- footer -->
+ <!-- footer -->
      <footer class="main-footer mt-5 static-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6">
-                    <h3 class="footer-title" id="contactUs">Contact Us</h3>
+                    <h1 class="footer-title" id="contactUs">Contact Us</h1>
                     <p>Email: info@forchetta.com</p>
                     <p>Telepon: (021) 1234 5678</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4  col-6">
-                    <h3 class="footer-title">Media Sosial</h3>
+                    <h1 class="footer-title">Media Sosial</h1>
                     <ul class="social-links">
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-link-item">
-                            <a href="#">
+                            <a href="#" aria-label="Tiktok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    <h3 class="footer-title copyright-title">La Forchetta</h3>
+                    <h1 class="footer-title copyright-title">La Forchetta</h1>
                     <p>&copy; 2025 Aplikasi Makanan. Semua Hak Cipta Dilindungi.</p>
                 </div>
           </div>
