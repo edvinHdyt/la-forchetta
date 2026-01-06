@@ -213,6 +213,6 @@ Berikut merupakan hasil pengecekan aksesibilitas pada website La Forchetta:
 
 ## Penutup
 
-Website **La Forchet** dikembangkan sebagai bagian dari Tugas Besar mata kuliah Desain Web dengan menerapkan prinsip UI/UX, aksesibilitas, responsivitas, serta penggunaan framework Bootstrap 5. Proyek ini diharapkan mampu merepresentasikan website profesional yang inklusif dan nyaman digunakan di berbagai perangkat. TERIMAKASIH!
+Website **La Forchetta** dikembangkan sebagai bagian dari Tugas Besar mata kuliah Desain Web dengan menerapkan prinsip UI/UX, aksesibilitas, responsivitas, serta penggunaan framework Bootstrap 5. Proyek ini diharapkan mampu merepresentasikan website profesional yang inklusif dan nyaman digunakan di berbagai perangkat. TERIMAKASIH!
 
 ---
